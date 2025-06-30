@@ -41,6 +41,10 @@ class AwardController extends Controller
 dd(request('compete'));
 
 
+
+
+
+
             if(request('photo')){
                 $attach = request('photo');
                 foreach($attach as $attached){

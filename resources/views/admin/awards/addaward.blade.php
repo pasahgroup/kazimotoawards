@@ -8,7 +8,7 @@ function addkid() {
   if (i <= 4) {
     i++;
     var div = document.createElement('div');
-    div.innerHTML ="<label>Competitor "+i+'</label>:<input type="text" name="compete[]" id="compete[]">'
+    div.innerHTML ="<label>Competitor "+i+' prize</label>:<input type="number" name="compete[]" id="compete[]">'
       + ' <input type="button" id="add_kid()" onclick="addkid()" value="+" />'
       + ' <input type="button" value="-" onclick="removekid(this)">';
     document.getElementById('kids').appendChild(div);
@@ -76,8 +76,8 @@ function removekid(div) {
               <div class="col-md-6 col-sm-12">
             <div id="kids">
 
-        <label>Competitor 1:</label>
-               <input type="text" name="compete[]" id="compete[]">
+        <label>Competitor 1 prize:</label>
+               <input type="number" name="compete[]" id="compete[]">
                 <input type="button" id="add_kid()" onclick="addkid()" value="+" />(limit 5) 
 
          
