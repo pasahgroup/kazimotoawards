@@ -1,4 +1,4 @@
-@extends('spa.layout')
+@extends('spa.mainlayout')
 @section('content')
   <!-- ==================== Home-Slider Area (Start) ==================== -->  
   <section class="home">

@@ -36,7 +36,7 @@
 
 <div class="form-container">
     <div class="col-md-12">
-      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.store') }}" enctype="multipart/form-data">
+      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('assign-activity.store') }}" enctype="multipart/form-data">
         @csrf
         <h3><i class="fa fa-calendar-check-o"></i>SUBPROJECT ACTIVITIES ASSIGNING FORM</h3>
         <fieldset class="active">
@@ -72,7 +72,7 @@
     @foreach($activities as $activity)
     <div class="col-md-6 col-sm-6">   
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="checkIndeterminateDisabled">
+  <input class="form-check-input" type="checkbox" value="{{$activity->id}}" id="checkIndeterminateDisabled" name="activities[]">
   <label class="form-check-label" for="checkIndeterminateDisabled">
    {{$activity->activity_name}}
   </label>

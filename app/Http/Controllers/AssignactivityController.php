@@ -49,14 +49,40 @@ class AssignactivityController extends Controller
      */
     public function store(Request $request)
     {
-        $subproject = subproject::UpdateOrCreate([
-        'sub_project_name'=>request('sub_project_name'),
-        'sub_project_code'=>request('sub_project_code'),
-        'project_id'=>request('project_id'),      
-        'status'=>request('status'),
-        'level'=>request('level'),
-      
+$activities = request('activities');
+//dd(request('activities'));
+     
+    if(request('activities')>0)
+    {
+    foreach($activities as $key => $activity){      
+    // $activityUpdate = assignactivity::where('id',$key)
+    // ->where('project_id',$project_id)
+    // ->where('subproject_id',$subproject_id)->UpdateOrCreate([
+    //         'itinerary_title'=>$title[$key],
+
+    //         'distance'=>$distance[$key],
+    //         'transport'=>$transport[$key],
+    //         'meal'=>$meal[$key],
+
+    //         'itinerary_description'=>$description[$key],
+    //         'destination_id'=>$destination[$key],
+    //         'accommodation_id'=>$accommodation[$key]
+    //     ]);
+ //dd($activities[$key]);
+
+        $activityUpdate = assignactivity::UpdateOrCreate([
+        'project_id'=>request('project_id'),
+        'subproject_id'=>request('subproject_id'),
+        'activity_id'=>$activities[$key],
+
+    ],[
+        'percent'=>request('percent')      
         ]);
+
+            }
+   }
+
+
          return redirect('/subproject');
     }
 

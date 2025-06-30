@@ -46,7 +46,7 @@ $enquiries=enquiry::where('status','Active')->count();
             $lodges=lodge::count();
 
 //dd($trainee);
-        return view('admins.Dashboard.index',compact('agents','lodges','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
+        return view('admin.Dashboard.index',compact('agents','lodges','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
     }
 
     /**

@@ -72,6 +72,8 @@ use App\Http\Controllers\DesignationController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\AssignactivityController;
 
+use App\Http\Controllers\AwardController;
+
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\AuthController;
 
@@ -114,6 +116,7 @@ Route::resource('/contact',ContactController::class);
 Route::resource('/project',ProjectController::class);
 Route::resource('/subproject',SubprojectController::class);
 Route::resource('/activity',ActivityController::class);
+Route::resource('/awards',AwardController::class);
 
 
 Route::resource('/slides',SlidesController::class);
@@ -138,7 +141,7 @@ Route::resource('/aboutus',AboutusController::class);
 
  Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
  Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('destroy');
-
+ Route::get('/award-destroy/{x}', [AwardController::class, 'destroy'])->name('destroy');
 
  Route::resource('/assign-activity',AssignactivityController::class);
  Route::get('/assignActivity', [AssignactivityController::class,'show'])->name('assignActivity');

@@ -415,11 +415,19 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
+              <a href="/awards" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Awards</p>
+              </a>
+            </li>
+
+             <li class="nav-item">
               <a href="/aboutus" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>About us</p>
               </a>
             </li>
+
             <li class="nav-item">
               <a href="/bank" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
@@ -441,6 +449,50 @@
   </div>
   <!-- /.sidebar -->
 </aside>
+
+                    @if($message= Session::get('success'))
+<div class="alert alert-success" role="alert">
+  <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+  <span aria-hidden="true">&times;</span></button>
+  <strong>Well done!</strong> {{ $message }}
+</div>
+@endif
+
+@if($message= Session::get('delete'))
+<div class="alert alert-danger" role="alert">
+  <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+  <span aria-hidden="true">&times;</span></button>
+  <strong>Attention!</strong> {{ $message }}
+</div>
+@endif
+@if($message= Session::get('info'))
+<div class="alert alert-danger" role="alert">
+  <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+  <span aria-hidden="true">&times;</span></button>
+  <strong>Sorry!</strong> {{ $message }}
+</div>
+@endif
+@if($message= Session::get('error'))
+<div class="alert alert-danger" role="alert">
+  <button aria-label="Close" class="close" data-dismiss="alert" type="button">
+  <span aria-hidden="true">&times;</span></button>
+  <strong>Sorry!</strong> {{ $message }}
+</div>
+@endif
+
+{{-- Validation error message --}}
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
+
 @yield('contents')
 
 <footer class="main-footer">
