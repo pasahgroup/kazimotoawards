@@ -77,8 +77,9 @@ function removekid(div) {
             <div id="kids">
 
         <label>Competitor 1 prize:</label>
-               <input type="number" name="compete[]" id="compete[]">
+                <input type="text" name="compete[]" id="compete[]" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
                 <input type="button" id="add_kid()" onclick="addkid()" value="+" />(limit 5) 
+
 
          
   </div>
