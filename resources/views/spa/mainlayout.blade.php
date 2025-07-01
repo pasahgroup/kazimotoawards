@@ -25,6 +25,11 @@
     <link rel="stylesheet" href="../../assets/css/nice-select.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
 
+    <!-- Custom button -->
+        <link rel="stylesheet" href="../../buttons/css/ionicons.min.css">
+        <link rel="stylesheet" href="../../buttons/css/style.css">
+           <!-- <link rel="stylesheet" href="../../forms/css/style.css"> -->
+
 </head>
 
 <body class="home-5">
@@ -54,7 +59,6 @@
                                             info@example.com</a></li>
                                     <li><a href="tel:+21236547898"><i class="far fa-headset"></i> +2 123 654
                                             7898</a></li>
-                                    <li class="help"><a href="#"><i class="far fa-comment-question"></i> Need Help?</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -62,7 +66,7 @@
                             <div class="header-top-right">
                                 <ul class="header-top-list">
                                     <li><a href="#"><i class="far fa-alarm-clock"></i> Daily Deal</a></li>
-                                    <li class="login"><a href="#"><i class="far fa-arrow-right-to-bracket"></i> Sign In</a></li>
+                                    <li class="login"><a href="/login"><i class="far fa-user-circle"></i> Sign In</a></li>
                                     <li>
                                         <div class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
@@ -124,7 +128,7 @@
                             <form action="#">
                                 <div class="search-content">
                                     <select class="select">
-                                        <option value="">All Category</option>
+                                        <option value="">Menu</option>
                                         <option value="1">Today's Hot Deals</option>
                                         <option value="2">Fashion & Accessories</option>
                                         <option value="3">Electronics</option>
@@ -146,27 +150,15 @@
                     <div class="col-7 col-lg-3 col-xl-4">
                         <div class="header-middle-right">
                             <ul class="header-middle-list">
-                                <li>
-                                    <a href="#" class="list-item">
-                                        <div class="list-item-icon">
-                                            <i class="far fa-user-circle"></i>
-                                        </div>
-                                        <div class="list-item-info">
-                                            <h6>Sign In</h6>
-                                            <h5>Account</h5>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="list-item">
-                                        <div class="list-item-icon">
-                                            <i class="far fa-heart"></i><span>0</span>
-                                        </div>
-                                        <div class="list-item-info">
-                                            <h6>Wishlist</h6>
-                                            <h5>My Items</h5>
-                                        </div>
-                                    </a>
+                                <li>                                                                             
+
+                                <button type="button" class="btn mb-2 mb-md-0 btn-tertiary btn-block"><span style="padding-right: 12px;">Contestant</span> 
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <i class="ion-ios-paper-plane"></i>
+                                    </div>
+                                </button>
+                          
+
                                 </li>
                                 <li class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
@@ -252,7 +244,7 @@
                     </a>
                     <div class="category-all">
                         <button class="category-btn" type="button">
-                            <i class="far fa-grid-2-plus"></i><span>All Categories</span>
+                            <i class="far fa-grid-2-plus"></i><span>Menu</span>
                         </button>
                         <ul class="main-category">
                             <li>
@@ -786,11 +778,11 @@
                             </li>
                             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         </ul>
-                        <div class="nav-right">
+                       <!--  <div class="nav-right">
                             <div class="nav-right-btn">
                                 <a href="become-seller.html" class="theme-btn">Become Seller</a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </nav>
@@ -3002,6 +2994,7 @@
     <script src="../../assets/js/countdown.min.js"></script>
     <script src="../../assets/js/wow.min.js"></script>
     <script src="../../assets/js/main.js"></script>
+     <script src="../../forms/js/main.js"></script>
 
 </body>
 

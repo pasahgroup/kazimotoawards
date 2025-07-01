@@ -153,17 +153,6 @@ Route::resource('/aboutus',AboutusController::class);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // Route::resource('/addAsset', [AssetCateController::class]);
 Route::resource('/item',ItemController::class);
 
@@ -185,8 +174,9 @@ Route::get('/test', [AssetController::class, 'test'])->name('test');
  Route::resource('/home', websiteController::class);
 
 Route::get('/ff', function () {
-    return view('mformt');
+    return view('formr');
 });
+
 
 // Route::get('/email', function () {
 //     return view('email');

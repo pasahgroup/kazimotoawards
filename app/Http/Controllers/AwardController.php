@@ -10,6 +10,12 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Benchmark;
+// use Illuminate\Http\UploadedFile;
+//use App\Http\Livewire\Input;
+use Intervention\Image\Facades\Image;
+
 class AwardController extends Controller
 {
     /**
@@ -37,11 +43,15 @@ class AwardController extends Controller
      */
     public function store(Request $request)
     {
+   //$rr=[];  
+$cars[0] = "Volvo";  
+$competes=request('compete');
+$awards = implode(", ", $competes);
+//echo $cars_together;
 
-dd(request('compete'));
-
-
-
+ // dd($explode_id);
+//dd($competes);
+//dd($newLength);
 
 
 
@@ -67,7 +77,7 @@ dd(request('compete'));
         $donors = award::UpdateOrCreate([
         'award_name'=>request('award_name'),
     ],[
-        'price'=>request('price'),     
+        'price'=>$awards,     
         'photo'=>$imageToStore,      
        'status'=>request('status')
         ]);

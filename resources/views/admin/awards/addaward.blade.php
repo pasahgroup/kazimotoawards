@@ -106,7 +106,7 @@ function removekid(div) {
                  <div class="col-lg-6 col-md-12 col-sm-12">
                                     <label for="password_confirmation" :value="('Image')" />
                                     <div class="form-group">
-                                    <input type="file" name="photo[]" onChange="displayImage(this)" id="photo" accept="image/*" class="" style="display:block;" required>
+                                    <input type="file" name="photo[]" onChange="displayImage(this)" id="photo" accept="image/*" class="" style="display:block;">
 
                                 </div>
                                 </div>
