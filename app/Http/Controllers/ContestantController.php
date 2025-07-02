@@ -15,7 +15,10 @@ class ContestantController extends Controller
      */
     public function index()
     {
-        //
+        //dd('printed');
+    
+      return view('website.contestantregistration.contestantregistration');
+
     }
 
     /**

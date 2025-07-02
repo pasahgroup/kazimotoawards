@@ -73,6 +73,8 @@ use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\AssignactivityController;
 
 use App\Http\Controllers\AwardController;
+use App\Http\Controllers\ContestantController;
+
 
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\Auth\AuthController;
@@ -128,6 +130,20 @@ Route::get('/edit_slide', [SlidesController::class,'edit'])->name('edit_slide');
 
 Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
  Route::get('/slide-destroy/{x}', [SlidesController::class, 'destroy'])->name('destroy');
+
+
+
+
+Route::resource('/contestant',ContestantController::class);
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/get_aboutusw', [WebsiteController::class,'aboutusw']);

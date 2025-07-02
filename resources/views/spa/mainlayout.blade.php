@@ -46,7 +46,6 @@
 
     <!-- header area -->
     <header class="header">
-
         <!-- header top -->
         <div class="header-top">
             <div class="container">
@@ -238,13 +237,13 @@
         <!-- header main navigation -->
         <div class="main-navigation">
             <nav class="navbar navbar-expand-lg">
-                <div class="container position-relative">
+                <div class="container-fluid position-relative">
                     <a class="navbar-brand" href="index.html">
                         <img src="assets/img/logo/logo.png" class="logo-scrolled" alt="logo">
                     </a>
                     <div class="category-all">
-                        <button class="category-btn" type="button">
-                            <i class="far fa-grid-2-plus"></i><span>Menu</span>
+                        <button class="category-btn" type="button" style="text-align:left;">
+                            <i class="far fa-grid-2-plus"></i><span>Menu nm</span>
                         </button>
                         <ul class="main-category">
                             <li>
@@ -791,9 +790,8 @@
     </header>
     <!-- header area end -->
 
-
+@yield('contents')
     <main class="main">
-
         <!-- hero slider -->
         <div class="hero-section3 hs3-2">
             <div class="container">
