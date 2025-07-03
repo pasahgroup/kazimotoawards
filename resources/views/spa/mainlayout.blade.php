@@ -151,12 +151,14 @@
                             <ul class="header-middle-list">
                                 <li>                                                                             
 
-                                <button type="button" class="btn mb-2 mb-md-0 btn-tertiary btn-block"><span style="padding-right: 12px;">Contestant</span> 
+<form method="get" id="post_form" role="form" class="registration-form" action="{{ route('contestant.index') }}" enctype="multipart/form-data">
+        @csrf
+                                <button type="submit" class="btn mb-2 mb-md-0 btn-tertiary btn-block"><span style="padding-right: 12px;">Contestant</span> 
                                     <div class="icon d-flex align-items-center justify-content-center">
                                         <i class="ion-ios-paper-plane"></i>
                                     </div>
                                 </button>
-                          
+                          </form>
 
                                 </li>
                                 <li class="dropdown-cart">
@@ -243,13 +245,13 @@
                     </a>
                     <div class="category-all">
                         <button class="category-btn" type="button" style="text-align:left;">
-                            <i class="far fa-grid-2-plus"></i><span>Menu nm</span>
+                            <i class="far fa-grid-2-plus"></i><span>Awards</span>
                         </button>
                         <ul class="main-category">
                             <li>
                                 <a href="#">
                                     <img src="assets/img/icon/shopping-bag.svg" alt="">
-                                    <span>New Arrivals</span><i class="far fa-angle-right"></i>
+                                    <span>New Arrivals 1</span><i class="far fa-angle-right"></i>
                                 </a>
                                 <ul class="sub-category">
                                     <li><a href="#"><img src="assets/img/icon/dress.svg" alt=""><span>Accessories</span></a></li>

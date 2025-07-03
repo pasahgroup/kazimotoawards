@@ -6,6 +6,21 @@ use App\Models\contestant;
 use App\Http\Requests\StorecontestantRequest;
 use App\Http\Requests\UpdatecontestantRequest;
 
+
+use App\Models\Agent;
+use App\Models\tailorMade;
+use App\Models\TourEquiryForm;
+use App\Models\partner;
+use App\Models\tourGuide;
+use App\Models\contacts;
+use App\Models\enquiry;
+use App\Models\lodge;
+use App\Models\student;
+use App\Models\lodgetrainee;
+
+use DB;
+use Illuminate\Http\Request;
+
 class ContestantController extends Controller
 {
     /**
