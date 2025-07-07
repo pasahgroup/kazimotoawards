@@ -9,6 +9,8 @@ use App\Models\website;
 use App\Models\bank;
 use App\Models\slide;
 use App\Models\contact;
+use App\Models\award;
+
 use App\Http\Requests\StorewebsiteRequest;
 use App\Http\Requests\UpdatewebsiteRequest;
 use Illuminate\Support\Facades\Storage; 
@@ -29,9 +31,11 @@ class WebsiteController extends Controller
 
           $slides=slide::where('status','Active')
         ->get();
-        //dd($slides);
+            $awards=award::where('status','Active')
+        ->get();
+        //dd($awards);
 
-        return view('website.home.home',compact('donors','slides'));
+        return view('website.home.home',compact('donors','slides','awards'));
     }
 
     public function form()

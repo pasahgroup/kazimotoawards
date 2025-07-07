@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="../../buttons/css/style.css">
 
         <link rel="stylesheet" href="../../styleMain.css">
+        <link rel="stylesheet" href="../../../../sonamaster/style.css">
            <!-- <link rel="stylesheet" href="../../forms/css/style.css"> -->
 
 </head>
@@ -44,6 +45,9 @@
         </div>
     </div>
     <!-- preloader end -->
+
+
+  @include('spa.topmenu')
 
 
     <!-- header area -->
@@ -113,130 +117,7 @@
             </div>
         </div>
 
-        <!-- header middle -->
-        <div class="header-middle">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-5 col-lg-3 col-xl-3">
-                        <div class="header-middle-logo">
-                            <a class="navbar-brand" href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="d-none d-lg-block col-lg-6 col-xl-5">
-                        <div class="header-middle-search">
-                            <form action="#">
-                                <div class="search-content">
-                                    <select class="select">
-                                        <option value="">Menu</option>
-                                        <option value="1">Today's Hot Deals</option>
-                                        <option value="2">Fashion & Accessories</option>
-                                        <option value="3">Electronics</option>
-                                        <option value="4">Grocery & Market</option>
-                                        <option value="5">Music</option>
-                                        <option value="6">Home & Furniture</option>
-                                        <option value="7">Toy & Video Games</option>
-                                        <option value="8">Gifts</option>
-                                        <option value="9">Babies & Moms</option>
-                                        <option value="10">Sports & Outdoor</option>
-                                        <option value="11">Health & Beauty</option>
-                                    </select>
-                                    <input type="text" class="form-control" placeholder="Search Here...">
-                                    <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-7 col-lg-3 col-xl-4">
-                        <div class="header-middle-right">
-                            <ul class="header-middle-list">
-                                <li>                                                                             
-
-<form method="get" id="post_form" role="form" class="registration-form" action="{{ route('contestant.index') }}" enctype="multipart/form-data">
-        @csrf
-                                <button type="submit" class="btn mb-2 mb-md-0 btn-tertiary btn-block"><span style="padding-right: 12px;">Contestant</span> 
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <i class="ion-ios-paper-plane"></i>
-                                    </div>
-                                </button>
-                          </form>
-
-                                </li>
-                                <li class="dropdown-cart">
-                                    <a href="#" class="shop-cart list-item">
-                                        <div class="list-item-icon">
-                                            <i class="far fa-shopping-bag"></i><span>5</span>
-                                        </div>
-                                        <div class="list-item-info">
-                                            <h6>$350.00</h6>
-                                            <h5>My Cart</h5>
-                                        </div>
-                                    </a>
-                                    <div class="dropdown-cart-menu">
-                                        <div class="dropdown-cart-header">
-                                            <span>03 Items</span>
-                                            <a href="#">View Cart</a>
-                                        </div>
-                                        <ul class="dropdown-cart-list">
-                                            <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p47.png" alt="#"></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="#">Xamaha R15 Red</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$200.00</span></p>
-                                                    </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p12.png" alt="#"></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="#">Apple Blue Watch</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$120.00</span></p>
-                                                    </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p32.png" alt="#"></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="#">Orange Sweater</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$330.00</span></p>
-                                                    </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="dropdown-cart-bottom">
-                                            <div class="dropdown-cart-total">
-                                                <span>Total</span>
-                                                <span class="total-amount">$650.00</span>
-                                            </div>
-                                            <a href="#" class="theme-btn">Checkout</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      
 
         <!-- header main navigation -->
         <div class="main-navigation">
@@ -791,8 +672,8 @@
             </nav>
         </div>
     </header>
+  
 
-    @include('spa.topmenu')
     <!-- header area end -->
 
 @yield('contents')
