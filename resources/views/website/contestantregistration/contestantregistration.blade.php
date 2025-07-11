@@ -1,19 +1,17 @@
 @extends('spa.mainlayout')
 @section('contents')
 
- <section class="bg-gray" style="padding-top:10%;padding-left:20%">
+ <section style="padding-top:10%;padding-left:11%">
         <div class="container">
                      <div class="col-lg-8 col-md-12 col-sm-12">
-             <div class="card">
-                        <div class="card-body">
-      <div class="modal-content">
+                   <div class="modal-content">
      
         <div class="modal-body">
 
           <div class="preview-wrap">
            
             <div class="form-wrap">
-                <h4 id="heading">Custom Booking Form:<span style="color:green"> Create My Safari</span></h4>
+                <h4 id="heading">Contestant:<span style="color:green"> Registration Form</span></h4>
           <div>
             @if ($errors->any())
     <div class="alert alert-danger">
@@ -29,8 +27,8 @@
                     @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">
-                        <li class="active" id="account"><strong>1 Step</strong></li>
-                        <li id="personal"><strong>2 Step:</strong></li>
+                        <li class="active" id="account"><strong>1: Personal details</strong></li>
+                        <li id="personal"><strong>2: Photos</strong></li>
                         <li id="confirm"><strong>Finish</strong></li>
                     </ul>
                     <div class="progress">
@@ -61,9 +59,9 @@
 
                     
              <div class="form-group">
-                              <div class="col-lg-6 col-md-6 col-sm-6">
+                              <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
-                                        <input type="text" name="first_name" placeholder="first name"/> 
+                                        <input type="text" name="full_name" placeholder="full name"/> 
                     
                                     </div>
                                 </div>
@@ -176,7 +174,7 @@
                             <div class="form-card">
                             <div class="row">
                                 <div class="col-12">
-                                    <h4 class="fs-title">Tour Information:|Step 2 - 3</h4>
+                                    <h4 class="fs-title">Photos:|Step 2 - 3</h4>
                                 </div>
                              </div>
 
@@ -280,9 +278,8 @@
         </div>   
       </div>
     </div>
-  </div>
 </div>
-</div>
+
 
 <div class="col-lg-1 col-md-12 col-sm-12">
            </div>
