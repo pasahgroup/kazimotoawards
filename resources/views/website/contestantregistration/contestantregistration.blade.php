@@ -1,10 +1,12 @@
 @extends('spa.mainlayout')
 @section('contents')
-
- <section style="padding-top:10%;padding-left:11%">
-        <div class="container">
-                     <div class="col-lg-8 col-md-12 col-sm-12">
-                   <div class="modal-content">
+    <main class="main" style="padding-top:12%;">
+<div class="hero-section3 hs3-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-9 offset-xl-3">                    
+                      
+         <div class="modal-content">
      
         <div class="modal-body">
 
@@ -58,13 +60,41 @@
 
 
                     
-             <div class="form-group">
+             <div class="row">
                               <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="form-group">
+                                      <label>Full name</label>
                                         <input type="text" name="full_name" placeholder="full name"/> 
                     
                                     </div>
                                 </div>
+
+
+
+<div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+                                      <label>Full name</label>
+                                        <input type="text" name="full_name" placeholder="full name"/> 
+                                </div>
+  <div class="col-lg-6 col-md-12 col-sm-12">
+                                      <label>Full name</label>
+                                        <input type="text" name="full_name" placeholder="full name"/> 
+                                </div>
+</div>
+
+
+
+
+
+  <div class="col">
+              <div class="form-outline">
+                 <label class="form-label" for="form7Example2">Phone number:</label>
+                <input type="text" id="" class="form-control" name="phone"/>            
+              </div>
+            </div>
+
+
+
 
                               <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="form-group">
@@ -278,13 +308,31 @@
         </div>   
       </div>
     </div>
-</div>
 
 
-<div class="col-lg-1 col-md-12 col-sm-12">
-           </div>
-</div>
-</section>
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <script type="text/javascript">    

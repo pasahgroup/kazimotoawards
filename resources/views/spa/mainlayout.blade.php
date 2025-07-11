@@ -33,12 +33,10 @@
         <link rel="stylesheet" href="../../../../sonamaster/style.css">
            <!-- <link rel="stylesheet" href="../../forms/css/style.css"> -->
   <link href="../../css/mform.css" rel="stylesheet">
-
    <script src="../js/jquery361.min.js"></script>
 </head>
 
 <body class="home-5">
-
     <!-- preloader -->
     <div class="preloader">
         <div class="loader-ripple">
@@ -129,7 +127,7 @@
                                             <div class="hero-content">
                                                 <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
                                                 <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                                    For Your First <br> <span>Goemart</span> Shopping
+                                                    For Your First <br> <span>Goemart</span> Shopping2
                                                 </h1>
                                                 <p data-animation="fadeInLeft" data-delay=".75s">
                                                     There are many variations of passages orem psum available but the majority have
