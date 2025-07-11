@@ -1,4 +1,4 @@
-@extends('spa.app')
+@extends('layouts.app')
 @section('contents')
 
 <style>

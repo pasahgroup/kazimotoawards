@@ -132,17 +132,7 @@ Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
  Route::get('/slide-destroy/{x}', [SlidesController::class, 'destroy'])->name('destroy');
 
 
-
-
 Route::resource('/contestant',ContestantController::class);
-
-
-
-
-
-
-
-
 
 
 
@@ -190,7 +180,7 @@ Route::get('/test', [AssetController::class, 'test'])->name('test');
  Route::resource('/home', websiteController::class);
 
 Route::get('/ff', function () {
-    return view('formr');
+    return view('welcome');
 });
 
 

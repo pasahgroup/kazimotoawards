@@ -68,25 +68,14 @@
                 </div>
             </div>
    
-    </div>
+
 
 
 
 
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
-            <div class="classy-nav-container breakpoint-off">
-                <!-- Classy Menu -->
-                <nav class="classy-navbar justify-content-between" id="southNav">
-                      
-{{--
-                      <a href="{{ route('home') }}"><img src="{{getImage(imagePath()['logoIcon']['path'].'/logo.png')}}" alt="logo" style="width:120px;"></a>
-
---}}
-
-
-                    
-                          <div class="category-all">
+                      <div class="category-all" style="align:right;background-color:#979f94;">
                         <button class="category-btn" type="button" style="text-align:left;">
                             <i class="far fa-grid-2-plus"></i><span>Awards 2</span>
                     </button>
@@ -404,7 +393,20 @@
                             <li><a href="#"><img src="assets/img/icon/automotive.svg" alt=""><span>Automotive</span></a></li>
                         </ul>
                     </div>
-                 
+                    
+
+            <div class="classy-nav-container breakpoint-off">               
+                <nav class="classy-navbar justify-content-between" id="southNav">
+                  
+
+                      <a href="#"><img src="#" alt="logo" style="width:120px;"></a><!-- 
+                    
+                          <div class="category-all" style="align:right;">
+                        <button class="category-btn" type="button" style="text-align:left;">
+                            <i class="far fa-grid-2-plus"></i><span>Awards 2</span>
+                    </button>
+                                         </div>
+                  -->
 
 
                     <!-- Navbar Toggler -->
@@ -433,38 +435,14 @@
                              @endauth
 
                                  </a></li>
+
                                 <li><a href="/">Home2</a></li>
 
                                 <li><a href="#">Vehicles</a>
                                     <ul class="dropdown">
                                       
 
-                                          @foreach($awards as $brand)
-                                        <li><a href="#">{{$brand->award_name}}</a>                                           
-                                         
-                                            <ul class="dropdown">
-                                                {{--
-                                                   @foreach($view_vehicles as $vehicle)
-                                               
-                                                <li style="padding-left:10px;">
-
-                                                     @if($vehicle->brand_id==$brand->id)
-      <form action="{{ route('vehicle.search') }}" method="get" class="priceForm">
-<input type="hidden" name="model" id="model" value="{{$vehicle->model}}" class="form-control form--control" required>
-  <button  class="dropdown-item">{{$vehicle->model}}</button>
-                                          </form>
-  @endif
-
-                                                </li>
-                                                 @endforeach
-                                                 --}}
- <li><a href="#">{{$brand->award_name}}</a> </li>
-
-                                            </ul>                                            
-
-                                        </li>
-                                           @endforeach
-                                      
+        
 
                                     </ul>
                                 </li>
@@ -475,7 +453,7 @@
                                             <ul class="dropdown">
                                                 {{--
                                              @foreach($view_services as $view_service)
-                                                }
+                                                
               <form action="{{ route('web-service',$view_service->service_name) }}" method="get" class="priceForm">
             <button  class="dropdown-item">{{$view_service->title}}</button>
                                                   </form>
@@ -496,8 +474,8 @@
 
                         
                                 <li>                                                                             
-
-<form method="get" id="post_form" role="form" class="registration-form" action="#" enctype="multipart/form-data">
+{{--
+<form method="get" id="post_form" role="form" class="registration-form" action="{{ route('assign-activity.store') }}"  enctype="multipart/form-data">
         @csrf
                                 <button type="submit" class="btn mb-2 mb-md-0 btn-tertiary btn-block"><span style="padding-right: 12px;">Contestant</span> 
                                     <div class="icon d-flex align-items-center justify-content-center">
@@ -505,8 +483,14 @@
                                     </div>
                                 </button>
                           </form>
+                          --}}
+                     
+                          <a type="button" href="/contestant" class="btn mb-2 mb-md-0 btn-tertiary btn-block"> <div class="icon d-flex align-items-center justify-content-center">
+                                        <i class="ion-ios-paper-plane"></i>
+                                    </div>Contestant</a>
 
                                 </li>
+                                
                                 <li class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">

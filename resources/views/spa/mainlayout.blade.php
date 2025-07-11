@@ -32,7 +32,9 @@
         <link rel="stylesheet" href="../../styleMain.css">
         <link rel="stylesheet" href="../../../../sonamaster/style.css">
            <!-- <link rel="stylesheet" href="../../forms/css/style.css"> -->
+  <link href="../../css/mform.css" rel="stylesheet">
 
+   <script src="../js/jquery361.min.js"></script>
 </head>
 
 <body class="home-5">

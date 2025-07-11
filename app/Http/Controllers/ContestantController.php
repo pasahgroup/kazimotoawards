@@ -16,6 +16,8 @@ use App\Models\contacts;
 use App\Models\enquiry;
 use App\Models\lodge;
 use App\Models\student;
+
+use App\Models\award;
 use App\Models\lodgetrainee;
 
 use DB;
@@ -30,10 +32,12 @@ class ContestantController extends Controller
      */
     public function index()
     {
-        //dd('printed');
-    
-      return view('website.contestantregistration.contestantregistration');
+      $awards=award::where('status','Active')
+      ->get();
 
+      //dd($awards);
+
+      return view('website.contestantregistration.contestantregistration',compact('awards'));
     }
 
     /**
@@ -52,9 +56,23 @@ class ContestantController extends Controller
      * @param  \App\Http\Requests\StorecontestantRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorecontestantRequest $request)
+    public function store(Request $request)
     {
-        //
+
+       // dd(request('phone'));
+
+            $contestants = contestant::Create([
+        'full_name'=>request('full_name'),
+          
+         'phone'=>request('phone'),
+        'email'=>request('email'),      
+        'bank_holder_name'=>request('bank_holder_name'),
+        'currency'=>request('currency'), 
+          'district'=>request('district'),      
+       'status'=>'Active',  
+        ]);
+
+         return redirect('/contestant');
     }
 
     /**

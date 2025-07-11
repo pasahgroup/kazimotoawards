@@ -8,7 +8,10 @@
        <!-- MultiStep Form -->
 
     <div class="col-md-6 col-md-offset-3">
-        <form id="msform">
+  
+               <form method="POST" id="msform" role="form" class="registration-form" action="{{ route('contestant.store') }}" enctype="multipart/form-data">
+        @csrf
+
             <!-- progressbar -->
             <ul id="progressbar">
                 <li class="active">Personal Details</li>
@@ -40,7 +43,7 @@
                 <input type="password" name="pass" placeholder="Password"/>
                 <input type="password" name="cpass" placeholder="Confirm Password"/>
                 <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
-                <input type="submit" name="submit" class="submit action-button" value="Submit"/>
+                <input type="submit" name="submit" class="submit action-button" value="Submit2"/>
             </fieldset>
         </form>
         <!-- link to designify.me code snippets -->
