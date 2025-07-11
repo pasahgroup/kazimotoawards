@@ -73,8 +73,8 @@
 
 <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Phone</label>
-                                        <input type="number" name="phone" placeholder="phone"/> 
+                                      <label>Phone number</label>
+                                        <input type="number" name="phone" placeholder="phone number"/> 
                                 </div>
   <div class="col-lg-6 col-md-12 col-sm-12">
                                       <label>Email</label>
@@ -85,23 +85,6 @@
 
 
 
-
-  <div class="col">
-              <div class="form-outline">
-                 <label class="form-label" for="form7Example2">Phone number:</label>
-                <input type="text" id="" class="form-control" name="phone"/>            
-              </div>
-            </div>
-
-
-
-
-                              <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                           <input type="text" name="last_name" placeholder="last name" /> 
-                                    </div>
-                                </div>
-  </div>
 
      <div class="form-group">
                                   <div class="col-lg-6 col-md-6 col-sm-6">                                    
@@ -192,6 +175,7 @@
                                     </div>
                                 </div>
   </div>
+    </div>
                           
 
                         </div> 
