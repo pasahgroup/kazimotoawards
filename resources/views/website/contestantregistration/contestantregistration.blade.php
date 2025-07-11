@@ -73,12 +73,12 @@
 
 <div class="row">
       <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Full name</label>
-                                        <input type="text" name="full_name" placeholder="full name"/> 
+                                      <label>Phone</label>
+                                        <input type="number" name="phone" placeholder="phone"/> 
                                 </div>
   <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Full name</label>
-                                        <input type="text" name="full_name" placeholder="full name"/> 
+                                      <label>Email</label>
+                                        <input type="email" name="email" placeholder="email"/> 
                                 </div>
 </div>
 
