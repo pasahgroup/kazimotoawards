@@ -2,72 +2,146 @@
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
         <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container">
-                <div class="header-top-wrapper">                  
-                       
-                           
+   
+      <div class="header-top">
+            <div class="container-fluid">
+                <div class="header-top-wrapper">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-5">
+                            <div class="header-top-left">
                                 <ul class="header-top-list">
- <div class="row">
-     <div class="header-top-right">
-   <div class="col-md-12"> 
                                     <li><a href="mailto:info@rhonds.co.tz"><i class="far fa-envelopes"></i>
                                             info@rhonds.co.tz</a></li>
                                     <li><a href="https://wa.me/+255655633302"><i class="far fa-headset"></i> +255 764 706 227</a></li>
-
-
-                                    <li><a href="#"><i class="far fa-alarm-clock"></i> Daily Deal</a></li>
-                                    <li class="login"><a href="/login"><i class="far fa-user-circle"></i> Sign In</a></li>
+                                    <li class="help"><a href="#"><i class="far fa-comment-question"></i> Need Help?</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-7">
+                            <div class="header-top-right">
+                                <ul class="header-top-list">
                                     <li>
-                                        <div class="dropdown">
+    <div class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
                                                 aria-expanded="false">
-                                                <i class="far fa-usd"></i> USD
+                                                <i class="far fa-arrow-right-to-arc"></i> Login
                                             </a>
+
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">USD</a>
-                                                <a class="dropdown-item" href="#">EUR</a>
-                                                <a class="dropdown-item" href="#">AUD</a>
-                                                <a class="dropdown-item" href="#">CUD</a>
+                                                <a class="dropdown-item" href="#">Login</a>
                                             </div>
+                                        </div>
+
+                                    </li>
+                                                                 
+
+
+                                                                 <li>
+                                        <div class="dropdown">
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Login</a>
+                                                <a class="dropdown-item" href="#">Contestant</a>
+                                                <a class="dropdown-item" href="#">Panel</a>
+                                            </div>
+
+    <div class="dropdown-cart">
+                                    <a href="#" class="shop-cart list-item">
+                                        <div class="list-item-icon">
+                                            <i class="far fa-arrow-right-to-arc"></i><span>Account</span>
+                                        </div>
+                                                                           </a>
+                                    <div class="dropdown-cart-menu">
+                                        <div class="dropdown-cart-header">
+                                            <span>03 Items</span>
+                                            <a href="#">View Cart</a>
+                                        </div>
+                                        <ul class="dropdown-cart-list">
+                                            <li>
+                                                <div class="dropdown-cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="assets/img/product/p47.png" alt="#"></a>
+                                                    </div>
+                                                    <div class="cart-info">
+                                                        <h4><a href="#">Xamaha R15 Red</a></h4>
+                                                        <p class="cart-qty">1x - <span
+                                                                class="cart-amount">$200.00</span></p>
+                                                    </div>
+                                                    <a href="#" class="cart-remove" title="Remove this item"><i
+                                                            class="far fa-times-circle"></i></a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown-cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="assets/img/product/p12.png" alt="#"></a>
+                                                    </div>
+                                                    <div class="cart-info">
+                                                        <h4><a href="#">Apple Blue Watch</a></h4>
+                                                        <p class="cart-qty">1x - <span
+                                                                class="cart-amount">$120.00</span></p>
+                                                    </div>
+                                                    <a href="#" class="cart-remove" title="Remove this item"><i
+                                                            class="far fa-times-circle"></i></a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="dropdown-cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="assets/img/product/p32.png" alt="#"></a>
+                                                    </div>
+                                                    <div class="cart-info">
+                                                        <h4><a href="#">Orange Sweater</a></h4>
+                                                        <p class="cart-qty">1x - <span
+                                                                class="cart-amount">$330.00</span></p>
+                                                    </div>
+                                                    <a href="#" class="cart-remove" title="Remove this item"><i
+                                                            class="far fa-times-circle"></i></a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="dropdown-cart-bottom">
+                                            <div class="dropdown-cart-total">
+                                                <span>Total</span>
+                                                <span class="total-amount">$650.00</span>
+                                            </div>
+                                            <a href="#" class="theme-btn">Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+
                                         </div>
                                     </li>
                                     <li>
                                         <div class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
                                                 aria-expanded="false">
-                                                <i class="far fa-globe-americas"></i>EN
+                                                <i class="far fa-globe-americas"></i> EN
                                             </a>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">EN</a>
-                                                <a class="dropdown-item" href="#">FR</a>
-                                                <a class="dropdown-item" href="#">DE</a>
-                                                <a class="dropdown-item" href="#">RU</a>
                                             </div>
                                         </div>
                                     </li>
-                                    {{--
                                     <li class="social">
                                         <div class="header-top-social">
-                                                 @forelse($social_icons as $item)
-                                <a href="{{ $item->data_values->url }}" class="btn btn-secondary btn-md-square rounded-circle me-3">
-                                    @php echo @$item->data_values->social_icon @endphp
-                                </a>
-                       @empty
-                        @endforelse
+                                            <span>Follow Us: </span>
+                                            <a href="#"><i class="fab fa-facebook"></i></a>
+                                            <a href="#"><i class="fab fa-x-twitter"></i></a>
+                                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                            <a href="#"><i class="fab fa-linkedin"></i></a>
                                         </div>
                                     </li>
-                                    --}}
-                                </div>
-                                 </div>
-                                   </div>
                                 </ul>
-                          
-                       
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-   
+        </div>
+
+
+
+
 
 
 
@@ -75,31 +149,21 @@
 
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
-                      <div class="category-all" style="align:right;background-color:#979f94;">
+                      <div class="category-all" style="align:right;background-color:#fff;">
                         <button class="category-btn" type="button" style="text-align:left;">
-                            <i class="far fa-grid-2-plus"></i><span>Awards 2</span>
+                            <i class="far fa-grid-2-plus"></i><span>Awards</span>
                     </button>
                         <ul class="main-category">
                             <li>
-                                <a href="#">
-                                    <img src="assets/img/icon/shopping-bag.svg" alt="">
-                                    <span>New Arrivals 1</span><i class="far fa-angle-right"></i>
-                                </a>
                                 <ul class="sub-category">
-                                    <li><a href="#"><img src="assets/img/icon/dress.svg" alt=""><span>Accessories</span></a></li>
                                     <li><a href="#"><img src="assets/img/icon/laptop.svg" alt=""><span>Electronics</span></a></li>
                                     <li><a href="#"><img src="assets/img/icon/grocery.svg" alt=""><span>Grocery & Market</span></a></li>
                                     <li><a href="#"><img src="assets/img/icon/music.svg" alt=""><span>Music & Audio</span></a></li>
                                     <li><a href="#"><img src="assets/img/icon/furniture.svg" alt=""><span>Home & Furniture</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/toy.svg" alt=""><span>Toy & Video Games</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/gifts.svg" alt=""><span>Gifts</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/mother.svg" alt=""><span>Babies & Moms</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/beauty.svg" alt=""><span>Health & Beauty</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/sports.svg" alt=""><span>Sports & Outdoor</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/garden.svg" alt=""><span>Home & Garden</span></a></li>
-                                    <li><a href="#"><img src="assets/img/icon/automotive.svg" alt=""><span>Automotive</span></a></li>
                                 </ul>
                             </li>
+
+                             <li><a href="#"><img src="assets/img/icon/music.svg" alt=""><span>Music & Audio</span></a></li>
                             <li>
                                 <a href="#">
                                     <img src="assets/img/icon/dress.svg" alt="">
@@ -336,7 +400,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="#"><img src="assets/img/icon/music.svg" alt=""><span>Music & Audio</span></a></li>
+                           
                             <li>
                                 <a href="#">
                                     <img src="assets/img/icon/furniture.svg" alt="">
@@ -385,12 +449,6 @@
                                     </div>
                                 </div>
                             </li>
-                            <li><a href="#"><img src="assets/img/icon/toy.svg" alt=""><span>Toy & Video Games</span></a></li>
-                            <li><a href="#"><img src="assets/img/icon/gifts.svg" alt=""><span>Gifts</span></a></li>
-                            <li><a href="#"><img src="assets/img/icon/beauty.svg" alt=""><span>Health & Beauty</span></a></li>
-                            <li><a href="#"><img src="assets/img/icon/sports.svg" alt=""><span>Sports & Outdoor</span></a></li>
-                            <li><a href="#"><img src="assets/img/icon/garden.svg" alt=""><span>Home & Garden</span></a></li>
-                            <li><a href="#"><img src="assets/img/icon/automotive.svg" alt=""><span>Automotive</span></a></li>
                         </ul>
                     </div>
                     
@@ -399,14 +457,7 @@
                 <nav class="classy-navbar justify-content-between" id="southNav">
                   
 
-                      <a href="#"><img src="#" alt="logo" style="width:120px;"></a><!-- 
-                    
-                          <div class="category-all" style="align:right;">
-                        <button class="category-btn" type="button" style="text-align:left;">
-                            <i class="far fa-grid-2-plus"></i><span>Awards 2</span>
-                    </button>
-                                         </div>
-                  -->
+                      <a href="#"><img src="#" alt="logo" style="width:120px;"></a>
 
 
                     <!-- Navbar Toggler -->
@@ -466,100 +517,19 @@
                                             
                                      
 
-                            <li><a href="#">Plans</a></li>
-                            <li><a href="#">Blog</a></li>
                             <li><a href="/about">About Us</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
 
                         
                                 <li>                                                                             
-{{--
-<form method="get" id="post_form" role="form" class="registration-form" action="{{ route('assign-activity.store') }}"  enctype="multipart/form-data">
-        @csrf
-                                <button type="submit" class="btn mb-2 mb-md-0 btn-tertiary btn-block"><span style="padding-right: 12px;">Contestant</span> 
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <i class="ion-ios-paper-plane"></i>
-                                    </div>
-                                </button>
-                          </form>
-                          --}}
                      
                           <a type="button" href="/contestant" class="btn mb-2 mb-md-0 btn-tertiary btn-block"> <div class="icon d-flex align-items-center justify-content-center">
                                         <i class="ion-ios-paper-plane"></i>
                                     </div>Contestant</a>
 
                                 </li>
-                                
-                                <li class="dropdown-cart">
-                                    <a href="#" class="shop-cart list-item">
-                                        <div class="list-item-icon">
-                                            <i class="far fa-shopping-bag"></i><span>5</span>
-                                        </div>
-                                        <div class="list-item-info">
-                                            <h6>$350.00</h6>
-                                            <h5>My Cart</h5>
-                                        </div>
-                                    </a>
-                                    <div class="dropdown-cart-menu">
-                                        <div class="dropdown-cart-header">
-                                            <span>03 Items</span>
-                                            <a href="#">View Cart</a>
-                                        </div>
-                                        <ul class="dropdown-cart-list">
-                                            <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p47.png" alt="#"></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="#">Xamaha R15 Red</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$200.00</span></p>
-                                                    </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p12.png" alt="#"></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="#">Apple Blue Watch</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$120.00</span></p>
-                                                    </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p32.png" alt="#"></a>
-                                                    </div>
-                                                    <div class="cart-info">
-                                                        <h4><a href="#">Orange Sweater</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$330.00</span></p>
-                                                    </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="dropdown-cart-bottom">
-                                            <div class="dropdown-cart-total">
-                                                <span>Total</span>
-                                                <span class="total-amount">$650.00</span>
-                                            </div>
-                                            <a href="#" class="theme-btn">Checkout</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
+                                                       </ul>
                      
                    
                     </div>

@@ -1,1032 +1,2036 @@
 @extends('spa.mainlayout')
-@section('content')
-  <!-- ==================== Home-Slider Area (Start) ==================== -->  
-  <section class="home">
-
-    <!-- Home Slider -->
-    <div class="swiper-container home-slider">
-      <div class="swiper-wrapper">
-
-    <!-- Home Slide-1 -->       
- @foreach($slides as $slide)
-        <div class="swiper-slide home-item">
-          <img src="{{ URL::asset('/storage/slides/'.$slide->photo) }}" alt="Home Image"> <!-- Slide Image -->
-          <div class="content">
-            <div class="text">
-              <h3>{{$slide->photo_title}} <i class="fas fa-hammer"></i></h3> <!-- Slide Subheading -->
-              <p style="font-size:20px;color:#fff">{{$slide->photo_description}}</p>
-              <a href="#" class="btn">Read more</a> <!-- Read more Page Button -->
-            </div>
-          </div>
-        </div>
-        @endforeach
-  
-      </div>
-  
-      <!-- Home Slider Pagination -->
-      <div class="swiper-pagination swiper-pagination1"></div>
-  
-      <!-- Home Slider Navigation arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-  
-    </div>
-  
-  </section>  
-  <!-- ==================== Home-Slider Area (End) ==================== -->     
-
-
-
-  <!-- ==================== Features Area (Start) =================== -->
-  <section class="features">
-
-    <div class="box-container">
-  
-      <!-- Feature 1 - Custom Woodwork -->
-      <div class="feature-item">
-        <i class="fas fa-hammer"></i>
-        <h3>Custom Woodwork</h3>
-        <p>Offering bespoke woodwork solutions crafted to perfection</p>
-      </div>
-  
-      <!-- Feature 2 - Precision Craftsmanship -->
-      <div class="feature-item">
-        <i class="fas fa-ruler-combined"></i>
-        <h3>Precision Craftsmanship</h3>
-        <p>Providing meticulous attention to detail for flawless results</p>
-      </div>
-  
-      <!-- Feature 3 - Natural Materials -->
-      <div class="feature-item">
-        <i class="fas fa-tree"></i>
-        <h3>Natural Materials</h3>
-        <p>Using high-quality, sustainably sourced wood for timeless beauty</p>
-      </div>
-  
-      <!-- Feature 4 - Customization Options -->
-      <div class="feature-item">
-        <i class="fas fa-paint-brush"></i>
-        <h3>Customization Options</h3>
-        <p>Offering a wide range of finishes and styles to suit your preferences</p>
-      </div>
-  
-    </div>
-  
-  </section>  
-  <!-- ==================== Features Area (End) ==================== -->
-
-
-
-  <!-- ==================== About Area (Start) ==================== -->
-  <section class="about">
-  
-    <!-- About Image -->
-    <div class="image">
-      <div class="sub-image double">
-        <img src="./assets/images/About/About-1.jpg" alt="About-Image1">
-        <img src="./assets/images/About/About-2.jpg" alt="About-Image2">
-      </div>
-      <div class="sub-image last">
-        <img src="./assets/images/About/About-3.jpg" alt="About-Image3">
-        <div class="experience"><span>25</span> years of experience</div>
-      </div>
-    </div>
-  
-    <!-- Introduction Content -->
-    <div class="content">
-  
-      <div class="heading">
-        <div class="sub"><span>About Us</span><i class="fas fa-hammer"></i></div> <!-- Sub Heading -->
-        <h2>Your Trusted Source for Quality Woodwork</h2> <!-- Main Heading -->
-      </div>
-  
-      <!-- Description -->
-      <p>Welcome to TimberCraft, your premier destination for high-quality woodwork solutions. We are dedicated to providing exceptional craftsmanship and services to enhance the beauty, functionality, and durability of your space. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem enim nobis ea quo sint vero laboriosam ex repellendus.</p>
-  
-      <!-- Key Features -->
-      <ul class="about-features">
-        <li><i class="fas fa-hammer"></i><span>Custom Woodwork Creations</span></li> <!-- Feature 1 -->
-        <li><i class="fas fa-hammer"></i><span>Professional Carpentry Services</span></li> <!-- Feature 2 -->
-        <li><i class="fas fa-hammer"></i><span>Natural Wood Selections</span></li> <!-- Feature 3 -->
-        <li><i class="fas fa-hammer"></i><span>Precision Craftsmanship</span></li> <!-- Feature 4 -->
-        <li><i class="fas fa-hammer"></i><span>Expert Consultation & Support</span></li> <!-- Feature 5 -->
-      </ul>
-  
-    </div>
-  
-  </section>   
-  <!-- ==================== About Area (End) ==================== -->
-
-
-
-  <!-- ==================== Count Area (Start) ==================== -->
-  <div class="counting">
-
-    <!-- Statistic Box 1: Woodwork Projects -->
-    <div class="box">
-      <div class="info">
-        <i class="fas fa-hammer"></i> <!-- Hammer icon -->
-        <div class="content">
-          <h1 class="count" data-count="20000">20,000+</h1> <!-- Count of woodwork projects -->
-          <h3>Woodwork Projects</h3> <!-- Statistic description -->
-        </div>
-      </div>
-    </div>
-  
-    <!-- Statistic Box 2: Happy Clients -->
-    <div class="box">
-      <div class="info">
-        <i class="fas fa-heart"></i> <!-- Heart icon -->
-        <div class="content">
-          <h1 class="count" data-count="30000">30,000+</h1> <!-- Count of happy clients -->
-          <h3>Happy Clients</h3> <!-- Statistic description -->
-        </div>
-      </div>
-    </div>
-  
-    <!-- Statistic Box 3: Years of Experience -->
-    <div class="box">
-      <div class="info">
-        <i class="fas fa-calendar-alt"></i> <!-- Calendar icon -->
-        <div class="content">
-          <h1 class="count" data-count="25">25+</h1> <!-- Count of years of experience -->
-          <h3>Years of Experience</h3> <!-- Statistic description -->
-        </div>
-      </div>
-    </div>
-  
-    <!-- Statistic Box 4: Service Locations -->
-    <div class="box">
-      <div class="info">
-        <i class="fas fa-map-marked-alt"></i> <!-- Map-marked-alt icon -->
-        <div class="content">
-          <h1 class="count" data-count="100">100+</h1> <!-- Count of service locations -->
-          <h3>Service Locations</h3> <!-- Statistic description -->
-        </div>
-      </div>
-    </div>
-  
-  </div>     
-  <!-- ==================== Count Area (End) ==================== -->
-
-
-
-  <!-- ==================== Service Slider Area (Start) ==================== -->
-  <section class="services">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>What we offer</span><i class="fa-solid fa-hammer"></i></div>
-      <h2>Our Services</h2>
-    </div>  
-
-    <!-- Service Slider -->
-    <div class="swiper-container service-slider">
-      <div class="swiper-wrapper">
-
-        <!-- Service 1: Custom Woodworking -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-1.jpg" alt="Custom Woodworking"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-hammer"></i> <!-- Hammer Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Custom Craft</h3></a> <!-- Service Title -->
-            <p>Crafting custom-made furniture, cabinets, and other wooden items tailored to clients' needs.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 2: Carpentry Services -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-2.jpg" alt="Carpentry Services"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-wrench"></i> <!-- Wrench Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Carpentry Work</h3></a> <!-- Service Title -->
-            <p>General carpentry work including framing, trim work, and finishing carpentry.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 3: Furniture Restoration -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-3.jpg" alt="Furniture Restoration"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-tools"></i> <!-- Tools Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Furniture Repair</h3></a> <!-- Service Title -->
-            <p>Repairing and restoring antique or damaged wooden furniture to its former glory.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-  
-        <!-- Service 4: Cabinet Making -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-4.jpg" alt="Cabinet Making"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-box-open"></i> <!-- Box Open Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Cabinet Design</h3></a> <!-- Service Title -->
-            <p>Designing, building, and installing custom cabinets for kitchens, bathrooms, and other spaces.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 5: Wood Flooring Installation -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-5.jpg" alt="Wood Flooring Installation and Refinishing"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-screwdriver"></i> <!-- Screwdriver Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Flooring Installation</h3></a> <!-- Service Title -->
-            <p>Installing new hardwood floors or refinishing existing ones to revitalize their appearance.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-    
-        <!-- Service 6: Deck Building -->
-        <div class="swiper-slide service-item">
-          <img src="./assets/images/Service/Services/Service-6.jpg" alt="Deck Building"> <!-- Service Image -->
-          <div class="content">
-            <i class="fa-solid fa-house"></i> <!-- House Icon -->
-            <a href="./pages/Service/Service-Single.html"><h3>Deck Construction</h3></a> <!-- Service Title -->
-            <p>Designing and constructing wooden decks for residential or commercial properties.</p> <!-- Service Description -->
-            <a href="./pages/Service/Service-Single.html" class="btn">read more</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-  <!-- ==================== Service Slider Area (End) ==================== -->
-
-
-
-  <!-- ==================== Why Choose Us Area (Start) ==================== -->
-  <section class="whyUs linear-bg">
-
-    <div class="box-container"> 
-
-      <!-- Main Content Area -->
-      <div class="content">
-        <div class="text">
-
-          <!-- Section Heading -->
-          <div class="heading">  
-            <div class="sub"><span>Why Choose Us</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
-            <h2>Exquisite Woodwork Craftsmanship to Elevate Your Space</h2>
-          </div>
-
-          <!-- Main Heading -->
-          <p>At WoodCrafters, we're dedicated to enhancing the aesthetics and security of your home with our artisanal windows and doors.</p>
-          
-          <!-- Mission Points -->
-          <ul class="whyUs-points">
-            <li>
-              <i class="fas fa-tools"></i> <!-- Tools icon -->
-              <div class="text">
-                <h5>Bespoke Solutions</h5>
-                <p>We offer tailored window and door solutions to meet your unique needs, ensuring seamless integration with your home's style.</p>
-              </div>
-            </li>
-            <li>
-              <i class="fas fa-shield-alt"></i> <!-- Shield icon -->
-              <div class="text">
-                <h5>Enhanced Security</h5>
-                <p>With our top-of-the-line security features, we provide unparalleled protection for your home, ensuring your peace of mind.</p>
-              </div>
-            </li>
-            <li>
-              <i class="fas fa-hammer"></i> <!-- Hammer icon -->
-              <div class="text">
-                <h5>Professional Craftsmanship</h5>
-                <p>Our skilled artisans ensure meticulous installation of your windows and doors, ensuring superior performance and longevity.</p>
-              </div>
-            </li>
-          </ul>
-          
-        </div>
-      </div>
-
-    </div>
-
-  </section>     
-  <!-- ==================== Why Choose Us Area (End) ==================== -->
-
-
-
-  <!-- ==================== Process Slider Area (Start) ==================== -->
-  <section class="process">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>how we work</span><i class="fa-solid fa-hammer"></i></div>
-      <h2>Our Process</h2>
-    </div>   
-
-    <!-- Process Slider -->
-    <div class="swiper-container process-slider">
-      <div class="swiper-wrapper">
-      
-        <!-- Step 1: Assessment -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-1.jpg" alt="Assessment"> <!-- Step Image -->
-          <div class="content">
-            <h6>01</h6>
-            <h3>Assessment</h3> <!-- Step Title -->
-            <p>Thorough evaluation of your woodworking needs and requirements to provide tailored solutions.</p> <!-- Step Description -->
-          </div>
-        </div>
-    
-        <!-- Step 2: Design -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-2.jpg" alt="Design"> <!-- Step Image -->
-          <div class="content">
-            <h6>02</h6>
-            <h3>Design</h3> <!-- Step Title -->
-            <p>Professional design and customization of woodworking projects to match your space's aesthetics and requirements.</p> <!-- Step Description -->
-          </div>
-        </div>
-    
-        <!-- Step 3: Craftsmanship -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-3.jpg" alt="Craftsmanship"> <!-- Step Image -->
-          <div class="content">
-            <h6>03</h6>
-            <h3>Craftsmanship</h3> <!-- Step Title -->
-            <p>Expert craftsmanship in woodworking with precision and attention to detail to ensure optimal results.</p> <!-- Step Description -->
-          </div>
-        </div>
-    
-        <!-- Step 4: Quality Check -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-4.jpg" alt="Quality Check"> <!-- Step Image -->
-          <div class="content">
-            <h6>04</h6>
-            <h3>Quality Check</h3> <!-- Step Title -->
-            <p>Rigorous quality checks and inspections to verify the functionality and durability of crafted woodwork.</p> <!-- Step Description -->
-          </div>
-        </div>
-    
-        <!-- Step 5: Finishing -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-5.jpg" alt="Finishing"> <!-- Step Image -->
-          <div class="content">
-            <h6>05</h6>
-            <h3>Finishing</h3> <!-- Step Title -->
-            <p>Professional finishing services to enhance the appearance and longevity of your woodworking projects.</p> <!-- Step Description -->
-          </div>
-        </div>
-    
-        <!-- Step 6: Client Approval -->
-        <div class="swiper-slide process-item">
-          <img src="./assets/images/Process/Process-6.jpg" alt="Client Approval"> <!-- Step Image -->
-          <div class="content">
-            <h6>06</h6>
-            <h3>Client Approval</h3> <!-- Step Title -->
-            <p>Ensuring client satisfaction by delivering woodworking projects that meet or exceed expectations.</p> <!-- Step Description -->
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-  <!-- ==================== Process Slider Area (End) ==================== -->
-
-
-  <!-- ==================== Banner Area (Start) ==================== -->
-  <section class="banner">
-    <div class="content">
-  
-      <div class="heading">
-        <div class="sub"><span>Elevate Your Home Interior</span><i class="fa-solid fa-hammer"></i></div>
-      </div>
-      <h2>Discover the Ideal Woodwork Solutions for Your Space</h2>
-      <a href="./pages/Pages/Get-Quote.html" class="btn">Get a Quote</a>
-  
-    </div>
-  </section>  
-  <!-- ==================== Banner Area (End) ==================== -->
-
-
-
-
-  <!-- ==================== Projects Area (Start) ==================== -->
-  <section class="projects">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>Explore Our Work</span><i class="fa-solid fa-hammer"></i></div>
-      <h2>our projects</h2>
-    </div> 
-
-    <!-- Projects Filter Buttons -->
-    <ul class="tab-buttons">
-      <li class="button active" data-filter="*">all</li> <!-- Display all services -->
-      <li class="button" data-filter=".craft">Custom Craft</li> <!-- Filter by lock installation -->
-      <li class="button" data-filter=".carpentry">Carpentry Work</li> <!-- Filter by emergency services -->
-      <li class="button" data-filter=".cabinet">Cabinet Design</li> <!-- Filter by security solutions -->
-    </ul>
-    
-    <!-- Projects Container -->
-    <div class="box-container">
-  
-      <!-- Project 1 - Custom Furniture -->
-      <div class="project-item craft">
-        <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-1.jpg" alt="Custom Furniture"> <!-- Project Image -->
-          <div class="content">
-            <!-- Buttons container -->
-            <div class="btn-container">
-              <a class="view" href="./assets/images/Project/Projects/Project-1.jpg"><i class="fa-solid fa-plus"></i></a> <!-- View image button -->
-              <a href="./pages/Project/Project-Single.html"><i class="fa-solid fa-link"></i></a> <!-- Link to Project Single page -->
-            </div>
-            <!-- Text content -->
-            <div class="text">
-              <p>Custom Craft</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Custom Furniture</h3></a> <!-- Project Title -->
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Project 2 - Window Installations -->
-      <div class="project-item carpentry">
-        <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-2.jpg" alt="Window Installations"> <!-- Project Image -->
-          <div class="content">
-            <!-- Buttons container -->
-            <div class="btn-container">
-              <a class="view" href="./assets/images/Project/Projects/Project-2.jpg"><i class="fa-solid fa-plus"></i></a> <!-- View image button -->
-              <a href="./pages/Project/Project-Single.html"><i class="fa-solid fa-link"></i></a> <!-- Link to Project Single page -->
-            </div>
-            <!-- Text content -->
-            <div class="text">
-              <p>Carpentry Work</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Window Installations</h3></a> <!-- Project Title -->
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Project 3 - Home Décor -->
-      <div class="project-item craft">
-        <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-3.jpg" alt="Home Décor"> <!-- Project Image -->
-          <div class="content">
-            <!-- Buttons container -->
-            <div class="btn-container">
-              <a class="view" href="./assets/images/Project/Projects/Project-3.jpg"><i class="fa-solid fa-plus"></i></a> <!-- View image button -->
-              <a href="./pages/Project/Project-Single.html"><i class="fa-solid fa-link"></i></a> <!-- Link to Project Single page -->
-            </div>
-            <!-- Text content -->
-            <div class="text">
-              <p>Custom Craft</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Home Décor</h3></a> <!-- Project Title -->
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Project 4 - Kitchen Cabinets -->
-      <div class="project-item cabinet">
-        <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-4.jpg" alt="Kitchen Cabinets"> <!-- Project Image -->
-          <div class="content">
-            <!-- Buttons container -->
-            <div class="btn-container">
-              <a class="view" href="./assets/images/Project/Projects/Project-4.jpg"><i class="fa-solid fa-plus"></i></a> <!-- View image button -->
-              <a href="./pages/Project/Project-Single.html"><i class="fa-solid fa-link"></i></a> <!-- Link to Project Single page -->
-            </div>
-            <!-- Text content -->
-            <div class="text">
-              <p>Cabinet Design</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Kitchen Cabinets</h3></a> <!-- Project Title -->
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Project 5 - Door Installations -->
-      <div class="project-item carpentry">
-        <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-5.jpg" alt="Door Installations"> <!-- Project Image -->
-          <div class="content">
-            <!-- Buttons container -->
-            <div class="btn-container">
-              <a class="view" href="./assets/images/Project/Projects/Project-5.jpg"><i class="fa-solid fa-plus"></i></a> <!-- View image button -->
-              <a href="./pages/Project/Project-Single.html"><i class="fa-solid fa-link"></i></a> <!-- Link to Project Single page -->
-            </div>
-            <!-- Text content -->
-            <div class="text">
-              <p>Carpentry Work</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Door Installations</h3></a> <!-- Project Title -->
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Project 6 - Bathroom Cabinets -->
-      <div class="project-item cabinet">
-        <div class="projects-content">
-          <img src="./assets/images/Project/Projects/Project-6.jpg" alt="Bathroom Cabinets"> <!-- Project Image -->
-          <div class="content">
-            <!-- Buttons container -->
-            <div class="btn-container">
-              <a class="view" href="./assets/images/Project/Projects/Project-6.jpg"><i class="fa-solid fa-plus"></i></a> <!-- View image button -->
-              <a href="./pages/Project/Project-Single.html"><i class="fa-solid fa-link"></i></a> <!-- Link to Project Single page -->
-            </div>
-            <!-- Text content -->
-            <div class="text">
-              <p>Cabinet Design</p> <!-- Project Category -->
-              <a href="./pages/Project/Project-Single.html"><h3>Bathroom Cabinets</h3></a> <!-- Project Title -->
-            </div>
-          </div>
-        </div>
-      </div>
-  
-    </div>
-
-  </section> 
-  <!-- ==================== Projects Area (End) ==================== -->
-
-
-
-  <!-- ==================== Testimonials Area (Start) ==================== -->    
-  <section class="testimonial-bg linear-bg">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>What Our Customers Say</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
-      <h2>Customer Testimonials</h2> 
-    </div>    
-  
-    <!-- Testimonial Slider -->
-    <div class="swiper-container testimonial-slider">
-  
-      <div class="swiper-wrapper">
-    
-        <!-- Testimonial Slide 1 -->
-        <div class="swiper-slide testi-item">
-          <i class="fas fa-quote-right"></i>
-          <p>"WoodCraft's team provided excellent service! Their attention to detail and quality craftsmanship exceeded my expectations."</p>
-          <img src="./assets/images/Testimonials/Pic-1.jpg" alt="Author-Pic">
-          <div class="text">
-            <h4>John Doe</h4>
-            <h6>Homeowner</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-    
-        <!-- Testimonial Slide 2 -->
-        <div class="swiper-slide testi-item">
-          <i class="fas fa-quote-right"></i>
-          <p>"I am extremely satisfied with the woodwork installed by WoodCraft. The whole process was seamless and hassle-free."</p>
-          <img src="./assets/images/Testimonials/Pic-2.jpg" alt="Author-Pic">
-          <div class="text">
-            <h4>Jane Smith</h4>
-            <h6>Homeowner</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-    
-        <!-- Testimonial Slide 3 -->
-        <div class="swiper-slide testi-item">
-          <i class="fas fa-quote-right"></i>
-          <p>"The team at WoodCraft is professional and knowledgeable. I highly recommend their services to anyone looking for quality woodwork."</p>
-          <img src="./assets/images/Testimonials/Pic-3.jpg" alt="Author-Pic">
-          <div class="text">
-            <h4>Michael Thompson</h4>
-            <h6>Builder</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-    
-        <!-- Testimonial Slide 4 -->
-        <div class="swiper-slide testi-item">
-          <i class="fas fa-quote-right"></i>
-          <p>"WoodCraft's commitment to quality and customer satisfaction is commendable. I am delighted with the results!"</p>
-          <img src="./assets/images/Testimonials/Pic-4.jpg" alt="Author-Pic">
-          <div class="text">
-            <h4>Emily Johnson</h4>
-            <h6>Architect</h6>
-          </div>
-          <div class="rating">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </div>
-    
-      </div>
-  
-      <!-- Testimonial Slider Pagination -->
-      <div class="swiper-pagination swiper-pagination3"></div>
-  
-    </div>
-  
-  </section>  
-  <!-- ==================== Testimonials Area (End) ==================== -->
-
-
-
-  <!-- ==================== Team Area (Start) ==================== -->
-  <section class="team">
-
-    <!-- Section Heading -->
-    <div class="heading">
-      <div class="sub"><i class="fas fa-hammer"></i><span>Meet Our Team</span><i class="fas fa-hammer"></i></div> <!-- Sub Heading -->
-      <h2>our team</h2>
-    </div>
-  
-    <div class="box-container">
-  
-      <!-- Team Member 1 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-1.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>David Smith</h3></a> <!-- Team Member Name -->
-            <p>Master Carpenter</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Team Member 2 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-2.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>Emma Johnson</h3></a> <!-- Team Member Name -->
-            <p>Woodwork Specialist</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Team Member 3 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-3.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>Matthew Anderson</h3></a> <!-- Team Member Name -->
-            <p>Custom Furniture Maker</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-      <!-- Team Member 4 -->
-      <div class="team-item">
-        <img src="./assets/images/Team/Team-4.jpg" alt="Team-Image"> <!-- Team Member Image -->
-        <div class="content">
-          <div class="icon-container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a> <!-- Facebook Icon -->
-            <a href="#"><i class="fab fa-linkedin-in"></i></a> <!-- LinkedIn Icon -->
-            <a href="#"><i class="fab fa-instagram"></i></a> <!-- Instagram Icon -->
-          </div>
-          <div class="intro">
-            <a href="./pages/About/Team-Single.html"><h3>Olivia Brown</h3></a> <!-- Team Member Name -->
-            <p>Master Woodcarver</p> <!-- Team Member Designation -->
-          </div>
-        </div>
-      </div>
-  
-    </div>
-  
-  </section>  
-  <!-- ==================== Team Area (End) ==================== -->
-
-
-
-  <!-- ==================== Get A Quote Area (Start) ==================== -->
-  <section class="get-quote linear-bg">
-
-    <div class="box-container">
-
-      <div class="content">
-
-        <form class="dark-form" id="quote-form" method="post">
-
-          <!-- Form Heading -->
-          <div class="heading">
-            <div class="sub"><span>Custom Woodwork Solutions</span><i class="fa-solid fa-hammer"></i></div>
-            <h2>Request A Quote</h2>
-          </div>
-
-          <div class="input-box">
-
-            <!-- Name Input Field -->
-            <div class="input-field"> 
-              <label for="name" class="fa-solid fa-user"></label>
-              <input type="text" name="name" class="box" id="name" placeholder="Name" required>
-            </div>
-
-            <!-- Email Input Field -->
-            <div class="input-field">
-              <label for="email" class="fa-solid fa-envelope"></label>
-              <input type="email" name="email" class="box" id="email" placeholder="Email" required>
-            </div>
-
-          </div>
-
-          <div class="input-box">
-
-            <!-- Phone Number Input Field -->
-            <div class="input-field">
-              <label for="number" class="fa-solid fa-phone"></label>
-              <input type="number" name="number" class="box" id="number" placeholder="Phone Number" required>
-            </div>
-
-            <!-- Service Select Field -->
-            <div class="select">
-              <div class="select-container">
-                <label for="service" class="fa-solid fa-hammer"></label>
-                <select class="select-box" id="service" name="service" required>
-                  <option value="">Services</option>
-                  <option value="custom-craft">Custom Craft</option>
-                  <option value="carpentry-work">Carpentry Work</option>
-                  <option value="furniture-repair">Furniture Repair</option>
-                  <option value="cabinet-design">Cabinet Design</option>
-                  <option value="flooring-installation">Flooring Installation</option>
-                  <option value="deck-construction">Deck Construction</option>
-                </select>
-                <div class="icon-container">
-                  <i class="fas fa-angle-down"></i>
+@section('contents')
+
+     <main class="main">
+        <!-- hero slider -->
+        <div class="hero-section3 hs3-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-9 offset-xl-3">
+                        <div class="hero-slider owl-carousel owl-theme">
+                            <div class="hero-single">
+                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-5.jpg)"></div>
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 col-lg-7">
+                                            <div class="hero-content">
+                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                    For Your First <br> <span>Goemart</span> Shopping
+                                                </h1>
+                                                <p data-animation="fadeInLeft" data-delay=".75s">
+                                                    There are many variations of passages orem psum available but the majority have
+                                                    suffered are going to use some form by injected humour.
+                                                </p>
+                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-single">
+                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-6.jpg)"></div>
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 col-lg-7">
+                                            <div class="hero-content">
+                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                    For Your First <br> <span>Goemart</span> Shopping
+                                                </h1>
+                                                <p data-animation="fadeInLeft" data-delay=".75s">
+                                                    There are many variations of passages orem psum available but the majority have
+                                                    suffered are going to use some form by injected humour.
+                                                </p>
+                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-single">
+                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-7.jpg)"></div>
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 col-lg-7">
+                                            <div class="hero-content">
+                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                    For Your First <br> <span>Goemart</span> Shopping
+                                                </h1>
+                                                <p data-animation="fadeInLeft" data-delay=".75s">
+                                                    There are many variations of passages orem psum available but the majority have
+                                                    suffered are going to use some form by injected humour.
+                                                </p>
+                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-single">
+                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-8.jpg)"></div>
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-12 col-lg-7">
+                                            <div class="hero-content">
+                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                    For Your First <br> <span>Goemart</span> Shopping2
+                                                </h1>
+                                                <p data-animation="fadeInLeft" data-delay=".75s">
+                                                    There are many variations of passages orem psum available but the majority have
+                                                    suffered are going to use some form by injected humour.
+                                                </p>
+                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-
-          </div>
-
-          <div class="input-box">
-            
-            <!-- Address Input Field -->
-            <div class="input-field">
-              <label for="address" class="fa-solid fa-location-dot"></label>
-              <input type="text" name="address" class="box" id="address" placeholder="Address" required>
-            </div>
-
-          </div>
-
-          <div class="input-box">
-
-            <!-- Budget Input Field -->
-            <div class="input-field">
-              <label for="budget" class="fa-solid fa-dollar-sign"></label>
-              <input type="number" name="budget" class="box" id="budget" placeholder="Budget" required>
-            </div>
-                        
-            <!-- Date Input Field -->
-            <div class="input-field">
-              <label for="date" class="fa-solid fa-calendar"></label>
-              <input type="text" name="date" placeholder="Date" id="date" class="box" onfocus="(this.type='date')" onblur="(this.type='text')" required>
-            </div>
-
-          </div>
-
-          <!-- Comment Text Area -->
-          <div class="input-field text-area">
-            <label for="comment" class="fa-solid fa-comment"></label>
-            <textarea cols="30" rows="10" name="comment" class="box" id="comment" placeholder="Message" required></textarea>
-          </div>
-
-          <!-- Submit Button for Booking Confirmation -->
-          <button type="submit" class="btn" name="submit" id="submit">submit</button>
-          <span class="alert" id="msg"></span>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </section>  
-  <!-- ==================== Get A Quote Area (End) ==================== -->
-    
-
-
-  <!-- ==================== Pricing Area (Start) ==================== -->
-  <section class="pricing">
-
-    <div class="heading">
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>Choose your plan</span><i class="fa-solid fa-hammer"></i></div>
-      <h2>Pricing Plans</h2>
-    </div>
-  
-    <!-- Pricing Plans -->
-    <div class="box-container">
-  
-      <!-- Pricing Plan 1 - Basic Plan -->
-      <div class="plan-item">
-        <div class="intro">
-          <img src="./assets/images/Pricing/Plan-1.jpg" alt="Basic Plan"> <!-- Plan Image -->
-          <div class="content">
-            <i class="icon fas fa-wrench"></i> <!-- Wrench Icon -->
-            <h3>Basic Plan</h3>
-            <div class="price">$49</div>
-          </div>
         </div>
-        <ul> <!-- Plan Features -->
-          <li><i class="fa-solid fa-check"></i> Basic Wood Repair</li>
-          <li><i class="fa-solid fa-check"></i> Tool Rental</li>
-          <li><i class="fa-solid fa-check"></i> Safety Gear Included</li>
-          <li><i class="fa-solid fa-check"></i> 24/7 Support</li>
-          <li><i class="fa-solid fa-check"></i> Priority Service</li>
-        </ul>
-        <a href="#" class="btn">Select Package</a>
-      </div>
-  
-      <!-- Pricing Plan 2 - Standard Plan -->
-      <div class="plan-item">
-        <div class="intro">
-          <img src="./assets/images/Pricing/Plan-2.jpg" alt="Standard Plan"> <!-- Plan Image -->
-          <div class="content">
-            <i class="icon fas fa-hammer"></i> <!-- Hammer Icon -->
-            <h3>Standard Plan</h3>
-            <div class="price">$99</div>
-          </div>
+        <!-- hero slider end -->
+
+
+        <!-- feature area -->
+        <div class="feature-area2 mt-80">
+            <div class="container">
+                <div class="feature-wrap">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fal fa-truck"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Free Delivery</h4>
+                                    <p>Orders Over $120</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fal fa-sync"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Get Refund</h4>
+                                    <p>Within 30 Days Returns</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fal fa-wallet"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Safe Payment</h4>
+                                    <p>100% Secure Payment</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fal fa-headset"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>24/7 Support</h4>
+                                    <p>Feel Free To Call Us</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul> <!-- Plan Features -->
-          <li><i class="fa-solid fa-check"></i> Advanced Wood Restoration</li>
-          <li><i class="fa-solid fa-check"></i> Premium Tool Set</li>
-          <li><i class="fa-solid fa-check"></i> Safety Gear Included</li>
-          <li><i class="fa-solid fa-check"></i> Expert Consultation</li>
-          <li><i class="fa-solid fa-check"></i> Priority Service</li>
-        </ul>
-        <a href="#" class="btn">Select Package</a>
-      </div>
-  
-      <!-- Pricing Plan 3 - Premium Plan -->
-      <div class="plan-item">
-        <div class="intro">
-          <img src="./assets/images/Pricing/Plan-3.jpg" alt="Premium Plan"> <!-- Plan Image -->
-          <div class="content">
-            <i class="icon fas fa-toolbox"></i> <!-- Toolbox Icon -->
-            <h3>Premium Plan</h3>
-            <div class="price">$149</div>
-          </div>
+        <!-- feature area end -->
+
+
+        <!-- product area -->
+        <div class="product-area pt-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline">
+                            <h2 class="site-title">Recent Items</h2>
+                            <a href="#">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-slider item-2 owl-carousel owl-theme">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <span class="type">Trending</span>
+                            <a href="shop-single.html"><img src="assets/img/product/g1.png" alt=""></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <span>$100.00</span>
+                                </div>
+                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-img">
+                            <span class="type hot">Hot</span>
+                            <a href="shop-single.html"><img src="assets/img/product/g11.png" alt=""></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <span>$100.00</span>
+                                </div>
+                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-img">
+                            <span class="type oos">Out Of Stock</span>
+                            <a href="shop-single.html"><img src="assets/img/product/g14.png" alt=""></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <span>$100.00</span>
+                                </div>
+                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="shop-single.html"><img src="assets/img/product/g21.png" alt=""></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <span>$100.00</span>
+                                </div>
+                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-img">
+                            <span class="type discount">10% Off</span>
+                            <a href="shop-single.html"><img src="assets/img/product/g38.png" alt=""></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <del>120.00</del><span>$100.00</span>
+                                </div>
+                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="shop-single.html"><img src="assets/img/product/g39.png" alt=""></a>
+                            <div class="product-action-wrap">
+                                <div class="product-action">
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                    <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                            <div class="product-rate">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="product-bottom">
+                                <div class="product-price">
+                                    <span>$100.00</span>
+                                </div>
+                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul> <!-- Plan Features -->
-          <li><i class="fa-solid fa-check"></i> Custom Woodwork Design</li>
-          <li><i class="fa-solid fa-check"></i> Deluxe Tool Set</li>
-          <li><i class="fa-solid fa-check"></i> Safety Gear Included</li>
-          <li><i class="fa-solid fa-check"></i> On-Site Assistance</li>
-          <li><i class="fa-solid fa-check"></i> Priority Service</li>
-        </ul>
-        <a href="#" class="btn">Select Package</a>
-      </div>
-  
-    </div>
-  
-  </section> 
-  <!-- ==================== Pricing Area (End) ==================== --> 
+        <!-- product area end -->
+
+
+        <!-- category area -->
+        <div class="category-area2 pt-80 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline">
+                            <h2 class="site-title">Top Category</h2>
+                            <a href="#">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="category-slider owl-carousel owl-theme">
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc1.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Vegetables</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc2.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Milks & Creams</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc3.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Bakery</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc4.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Breakfast</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc5.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Fruits</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc6.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Meats</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc7.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Chocolate</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc8.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Drinks</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="category-item">
+                        <a href="#">
+                            <div class="category-info">
+                                <div class="icon">
+                                    <img src="assets/img/category/gc9.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <h4>Dry Food</h4>
+                                    <p>30 Items</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- category area end-->
+
+
+        <!-- big banner -->
+        <div class="big-banner">
+            <div class="container">
+                <div class="banner-wrap" style="background-image: url(assets/img/banner/big-banner-3.jpg);">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="banner-content">
+                                <div class="banner-info">
+                                    <h6>Mega Collections</h6>
+                                    <h2>Huge Sale Up To <span>40%</span> Off</h2>
+                                    <p>at our outlet stores</p>
+                                </div>
+                                <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- big banner end -->
+
+
+        <!-- popular item -->
+        <div class="product-area pt-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline item-tab">
+                            <h2 class="site-title">Popular Items</h2>
+                            <ul class="nav nav-pills" id="item-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link active" id="item-tab1" data-bs-toggle="pill" data-bs-target="#pill-item-tab1" type="button" role="tab" aria-controls="pill-item-tab1" aria-selected="true">Fruits</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="item-tab2" data-bs-toggle="pill" data-bs-target="#pill-item-tab2" type="button" role="tab" aria-controls="pill-item-tab2" aria-selected="false">Meats</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="item-tab3" data-bs-toggle="pill" data-bs-target="#pill-item-tab3" type="button" role="tab" aria-controls="pill-item-tab3" aria-selected="false">Vagetables</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="item-tab4" data-bs-toggle="pill" data-bs-target="#pill-item-tab4" type="button" role="tab" aria-controls="pill-item-tab4" aria-selected="false">All</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="item-tabContent">
+                    <div class="tab-pane fade show active" id="pill-item-tab1" role="tabpanel" aria-labelledby="item-tab1" tabindex="0">
+                        <div class="row item-2">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type">Trending</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g21.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type hot">Hot</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g22.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type oos">Out Of Stock</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g23.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="shop-single.html"><img src="assets/img/product/g29.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pill-item-tab2" role="tabpanel" aria-labelledby="item-tab2" tabindex="0">
+                        <div class="row item-2">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type">Trending</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g37.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type hot">Hot</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g38.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type oos">Out Of Stock</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g39.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="shop-single.html"><img src="assets/img/product/g40.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pill-item-tab3" role="tabpanel" aria-labelledby="item-tab3" tabindex="0">
+                        <div class="row item-2">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type">Trending</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g1.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type hot">Hot</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g2.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type oos">Out Of Stock</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g3.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="shop-single.html"><img src="assets/img/product/g4.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pill-item-tab4" role="tabpanel" aria-labelledby="item-tab4" tabindex="0">
+                        <div class="row item-2">
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type">Trending</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g1.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type hot">Hot</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g11.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <span class="type oos">Out Of Stock</span>
+                                        <a href="shop-single.html"><img src="assets/img/product/g14.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-xl-3">
+                                <div class="product-item">
+                                    <div class="product-img">
+                                        <a href="shop-single.html"><img src="assets/img/product/g21.png" alt=""></a>
+                                        <div class="product-action-wrap">
+                                            <div class="product-action">
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h3 class="product-title"><a href="shop-single.html">Fresh Organic Product</a></h3>
+                                        <div class="product-rate">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="product-bottom">
+                                            <div class="product-price">
+                                                <span>$100.00</span>
+                                            </div>
+                                            <button type="button" class="product-cart-btn">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- popular item end -->
+
+
+        <!-- product area -->
+        <div class="product-area pt-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline">
+                            <h2 class="site-title">Fruit Items</h2>
+                            <a href="#">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row item-banner">
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="small-banner item-side-banner">
+                            <div class="banner-item">
+                                <img src="assets/img/banner/isb-1.jpg" alt="">
+                                <div class="banner-content">
+                                    <p>From $599.00</p>
+                                    <h3>Best Organic <br> Products For You</h3>
+                                    <a href="#">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-9">
+                        <div class="product-slider item-2 owl-carousel owl-theme">
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type">Trending</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g25.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type hot">Hot</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g26.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type oos">Out Of Stock</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g27.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g28.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type discount">10% Off</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g29.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <del>120.00</del><span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g30.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product area end -->
+
+
+        <!-- product area -->
+        <div class="product-area pt-50">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline">
+                            <h2 class="site-title">Vegetable Items</h2>
+                            <a href="#">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row item-banner">
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="small-banner item-side-banner">
+                            <div class="banner-item">
+                                <img src="assets/img/banner/isb-2.jpg" alt="">
+                                <div class="banner-content">
+                                    <p>From $599.00</p>
+                                    <h3>Best Organic <br> Products For You</h3>
+                                    <a href="#">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-9">
+                        <div class="product-slider item-2 owl-carousel owl-theme">
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type">Trending</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g5.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type hot">Hot</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g6.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type oos">Out Of Stock</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g7.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g8.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type discount">10% Off</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g9.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <del>120.00</del><span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g10.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product area end -->
+
+
+        <!-- product area -->
+        <div class="product-area pt-50 pb-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline">
+                            <h2 class="site-title">Breakfast Items</h2>
+                            <a href="#">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row item-banner">
+                    <div class="col-lg-4 col-xl-3">
+                        <div class="small-banner item-side-banner">
+                            <div class="banner-item">
+                                <img src="assets/img/banner/isb-3.jpg" alt="">
+                                <div class="banner-content">
+                                    <p>From $599.00</p>
+                                    <h3>Make Your Breakfast <br> Healthy and Easy</h3>
+                                    <a href="#">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-xl-9">
+                        <div class="product-slider item-2 owl-carousel owl-theme">
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type">Trending</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g11.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type hot">Hot</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g12.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type oos">Out Of Stock</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g13.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g14.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <span class="type discount">10% Off</span>
+                                    <a href="shop-single.html"><img src="assets/img/product/g15.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <del>120.00</del><span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <div class="product-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g16.png" alt=""></a>
+                                    <div class="product-action-wrap">
+                                        <div class="product-action">
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
+                                            <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="product-title"><a href="shop-single.html">Fresh Organic Fruit</a></h3>
+                                    <div class="product-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-bottom">
+                                        <div class="product-price">
+                                            <span>$100.00</span>
+                                        </div>
+                                        <button type="button" class="product-cart-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product area end -->
+
+
+        <!-- deal area -->
+        <div class="deal-area">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-12 col-lg-6">
+                        <div class="deal-img">
+                            <img src="assets/img/deal/02.jpg" alt="#">
+                        </div>  
+                    </div>  
+                    <div class="col-12 col-lg-6 align-self-center">
+                        <div class="deal-content">
+                            <span class="deal-sub-title">Todays Deal 20% Off</span>
+                            <h3 class="deal-title">All Type Of Fresh Organic Vegetable <br> And Fruit Products For You.</h3>
+                            <p class="deal-text">There are many variations of passages available but the majority have suffered alteration in some form words look even slightly believable.</p>
+                            <h3 class="deal-price"><span>$1020</span><del>$1200</del></h3>
+                            <div class="col-lg-9">
+                                <div class="deal-countdown">
+                                    <div class="countdown" data-countdown="2030/12/30"></div>
+                                </div>
+                            </div>
+                            <div class="deal-btn">
+                                <a href="#" class="theme-btn">Buy Now<i class="fas fa-arrow-right"></i></a> 
+                            </div>
+                        </div>  
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- deal area end  -->
+
+
+        <!-- product list -->
+        <div class="product-list pt-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="product-list-box">
+                            <h2 class="product-list-title">On sale</h2>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g1.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g2.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g3.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="product-list-box">
+                            <h2 class="product-list-title">Best Seller</h2>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g11.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g12.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g13.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="product-list-box">
+                            <h2 class="product-list-title">Top Rated</h2>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g21.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g22.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                            <div class="product-list-item">
+                                <div class="product-list-img">
+                                    <a href="shop-single.html"><img src="assets/img/product/g23.png" alt="#"></a>
+                                </div>
+                                <div class="product-list-content">
+                                    <h4><a href="shop-single.html">Fresh Organic Product</a></h4>
+                                    <div class="product-list-rate">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <div class="product-list-price">
+                                        <del>60.00</del><span>$40.00</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="product-list-btn" data-bs-placement="left" data-tooltip="tooltip" title="Add To Cart"><i class="far fa-shopping-bag"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product list end -->
+
+
+        <!-- brand area -->
+        <div class="brand-area pt-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="site-heading-inline">
+                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Popular Brands</h2>
+                            <a href="#">All Brands <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-slider owl-carousel owl-theme">
+                    <div class="brand-item">
+                        <img src="assets/img/brand/01.png" alt="">
+                    </div>
+                    <div class="brand-item">
+                        <img src="assets/img/brand/02.png" alt="">
+                    </div>
+                    <div class="brand-item">
+                        <img src="assets/img/brand/03.png" alt="">
+                    </div>
+                    <div class="brand-item">
+                        <img src="assets/img/brand/04.png" alt="">
+                    </div>
+                    <div class="brand-item">
+                        <img src="assets/img/brand/05.png" alt="">
+                    </div>
+                    <div class="brand-item">
+                        <img src="assets/img/brand/06.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- brand area end -->
+
+
+        <!-- blog area -->
+        <div class="blog-area py-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="site-heading text-center">
+                            <span class="site-title-tagline">Our Blog</span>
+                            <h2 class="site-title">Latest News & <span>Blog</span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-item-img">
+                                <img src="assets/img/blog/01.jpg" alt="Thumb">
+                            </div>
+                            <div class="blog-item-info">
+                                <div class="blog-item-meta">
+                                    <ul>
+                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
+                                        <li><a href="#"><i class="far fa-calendar-alt"></i> January 29, 2025</a></li>
+                                    </ul>
+                                </div>
+                                <h4 class="blog-title">
+                                    <a href="#">There are many variations of passage available majority suffered.</a>
+                                </h4>
+                                <p>There are many variations available the majority have suffered alteration randomised words.</p>
+                                <a class="theme-btn" href="#">Read More<i class="fas fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-item-img">
+                                <img src="assets/img/blog/02.jpg" alt="Thumb">
+                            </div>
+                            <div class="blog-item-info">
+                                <div class="blog-item-meta">
+                                    <ul>
+                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
+                                        <li><a href="#"><i class="far fa-calendar-alt"></i> January 29, 2025</a></li>
+                                    </ul>
+                                </div>
+                                <h4 class="blog-title">
+                                    <a href="#">There are many variations of passage available majority suffered.</a>
+                                </h4>
+                                <p>There are many variations available the majority have suffered alteration randomised words.</p>
+                                <a class="theme-btn" href="#">Read More<i class="fas fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="blog-item">
+                            <div class="blog-item-img">
+                                <img src="assets/img/blog/03.jpg" alt="Thumb">
+                            </div>
+                            <div class="blog-item-info">
+                                <div class="blog-item-meta">
+                                    <ul>
+                                        <li><a href="#"><i class="far fa-user-circle"></i> By Alicia Davis</a></li>
+                                        <li><a href="#"><i class="far fa-calendar-alt"></i> January 29, 2025</a></li>
+                                    </ul>
+                                </div>
+                                <h4 class="blog-title">
+                                    <a href="#">There are many variations of passage available majority suffered.</a>
+                                </h4>
+                                <p>There are many variations available the majority have suffered alteration randomised words.</p>
+                                <a class="theme-btn" href="#">Read More<i class="fas fa-arrow-right-long"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- blog area end -->
+
+
+        <!-- newsletter area -->
+        <div class="newsletter-area2 mb-100">
+            <div class="container">
+                <div class="newsletter-wrap">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="newsletter-content">
+                                <h3>Get 20% Off Discount Coupon</h3>
+                                <p>By Subscribe Our Newsletter</p>
+                                <div class="subscribe-form">
+                                    <form action="#">
+                                        <input type="email" class="form-control" placeholder="Your Valid Email Address">
+                                        <button class="theme-btn" type="submit">
+                                            Subscribe <i class="far fa-paper-plane"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- newsletter area end -->
+
+    </main>
+
  
-
-
-  <!-- ==================== Newsletter Area (Start) ==================== -->
-  <section class="newsletter-subscribe">
-    <div class="content">
-      <h2>Subscribe To Our Newsletter</h2> <!-- Newsletter Heading -->
-      <p>Stay informed about the latest trends in woodworking, new projects, and special promotions.</p> <!-- Newsletter Description -->
-      <!-- Newsletter Description -->
-      <form class="newsletter-form" method="post" id="newsletter-form-1">
-        <div class="box-container">
-          <input type="email" id="sub-email-1" name="email" placeholder="Your email address" required>
-          <!-- Email Input Field -->
-          <button type="submit" class="btn" name="submit" id="submit-1">Subscribe</button> <!-- Subscribe Button -->
-        </div>
-        <!-- Alert Message -->
-        <span class="alert" id="msg-1"></span>
-      </form>
-    </div>
-  </section>
-  <!-- ==================== Newsletter Area (End) ==================== -->
-
-
-
-  <!-- ==================== Blogs Area (Start) ==================== -->
-  <section class="blog main">
-
-    <!-- Section Heading -->
-    <div class="heading"> 
-      <div class="sub"><i class="fa-solid fa-hammer"></i><span>our recent articles</span><i class="fa-solid fa-hammer"></i></div> <!-- Sub Heading -->
-      <h2>our blogs</h2> 
-    </div>
-  
-    <!-- Latest Blogs -->
-    <div class="box-container">
-
-      <!-- Blog-1 -->
-      <div class="blog-item">
-        <div class="image">
-          <img src="./assets/images/Blog/Blogs/Blog-1.jpg" alt="Blog-Image"> <!-- Blog Image -->
-          <div class="date"><span>22</span> Feb</div> <!-- Blog Date -->
-        </div>
-        <div class="content">
-          <a class="main-heading" href="./pages/Blog/Blog-Single.html">Renovating Your Kitchen Cabinets: Before and After</a> <!-- Blog Title -->
-          <div class="details">
-            <h3><i class="fa-solid fa-circle-user"></i><span>By Admin</span></h3> <!-- Blog Author -->
-            <h3><i class="fa-solid fa-tags"></i><span>Project Ideas</span></h3> <!-- Blog Category -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog-2 -->
-      <div class="blog-item">
-        <div class="image">
-          <img src="./assets/images/Blog/Blogs/Blog-2.jpg" alt="Blog-Image"> <!-- Blog Image -->
-          <div class="date"><span>15</span> Feb</div> <!-- Blog Date -->
-        </div>
-        <div class="content">
-
-          <a class="main-heading" href="./pages/Blog/Blog-Single.html">Mastering Basic Woodworking Joints</a> <!-- Blog Title -->
-          <div class="details">
-            <h3><i class="fa-solid fa-circle-user"></i><span>By Admin</span></h3> <!-- Blog Author -->
-            <h3><i class="fa-solid fa-tags"></i><span>Woodworking Techniques</span></h3> <!-- Blog Category -->
-          </div>
-        </div>
-      </div>
-
-      <!-- Blog-3 -->
-      <div class="blog-item">
-        <div class="image">
-          <img src="./assets/images/Blog/Blogs/Blog-3.jpg" alt="Blog-Image"> <!-- Blog Image -->
-          <div class="date"><span>05</span> Feb</div> <!-- Blog Date -->
-        </div>
-        <div class="content">
-
-          <a class="main-heading" href="./pages/Blog/Blog-Single.html">The Rise of Minimalist Wood Furniture</a> <!-- Blog Title -->
-          <div class="details">
-            <h3><i class="fa-solid fa-circle-user"></i><span>By Admin</span></h3> <!-- Blog Author -->
-            <h3><i class="fa-solid fa-tags"></i><span>Design Trends</span></h3> <!-- Blog Category -->
-          </div>
-        </div>
-      </div>
-
-    </div>  
-  </section>
-  <!-- ==================== Blogs Area (End) ==================== -->
-
-
-   <!-- ==================== Clients Area (Start) ==================== -->
-  <section class="home-clients clients">
-    <!-- Client Slider Container -->
-    <div class="swiper-container client-slider">
-
-
-
-      <!-- Clients Logo -->
-      <div class="swiper-wrapper">
-  @foreach($donors as $donor)
-
-<div class="swiper-slide client-item"><a href="#"><img src="{{ URL::asset('/storage/donor_photos/'.$donor->logo) }}" alt="Client-Logo"  style="width:60px;height:40px"></a>
-
-<p>{{$donor->donor_name}}</p>
-</div>
-@endforeach
-
-
-
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-1.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-2.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-3.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-4.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-5.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-6.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-7.png" alt="Client-Logo"></a></div>
-        <div class="swiper-slide client-item"><a href="#"><img src="./assets/images/Clients/Client-8.png" alt="Client-Logo"></a></div>
-      </div>
-    </div> 
-      </section>
 @endsection

@@ -1718,7 +1718,7 @@ label {
 .main-category{
   position: absolute;
   left: 0;
-  top: 63px;
+  top: 75px;
   min-width: 278px;
   border-radius: 10px;
   padding: 8px 8px;
@@ -9697,10 +9697,10 @@ label {
 }
 
 .home-5 .category-btn{
-  min-width: 278px;
-  padding: 12px 26px;
+  min-width: 100px;
+  padding: 1px 30px;
   border-radius: 0;
-  background: var(--theme-color);
+  background:#5e5f57;
   color: var(--color-white);
   box-shadow: var(--box-shadow);
 }

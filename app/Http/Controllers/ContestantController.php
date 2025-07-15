@@ -33,6 +33,7 @@ class ContestantController extends Controller
     public function index()
     {
       $awards=award::where('status','Active')
+      ->where('award_name','!=',"")
       ->get();
 
       //dd($awards);
@@ -59,16 +60,24 @@ class ContestantController extends Controller
     public function store(Request $request)
     {
 
-       // dd(request('phone'));
+       //dd(request('phone'));
 
             $contestants = contestant::Create([
         'full_name'=>request('full_name'),
-          
+          'birth_date'=>request('birth_date'),
+
          'phone'=>request('phone'),
-        'email'=>request('email'),      
-        'bank_holder_name'=>request('bank_holder_name'),
-        'currency'=>request('currency'), 
-          'district'=>request('district'),      
+        'email'=>request('email'),   
+         'country'=>request('country'),
+         'district'=>request('district'),
+
+        'education'=>request('education'),
+        'education_of'=>request('education_of'), 
+
+         'expirience_one'=>request('expirience_one'),
+        'expirience_two'=>request('expirience_two'), 
+         'expirience_three'=>request('expirience_three'),
+               
        'status'=>'Active',  
         ]);
 

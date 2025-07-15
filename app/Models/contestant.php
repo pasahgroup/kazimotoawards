@@ -14,6 +14,10 @@ class contestant extends Model
         'email',
          'country', 
         'district',
+        'education', 
+        'education_of',
+
+
         'status'
     ];
 }

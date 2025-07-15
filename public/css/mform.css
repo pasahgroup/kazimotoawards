@@ -31,7 +31,7 @@ p {
     box-sizing: border-box;
     width: 100%;
     margin: 0;
-    padding-bottom: 20px;
+    padding-bottom: 2px;
     position: relative
 }
 
@@ -47,15 +47,15 @@ p {
 #msform textarea {
     padding: 8px 15px 2px 15px;
     border: 1px solid #ccc;
-    border-radius: 0px;
+    border-radius: 10px;
     margin-bottom: 5px;
     margin-top: 2px;
     width: 100%;
     box-sizing: border-box;
     font-family: montserrat;
     color: #2C3E50;
-    background-color: #ECEFF1;
-    font-size: 14px;
+    background-color:#;
+    /*font-size: 14px;*/
     letter-spacing: 1px
 }
 
@@ -74,7 +74,7 @@ p {
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 0px;
+    border-radius: 5px;
     cursor: pointer;
     padding: 5px 5px;
     margin: 2px 0px 5px 5px;
@@ -92,7 +92,7 @@ p {
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 0px;
+    border-radius: 5px;
     cursor: pointer;
     padding: 4px 5px;
     margin: 1px 2px 5px 15px;
