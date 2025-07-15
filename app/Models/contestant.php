@@ -16,8 +16,15 @@ class contestant extends Model
         'district',
         'education', 
         'education_of',
+         'expirience_one',
+ 'expirience_two',
+  'expirience_three',
 
-
+  'file1',
+  'file2',
+  'file3',
+  'file4',
+  'file5',
         'status'
     ];
 }
