@@ -69,7 +69,7 @@
                                 </div>
   <div class="col-lg-6 col-md-12 col-sm-12">
                                       <label>Birth Date</label>
-                                        <input type="date" name="arrival_date" id="arrival_date" required/>
+                                        <input type="date" name="birth_date" id="birth_date" required/>
                                 </div>
 
 
@@ -154,7 +154,7 @@
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 1:</label>
                                     <div class="form-group">
-                                    <textarea name="Experience_one"></textarea>
+                                    <textarea name="experience_one"></textarea>
                                     </div>
                                 </div>
 
@@ -168,7 +168,7 @@
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 2:</label>
                                     <div class="form-group">
-                                      <textarea name="Experience_two"></textarea>
+                                      <textarea name="experience_two"></textarea>
                                     </div>
                                 </div>
 
@@ -182,7 +182,7 @@
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 3:</label>
                                     <div class="form-group">
-                                      <textarea name="Experience_three"></textarea>
+                                      <textarea name="experience_three"></textarea>
                                     </div>
                                 </div>
 

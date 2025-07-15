@@ -60,7 +60,7 @@ class ContestantController extends Controller
     public function store(Request $request)
     {
 
-       //dd(request('phone'));
+       //dd(request('birth_date'));
 
             $contestants = contestant::Create([
         'full_name'=>request('full_name'),
@@ -74,9 +74,9 @@ class ContestantController extends Controller
         'education'=>request('education'),
         'education_of'=>request('education_of'), 
 
-         'expirience_one'=>request('expirience_one'),
-        'expirience_two'=>request('expirience_two'), 
-         'expirience_three'=>request('expirience_three'),
+         'experience_one'=>request('experience_one'),
+        'experience_two'=>request('experience_two'), 
+         'experience_three'=>request('experience_three'),
                
        'status'=>'Active',  
         ]);
