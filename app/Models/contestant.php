@@ -10,15 +10,16 @@ class contestant extends Model
     use HasFactory;
        protected $fillable = [
         'full_name',
+        'birth_date',
         'phone', 
         'email',
          'country', 
         'district',
         'education', 
         'education_of',
-         'expirience_one',
- 'expirience_two',
-  'expirience_three',
+         'experience_one',
+ 'experience_two',
+  'experience_three',
 
   'file1',
   'file2',

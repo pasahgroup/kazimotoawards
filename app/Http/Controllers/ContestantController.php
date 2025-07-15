@@ -60,11 +60,14 @@ class ContestantController extends Controller
     public function store(Request $request)
     {
 
-       //dd(request('birth_date'));
+      
+     $start_date=request('birth_date');
+     $birth_date=date('Y-m-d', strtotime($start_date));
+
 
             $contestants = contestant::Create([
         'full_name'=>request('full_name'),
-          'birth_date'=>request('birth_date'),
+          'birth_date'=>$birth_date,
 
          'phone'=>request('phone'),
         'email'=>request('email'),   

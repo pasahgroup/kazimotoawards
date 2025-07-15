@@ -69,7 +69,7 @@
                                 </div>
   <div class="col-lg-6 col-md-12 col-sm-12">
                                       <label>Birth Date</label>
-                                        <input type="date" name="birth_date" id="birth_date" required/>
+                                        <input type="date" name="birth_date" id="birth_date1" required/>
                                 </div>
 
 
