@@ -24,6 +24,7 @@ class ContactController extends Controller
      */
     public function contact()
     {
+        //dd('ddd');
         return view('website.contact.contact');
     }
 
@@ -37,13 +38,13 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $contacts = contact::UpdateOrCreate([
         'name'=>request('name'),
         'email'=>request('email'),
         'phone_number'=>request('number'),      
         'message'=>request('comment'),
         ]);
+
          return redirect('/get_contact');
     }
 

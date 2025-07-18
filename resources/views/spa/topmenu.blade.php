@@ -28,7 +28,7 @@
                                             </a>
 
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Login</a>
+                                                <a class="dropdown-item" href="/login">Login</a>
                                             </div>
                                         </div>
 
@@ -479,7 +479,7 @@
 
                                  <li><a href="/">
        @auth
-                     <a class="nav-link" href="{{ route('user.home') }}">
+                     <a class="nav-link" href="#">
               <i class="typcn typcn-device-desktop menu-icon"></i>
               <div class="badge badge-primary"><span class="menu-title">Dashboard</span></div>
             </a>
@@ -487,7 +487,7 @@
 
                                  </a></li>
 
-                                <li><a href="/">Home2</a></li>
+                                <li><a href="/">Home</a></li>
 
                                 <li><a href="#">Vehicles</a>
                                     <ul class="dropdown">

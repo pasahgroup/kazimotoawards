@@ -5186,7 +5186,7 @@ th.w-85 {
     padding: 15px 30px;
     margin-left: 250px;
     border-bottom: 1px solid #dee4ec;
-    box-shadow: 5px 7px 26px -5px #cdd4e7;
+    /*box-shadow: 5px 7px 26px -5px #cdd4e7;*/
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -5307,7 +5307,7 @@ th.w-85 {
 }
 
 .navbar-user__thumb {
-    width: 35px;
+    /*width: 35px;*/
 }
 
 .navbar-user__thumb img {

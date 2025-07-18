@@ -8807,7 +8807,7 @@ label {
 .subscribe-form .theme-btn {
   position: absolute;
   right: -10px;
-  top: 5px;
+  top: -4px;
   border-radius: 50px;
 }
 

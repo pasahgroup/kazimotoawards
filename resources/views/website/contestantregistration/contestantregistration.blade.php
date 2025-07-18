@@ -25,7 +25,7 @@
           </div>
 
 
-                <form id="msform" method="post" action="{{ route('contestant.store') }}" class="registration-form">
+                <form id="msform" method="post" action="{{ route('contestant.store') }}" class="registration-form"  enctype="multipart/form-data">
                     @csrf
                     <!-- progressbar -->
                     <ul id="progressbar">
@@ -62,7 +62,7 @@
 
 
                     
-      <div class="row" style="padding:20px;">
+      <div class="row" style="padding:2px;">
       <div class="col-lg-6 col-md-12 col-sm-12">
                                       <label>Full name</label>
                                          <input type="text" name="full_name" required/> 

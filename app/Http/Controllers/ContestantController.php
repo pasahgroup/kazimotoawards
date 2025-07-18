@@ -51,6 +51,21 @@ class ContestantController extends Controller
         //
     }
 
+
+
+  public function contestant()
+    {
+       $contestants = contestant::get();
+       //dd($contestants);
+       $tailorMades = tailorMade::get();
+       return view('admin.contestants.contestant',compact('contestants'));
+   
+    }
+
+
+
+
+
     /**
      * Store a newly created resource in storage.
      *
@@ -83,6 +98,135 @@ class ContestantController extends Controller
                
        'status'=>'Active',  
         ]);
+
+//dd($contestants->id);
+
+//File1
+  if(request('file_one')){
+            $attach = request('file_one');
+            foreach($attach as $attached){
+
+                 // Get filename with extension
+                 $fileNameWithExt = $attached->getClientOriginalName();
+                 // Just Filename
+                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                 // Get just Extension
+                 $extension = $attached->getClientOriginalExtension();
+                 //Filename to store
+                 $imageToStore = $filename.'_'.time().'.'.$extension;
+                 //upload the image
+                 $path = $attached->storeAs('public/photos/', $imageToStore);
+
+  $contestant_fileupdate = contestant::where('id',$contestants->id)
+             ->update([
+               'file1'=>$imageToStore
+        ]);
+       
+    }
+}
+
+
+//File1
+  if(request('file_two')){
+            $attach = request('file_two');
+            foreach($attach as $attached){
+
+                 // Get filename with extension
+                 $fileNameWithExt = $attached->getClientOriginalName();
+                 // Just Filename
+                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                 // Get just Extension
+                 $extension = $attached->getClientOriginalExtension();
+                 //Filename to store
+                 $imageToStore = $filename.'_'.time().'.'.$extension;
+                 //upload the image
+                 $path = $attached->storeAs('public/photos/', $imageToStore);
+
+  $contestant_fileupdate = contestant::where('id',$contestants->id)
+             ->update([
+               'file2'=>$imageToStore
+        ]);
+       
+    }
+}
+
+
+//File1
+  if(request('file_three')){
+            $attach = request('file_three');
+            foreach($attach as $attached){
+
+                 // Get filename with extension
+                 $fileNameWithExt = $attached->getClientOriginalName();
+                 // Just Filename
+                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                 // Get just Extension
+                 $extension = $attached->getClientOriginalExtension();
+                 //Filename to store
+                 $imageToStore = $filename.'_'.time().'.'.$extension;
+                 //upload the image
+                 $path = $attached->storeAs('public/photos/', $imageToStore);
+
+  $contestant_fileupdate = contestant::where('id',$contestants->id)
+             ->update([
+               'file3'=>$imageToStore
+        ]);
+       
+    }
+}
+
+
+//File1
+  if(request('file_four')){
+            $attach = request('file_four');
+            foreach($attach as $attached){
+
+                 // Get filename with extension
+                 $fileNameWithExt = $attached->getClientOriginalName();
+                 // Just Filename
+                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                 // Get just Extension
+                 $extension = $attached->getClientOriginalExtension();
+                 //Filename to store
+                 $imageToStore = $filename.'_'.time().'.'.$extension;
+                 //upload the image
+                 $path = $attached->storeAs('public/photos/', $imageToStore);
+
+  $contestant_fileupdate = contestant::where('id',$contestants->id)
+             ->update([
+               'file4'=>$imageToStore
+        ]);
+       
+    }
+}
+
+
+//File1
+  if(request('file_five')){
+            $attach = request('file_five');
+            foreach($attach as $attached){
+
+                 // Get filename with extension
+                 $fileNameWithExt = $attached->getClientOriginalName();
+                 // Just Filename
+                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                 // Get just Extension
+                 $extension = $attached->getClientOriginalExtension();
+                 //Filename to store
+                 $imageToStore = $filename.'_'.time().'.'.$extension;
+                 //upload the image
+                 $path = $attached->storeAs('public/photos/', $imageToStore);
+
+  $contestant_fileupdate = contestant::where('id',$contestants->id)
+             ->update([
+               'file5'=>$imageToStore
+        ]);
+       
+    }
+}
+
+
+
 
          return redirect('/contestant');
     }

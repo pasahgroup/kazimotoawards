@@ -41,7 +41,6 @@ class AddonsController extends Controller
      */
     public function store(Request $request)
     {
-          //
        $addon =  addons::create(
             [
                 'addon_name'=>request('addon_name'),

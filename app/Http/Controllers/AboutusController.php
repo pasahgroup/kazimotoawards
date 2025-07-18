@@ -72,14 +72,18 @@ class AboutusController extends Controller
                 }
             }
 
+//dd('Reached here');
+
+
+
 
         $aboutus = aboutus::UpdateOrCreate([
+      'status'=>'Active', 
+        ],[
         'mission_photo'=>$missionphoto,
         'mission'=>request('mission'),
         'vision_photo'=>$visionphoto,      
         'vision'=>request('vision'),
-        'status'=>request('status'),        
-      
         ]);
          return redirect('/aboutus');
     }

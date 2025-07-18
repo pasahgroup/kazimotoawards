@@ -33,20 +33,25 @@
             <li class="dropdown">
                 <button type="button" class="primary--layer" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                   <i class="las la-bell text--primary"></i>
+                  {{--
                   @if($adminNotifications->count() > 0)
                     <span class="pulse--primary"></span>
                   @endif
+                  --}}
                 </button>
                 <div class="dropdown-menu dropdown-menu--md p-0 border-0 box--shadow1 dropdown-menu-right">
                   <div class="dropdown-menu__header">
                     <span class="caption">@lang('Notification')</span>
+                    {{--
                     @if($adminNotifications->count() > 0)
                         <p>@lang('You have') {{ $adminNotifications->count() }} @lang('unread notification')</p>
                     @else
                         <p>@lang('No unread notification found')</p>
                     @endif
+                    --}}
                   </div>
                   <div class="dropdown-menu__body">
+                    {{--
                     @foreach($adminNotifications as $notification)
                     <a href="{{ route('admin.notification.read',$notification->id) }}" class="dropdown-menu__item">
                       <div class="navbar-notifi">
@@ -58,9 +63,10 @@
                       </div><!-- navbar-notifi end -->
                     </a>
                     @endforeach
+                    --}}
                   </div>
                   <div class="dropdown-menu__footer">
-                    <a href="{{ route('admin.notifications') }}" class="view-all-message">@lang('View all notification')</a>
+                    <a href="#" class="view-all-message">@lang('View all notification')</a>
                   </div>
                 </div>
             </li>
@@ -69,27 +75,27 @@
             <li class="dropdown">
                 <button type="button" class="" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                   <span class="navbar-user">
-                    <span class="navbar-user__thumb"><img src="{{ getImage('assets/admin/images/profile/'. auth()->guard('admin')->user()->image) }}" alt="image"></span>
+                    <span class="navbar-user__thumb"><img src="#}" alt="image"></span>
                     <span class="navbar-user__info">
-                      <span class="navbar-user__name">{{auth()->guard('admin')->user()->username}}</span>
+                      <span class="navbar-user__name">#</span>
                     </span>
                     <span class="icon"><i class="las la-chevron-circle-down"></i></span>
                   </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu--sm p-0 border-0 box--shadow1 dropdown-menu-right">
-                    <a href="{{ route('admin.profile') }}"
+                    <a href="#"
                        class="dropdown-menu__item d-flex align-items-center px-3 py-2">
                         <i class="dropdown-menu__icon las la-user-circle"></i>
                         <span class="dropdown-menu__caption">@lang('Profile')</span>
                     </a>
 
-                    <a href="{{route('admin.password')}}"
+                    <a href="#"
                        class="dropdown-menu__item d-flex align-items-center px-3 py-2">
                         <i class="dropdown-menu__icon las la-key"></i>
                         <span class="dropdown-menu__caption">@lang('Password')</span>
                     </a>
 
-                    <a href="{{ route('admin.logout') }}"
+                    <a href="#"
                        class="dropdown-menu__item d-flex align-items-center px-3 py-2">
                         <i class="dropdown-menu__icon las la-sign-out-alt"></i>
                         <span class="dropdown-menu__caption">@lang('Logout')</span>

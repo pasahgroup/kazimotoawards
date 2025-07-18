@@ -27,6 +27,60 @@
    <link rel="stylesheet" href="../../admins/custom/css/bootstrap452.min.css">
  <link rel="stylesheet" href="../../css/custom2.css">
  
+
+
+
+  {{--
+
+    <title>{{ $general->sitename($pageTitle ?? '') }}</title>
+    --}}
+    <title>tttt</title>
+    <!-- site favicon -->
+    <link rel="shortcut icon" type="image/png" href="#">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <!-- bootstrap 4  -->
+    <link rel="stylesheet" href="{{ asset('assets_rentlab/admin/css/vendor/bootstrap.min.css') }}">
+    <!-- bootstrap toggle css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/bootstrap-toggle.min.css')}}">
+    <!-- fontawesome 5  -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/all.min.css')}}">
+    <!-- line-awesome webfont -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/line-awesome.min.css')}}">
+
+  
+    <!-- custom select box css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/nice-select.css')}}">
+    <!-- code preview css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/prism.css')}}">
+    <!-- select 2 css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/select2.min.css')}}">
+    <!-- jvectormap css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/jquery-jvectormap-2.0.5.css')}}">
+    
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/datepicker.min.css')}}">
+    <!-- timepicky for time picker css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/jquery-timepicky.css')}}">
+    <!-- bootstrap-clockpicker css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/bootstrap-clockpicker.min.css')}}">
+    <!-- bootstrap-pincode css -->
+    <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/bootstrap-pincode-input.css')}}">
+    <!-- dashdoard main css -->
+    
+    <!-- <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/app.css')}}"> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
   <style>
     /* Sidebar styles */
     .main-sidebar .nav-link {
@@ -287,7 +341,6 @@
 </nav>
 
 
-
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
@@ -491,8 +544,6 @@
 </div>
 @endif
 
-
-
 @yield('contents')
 
 <footer class="main-footer">
@@ -599,5 +650,58 @@
   });
 </script>
    <script src="../../img_library/scripts.js" type="text/javascript"></script>
+
+
+<!-- Custom script -->
+<!-- jQuery library -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/jquery-3.6.0.min.js')}}"></script>
+<!-- bootstrap js -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/bootstrap.bundle.min.js')}}"></script>
+<!-- bootstrap-toggle js -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/bootstrap-toggle.min.js')}}"></script>
+
+<!-- slimscroll js for custom scrollbar -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/jquery.slimscroll.min.js')}}"></script>
+<!-- custom select box js -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/jquery.nice-select.min.js')}}"></script>
+
+{{--
+@include('admin_rentlab.partials.notify')
+--}}
+@stack('script-lib')
+
+<script src="{{ asset('assets_rentlab/admin/js/nicEdit.js') }}"></script>
+
+<!-- code preview js -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/prism.js')}}"></script>
+<!-- seldct 2 js -->
+<script src="{{asset('assets_rentlab/admin/js/vendor/select2.min.js')}}"></script>
+<!-- main js -->
+<script src="{{asset('assets_rentlab/admin/js/app.js')}}"></script>
+
+{{-- LOAD NIC EDIT --}}
+<script>
+    "use strict";
+    bkLib.onDomLoaded(function() {
+        $( ".nicEdit" ).each(function( index ) {
+            $(this).attr("id","nicEditor"+index);
+            new nicEditor({fullPanel : true}).panelInstance('nicEditor'+index,{hasPanel : true});
+        });
+    });
+    (function($){
+        $( document ).on('mouseover ', '.nicEdit-main,.nicEdit-panelContain',function(){
+            $('.nicEdit-main').focus();
+        });
+    })(jQuery);
+</script>
+
+@stack('script')
+
+
+
+
+
+
+
 </body>
 </html>

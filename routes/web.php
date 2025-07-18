@@ -133,6 +133,7 @@ Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
 
 
 Route::resource('/contestant',ContestantController::class);
+Route::get('/get_contestant', [ContestantController::class,'contestant']);
 
 
 

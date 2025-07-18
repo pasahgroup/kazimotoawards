@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{--
 
     <title>{{ $general->sitename($pageTitle ?? '') }}</title>
+    --}}
+    <title>tttt</title>
     <!-- site favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{getImage(imagePath()['logoIcon']['path'] .'/favicon.png')}}">
+    <link rel="shortcut icon" type="image/png" href="#">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
     <!-- bootstrap 4  -->
     <link rel="stylesheet" href="{{ asset('assets_rentlab/admin/css/vendor/bootstrap.min.css') }}">
@@ -56,8 +59,9 @@
 <!-- custom select box js -->
 <script src="{{asset('assets_rentlab/admin/js/vendor/jquery.nice-select.min.js')}}"></script>
 
-
+{{--
 @include('admin_rentlab.partials.notify')
+--}}
 @stack('script-lib')
 
 <script src="{{ asset('assets_rentlab/admin/js/nicEdit.js') }}"></script>
@@ -86,7 +90,6 @@
 </script>
 
 @stack('script')
-
 
 </body>
 </html>

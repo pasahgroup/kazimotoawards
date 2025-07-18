@@ -1,5 +1,4 @@
 @extends('layouts.master')
-
 @section('content')
     <!-- page-wrapper start -->
     <div class="page-wrapper default-version">
