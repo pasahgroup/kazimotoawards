@@ -55,7 +55,7 @@ class ContestantController extends Controller
 
   public function contestant()
     {
-       $contestants = contestant::get();
+       $contestants = contestant::paginate(8);
        
        //dd($contestants);
        $tailorMades = tailorMade::get();

@@ -4,6 +4,7 @@
 <script type="text/javascript" src="../../admins/js/jquery.js"></script>
 <script type="text/javascript" src="../../admins/js/jquery311.min.js"></script>
 
+
 <style type="text/css">
   body {
     font-family: "Calibri Light", Calibri, sans-serif;
@@ -345,6 +346,9 @@
               @endforeach
             </tbody>
           </table>
+
+ {!! $contestants->links() !!}
+
 
         </div>
       </div>

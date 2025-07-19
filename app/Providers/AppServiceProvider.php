@@ -9,6 +9,7 @@ use App\Models\User;
 
 use App\Models\student;
 use App\Models\PostBody;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         
              Schema::defaultStringLength(191);
+            Paginator::useBootstrap();
 
          view()->composer('*',function($view) {
 
