@@ -63,8 +63,6 @@
 
 
 
-
-
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
                         <i class="menu-icon las la-car-side"></i>
@@ -72,19 +70,37 @@
                     </a>
                     <div class="sidebar-submenu # ">
                         <ul>
-                            <li class="sidebar-menu-item #">
-                                <a href="#" class="nav-link">
+
+                             <li class="sidebar-menu-item #">
+                                <a href="/aboutus" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Contacts')</span>
+                                    <span class="menu-title">@lang('About us')</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-menu-item #">
+                                <a href="/awards" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Awards')</span>
+                                </a>
+                            </li>
+
+                          
+                         
+
+
+                            <li class="sidebar-menu-item #">
+                                <a href="/bank" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Bank')</span>
                                 </a>
                             </li>
 
                           
                           
                               <li class="sidebar-menu-item #">
-                                <a href="#" class="nav-link">
+                                <a href="/donor" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Contacts')</span>
+                                    <span class="menu-title">@lang('Donors')</span>
                                 </a>
                             </li>
 

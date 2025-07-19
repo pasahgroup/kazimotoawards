@@ -1,7 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.master')
 @section('contents')
 
+
+
 <style>
+
 /* Header */
 .legend-header {
   background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
@@ -249,7 +252,8 @@
 }
 </style>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
 
 <div class="content-wrapper" style="background: #f8fafc;">
   <section class="content">

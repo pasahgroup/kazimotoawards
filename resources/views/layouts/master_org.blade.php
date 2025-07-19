@@ -9,7 +9,7 @@
 
     <title>{{ $general->sitename($pageTitle ?? '') }}</title>
     --}}
-    <title>TMYA</title>
+    <title>tttt</title>
     <!-- site favicon -->
     <link rel="shortcut icon" type="image/png" href="#">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/line-awesome.min.css')}}">
 
     @stack('style-lib')
+
     <!-- custom select box css -->
     <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/nice-select.css')}}">
     <!-- code preview css -->
@@ -41,40 +42,10 @@
     <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/vendor/bootstrap-pincode-input.css')}}">
     <!-- dashdoard main css -->
     <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/app.css')}}">
-  
-
- <link rel="stylesheet" href="../../css/custom2.css">
-
-  
-
-
-  <!-- Custom styles -->
-
-  <link rel="stylesheet" href="../../admins/css/style.css">
- <link rel="stylesheet" href="../../css/custom2.css">
-    <link rel="stylesheet" href="{{ asset('assets_rentlab/admin/css/vendor/bootstrap.min.css') }}">
-    <!-- bootstrap toggle css -->
-  
-  
-     @stack('style')
+    @stack('style')
 </head>
-
 <body>
-
-      <!-- page-wrapper start -->
-    <div class="page-wrapper default-version">
-        @include('admin_rentlab.partials.sidenav')
-        @include('admin_rentlab.partials.topnav')
-
-        <div class="body-wrapper">
-            <div class="bodywrapper__inner">
-
-                @include('admin_rentlab.partials.breadcrumb')
-              
-@yield('contents')
-            </div><!-- bodywrapper__inner end -->
-        </div><!-- body-wrapper end -->
-    </div>
+@yield('content')
 
 <!-- jQuery library -->
 <script src="{{asset('assets_rentlab/admin/js/vendor/jquery-3.6.0.min.js')}}"></script>
@@ -119,5 +90,7 @@
 </script>
 
 @stack('script')
+
+
 </body>
 </html>
