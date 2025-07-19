@@ -18,6 +18,7 @@ class CreateAwardsTable extends Migration
              $table->string('award_name')->nullable();
                $table->string('price',64)->nullable();
                  $table->string('photo')->unsigned();
+                     $table->integer('year')->unsigned();
                    $table->integer('user_id')->unsigned();
                 $table->string('status')->unsigned();
                 $table->timestamps();

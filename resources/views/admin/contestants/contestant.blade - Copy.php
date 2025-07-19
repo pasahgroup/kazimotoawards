@@ -287,7 +287,6 @@
             <button type="button" id="confirmClose" class="btn-close" aria-label="Close"></button>
           </div>
 
-<div class="table-responsive">
           <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
@@ -311,34 +310,20 @@
                 <td>{{ $auth->name?? "nill" }}</td> 
                  <td>{{ $data->status }}</td>
                 <td>                
-                
-<div class="btn-group" role="group" aria-label="Standard Button Group" style="padding:.1rem .4rem;">
-<button type="button" class="btn btn-primary"> <i class="fa fa-align-justify" aria-hidden="true"></i></button>
-
-
-  <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
+                  <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
                     @csrf
                     <input type="hidden" name="user_id" value="PUT">
                     <input type="hidden" name="asset_id" value="#">
                     <input type="hidden" name="sessionf" value="#">
                     <!-- <input type="hidden" name="searchf" value="Donata"> -->
-               <!--      <button type="submit" class="editbtn">
-                      <i class="fa fa-edit"></i>
-                    </button> -->
-
-                  <button type="submit" class="btn btn-warning">
-  <i class="fa fa-edit"></i>
-</button>  
+                    <button type="submit" class="editbtn">
+                      <i class="fa fa-edit"></i> Edit
+                    </button>
                   </form>
 
-
- <a href="#" type="button" class="btn btn-danger btn-delete text-white" data-url="/award-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
-                    <i class="fa fa-trash"></i>
+                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/award-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
+                    <i class="fa fa-trash"></i> Delete
                   </a> 
-</div>
-
-
-
 
                 </td>
               </tr>

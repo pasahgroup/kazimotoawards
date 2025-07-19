@@ -26,6 +26,7 @@ class AwardController extends Controller
         $auth=auth::user();
        // dd($auth);
     $awards=award::get();
+    //dd($awards);
     return view('admin.awards.awards',compact('awards','auth'));
     }
 
@@ -50,7 +51,7 @@ $awards = implode(", ", $competes);
 //echo $cars_together;
 
  // dd($explode_id);
-//dd($competes);
+//dd($status);
 //dd($newLength);
 
 
@@ -78,7 +79,8 @@ $awards = implode(", ", $competes);
         'award_name'=>request('award_name'),
     ],[
         'price'=>$awards,     
-        'photo'=>$imageToStore,      
+        'photo'=>$imageToStore,  
+         'year'=>request('year'),    
        'status'=>request('status')
         ]);
 

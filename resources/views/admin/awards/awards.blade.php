@@ -276,6 +276,9 @@
     </div>
   </section>
 
+
+
+
   <section class="content">
           <!-- Confirmation Box -->
           <div id="confirmBox" role="alert" aria-live="assertive" aria-atomic="true">
@@ -295,6 +298,7 @@
                 <th>Price</th>
                <th>Photo</th>              
                 <th>Registra</th>
+                   <th>Year</th>
                  <th>status</th>
                 <th>Action</th>
               </tr>
@@ -308,6 +312,7 @@
                 
             <td><img src="{{ URL::asset('/storage/awards_photos/'.$data->photo) }}" alt="The Logo"></td>
                 <td>{{ $auth->name?? "nill" }}</td> 
+                 <td>{{ $data->year?? "nill" }}</td>
                  <td>{{ $data->status }}</td>
                 <td>                
                   <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
@@ -337,6 +342,17 @@
     </div>
   </section>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {

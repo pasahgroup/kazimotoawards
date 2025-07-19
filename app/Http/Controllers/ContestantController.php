@@ -56,6 +56,7 @@ class ContestantController extends Controller
   public function contestant()
     {
        $contestants = contestant::get();
+       
        //dd($contestants);
        $tailorMades = tailorMade::get();
        return view('admin.contestants.contestant',compact('contestants'));

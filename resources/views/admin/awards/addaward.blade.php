@@ -71,11 +71,9 @@ function removekid(div) {
   </div>
 
 
-  <div class="form-group row">
-             
+  <div class="form-group row">             
               <div class="col-md-6 col-sm-12">
             <div id="kids">
-
         <label>Competitor 1 prize:</label>
                 <input type="text" name="compete[]" id="compete[]" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
                 <input type="button" id="add_kid()" onclick="addkid()" value="+" />(limit 5) 
@@ -83,21 +81,27 @@ function removekid(div) {
 
          
   </div>
-
-            </div>
-          
+    </div>          
   </div>
 
  
 
   <div class="form-group row">   
-      <div class="col-md-6 col-sm-12">
+
+   <div class="col-md-6 col-sm-12">
         <label>Status</label>
          <select class="form-control" aria-label="Default select example" name="status" id="status">
   <option value="0"></option>
 <option value="Active">Active</option>
 <option value="Inactive">Inactive</option>
 </select>    
+  </div>
+
+      <div class="col-md-6 col-sm-12">
+        <label>Year</label>
+        <input type="number" class="form-control" name="year" value="{{ now()->year }}" min="2020">
+
+ 
   </div>
   </div>
 
@@ -106,7 +110,7 @@ function removekid(div) {
                  <div class="col-lg-6 col-md-12 col-sm-12">
                                     <label for="password_confirmation" :value="('Image')" />
                                     <div class="form-group">
-                                    <input type="file" name="photo[]" onChange="displayImage(this)" id="photo" accept="image/*" class="" style="display:block;">
+                                    <input type="file" name="photo[]" onChange="displayImage(this)" id="photo" accept="image/*" class="" style="display:block;" required>
 
                                 </div>
                                 </div>

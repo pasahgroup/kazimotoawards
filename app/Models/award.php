@@ -12,7 +12,8 @@ class award extends Model
         'award_name',
         'price', 
         'photo',
-        'status',
+        'year',
+         'status',
         'user_id'
     ];
 }
