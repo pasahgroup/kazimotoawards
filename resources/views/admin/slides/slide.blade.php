@@ -293,8 +293,7 @@
                 <th>Title</th>
                 <th>Photo</th>
                 <th>Description</th>
-               <th>Project name</th>
-               <th>Subproject name</th>
+               <th>Award name</th>
                 <th>Display</th>
                 <th>Status</th>
                 <th>Action</th>
@@ -307,8 +306,7 @@
                 <td>{{ $data->photo_title }}</td>
                  <td><img src="{{ URL::asset('/storage/slides/'.$data->photo) }}" alt="Slide Photo"></td>
                   <td>{{ $data->photo_description }}</td>
-                 <td>{{ $data->project_name }}</td>  
-                  <td>{{ $data->sub_project_name }}</td>   
+                 <td>{{ $data->award_name }}</td>   
                    <td>{{ $data->display }}</td>           
                 <td>{{ $data->status }}</td>
                 <td>

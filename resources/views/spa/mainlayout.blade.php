@@ -204,7 +204,7 @@
 
 
     <!-- js -->
-    <script src="../../assets/js/jquery-3.7.1.min.js"></script>
+   <!-- <script src="../../assets/js/jquery-3.7.1.min.js"></script> -->
     <script src="../../assets/js/modernizr.min.js"></script>
     <script src="../../assets/js/bootstrap.bundle.min.js"></script>
     <script src="../../assets/js/imagesloaded.pkgd.min.js"></script>
@@ -215,48 +215,51 @@
     <script src="../../assets/js/owl.carousel.min.js"></script>
     <script src="../../assets/js/counter-up.js"></script>
     <script src="../../assets/js/jquery-ui.min.js"></script>
-    <script src="../../assets/js/jquery.nice-select.min.js"></script>
+
+   <script src="../../assets/js/jquery.nice-select.min.js"></script>
     <script src="../../assets/js/countdown.min.js"></script>
     <script src="../../assets/js/wow.min.js"></script>
     <script src="../../assets/js/main.js"></script>
-     <script src="../../forms/js/main.js"></script>
+     <script src="../../forms/js/main.js"></script> 
 
 
-    <script src="../../sonamaster/js/jquery/jquery-2.2.4.min.js"></script>
+  <!-- <script src="../../sonamaster/js/jquery/jquery-2.2.4.min.js"></script>  -->
     <!-- Popper js -->
-    <script src="../../sonamaster/js/popper.min.js"></script>
+   <script src="../../sonamaster/js/popper.min.js"></script> 
     <!-- Bootstrap js -->
-    <script src="../../sonamaster/js/bootstrap.min.js"></script>
+  <script src="../../sonamaster/js/bootstrap.min.js"></script> 
     <!-- Plugins js -->
-    <script src="../../sonamaster/js/plugins.js"></script>
+  <script src="../../sonamaster/js/plugins.js"></script>
     <script src="../../sonamaster/js/classy-nav.min.js"></script>
-    <script src="../../sonamaster/js/jquery-ui.min.js"></script>
+    <script src="../../sonamaster/js/jquery-ui.min.js"></script> 
     <!-- Active js -->
     <script src="../../sonamaster/js/active.js"></script>
 
     <!-- Orinal libraries -->
 
-    <script src="../../sonamaster/js/jquery364.min.js"></script>
+     <!-- <script src="../../sonamaster/js/jquery364.min.js"></script> -->
     <script src="../../sonamaster/js/bootstrap.bundle.min.js"></script>
 
 
 
 
-     <script src="../../../assetstaxio/js/jquery-3.6.0.min.js"></script>
+   <!-- <script src="../../../assetstaxio/js/jquery-3.6.0.min.js"></script> -->
     <script src="../../../assetstaxio/js/modernizr.min.js"></script>
     <script src="../../../assetstaxio/js/bootstrap.bundle.min.js"></script>
     <script src="../../../assetstaxio/js/imagesloaded.pkgd.min.js"></script>
-    <script src="../../../assetstaxio/js/jquery.magnific-popup.min.js"></script>
+    <script src="../../../assetstaxio/js/jquery.magnific-popup.min.js"></script> 
+
     <script src="../../../assetstaxio/js/isotope.pkgd.min.js"></script>
     <script src="../../../assetstaxio/js/jquery.appear.min.js"></script>
     <script src="../../../assetstaxio/js/jquery.easing.min.js"></script>
-    <script src="../../../assetstaxio/js/owl.carousel.min.js"></script>
-    <script src="../../../assetstaxio/js/counter-up.js"></script>
+    <script src="../../../assetstaxio/js/owl.carousel.min.js"></script> 
+
+  <script src="../../../assetstaxio/js/counter-up.js"></script>
     <script src="../../../assetstaxio/js/jquery-ui.min.js"></script>
     <script src="../../../assetstaxio/js/jquery.timepicker.min.js"></script>
     <script src="../../../assetstaxio/js/jquery.nice-select.min.js"></script>
     <script src="../../../assetstaxio/js/wow.min.js"></script>
-    <script src="../../../assetstaxio/js/main.js"></script>
+    <script src="../../../assetstaxio/js/main.js"></script> 
 
 </body>
 

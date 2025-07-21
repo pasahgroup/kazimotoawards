@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\slide;
-use App\Models\subproject;
+use App\Models\award;
 use App\Models\project;
 
 
@@ -21,15 +21,13 @@ class SlidesController extends Controller
     public function index()
     {
 
-    $slides = DB::select("select s.*,c.project_name,b.sub_project_name from slides s,subprojects b,projects c where s.subproject_id=b.id and c.id=b.project_id");
+    $slides = DB::select("select s.*,a.award_name from slides s,awards a where a.id=s.award_id");
 
     // $slides = slide::join('slides','slides.subproject_id','subprojects.id')
     //  //->join('projects','projects.id','subprojects.subproject_id')
     //  //->select('slides.*','projects.project_name')
     //  ->where('slides.status','Active')
     //  ->get();
-    //dd($slides);
-
 
         return view('admin.slides.slide',compact('slides'));
     }
@@ -39,13 +37,13 @@ class SlidesController extends Controller
      */
     public function create()    {        
           $slides=slide::get();
-          $projects=project::where('status','Active')->get();
+          //$awards=award::where('status','Active')->get();
           //$subprojects=subproject::get();
 
-          $pprojects['data'] = project::orderby("project_name","asc")
+          $awards['data'] = award::orderby("project_name","asc")
               // ->select('id','name')
               ->get();
-        return view('admin.slides.addslide',compact('slides','projects','subprojects','pprojects'));
+        return view('admin.slides.addslide',compact('slides','awards','pprojects'));
     }
 
 
@@ -117,11 +115,12 @@ public function slides()
 
         public function show(project $project)
     {
-         $projects['data'] = project::orderby("project_name","asc")
-              ->select('id','project_name')
+         $awards['data'] = award::orderby("award_name","asc")
+              ->select('id','award_name')
               ->get();
 
-        return view('admin.slides.addslide',compact('projects'));
+ //dd($projects);
+        return view('admin.slides.addslide',compact('awards'));
     }
 
 

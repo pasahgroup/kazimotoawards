@@ -220,7 +220,7 @@
         <a href="#" class="dropdown-item">
           <!-- Message Start -->
           <div class="media">
-            <img src="{{ URL::asset('/storage/user/'.auth()->user()->photo) ?? '/dist/img/default-avatar.png' }}" alt="Avatar" class="img-size-50 mr-3 img-circle" style="object-fit: cover;">
+            <img src="#" alt="Avatar" class="img-size-50 mr-3 img-circle" style="object-fit: cover;">
             <div class="media-body">
               <h3 class="dropdown-item-title mb-1">
                 {{ auth()->check() ? auth()->user()->name : 'Guest' }}
@@ -240,7 +240,7 @@
     <!-- User Dropdown Menu -->
     <li class="nav-item dropdown ml-3">
       <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#" title="User Menu" aria-haspopup="true" aria-expanded="false" style="padding: 0 8px;">
-        <img src="{{ URL::asset('/storage/user/'.auth()->user()->photo) ?? '/dist/img/default-avatar.png' }}" class="img-circle elevation-2" alt="User Image" style="width:36px; height:36px; object-fit: cover; border: 2px solid #4f46e5; box-shadow: 0 2px 8px rgba(79,70,229,0.25);">
+        <img src="#" class="img-circle elevation-2" alt="User Image" style="width:36px; height:36px; object-fit: cover; border: 2px solid #4f46e5; box-shadow: 0 2px 8px rgba(79,70,229,0.25);">
         <span class="d-none d-lg-inline-block ml-2 font-weight-bold text-dark" style="font-size: 1rem;">
           {{ auth()->check() ? auth()->user()->name : 'Guest' }}
         </span>
@@ -248,11 +248,11 @@
       </a>
       <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right shadow-lg" style="min-width: 280px;">
         <a href="#" class="dropdown-item d-flex align-items-center">
-          <img src="{{ URL::asset('/storage/user/'.auth()->user()->photo) ?? '/dist/img/default-avatar.png' }}" alt="Profile" class="img-size-50 mr-3 img-circle" style="object-fit: cover;">
+          <img src="#" alt="Profile" class="img-size-50 mr-3 img-circle" style="object-fit: cover;">
           <div>
-            <h3 class="dropdown-item-title mb-1">{{ auth()->check() ? auth()->user()->name : 'Guest' }}</h3>
-            <p class="text-sm mb-0">{{ auth()->user()->email }}</p>
-            <small class="text-muted"><i class="far fa-user mr-1"></i> {{ auth()->user()->role }}</small>
+            <h3 class="dropdown-item-title mb-1">#</h3>
+            <p class="text-sm mb-0">#</p>
+            <small class="text-muted"><i class="far fa-user mr-1"></i>#</small>
           </div>
         </a>
         <div class="dropdown-divider"></div>
@@ -299,7 +299,7 @@
           </a>
         </li>
 
-        @if(Auth::user()->role == 'Admin')
+    
         <li class="nav-item">
           <a href="/users" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
@@ -308,8 +308,7 @@
               <!-- <span class="right badge badge-danger">New</span> -->
             </p>
           </a>
-        </li>
-        @endif
+ 
 
         <li class="nav-item">
           <a href="/asset" class="nav-link">

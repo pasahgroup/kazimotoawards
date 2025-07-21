@@ -181,7 +181,7 @@ Route::get('/test', [AssetController::class, 'test'])->name('test');
  Route::resource('/home', websiteController::class);
 
 Route::get('/ff', function () {
-    return view('welcome');
+    return view('table1');
 });
 
 

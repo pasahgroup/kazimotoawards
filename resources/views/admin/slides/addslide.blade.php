@@ -178,23 +178,14 @@
 
  <div class="form-group row">                                          
               <div class="col-md-6 col-sm-6">   
-              <label>Project name</label>
-              <select class="form-control" name="project_id" id="project_id">
+              <label>Award name</label>
+              <select class="form-control" name="award_id" id="award_id">
                 <option></option>
-  @foreach($projects['data'] as $project)
-                <option value="{{$project->id}}">{{$project->project_name}}</option>
+  @foreach($awards['data'] as $award)
+                <option value="{{$award->id}}">{{$award->award_name}}</option>
             @endforeach    
               </select>
-          </div>
-                                                
-    
-              <div class="col-md-6 col-sm-6">   
-              <label>Sub project name</label>
-
-              <select id='subproject_id' name='subproject_id' class="form-control">
-        <option value='0'>-- Select subproject name --</option>
-    </select>
-          </div>
+          </div>                   
             </div>
 
  <div class="form-group row">
