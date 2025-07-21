@@ -10,7 +10,7 @@
     <meta name="keywords" content="">
 
     <!-- title -->
-    <title>Goemart - Multipurpose eCommerce HTML5 Template</title>
+    <title>TMYA</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
@@ -178,7 +178,7 @@
                         </div>
                         <div class="col-12 col-lg-4 align-self-center">
                             <p class="copyright-text">
-                                &copy; Copyright <span id="date"></span> <a href="#"> Goemart </a> All Rights Reserved.
+                                &copy; Copyright <span id="date"></span> <a href="#"> pasah group </a> All Rights Reserved.
                             </p>
                         </div>
                         <div class="col-12 col-lg-4 align-self-center">

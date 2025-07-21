@@ -92,13 +92,10 @@ public function slides()
             }
  
 
-//dd(request('project_id'));
-
          $slides = Slide::UpdateOrCreate([
         'photo_title'=>request('photo_title'),
         'photo_description'=>request('photo_description'),      
-        'project_id'=>request('project_id'),
-        'subproject_id'=>request('subproject_id'),
+        'award_id'=>request('award_id'),
            'photo'=>$imageToStore,
             'display'=>request('display'),
         'status'=>request('status'), 

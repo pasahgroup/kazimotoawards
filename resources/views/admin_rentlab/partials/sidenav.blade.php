@@ -21,7 +21,7 @@
                         <ul>
 
                              <li class="sidebar-menu-item #">
-                    <a href="#" class="nav-link ">
+                    <a href="/dashboard" class="nav-link ">
                         <i class="menu-icon las la-feather"></i>
                         <span class="menu-title">@lang('Main Dashboard')</span>
                     </a>
@@ -48,19 +48,30 @@
                                 </a>
                             </li>
 
-                          
-                          
-                              <li class="sidebar-menu-item #">
-                                <a href="#" class="nav-link">
+                        </ul>
+                    </div>
+                </li> 
+
+
+
+
+                <li class="sidebar-menu-item sidebar-dropdown">
+                    <a href="javascript:void(0)" class="#">
+                        <i class="las la-trophy"></i>
+                        <span class="menu-title">@lang('Slides') </span>
+                    </a>
+                    <div class="sidebar-submenu # ">
+                        <ul>
+                            <li class="sidebar-menu-item #">
+                                <a href="/slides" class="nav-link">
                                     <i class="menu-icon las la-dot-circle"></i>
-                                    <span class="menu-title">@lang('Offer')</span>
+                                    <span class="menu-title">@lang('Slides')</span>
                                 </a>
                             </li>
 
                         </ul>
                     </div>
-                </li> 
-
+                </li>
 
 
                 <li class="sidebar-menu-item sidebar-dropdown">
@@ -103,7 +114,7 @@
                                     <span class="menu-title">@lang('Donors')</span>
                                 </a>
                             </li>
-
+                          
                         </ul>
                     </div>
                 </li>               

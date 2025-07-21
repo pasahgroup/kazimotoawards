@@ -1,66 +1,6 @@
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <!-- Bootstrap 5 CSS -->
-  <link rel="stylesheet" href="../../../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../../dist/css/adminlte.min.css">
+@extends('layouts.login')
+@section('contents')
 
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: #f8fafc; /* Light background from your layout */
-    }
-    .login-container {
-      margin-top: 5rem;
-    }
-    .card {
-      border: none;
-      border-radius: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .card-header {
-      background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%); /* Blue gradient */
-      color: #fff;
-      font-weight: bold;
-      text-align: center;
-      border-bottom: none;
-      border-radius: 1rem 1rem 0 0;
-      padding: 1.5rem 1rem;
-    }
-    .form-label {
-      font-weight: 500;
-    }
-    .btn-primary {
-      background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%); /* Blue gradient */
-      border: none;
-      border-radius: 2rem;
-      padding: 0.75rem 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      transition: background-color 0.3s;
-    }
-    .btn-primary:hover {
-      background: linear-gradient(90deg, #3730a3 0%, #0891b2 100%); /* Darker blue gradient on hover */
-    }
-    .text-danger {
-      color: #dc3545 !important;
-    }
-    .logo {
-      max-width: 300px; /* Adjust size as needed */
-      margin-bottom: 1rem;
-    }
-  </style>
-</head>
-<body>
   <main class="login-form">
     <div class="container login-container">
       <div class="row justify-content-center">
@@ -137,10 +77,7 @@
     </div>
   </main>
 
-  <!-- Bootstrap 5 JS (optional) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+@endsection
 
 
 

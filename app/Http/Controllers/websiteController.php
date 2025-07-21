@@ -33,7 +33,7 @@ class WebsiteController extends Controller
         ->get();
             $awards=award::where('status','Active')
         ->get();
-        //dd($awards);
+       // dd($slides);
 
         return view('website.home.home',compact('donors','slides','awards'));
     }

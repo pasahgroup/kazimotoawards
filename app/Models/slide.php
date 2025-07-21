@@ -13,7 +13,7 @@ class slide extends Model
       'photo_title', 
       'photo_description',        
       'photo',
-       'project_id',  
+       'award_id',  
        'subproject_id', 
        'display',
         'status',

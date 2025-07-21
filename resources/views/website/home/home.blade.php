@@ -6,102 +6,50 @@
         <div class="hero-section3 hs3-2">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-xl-9 offset-xl-3">
+                    <div class="col-lg-12 col-xl-12 offset-xl-1">
                         <div class="hero-slider owl-carousel owl-theme">
-                            <div class="hero-single">
-                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-5.jpg)"></div>
+                          
+
+                            @foreach($slides as $slide)
+                            <div class="hero-single">                               
+                                <div class="hero-single-bg" style="background-image: url({{ URL::asset('/storage/slides/'.$slide->photo) }})"></div>
                                 <div class="container">
                                     <div class="row align-items-center">
                                         <div class="col-md-12 col-lg-7">
-                                            <div class="hero-content">
-                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
-                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                                    For Your First <br> <span>Goemart</span> Shopping
-                                                </h1>
+                                            <div class="hero-content">                                               
+                                                <h5 class="hero-title" data-animation="fadeInRight" data-delay=".50s">                                                <span> {{$slide->photo_title}}</span> Shopping
+                                                </h5>
                                                 <p data-animation="fadeInLeft" data-delay=".75s">
-                                                    There are many variations of passages orem psum available but the majority have
-                                                    suffered are going to use some form by injected humour.
+                                                    {{$slide->photo_description}}
                                                 </p>
                                                 <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
                                                     <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
                                                 </div>
+
+
+
+
+
+
+
+
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div>                       
                             </div>
-                            <div class="hero-single">
-                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-6.jpg)"></div>
-                                <div class="container">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-12 col-lg-7">
-                                            <div class="hero-content">
-                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
-                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                                    For Your First <br> <span>Goemart</span> Shopping
-                                                </h1>
-                                                <p data-animation="fadeInLeft" data-delay=".75s">
-                                                    There are many variations of passages orem psum available but the majority have
-                                                    suffered are going to use some form by injected humour.
-                                                </p>
-                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hero-single">
-                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-7.jpg)"></div>
-                                <div class="container">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-12 col-lg-7">
-                                            <div class="hero-content">
-                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
-                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                                    For Your First <br> <span>Goemart</span> Shopping
-                                                </h1>
-                                                <p data-animation="fadeInLeft" data-delay=".75s">
-                                                    There are many variations of passages orem psum available but the majority have
-                                                    suffered are going to use some form by injected humour.
-                                                </p>
-                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="hero-single">
-                                <div class="hero-single-bg" style="background-image: url(assets/img/slider/slider-8.jpg)"></div>
-                                <div class="container">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-12 col-lg-7">
-                                            <div class="hero-content">
-                                                <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
-                                                <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
-                                                    For Your First <br> <span>Goemart</span> Shopping2
-                                                </h1>
-                                                <p data-animation="fadeInLeft" data-delay=".75s">
-                                                    There are many variations of passages orem psum available but the majority have
-                                                    suffered are going to use some form by injected humour.
-                                                </p>
-                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                             @endforeach
+                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- hero slider end -->
+
+
+
+
 
 
         <!-- feature area -->
@@ -197,7 +145,7 @@
                                 <div class="product-price">
                                     <span>$100.00</span>
                                 </div>
-                                <button type="button" class="product-cart-btn">Add To Cart</button>
+                                <button type="button" class="product-cart-btn">Add To Cart2</button>
                             </div>
                         </div>
                     </div>
