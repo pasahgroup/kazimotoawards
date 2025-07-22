@@ -57,7 +57,7 @@
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
-                        <i class="las la-trophy"></i>
+                        <i class="las la-align-justify"></i>
                         <span class="menu-title">@lang('Slides') </span>
                     </a>
                     <div class="sidebar-submenu # ">
