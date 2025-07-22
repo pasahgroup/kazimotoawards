@@ -3670,7 +3670,7 @@ div.dataTables_wrapper div.dataTables_filter label {
 
 div.dataTables_wrapper .dt-buttons button {
     border-radius: 3px !important;
-    margin: 0 10px;
+    margin: 0 4px;
     background-color: transparent;
     border: 1px solid #d8d8d8;
     border-radius: 5px !important;
@@ -3783,7 +3783,7 @@ table.dataTable thead tr th {
     -o-border-radius: 5px !important;
     width: auto;
     height: auto;
-    padding: 8px 15px;
+    padding: 1px 4px;
 }
 
 .dataTables_paginate .pagination li a:focus {
@@ -5183,7 +5183,9 @@ th.w-85 {
 .navbar-wrapper {
     position: relative;
     background: #ffffff;
-    padding: 15px 30px;
+    padding: 1px 20px;
+    padding-top:0px;
+
     margin-left: 250px;
     border-bottom: 1px solid #dee4ec;
     /*box-shadow: 5px 7px 26px -5px #cdd4e7;*/

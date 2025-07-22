@@ -1,4 +1,4 @@
-@extends('spa.mainlayout')
+@extends('layouts.master')
 @section('contents')
 
   <style type="text/css">
@@ -6,29 +6,6 @@
       color: red;
     }
   </style>
-
-<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<script src="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></script>
-
- <!-- Font Awesome -->
-  <link rel="stylesheet" href="../../../../plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="../../../dist/css/adminlte.min.css">
-
-  <!-- DataTables -->
-  <link rel="stylesheet" href="../../../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="../../../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <script src="../../../../assets/corporate/scripts/jquery351.min.js" type="text/javascript"></script>
-  <!-- Theme style -->
-  <!-- summernote -->
-
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
-  <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 
 
 
@@ -119,65 +96,4 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
-
-       <!-- <script src="../assetf/js/jquery/jquery-2.2.4.min.js"></script> -->
-<!-- jQuery -->
-<script src="../../../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="../../../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../../../dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../../../dist/js/demo.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="../../../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="../../../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../../../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="../../../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../../../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="../../../../plugins/jszip/jszip.min.js"></script>
-<script src="../../../../plugins/pdfmake/pdfmake.min.js"></script>
-<script src="../../../../plugins/pdfmake/vfs_fonts.js"></script>
-<script src="../../../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="../../../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../../../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": true,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
-  <!-- Summernote -->
-<script src="../../plugins/summernote/summernote-bs4.min.js"></script>
-  <script>
-    $(function () {
-      // Summernote
-      $('#summernote').summernote()
-    })
-    $(function () {
-      // Summernote
-      $('#summernote1').summernote()
-    })
-    $(function () {
-      // Summernote
-      $('#summernote2').summernote()
-    })
-    $(function () {
-      // Summernote
-      $('#summernote3').summernote()
-    })
-  </script>
   @endsection

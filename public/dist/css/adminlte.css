@@ -12449,7 +12449,7 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .content-header {
-  padding: 15px 0.5rem;
+  padding: 1px 0.2rem;
 }
 
 .text-sm .content-header {

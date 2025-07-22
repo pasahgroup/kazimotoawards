@@ -343,17 +343,6 @@
   </section>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const confirmBox = document.getElementById('confirmBox');
