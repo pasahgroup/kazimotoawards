@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\contacts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use DB;
 
 class ContactsController extends Controller
 {
@@ -156,8 +158,18 @@ $contacts=contacts::get();
      * @param  \App\Models\contacts  $contacts
      * @return \Illuminate\Http\Response
      */
-    public function destroy(contacts $contacts)
+    public function destroy($id)
     {
-        //
+          $delete = contacts::where('id',$id)->first();
+      //dd($delete);
+        if($delete->delete()){
+             DB::statement("delete from contacts where id=$id");
+             Storage::delete('/public/logos/'.$delete->logo);
+            
+            return redirect()->route('contacts.index')->with('info','The Contact deleted successfully');
+        }
+        else{
+            return redirect()->route('contacts.index')->with('error','The Contact not exists');
+        }
     }
 }

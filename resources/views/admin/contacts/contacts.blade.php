@@ -330,7 +330,7 @@
                     </button>
                   </form>
 
-                   <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/bank-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
+                   <a href="/contact-destroy/{{$data->id}}" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/contact-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 

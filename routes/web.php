@@ -443,7 +443,7 @@ Route::get('/activeGroupTrip', [TourEquiryFormController::class, 'activeGroupTri
 //Route::get('/contacts', [ContactsController::class, 'contacts'])->name('contacts');
 Route::resource('/contacts', ContactsController::class);
 Route::get('/register_contact', [ContactsController::class,'show'])->name('register_contact');
-
+Route::get('/contact-destroy/{x}', [ContactsController::class, 'destroy'])->name('contact-destroy');
 
 //Program controller
 Route::get('/editProgram/{x}', [programController::class, 'editProgram'])->name('editProgram');
