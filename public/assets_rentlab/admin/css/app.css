@@ -3670,7 +3670,7 @@ div.dataTables_wrapper div.dataTables_filter label {
 
 div.dataTables_wrapper .dt-buttons button {
     border-radius: 3px !important;
-    margin: 0 4px;
+    margin: 0 3px;
     background-color: transparent;
     border: 1px solid #d8d8d8;
     border-radius: 5px !important;
