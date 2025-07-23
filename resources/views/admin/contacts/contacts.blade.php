@@ -257,28 +257,27 @@
 </div>
 
 <div class="content-wrapper">
-  <section class="content-header">
+
+
+<section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2 align-items-center">
         <div class="col-sm-10">
-          <h4 class="asset">Award list</h4>
+          <h4 class="asset">Contacts List</h4>
         </div>
 
-        <div class="col-sm-2 d-flex justify-content-end gap-3">     
+        <div class="col-sm-2 d-flex justify-content-end gap-3">    
        
-          <a href="{{ route('awards.create') }}" class="btn btn-gradient">
-            <i class="fas fa-plus"></i>Award
-          </a> 
-
+          <a href="{{ route('register_contact') }}" class="btn btn-gradient">
+            <i class="fas fa-plus"></i>Contact
+          </a>    
       
         </div>
       </div>
     </div>
   </section>
 
-
-
-
+ 
   <section class="content">
           <!-- Confirmation Box -->
           <div id="confirmBox" role="alert" aria-live="assertive" aria-atomic="true">
@@ -294,26 +293,31 @@
             <thead>
               <tr>
                 <th>ID.</th>
-                <th>Award name</th>
-                <th>Price</th>
-               <th>Photo</th>              
-                <th>Registra</th>
-                   <th>Year</th>
+                <th>Phon1</th>
+                <th>Phon2</th>
+              <th>Email1</th>       
+               <th>Email2</th>
+              <th>Logo</th>
+              <th>Address</th>
                  <th>status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($awards as $data)
+
+              @foreach ($contacts as $data)
               <tr>
                 <td>{{ $data->id }}</td>
-                <td>{{ $data->award_name }}</td>
-                 <td>{{ $data->price }}</td> 
-                
-            <td><img src="{{ URL::asset('/storage/awards_photos/'.$data->photo) }}" alt="The Logo"></td>
-                <td>{{ $auth->name?? "nill" }}</td> 
-                 <td>{{ $data->year?? "nill" }}</td>
+                <td>{{ $data->phone1 }}</td>                               
+           
+             <td>{{ $data->phone2 }}</td>
+                <td>{{ $data->email1}}</td> 
+                 <td>{{ $data->email2 }}</td>
+                 
+                  <td><img src="{{ URL::asset('/storage/logos/'.$data->logo) }}" alt="The Logo"></td>
+                  <td>{{ $data->address }}</td>
                  <td>{{ $data->status }}</td>
+              
                 <td>                
                   <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
                     @csrf
@@ -326,7 +330,7 @@
                     </button>
                   </form>
 
-                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/award-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
+                   <a href="/" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/bank-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 

@@ -442,6 +442,8 @@ Route::get('/customers', [TourEquiryFormController::class, 'customers'])->name('
 Route::get('/activeGroupTrip', [TourEquiryFormController::class, 'activeGroupTrip'])->name('activeGroupTrip');
 //Route::get('/contacts', [ContactsController::class, 'contacts'])->name('contacts');
 Route::resource('/contacts', ContactsController::class);
+Route::get('/register_contact', [ContactsController::class,'show'])->name('register_contact');
+
 
 //Program controller
 Route::get('/editProgram/{x}', [programController::class, 'editProgram'])->name('editProgram');

@@ -257,9 +257,7 @@
 </div>
 
 <div class="content-wrapper">
-
-
-<section class="content-header">
+  <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2 align-items-center">
         <div class="col-sm-10">
@@ -277,7 +275,6 @@
     </div>
   </section>
 
- 
   <section class="content">
           <!-- Confirmation Box -->
           <div id="confirmBox" role="alert" aria-live="assertive" aria-atomic="true">
@@ -292,48 +289,46 @@
           <table id="example1" class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>ID.</th>
-                <th>Photo title</th>
-                <th>Slide Photo</th>
-               <th>Photo Description</th>              
-                <th>Award name</th>
-                   <th>Display</th>
-                 <th>status</th>
+                <th>No.</th>
+                <th>Title</th>
+                <th>Photo</th>
+                <th>Description</th>
+               <th>Award name</th>
+                <th>Display</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
-
               @foreach ($slides as $data)
               <tr>
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->photo_title }}</td>
-                                
-            <td><img src="{{ URL::asset('/storage/slides/'.$data->photo) }}" alt="The Logo"></td>
-             <td>{{ $data->photo_description }}</td>
-                <td>{{ $data->award_name?? "nill" }}</td> 
-                 <td>{{ $data->display?? "nill" }}</td>
-                 <td>{{ $data->status }}</td>
-                <td>                
-                  <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
+                 <td><img src="{{ URL::asset('/storage/slides/'.$data->photo) }}" alt="Slide Photo"></td>
+                  <td>{{ $data->photo_description }}</td>
+                 <td>{{ $data->award_name }}</td>   
+                   <td>{{ $data->display }}</td>           
+                <td>{{ $data->status }}</td>
+                <td>
+                
+                
+                  <form method="GET" action="{{ route('edit_slide') }}" class="d-inline">
                     @csrf
                     <input type="hidden" name="user_id" value="PUT">
                     <input type="hidden" name="asset_id" value="#">
                     <input type="hidden" name="sessionf" value="#">
-                    <!-- <input type="hidden" name="searchf" value="Donata"> -->
+                    <input type="hidden" name="edit_slide" id="edit_slide"  value="{{$data->id}}">
+                    
                     <button type="submit" class="editbtn">
                       <i class="fa fa-edit"></i> Edit
                     </button>
                   </form>
 
-                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/bank-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
+                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/slide-destroy/{{$data->id}}" data-message="Are you sure you want to delete this slide?">
                     <i class="fa fa-trash"></i> Delete
-                  </a> 
-
-                   <a href="/" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/bank-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
-                    <i class="fa fa-trash"></i> Delete
-                  </a> 
-
+                  </a>
+                 
+             
                 </td>
               </tr>
               @endforeach

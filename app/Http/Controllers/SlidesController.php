@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\slide;
 use App\Models\award;
 use App\Models\project;
+use App\Models\bank;
 
 
 use App\Http\Requests\StoreslidesRequest;
@@ -22,14 +23,14 @@ class SlidesController extends Controller
     {
 
     $slides = DB::select("select s.*,a.award_name from slides s,awards a where a.id=s.award_id");
-
+ $banks=bank::get();
     // $slides = slide::join('slides','slides.subproject_id','subprojects.id')
     //  //->join('projects','projects.id','subprojects.subproject_id')
     //  //->select('slides.*','projects.project_name')
     //  ->where('slides.status','Active')
     //  ->get();
-
-        return view('admin.slides.slide',compact('slides'));
+//dd($slides);
+        return view('admin.slides.slide',compact('slides','banks'));
     }
 
     /**

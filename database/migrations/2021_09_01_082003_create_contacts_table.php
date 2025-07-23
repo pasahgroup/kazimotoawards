@@ -15,11 +15,12 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {           
             $table->bigIncrements('id');
-            $table->string('full_name')->nullable();
-            $table->string('subject')->nullable();
-            $table->string('comment')->nullable();
-            $table->string('phone')->nullable();
-             $table->string('email')->nullable();
+            $table->string('phone1')->nullable();
+            $table->string('phone2')->nullable();
+             $table->string('email1')->nullable();
+             $table->string('email2')->nullable();
+                 $table->string('logo',32)->nullable();
+                   $table->string('address',164)->nullable();
              $table->string('status')->default('Active');
             $table->timestamps();
         });

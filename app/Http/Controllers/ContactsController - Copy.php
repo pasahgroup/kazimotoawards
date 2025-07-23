@@ -14,10 +14,10 @@ class ContactsController extends Controller
      */
     public function index()
     {
-     $contacts=contacts::get();     
+     $contacts=contacts::where('status','Active')
+     ->get();     
      $status=contacts::distinct()->get(['status']);
-     //dd('ddd');
-     return view('admin.contacts.contacts',compact('contacts','status'));
+     return view('admins.contacts.contactsComment',compact('contacts','status'));
     }
 
     /**
@@ -38,46 +38,14 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {      
-        $contacts = contacts::UpdateOrCreate([
-        'phone1'=>request('phone1'),
-        'phone2'=>request('phone2'),
-         'email1'=>request('email1'),
-        'email2'=>request('email2'),
-
-        'address'=>request('address'),
-        'status'=>request('status')        
+        $contacts = contacts::create([
+        'full_name'=>request('full_name'),
+        'subject'=>request('subject'),
+        'comment'=>request('comment'),
+        'phone'=>request('phone'), 
+        'email'=>request('email')        
         ]);
-
-
- if(request('logo_photo')){
-            $attach = request('logo_photo');
-            foreach($attach as $attached){
-
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/logos/', $imageToStore);
-
-
-  $contestant_fileupdate = contacts::where('id',$contacts->id)
-             ->update([
-               'logo'=>$imageToStore
-        ]);       
-    }
-}
-
-
-
-
-
-
-          return redirect()->route('contacts.index')->with('success','Tour Summary Cost created successful');
+          return redirect()->route('contact')->with('success','Tour Summary Cost created successful');
     }
 
 
@@ -87,7 +55,7 @@ class ContactsController extends Controller
      * @param  \App\Models\contacts  $contacts
      * @return \Illuminate\Http\Response
      */
-    public function showx(contacts $contacts,$id)
+    public function show(contacts $contacts,$id)
     {
       
  $status=contacts::where('id',$id)
@@ -108,24 +76,6 @@ $status="Active";
               ]);
 return redirect()->route('contacts.index')->with('success','Successful updated!');
     }
-
-
-
-
-
-        public function show(contacts $project)
-    {
-         // $awards['data'] = contacts::orderby("award_name","asc")
-         //      ->select('id','award_name')
-         //      ->get();
-$contacts=contacts::get();
- //dd($contacts);
-        return view('admin.contacts.addcontact',compact('contacts'));
-    }
-
-
-
-
 
     /**
      * Show the form for editing the specified resource.

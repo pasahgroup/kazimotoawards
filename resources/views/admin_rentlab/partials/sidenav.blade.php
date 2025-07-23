@@ -106,6 +106,12 @@
                                 </a>
                             </li>
 
+<li class="sidebar-menu-item #">
+                                <a href="/contacts" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('Contacts')</span>
+                                </a>
+                            </li>
                           
                           
                               <li class="sidebar-menu-item #">
