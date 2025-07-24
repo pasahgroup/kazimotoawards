@@ -149,6 +149,7 @@ $contacts=contacts::get();
         public function update(Request $request,$id)
     {
      
+   
       $visionUpdate = contacts::where('id',$id)
              ->update([           
             'phone1'=>request('phone1'),
