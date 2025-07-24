@@ -1,104 +1,6 @@
 @extends('layouts.master')
 @section('contents')
 
-<style>
-  body {
-    font-family: "Calibri Light", Calibri, sans-serif;
-    background-color: #f8f9fa;
-  }
-
- .form-container {
-    max-width: 950px;
-    margin: 1rem auto;
-    background-color: #fff;
-    padding: 2rem 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  h3 {
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: #4f46e5;
-    text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
-  }
-
-  label {
-    font-weight: 500;
-    color: #333;
-    font-size: 13px;
-  }
-
-  .form-control {
-    border: 1px solid #ced4da;
-    border-radius: 0.75rem;
-    /*font-size: 15px;
-    padding: 0.75rem;*/
-    font-family: "Calibri Light", Calibri, sans-serif;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .form-control:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
-  }
-
-  .form-group {
-    margin-bottom: 5px;
-  }
-
-  .btn-gradient {
-    background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
-    border: none;
-    padding: 0.1rem 1.2rem;
-    border-radius: 2rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
-    font-family: "Calibri Light", Calibri, sans-serif;
-    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .btn-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
-    background-color: #5b69ff;
-  }
-
-  .btn-previous {
-    background-color: #6c757d;
-    border: none;
-    padding: 0.4rem 1.5rem;
-    border-radius: 2rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: "Calibri Light", Calibri, sans-serif;
-  }
-
-  .btn-previous:hover {
-    background-color: #5a6268;
-  }
-
-  .input-error {
-    border-color: #dc3545 !important;
-    background-color: #fff4f4;
-  }
-
-  /* Hide all fieldsets except the first */
-  fieldset {
-    display: none;
-  }
-
-  fieldset.active {
-    display: block;
-  }
-</style>
-
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
 
@@ -134,28 +36,57 @@
 
 <div class="form-container">
     <div class="col-md-12">
-      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.update',$slides->id) }}" enctype="multipart/form-data">
+    <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('contacts.update',$contact_first->id) }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>SLIDE REGISTRATION FORM</h3>
-<input type="hidden" name="_method" value="PUT">
+        <h3><i class="fa fa-calendar-check-o"></i>Contact Editing Form</h3>
         <fieldset class="active">
-            <div class="form-group row">        
-           <div class="col-md-12 col-sm-12">
-        <label>Photo title</label>
-        <input type="text" name="photo_title" id="photo_title" class="form-control" value="{{$slides->photo_title}}"  maxlength="150" required>
-         
+    <input type="hidden" name="_method" value="PUT">
+ <div class="form-group row">
+              <div class="col-md-6 col-sm-12">   
+              <label>Phone1</label>
+               <input type="text" name="phone1" id="phone1" class="form-control" value="{{$contact_first->phone1}}">
+          </div>
+
+           <div class="col-md-6 col-sm-12">   
+              <label>Phone2</label>
+               <input type="text" name="phone2" id="phone2" class="form-control" value="{{$contact_first->phone2}}">
+          </div>
+            </div>
+
+
+
+ <div class="form-group row">
+              <div class="col-md-6 col-sm-12">   
+              <label>Email1</label>
+               <input type="email" name="email1" id="email1" class="form-control" value="{{$contact_first->email1}}">
+          </div>
+
+          <div class="col-md-6 col-sm-12">   
+              <label>Email2</label>
+               <input type="email" name="email2" id="email2" class="form-control" value="{{$contact_first->email2}}">
+          </div>
+            </div>
+
+
+
+          
+ <div class="form-group row">
+      <div class="col-md-12 col-sm-12">
+        <label>Address</label>
+            <textarea cols="30" rows="3" name="address" class="form-control" id="address" placeholder="address" maxlength="1200" value="{{$contact_first->address}}">{{$contact_first->address}}</textarea>
   </div>
-   </div>
+  </div>
+
 
 
       <div class="form-group row">
             <div class="col-md-12 col-sm-12">
-              <label>Slide Photo</label>
+              <label>Logo</label>
             </div>
                  <div class="col-lg-4 col-md-12 col-sm-12">
                                     <label for="password_confirmation" :value="('Image')" />
                                     <div class="form-group">
-                                    <input type="file" name="slide_photo[]" onChange="displayImage(this)" id="slide_photo" accept="image/*" class="" style="display:block;">
+                                    <input type="file" name="logo_photo[]" onChange="displayImage(this)" id="logo_photo" accept="image/*" class="" style="display:block;">
 
                                 </div>
                                 </div>
@@ -163,73 +94,28 @@
             <span class="img-div">
               <div class="text-center img-placeholder"  onClick="triggerClick()">
               </div>
-                <img src="{{ URL::asset('/storage/slides/'.$slides->photo) }}" onClick="triggerClick()" id="profileDisplay">
+              <img src="{{ URL::asset('/storage/logos/'.$contact_first->logo) }}" onClick="triggerClick()" id="profileDisplay">
             </span>
             </div>               
   </div>
 
 
-          
+
+
  <div class="form-group row">
-      <div class="col-md-12 col-sm-12">
-        <label>Sub project Description</label>
-            <textarea cols="30" rows="4" name="photo_description" class="form-control" id="photo_description" placeholder="photo description" maxlength="1200" required>{{$slides->photo_description}}</textarea>
-  </div>
-  </div>
-
- <div class="form-group row">                                          
-              <div class="col-md-6 col-sm-6">   
-              <label>Project name</label>
-              <select class="form-control" name="project_id" id="project_id">
-                   <option selected value="{{$project_first->id?? 0}}">{{$project_first->project_name?? ""}}</option>
-               <option value="0"></option>
-  @foreach($projects['data'] as $project)
-                <option value="{{$project->id}}">{{$project->project_name}}</option>
-            @endforeach    
-              </select>
-          </div>
-                                                
-    
-              <div class="col-md-6 col-sm-6">   
-              <label>Sub project name</label>
-              <select id='subproject_id' name='subproject_id' class="form-control">
-                 <option  selected value="{{$subproject_first->id?? 0}}">{{$subproject_first->sub_project_name ?? ""}}</option>
-
-                 <option value="0"></option>
-        <option value='0'>-- Select subproject name --</option>
-        @foreach($subprojects as $subproject)
-         <option value="{{$subproject->id}}">{{$subproject->sub_project_name}}</option>
-        @endforeach
-    </select>
-          </div>
-            </div>
-
-    <div class="form-group row">
-              <div class="col-md-6 col-sm-12">   
-              <label>Display</label>
-              <select class="form-control" name="display" id="display">
-                 <option>{{$slides->display}}</option>
-
-                <option></option>
-                <option>Blog</option>
-                  <option>Footer</option>
-                <option>Slide</option>
-              </select>
-          </div>
-
-           <div class="col-md-6 col-sm-12">   
+                    <div class="col-md-6 col-sm-12">   
               <label>Status</label>
               <select class="form-control" name="status" id="status">
-                <option>{{$slides->status}}</option>
+                 <option>{{$contact_first->status}}</option>
                 <option></option>
                 <option>Active</option>
                 <option>Inactive</option>
               </select>
           </div>
             </div>
-<hr>
+
           <div class="d-flex justify-content-between mt-3">
-             <a href="/slides" role="button" class="btn-previous">Back</a>
+             <a href="/contacts" role="button" class="btn-previous">Cancel</a>
             <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
@@ -250,7 +136,7 @@
 
              // Empty the dropdown
              $('#subproject_id').find('option').not(':first').remove();
-//alert(id);
+
              // AJAX request
              $.ajax({
                  url: 'getSlides/'+id,
@@ -263,7 +149,6 @@
                           len = response['data'].length;
                      }
 
-//alert(len);
                      if(len > 0){
                           // Read data and create <option >
                           for(var i=0; i<len; i++){
@@ -410,11 +295,13 @@
 
 
      $(document).ready(function(){
+
         // Department Change
         $('#sel_emp').change(function(){
 
              // Department id
              var id = $(this).val();
+
 
              // Empty the dropdown
              $('#sel_emp2').find('option').not(':first').remove();
@@ -430,6 +317,8 @@
                      if(response['data'] != null){
                           len = response['data'].length;
                      }
+
+
 
                      if(len > 0){
                           // Read data and create <option >

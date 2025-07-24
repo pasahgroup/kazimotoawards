@@ -117,9 +117,6 @@ return redirect()->route('contacts.index')->with('success','Successful updated!'
 
         public function show(contacts $project)
     {
-         // $awards['data'] = contacts::orderby("award_name","asc")
-         //      ->select('id','award_name')
-         //      ->get();
 $contacts=contacts::get();
  //dd($contacts);
         return view('admin.contacts.addcontact',compact('contacts'));
@@ -135,9 +132,11 @@ $contacts=contacts::get();
      * @param  \App\Models\contacts  $contacts
      * @return \Illuminate\Http\Response
      */
-    public function edit(contacts $contacts)
+     public function edit(Request $request,$id)
     {
-        //
+        $contact_first=contacts::where('id',$id)
+         ->first();
+     return view('admin.contacts.editcontacts',compact('contact_first'));
     }
 
     /**
@@ -147,10 +146,57 @@ $contacts=contacts::get();
      * @param  \App\Models\contacts  $contacts
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, contacts $contacts)
+        public function update(Request $request,$id)
     {
-        //
+     
+      $visionUpdate = contacts::where('id',$id)
+             ->update([           
+            'phone1'=>request('phone1'),
+        'phone2'=>request('phone2'),
+         'email1'=>request('email1'),
+        'email2'=>request('email2'),
+
+        'address'=>request('address'),
+        'status'=>request('status')  
+        ]);
+
+//Update photo if exists
+  if(request('logo_photo')){
+                $attach = request('logo_photo');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                      //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
+                    $path = $attached->storeAs('public/logos/', $imageToStore);
+                }
+
+            //  $slideUpdate = slide::where('id',$id)
+            //  ->where('status','Active')
+            //  ->update([
+            // 'photo'=>$slidephoto
+
+   $slides = contacts::where('id',$id)->first(); 
+  $contestant_fileupdate = contacts::where('id',$id)
+             ->update([
+               'logo'=>$imageToStore
+
+        ]);
+
+//dd($slides->photo);
+        Storage::delete('/public/logos/'.$slides->logo);   
+            }
+   
+        return redirect('/contacts');
     }
+
 
     /**
      * Remove the specified resource from storage.

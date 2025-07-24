@@ -319,7 +319,7 @@
                  <td>{{ $data->status }}</td>
               
                 <td>                
-                  <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
+                  <form method="GET" action="{{ route('contacts.edit',$data->id) }}" class="d-inline">
                     @csrf
                     <input type="hidden" name="user_id" value="PUT">
                     <input type="hidden" name="asset_id" value="#">

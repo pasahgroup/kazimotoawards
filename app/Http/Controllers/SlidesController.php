@@ -163,6 +163,9 @@ public function slides()
               ->select('id','project_name')
               ->get();
 
+
+
+
         return view('admin.slides.editslide',compact('projects','slides','project_first','subproject_first','subprojects'));
     }
 
