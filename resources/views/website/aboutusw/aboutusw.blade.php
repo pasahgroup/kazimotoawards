@@ -37,20 +37,19 @@
             <div class="container-fluid p-0">
         <div class="row g-0">         
 
-          <div class="col-4 col-lg-6">
-            <div class="deal-img">
+          <div class="col-4 col-lg-3">
+            <div class="deal-img" style="padding:8px">
               <img src="{{ URL::asset('/storage/aboutus/'.$aboutusw->mission_photo) }}" alt="#" style="width:400px">
             </div>  
           </div> 
 
 
-             <div class="col-12 col-lg-6 align-self-center">
-            <div class="deal-content">
+             <div class="col-12 col-lg-9" style="padding-left:30px">
                             <span class="deal-sub-title">MISSION</span>                            
                             <p class="deal-text">{{$aboutusw->mission}}.</p>
                                                     
                           
-            </div>  
+        
           </div>
         </div>
       </div>
@@ -67,17 +66,16 @@
             <div class="container-fluid p-0">
         <div class="row g-0">
            
-          <div class="col-12 col-lg-6 align-self-center">
-            <div class="deal-content">
+          <div class="col-12 col-lg-9" style="padding-left:30px">
                             <span class="deal-sub-title">VISION</span>                            
                             <p class="deal-text">{{$aboutusw->vision}}.</p>
                                                     
                           
-            </div>  
+             
           </div> 
 
-          <div class="col-4 col-lg-6">
-            <div class="deal-img">
+          <div class="col-4 col-lg-3">
+            <div class="deal-img" style="padding:8px">
               <img src="{{ URL::asset('/storage/aboutus/'.$aboutusw->vision_photo) }}" alt="#" style="width:500px">
             </div>  
           </div> 
