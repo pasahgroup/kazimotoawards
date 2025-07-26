@@ -44,10 +44,18 @@
         <fieldset class="active">
             <div class="form-group row">        
            <div class="col-md-12 col-sm-12">
-        <label>Mission</label>
-            <textarea cols="30" rows="4" name="mission" class="form-control" id="mission" placeholder="mission" maxlength="1200" required></textarea>
+        <label>Who we are</label>
+            <textarea cols="30" rows="4" name="who_weare" class="form-control" id="who_weare" placeholder="who we are" maxlength="2500" required></textarea>
   </div>
    </div>
+
+        <div class="form-group row">        
+           <div class="col-md-12 col-sm-12">
+        <label>Mission</label>
+            <textarea cols="30" rows="4" name="mission" class="form-control" id="mission" placeholder="mission" maxlength="2500" required></textarea>
+  </div>
+   </div>
+
 
 
       <div class="form-group row">
@@ -76,7 +84,7 @@
  <div class="form-group row">
       <div class="col-md-12 col-sm-12">
         <label>Vision</label>
-            <textarea cols="30" rows="4" name="vision" class="form-control" id="vision" placeholder="vision" maxlength="1200" required></textarea>
+            <textarea cols="30" rows="4" name="vision" class="form-control" id="vision" placeholder="vision" maxlength="2500" required></textarea>
   </div>
   </div>
 

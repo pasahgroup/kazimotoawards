@@ -24,12 +24,6 @@ class SlidesController extends Controller
 
     $slides = DB::select("select s.*,a.award_name from slides s,awards a where a.id=s.award_id");
  $banks=bank::get();
-    // $slides = slide::join('slides','slides.subproject_id','subprojects.id')
-    //  //->join('projects','projects.id','subprojects.subproject_id')
-    //  //->select('slides.*','projects.project_name')
-    //  ->where('slides.status','Active')
-    //  ->get();
-//dd($slides);
         return view('admin.slides.slide',compact('slides','banks'));
     }
 

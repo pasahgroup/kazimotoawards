@@ -185,6 +185,7 @@ Route::get('/ff', function () {
 });
 
 
+
 // Route::get('/email', function () {
 //     return view('email');
 // });

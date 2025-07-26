@@ -334,6 +334,8 @@
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 
+                      <a href="#" onclick="return confirm('Are you sure? You want to delete Data ID: {{$data->id}}:','Destroy')"><i class="fa fa-trash red"></i></a>
+
                 </td>
               </tr>
               @endforeach

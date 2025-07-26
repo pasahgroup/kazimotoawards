@@ -80,6 +80,7 @@ class AboutusController extends Controller
         $aboutus = aboutus::UpdateOrCreate([
       'status'=>'Active', 
         ],[
+            'who_weare'=>request('who_weare'),
         'mission_photo'=>$missionphoto,
         'mission'=>request('mission'),
         'vision_photo'=>$visionphoto,      
@@ -117,6 +118,7 @@ class AboutusController extends Controller
   $visionUpdate = aboutus::where('id',$id)
              ->where('status','Active')
              ->update([
+            'who_weare'=>request('who_weare'),
             'mission'=>request('mission'),    
         'vision'=>request('vision'),
         'status'=>request('status')

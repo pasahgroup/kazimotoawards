@@ -291,6 +291,7 @@
             <thead>
               <tr>
                 <th>No.</th>
+                <th>Who we are</th>
                 <th>Mission</th>
                 <th>Mission photo</th>
                 <th>Vision</th>
@@ -303,6 +304,7 @@
               @foreach ($aboutus as $data)
               <tr>
                 <td>{{ $data->id }}</td>
+                <td>{{ $data->who_weare }}</td>
                 <td>{{ $data->mission }}</td>
                 <td><img src="{{ URL::asset('/storage/aboutus/'.$data->mission_photo) }}" alt="Mission Photo"></td>
                  <td>{{ $data->vision }}</td>  

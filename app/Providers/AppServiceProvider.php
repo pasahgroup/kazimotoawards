@@ -8,8 +8,12 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 use App\Models\student;
+use App\Models\contacts;
+use App\Models\award;
+
 use App\Models\PostBody;
 use Illuminate\Pagination\Paginator;
+ use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -30,11 +34,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        
+        $copyYear = 2008; 
+$curYear = date('Y'); 
+
              Schema::defaultStringLength(191);
             Paginator::useBootstrap();
 
          view()->composer('*',function($view) {
+
+      $copyYear = 2008; 
+//$curYear = date('Y'); 
+ // $view->with('curYear')=9000;
 
   $view->with('userCount', Auth::user());
   //dd($view->userCount;
@@ -59,15 +69,21 @@ class AppServiceProvider extends ServiceProvider
             //->select('properties.property_name')->first());
              //$view->with('qnsCount', collect($qnsCount));
 
-       $view->with('students', student::where('session','March 2023')
-        ->select('first_name','last_name','photo')
+       $view->with('awards', award::where('year','2025')     
+        ->select('award_name')
             // ->where('manager_checklist','!=','Cleared')
             // ->where('property_id',$property_id)
             //  ->where('status','Active')
             // select('properties.property_name')
             ->get());
+            $view->with('awardsxxx', award::where('year','2025')
+              ->get());
+           View::share('currentYear', date('Y'));
+   //dd($view->awards); 
 
+           
              $view->with('contact', PostBody::where('category','Contact')->first());
+               $view->with('app_contacts', contacts::where('status',"Active")->first());
               // $view->with('students', student::where('category','Contact')->first());
         });
     }

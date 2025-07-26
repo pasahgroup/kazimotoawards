@@ -113,6 +113,8 @@ Table of contents
   --color-dark: #081828;
   --color-dark2: #272727;
 
+   --color-border: #11B76B;
+
   --color-dark3: #aeadad;
   --color-green: #11B76B;
   --color-blue: #0049D0;
@@ -9106,8 +9108,9 @@ label {
 
 .footer-top-link-info a{
   color: var(--color-white);
-  border: 1px solid var(--border-white-color);
-  color: var(--body-text-color);
+  /*border: 1px solid var(--border-white-color);*/
+  border: 1px solid var(--color-border);
+  color:yellow;
   padding: 3px 15px;
   margin: 10px 5px 0 0;
   border-radius: 50px;
@@ -9116,7 +9119,8 @@ label {
 
 .footer-top-link-info a:hover{
   border-color: var(--theme-color);
-  color: var(--theme-color);
+  /*color: var(--theme-color);*/
+    color:yellow;
 }
 
 .copyright {

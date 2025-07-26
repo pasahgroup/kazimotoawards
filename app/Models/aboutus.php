@@ -10,6 +10,7 @@ class aboutus extends Model
     /** @use HasFactory<\Database\Factories\AboutusFactory> */
     use HasFactory;
     protected $fillable = [
+        'who_weare',
         'mission_photo',
         'mission',
         'vision_photo',

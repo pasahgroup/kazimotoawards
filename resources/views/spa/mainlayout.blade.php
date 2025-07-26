@@ -58,17 +58,16 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="footer-widget-box about-us">
                             <a href="#" class="footer-logo">
-                                <img src="assets/img/logo/logo-light.png" alt="">
+                                @isset($app_contacts)
+                                   <a href="#"><img src="{{ URL::asset('/storage/logos/'.$app_contacts->logo) }}" alt="logo2" style="width:160px;"></a>
+                                @endisset
+                                <img src="" alt="">
                             </a>
-                            <p class="mb-1">
-                                We are many variations of the passages available but the majoro have suffered alteration
-                                in more recently with desktop publishing some form by injected.
-                            </p>
-                            <ul class="footer-contact mt-3">
-                                <li><a href="tel:+21236547898"><i class="far fa-phone"></i>+2 123 654 7898</a></li>
-                                <li><i class="far fa-map-marker-alt"></i>25/B Milford Road, New York</li>
-                                <li><a href="mailto:info@example.com"><i
-                                            class="far fa-envelope"></i>info@example.com</a></li>
+                                                      <ul class="footer-contact mt-3">
+                                <li><a href="tel:+21236547898"><i class="far fa-phone"></i>{{$app_contacts->phone1 ?? ''}}</a></li>
+                                <li><i class="far fa-map-marker-alt"></i>{{$app_contacts->address ?? ''}}</li>
+                                <li><a href="mailto:{{$app_contacts->email1 ?? ''}}"><i
+                                            class="far fa-envelope"></i>{{$app_contacts->email1 ?? ''}}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -135,27 +134,12 @@
                         </div>
                     </div>
                     <div class="col-12">
-                        <div class="footer-top-link">
+                        <div class="footer-top-linkx">
+                            <h4 class="footer-widget-title">2025 Awards</h4>
                             <div class="footer-top-link-info">
-                                <a href="#">Top Sellers</a>
-                                <a href="#">New Arrivals</a>
-                                <a href="#">Accessories</a>
-                                <a href="#">Electronics</a>
-                                <a href="#">Groceries</a>
-                                <a href="#">Beauty</a>
-                                <a href="#">Health</a>
-                                <a href="#">Baby Toys</a>
-                                <a href="#">Music</a>
-                                <a href="#">Furniture</a>
-                                <a href="#">Gifts</a>
-                                <a href="#">Sports</a>
-                                <a href="#">Automotive</a>
-                                <a href="#">Watch</a>
-                                <a href="#">Sitemap</a>
-                                <a href="#">Our Affiliates</a>
-                                <a href="#">Returns Policy</a>
-                                <a href="#">Video</a>
-                                <a href="#">Home & Garden</a>
+                               @foreach($awards as $award)
+                                <a href="#">{{$award->award_name}}</a>
+                                 @endforeach
                             </div>
                         </div>
                     </div>
@@ -262,5 +246,4 @@
     <script src="../../../assetstaxio/js/main.js"></script> 
 
 </body>
-
 </html>

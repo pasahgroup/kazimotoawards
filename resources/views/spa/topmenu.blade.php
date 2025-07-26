@@ -10,9 +10,19 @@
                         <div class="col-12 col-md-6 col-lg-6 col-xl-5">
                             <div class="header-top-left">
                                 <ul class="header-top-list">
-                                    <li><a href="mailto:info@rhonds.co.tz"><i class="far fa-envelopes"></i>
-                                            info@rhonds.co.tz</a></li>
-                                    <li><a href="https://wa.me/+255655633302"><i class="far fa-headset"></i> +255 764 706 227</a></li>
+                                    <li><a target="_blank" href="mailto:{{$app_contacts->email1 ?? ''}}"><i class="far fa-envelopes"></i>
+                               
+@isset($app_contacts)
+     {{$app_contacts->email1}}
+
+@endisset
+
+
+
+
+
+</a></li>
+                                    <li><a href="https://wa.me/{{$app_contacts->phone1 ?? ''}}"><i class="far fa-headset"></i>{{$app_contacts->phone1 ?? ''}}</a></li>
                                     <li class="help"><a href="#"><i class="far fa-comment-question"></i> Need Help?</a></li>
                                 </ul>
                             </div>
@@ -28,15 +38,15 @@
                                             </a>
 
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="/login">Login</a>
+                                                <a class="dropdown-item" href="/login">Login system</a>
+                                                 <a class="dropdown-item" href="/https://tmya.net:2096">Login email</a>
                                             </div>
                                         </div>
 
                                     </li>
                                                                  
 
-
-                                                                 <li>
+                                <li>
                                         <div class="dropdown">
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="#">Login</a>
@@ -47,7 +57,7 @@
     <div class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">
-                                            <i class="far fa-arrow-right-to-arc"></i><span>Account</span>
+                                            <i class="far fa-arrow-right-to-arc"></i><span>2025 Awards</span>
                                         </div>
                                                                            </a>
                                     <div class="dropdown-cart-menu">
@@ -145,15 +155,13 @@
 
 
 
-
-
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader">
                       <div class="category-all" style="align:right;background-color:#fff;">
                         <button class="category-btn" type="button" style="text-align:left;">
-                            <i class="far fa-grid-2-plus"></i><span>Awards</span>
+                            <i class="far fa-grid-2-plus"></i><span>TMYA <marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
                     </button>
-                        <ul class="main-category">
+                        <ul class="main-category" style="background-color:transparent">
                             <li>
                                 <ul class="sub-category">
                                     <li><a href="#"><img src="assets/img/icon/laptop.svg" alt=""><span>Electronics</span></a></li>
@@ -455,10 +463,12 @@
 
             <div class="classy-nav-container breakpoint-off">               
                 <nav class="classy-navbar justify-content-between" id="southNav">
-                  
-
-                      <a href="#"><img src="#" alt="logo" style="width:120px;"></a>
-
+  
+@isset($app_contacts)
+   <a href="#"><img src="{{ URL::asset('/storage/logos/'.$app_contacts->logo) }}" alt="logo2" style="width:88px;"></a>
+@else
+    <a href="#"><img src="" alt="logo2" style="width:88px;"></a>
+@endisset
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -517,7 +527,7 @@
                                             
                                      
 
-                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/get_aboutusw">About Us</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
 
@@ -529,6 +539,11 @@
                                     </div>Contestant</a>
 
                                 </li>
+                                <li>
+                                    
+                                </li>
+
+
                                                        </ul>
                      
                    

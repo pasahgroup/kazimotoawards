@@ -22,16 +22,9 @@
                                                 <p data-animation="fadeInLeft" data-delay=".75s">
                                                     {{$slide->photo_description}}
                                                 </p>
-                                                <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btnx">Shop Now<i class="fas fa-arrow-right"></i></a>
                                                 </div>
-
-
-
-
-
-
-
 
                                             </div>
                                         </div>

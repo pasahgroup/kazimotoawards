@@ -140,10 +140,19 @@
         <h3><i class="fa fa-calendar-check-o"></i>ABOUT US EDITING FORM</h3>
 
         <fieldset class="active">
+
+     <div class="form-group row">        
+           <div class="col-md-12 col-sm-12">
+        <label>Who we are</label>
+            <textarea cols="30" rows="4" name="who_weare" class="form-control" id="who_weare" maxlength="2500" required>{{$aboutus->who_weare}}</textarea>
+  </div>
+   </div>
+
+
             <div class="form-group row">        
            <div class="col-md-12 col-sm-12">
         <label>Mission</label>
-            <textarea cols="30" rows="4" name="mission" class="form-control" id="mission" maxlength="1200" required>{{$aboutus->mission}}</textarea>
+            <textarea cols="30" rows="4" name="mission" class="form-control" id="mission" maxlength="2500" required>{{$aboutus->mission}}</textarea>
   </div>
    </div>
 
@@ -174,7 +183,7 @@
  <div class="form-group row">
       <div class="col-md-12 col-sm-12">
         <label>Vision</label>
-            <textarea cols="30" rows="4" name="vision" class="form-control" id="vision" maxlength="1200" required>{{$aboutus->vision}}</textarea>
+            <textarea cols="30" rows="4" name="vision" class="form-control" id="vision" maxlength="2500" required>{{$aboutus->vision}}</textarea>
   </div>
   </div>
 
