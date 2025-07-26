@@ -58,7 +58,6 @@
 
 
 
-
         <!-- deal area end  -->
 <hr>
   <!-- deal area -->
@@ -87,6 +86,7 @@
         <!-- newsletter area -->
         <div class="newsletter-area pt-60 pb-60">
             <div class="container">
+                
                 <div class="row">
                     <div class="col-lg-6 mx-auto">
                         <div class="newsletter-content">
@@ -102,9 +102,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="newsletter-img-1">
-                <img src="{{ URL::asset('/storage/aboutus/'.$aboutusw->mission_photo) }}" alt="">
             </div>
             <div class="newsletter-img-2">
                 <img src="{{ URL::asset('/storage/aboutus/'.$aboutusw->vision_photo) }}" alt="">
