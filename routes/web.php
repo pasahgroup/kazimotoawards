@@ -122,6 +122,8 @@ Route::resource('/subproject',SubprojectController::class);
 Route::resource('/activity',ActivityController::class);
 Route::resource('/awards',AwardController::class);
 
+Route::get('/get_awardsw', [AwardController::class,'awardsw']);
+
 
 Route::resource('/slides',SlidesController::class);
 // Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
@@ -186,6 +188,9 @@ Route::get('/ff', function () {
     return view('table1');
 });
 
+Route::get('/f', function () {
+    return view('slides');
+});
 
 
 // Route::get('/email', function () {

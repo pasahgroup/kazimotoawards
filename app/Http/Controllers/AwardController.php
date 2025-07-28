@@ -10,6 +10,10 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+
+use App\Models\contestant;
+
+
 use Illuminate\Support\Str;
 use Illuminate\Support\Benchmark;
 // use Illuminate\Http\UploadedFile;
@@ -90,6 +94,23 @@ $awards = implode(", ", $competes);
     /**
      * Display the specified resource.
      */
+
+
+
+ public function awardsw()
+    {
+       $awards = award::get();
+       
+       //dd($awards);
+       return view('website.awardsw.awardsw',compact('awards'));
+   
+    }
+
+
+
+
+
+
     public function show(project $project)
     {
         //

@@ -153,15 +153,56 @@
 
 
 
+<div class="header-top">
+            <div class="container-fluid">
+                <div class="header-top-wrapper">
+                    <div class="row">
+                      <span> <marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
 
 
         <!-- Main Header Area -->
-        <div class="main-header-area" id="stickyHeader">
-                      <div class="category-all" style="align:right;background-color:#fff;">
+        <div class="main-header-area" id="stickyHeader">                 
+          
+
+            <div class="classy-nav-container breakpoint-off">               
+                <nav class="classy-navbar justify-content-between" id="southNav">
+  
+@isset($app_contacts)
+   <a href="#"><img src="{{ URL::asset('/storage/logos/'.$app_contacts->logo) }}" alt="logo2" style="width:88px;"></a>
+@else
+    <a href="#"><img src="" alt="logo2" style="width:88px;"></a>
+@endisset
+
+
+
+   <div class="dropdown-cart">
+                                    <a href="#" class="shop-cart list-item">
+                                        <div class="list-item-icon">
+                                            <i class="far fa-arrow-right-to-arc"></i><span>{{$currYear}} Awards</span>
+                                        </div>
+                                                                           </a>
+                                    <div class="dropdown-cart-menu">
+                                        <div class="dropdown-cart-header">
+                                            <span>03 Items</span>
+                                            <a href="#">View Cart</a>
+                                        </div>
+
+
+ <div class="category-all" style="align:right;background-color:#fff;">
                         <button class="category-btn" type="button" style="text-align:left;">
                             <i class="far fa-grid-2-plus"></i><span>TMYA <marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
                     </button>
-                        <ul class="main-category" style="background-color:transparent">
+                        <ul class="main-category dropdown-cart-list" style="background-color:transparent">
                             <li>
                                 <ul class="sub-category">
                                     <li><a href="#"><img src="assets/img/icon/laptop.svg" alt=""><span>Electronics</span></a></li>
@@ -459,16 +500,25 @@
                             </li>
                         </ul>
                     </div>
-                    
+                                    </div>
+                                </div>
 
-            <div class="classy-nav-container breakpoint-off">               
-                <nav class="classy-navbar justify-content-between" id="southNav">
-  
-@isset($app_contacts)
-   <a href="#"><img src="{{ URL::asset('/storage/logos/'.$app_contacts->logo) }}" alt="logo2" style="width:88px;"></a>
-@else
-    <a href="#"><img src="" alt="logo2" style="width:88px;"></a>
-@endisset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -499,16 +549,7 @@
 
                                 <li><a href="/">Home</a></li>
 
-                                <li><a href="#">Vehicles</a>
-                                    <ul class="dropdown">
-                                      
-
-        
-
-                                    </ul>
-                                </li>
-
-
+                               
 
   <li><a href="#">Services</a>
                                             <ul class="dropdown">
@@ -529,7 +570,7 @@
   <li><a href="#">Awards</a>
                                             <ul class="dropdown">
               
-                                  <li><a href="#">Awards</a></li>
+                                  <li><a href="/get_awardsw">Awards</a></li>
                                       <li><a href="#">Contestants</a></li>
            
 
