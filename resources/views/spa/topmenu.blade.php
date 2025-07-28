@@ -155,7 +155,7 @@
             <div class="container-fluid">
                 <div class="header-top-wrapper">
                     <div class="row">
-                      <span> <marquee>Tanzania Mapishi Yetu  Awards-(TMYA)</marquee></span>
+                      <span> <marquee>Tanzania Mapishi Yetu  Awards(TMYA)-{{$currYear}}</marquee></span>
                    
                     </div>
                 </div>
@@ -189,8 +189,12 @@
                                                                            </a>
                                     <div class="dropdown-cart-menu">                                      
  <div class="category-all" style="align:right;background-color:#fff;">
-                            <i class="far fa-grid-2-plus"></i><span><marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
+                            <i class="far fa-grid-2-plus"></i><span><marquee>Tanzania Mapishi Yetu  Awards-{{$currYear}}</marquee></span>
                   
+                  <MARQUEE direction="right" WIDTH=200 HEIGHT=50>
+    Welcome to the Website. Welcome to the demo.Welcome to the Website. Welcome to the demo.
+</MARQUEE>
+
                         <ul class="main-category dropdown-cart-list">
                             <li>
                                 <ul class="sub-category">
