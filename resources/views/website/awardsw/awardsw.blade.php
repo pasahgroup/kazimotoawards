@@ -13,7 +13,10 @@
                         </div>
                     </div>
                 </div>
+                <marquee>
                 <div class="category-slider owl-carousel owl-theme">
+
+                    
                     <div class="category-item">
                         <a href="#">
                             <div class="category-info">
@@ -53,6 +56,7 @@
                             </div>
                         </a>
                     </div>
+
                     <div class="category-item">
                         <a href="#">
                             <div class="category-info">
@@ -132,6 +136,7 @@
                         </a>
                     </div>
                 </div>
+            </marquee>
             </div>
         </div>
              <!-- brand area -->

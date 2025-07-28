@@ -151,13 +151,11 @@
 
 
 
-
-
 <div class="header-top">
             <div class="container-fluid">
                 <div class="header-top-wrapper">
                     <div class="row">
-                      <span> <marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
+                      <span> <marquee>Tanzania Mapishi Yetu  Awards-(TMYA)</marquee></span>
                    
                     </div>
                 </div>
@@ -171,9 +169,7 @@
 
 
         <!-- Main Header Area -->
-        <div class="main-header-area" id="stickyHeader">                 
-          
-
+        <div class="main-header-area" id="stickyHeader">               
             <div class="classy-nav-container breakpoint-off">               
                 <nav class="classy-navbar justify-content-between" id="southNav">
   
@@ -191,18 +187,11 @@
                                             <i class="far fa-arrow-right-to-arc"></i><span>{{$currYear}} Awards</span>
                                         </div>
                                                                            </a>
-                                    <div class="dropdown-cart-menu">
-                                        <div class="dropdown-cart-header">
-                                            <span>03 Items</span>
-                                            <a href="#">View Cart</a>
-                                        </div>
-
-
+                                    <div class="dropdown-cart-menu">                                      
  <div class="category-all" style="align:right;background-color:#fff;">
-                        <button class="category-btn" type="button" style="text-align:left;">
-                            <i class="far fa-grid-2-plus"></i><span>TMYA <marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
-                    </button>
-                        <ul class="main-category dropdown-cart-list" style="background-color:transparent">
+                            <i class="far fa-grid-2-plus"></i><span><marquee>Tanzania Mapishi Yetu  Awards</marquee></span>
+                  
+                        <ul class="main-category dropdown-cart-list">
                             <li>
                                 <ul class="sub-category">
                                     <li><a href="#"><img src="assets/img/icon/laptop.svg" alt=""><span>Electronics</span></a></li>
