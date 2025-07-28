@@ -4,33 +4,29 @@
       
 
     <!-- hero slider -->   
-            <div class="container">
+          
                 <div class="row">
-                    <div class="col-lg-12 col-xl-12 offset-xl-1">
-                        <div class="hero-slider owl-carousel owl-theme">
-                          
-                     
-                            <div class="hero-single" style="padding:3px;padding-top:5px;padding-bottom:90px;">                
-                                <div class="container">
+                    <div class="col-md-12">
+                        <div class="hero-slider owl-carousel owl-themex">
+                                         
+                                <div class="container-fluid">
                                     <div class="row align-items-center">
                                         <div class="col-md-12 col-lg-7">
                                             <div class="hero-content">   
                                             
                                              <span class="deal-sub-title">Who We Are?</span>                            
-                            <p class="deal-textx">{{$aboutusw->mission}}. fffffffffffff</p>
+                            <p class="deal-textx">{{$aboutusw->mission}}.</p>
 
                                                                                             </div>
                                         </div>
                                     </div>
                                 </div>                       
-                            </div>
-                        
-                        
+                                                    
                         </div>
                     </div>
                 </div>
-            </div>
-      
+         
+      <hr>
 
 
  <div class="deal-area">
