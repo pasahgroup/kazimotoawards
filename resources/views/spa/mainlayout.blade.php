@@ -13,7 +13,7 @@
     <title>TMYA</title>
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/logo2.jpg">
 
     <!-- css -->
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
