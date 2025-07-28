@@ -34,20 +34,21 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $copyYear = 2008; 
-$curYear = date('Y'); 
+        //$copyYear = 2008; 
+
 
              Schema::defaultStringLength(191);
             Paginator::useBootstrap();
 
          view()->composer('*',function($view) {
 
-      $copyYear = 2008; 
+      //$copyYear = 2008; 
 //$curYear = date('Y'); 
  // $view->with('curYear')=9000;
-
+$currYear = date('Y'); 
+  $view->with('currYear',$currYear);
   $view->with('userCount', Auth::user());
-  //dd($view->userCount;
+  //dd($view->currYear);
 
              if($view->userCount !=NULL)
              {

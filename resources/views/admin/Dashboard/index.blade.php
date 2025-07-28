@@ -296,7 +296,7 @@
             <i class="bi bi-people-fill card-icon"></i>
             <div class="card-content text-center">
               <h5 class="card-title">Students</h5>
-              <div class="card-number">{{ $students->count() }}</div>
+              <div class="card-number">66</div>
               <div class="card-buttons justify-content-center">
                 <a href="/students" class="legend-btn" style="background-color: ;"><i class="bi bi-plus-circle"></i> Add</a>
               </div>

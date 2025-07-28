@@ -135,7 +135,7 @@
                     </div>
                     <div class="col-12">
                         <div class="footer-top-linkx">
-                            <h4 class="footer-widget-title">2025 Awards</h4>
+                            <h4 class="footer-widget-title">{{$currYear}} Awards</h4>
                             <div class="footer-top-link-info">
                                @foreach($awards as $award)
                                 <a href="#">{{$award->award_name}}</a>
@@ -147,25 +147,23 @@
             </div>
         </div>
         <div class="copyright">
-            <div class="container">
                 <div class="copyright-wrap">
                     <div class="row">
-                        <div class="col-12 col-lg-4 align-self-center">
-                            <div class="footer-payment">
-                                <span>We Accept:</span>
-                                <img src="assets//img/payment/visa.svg" alt="">
-                                <img src="assets//img/payment/mastercard.svg" alt="">
-                                <img src="assets//img/payment/amex.svg" alt="">
-                                <img src="assets//img/payment/discover.svg" alt="">
-                                <img src="assets//img/payment/paypal.svg" alt="">
-                            </div>
+                        <div class="col-12 col-lg-3 align-self-center">                          
+
+ <p class="mb-md-0 text-center text-md-left text-secondary float-right">
+                  Developed by: <a href="https://www.pasah.net" target="_blank">www.pasah.net</a>
+                </p>
+
                         </div>
-                        <div class="col-12 col-lg-4 align-self-center">
+                        <div class="col-12 col-lg-5 align-self-center">
                             <p class="copyright-text">
-                                &copy; Copyright <span id="date"></span> <a href="#"> pasah group </a> All Rights Reserved.
-                            </p>
+                        
+                    {{$currYear}} &copy; <a class="text-primary" href="#">pasah Group</a>. All Rights Reserved.<a href="javascript:;">| Privacy Policy</a>  |  <a href="javascript:;">Terms of Service</a>  |  <a href="https://tmya.net:2096" target="_blank">Email</a>
+                </p>
+
                         </div>
-                        <div class="col-12 col-lg-4 align-self-center">
+                        <div class="col-12 col-lg-3 align-self-center">
                             <div class="footer-social">
                                 <span>Follow Us:</span>
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -176,10 +174,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </footer>
     <!-- footer area end -->
+
 
 
     <!-- scroll-top -->

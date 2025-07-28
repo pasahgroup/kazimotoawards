@@ -39,7 +39,7 @@
 
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item" href="/login">Login system</a>
-                                                 <a class="dropdown-item" href="/https://tmya.net:2096">Login email</a>
+                                                 <a class="dropdown-item" href="https://tmya.net:2096" target="_blank">Login email</a>
                                             </div>
                                         </div>
 
@@ -57,7 +57,7 @@
     <div class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">
-                                            <i class="far fa-arrow-right-to-arc"></i><span>2025 Awards</span>
+                                            <i class="far fa-arrow-right-to-arc"></i><span>{{$currYear}} Awards</span>
                                         </div>
                                                                            </a>
                                     <div class="dropdown-cart-menu">
@@ -524,12 +524,22 @@
   --}}
   </ul>
   </li>
+
+
+  <li><a href="#">Awards</a>
+                                            <ul class="dropdown">
+              
+                                  <li><a href="#">Awards</a></li>
+                                      <li><a href="#">Contestants</a></li>
+           
+
+  </ul>
+  </li>
                                             
                                      
 
                             <li><a href="/get_aboutusw">About Us</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
+                                                          </ul>
 
                         
                                 <li>                                                                             
@@ -539,6 +549,8 @@
                                     </div>Contestant</a>
 
                                 </li>
+
+
                                 <li>
                                     
                                 </li>

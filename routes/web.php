@@ -29,6 +29,8 @@ use App\Http\Controllers\TailorMadeController;
 use App\Http\Controllers\EnquiryController;
 
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\SponsorController;
+
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\AttractionController;
@@ -445,6 +447,16 @@ Route::get('/activeGroupTrip', [TourEquiryFormController::class, 'activeGroupTri
 Route::resource('/contacts', ContactsController::class);
 Route::get('/register_contact', [ContactsController::class,'show'])->name('register_contact');
 Route::get('/contact-destroy/{x}', [ContactsController::class, 'destroy'])->name('contact-destroy');
+
+
+
+Route::resource('/sponsors',SponsorController::class);
+
+
+
+
+
+
 
 //Program controller
 Route::get('/editProgram/{x}', [programController::class, 'editProgram'])->name('editProgram');
