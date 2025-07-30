@@ -263,13 +263,13 @@
     <div class="container-fluid">
       <div class="row mb-2 align-items-center">
         <div class="col-sm-10">
-          <h4 class="asset">Contacts List</h4>
+          <h4 class="asset">Sponsor List</h4>
         </div>
 
         <div class="col-sm-2 d-flex justify-content-end gap-3">    
        
-          <a href="{{ route('register_contact') }}" class="btn btn-gradient">
-            <i class="fas fa-plus"></i>Contact
+          <a href="{{ route('register_sponsor') }}" class="btn btn-gradient">
+            <i class="fas fa-plus"></i>Sponsor
           </a>    
       
         </div>
@@ -293,29 +293,31 @@
             <thead>
               <tr>
                 <th>ID.</th>
-                <th>Phon1</th>
-                <th>Phon2</th>
-              <th>Email1</th>       
-               <th>Email2</th>
+                <th>Sponsor name</th>
+                <th>mobile</th>
+              <th>Email</th>       
+               <th>Pledge</th>
+                   <th>Contact person</th>
               <th>Logo</th>
-              <th>Address</th>
+              <th>website</th>
                  <th>status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
 
-              @foreach ($contacts as $data)
+              @foreach ($sponsors as $data)
               <tr>
                 <td>{{ $data->id }}</td>
-                <td>{{ $data->phone1 }}</td>                               
+                <td>{{ $data->sponsor_name }}</td>                               
            
-             <td>{{ $data->phone2 }}</td>
-                <td>{{ $data->email1}}</td> 
-                 <td>{{ $data->email2 }}</td>
-                 
+             <td>{{ $data->mobile }}</td>
+                <td>{{ $data->email}}</td> 
+                 <td>{{ $data->pledge }}</td>
+                   <td>{{ $data->contact_person }}</td>
+
                   <td><img src="{{ URL::asset('/storage/logos/'.$data->logo) }}" alt="The Logo"></td>
-                  <td>{{ $data->address }}</td>
+                  <td>{{ $data->website }}</td>
                  <td>{{ $data->status }}</td>
               
                 <td>                

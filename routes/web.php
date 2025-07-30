@@ -456,7 +456,7 @@ Route::get('/contact-destroy/{x}', [ContactsController::class, 'destroy'])->name
 
 
 Route::resource('/sponsors',SponsorController::class);
-
+Route::get('/register_sponsor', [SponsorController::class,'show'])->name('register_sponsor');
 
 
 

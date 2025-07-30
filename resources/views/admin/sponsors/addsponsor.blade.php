@@ -1,104 +1,6 @@
 @extends('layouts.master')
 @section('contents')
 
-<style>
-  body {
-    font-family: "Calibri Light", Calibri, sans-serif;
-    background-color: #f8f9fa;
-  }
-
- .form-container {
-    max-width: 950px;
-    margin: 1rem auto;
-    background-color: #fff;
-    padding: 2rem 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  h3 {
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: #4f46e5;
-    text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
-  }
-
-  label {
-    font-weight: 500;
-    color: #333;
-    font-size: 13px;
-  }
-
-  .form-control {
-    border: 1px solid #ced4da;
-    border-radius: 0.75rem;
-    /*font-size: 15px;
-    padding: 0.75rem;*/
-    font-family: "Calibri Light", Calibri, sans-serif;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .form-control:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
-  }
-
-  .form-group {
-    margin-bottom: 5px;
-  }
-
-  .btn-gradient {
-    background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
-    border: none;
-    padding: 0.1rem 1.2rem;
-    border-radius: 2rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
-    font-family: "Calibri Light", Calibri, sans-serif;
-    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .btn-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
-    background-color: #5b69ff;
-  }
-
-  .btn-previous {
-    background-color: #6c757d;
-    border: none;
-    padding: 0.4rem 1.5rem;
-    border-radius: 2rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: "Calibri Light", Calibri, sans-serif;
-  }
-
-  .btn-previous:hover {
-    background-color: #5a6268;
-  }
-
-  .input-error {
-    border-color: #dc3545 !important;
-    background-color: #fff4f4;
-  }
-
-  /* Hide all fieldsets except the first */
-  fieldset {
-    display: none;
-  }
-
-  fieldset.active {
-    display: block;
-  }
-</style>
-
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
 
@@ -134,20 +36,15 @@
 
 <div class="form-container">
     <div class="col-md-12">
-      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('contacts.store') }}" enctype="multipart/form-data">
+      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('sponsors.store') }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>Contact Registration Form</h3>
+        <h3><i class="fa fa-calendar-check-o"></i>Sponsor Registration Form</h3>
         <fieldset class="active">
     
  <div class="form-group row">
-              <div class="col-md-6 col-sm-12">   
-              <label>Phone1</label>
-               <input type="text" name="phone1" id="phone1" class="form-control" >
-          </div>
-
-           <div class="col-md-6 col-sm-12">   
-              <label>Phone2</label>
-               <input type="text" name="phone2" id="phone2" class="form-control" >
+              <div class="col-md-12 col-sm-12">   
+              <label>Sponsor name</label>
+               <input type="text" name="sponsor" id="sponsor" class="form-control" >
           </div>
             </div>
 
@@ -155,23 +52,35 @@
 
  <div class="form-group row">
               <div class="col-md-6 col-sm-12">   
-              <label>Email1</label>
-               <input type="email" name="email1" id="email1" class="form-control" >
+              <label>Mobile</label>
+               <input type="text" name="mobile" id="mobile" class="form-control" >
           </div>
 
           <div class="col-md-6 col-sm-12">   
-              <label>Email2</label>
-               <input type="email" name="email2" id="email2" class="form-control" >
+              <label>Email</label>
+               <input type="email" name="email" id="email" class="form-control" >
           </div>
             </div>
 
 
+ <div class="form-group row">
+              <div class="col-md-6 col-sm-12">   
+              <label>Pledge</label>
+               <input type="number" name="pledge" id="pledge" class="form-control" >
+          </div>
 
-          
+          <div class="col-md-6 col-sm-12">   
+              <label>Contact person</label>
+               <input type="text" name="contact_person" id="contact_person" class="form-control" >
+          </div>
+            </div>
+
+
+         
  <div class="form-group row">
       <div class="col-md-12 col-sm-12">
         <label>Address</label>
-            <textarea cols="30" rows="3" name="address" class="form-control" id="address" placeholder="address" maxlength="1200" required></textarea>
+            <textarea cols="30" rows="2" name="address" class="form-control" id="address" placeholder="address" maxlength="1200" required></textarea>
   </div>
   </div>
 
@@ -201,7 +110,12 @@
 
 
  <div class="form-group row">
-                    <div class="col-md-6 col-sm-12">   
+              <div class="col-md-6 col-sm-12">   
+              <label>Website</label>
+               <input type="text" name="website" id="website" class="form-control" >
+          </div>
+
+               <div class="col-md-6 col-sm-12">   
               <label>Status</label>
               <select class="form-control" name="status" id="status">
                 <option></option>

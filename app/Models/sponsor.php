@@ -12,10 +12,11 @@ class sponsor extends Model
         'sponsor_name',
         'mobile',
         'email',
-        'contact_person',     
-        'logo',
-        'website',
         'pledge',
+        'contact_person',  
+        'address',
+        'website',   
+        'logo',
         'status'
         
      ];
