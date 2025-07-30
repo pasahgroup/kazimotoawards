@@ -53,10 +53,37 @@ class SponsorController extends Controller
          'contact_person'=>request('contact_person'),
 
         'address'=>request('address'),
+        'website'=>request('website'),
         'status'=>request('status')        
         ]);
 
 
+//Update photo if exists
+  if(request('logo_photo')){
+                $attach = request('logo_photo');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                      //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
+                    $path = $attached->storeAs('public/logos/', $imageToStore);
+                }
+
+  $contestant_fileupdate = sponsor::where('id',$sponsors->id)
+             ->update([
+               'logo'=>$imageToStore
+
+        ]);        
+    }
+
+return redirect()->route('sponsors.index')->with('success','Tour Summary Cost created successful');
 
     }
 

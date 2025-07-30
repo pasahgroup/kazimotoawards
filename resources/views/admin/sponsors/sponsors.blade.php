@@ -298,6 +298,7 @@
               <th>Email</th>       
                <th>Pledge</th>
                    <th>Contact person</th>
+                    <td>Address</td>
               <th>Logo</th>
               <th>website</th>
                  <th>status</th>
@@ -315,6 +316,7 @@
                 <td>{{ $data->email}}</td> 
                  <td>{{ $data->pledge }}</td>
                    <td>{{ $data->contact_person }}</td>
+                    <td>{{ $data->address }}</td>
 
                   <td><img src="{{ URL::asset('/storage/logos/'.$data->logo) }}" alt="The Logo"></td>
                   <td>{{ $data->website }}</td>
