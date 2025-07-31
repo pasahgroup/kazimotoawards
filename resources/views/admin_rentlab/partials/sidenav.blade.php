@@ -76,7 +76,7 @@
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
-                        <i class="menu-icon las la-car-side"></i>
+                        <i class="menu-icon fa-solid fa-angles-down"></i>
                         <span class="menu-title">@lang('Settings') </span>
                     </a>
                     <div class="sidebar-submenu # ">

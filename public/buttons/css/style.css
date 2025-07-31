@@ -8256,14 +8256,16 @@ h1, h2, h3, h4, h5,
     .btn.btn-secondary .icon i {
       color: #8bbabb; }
   .btn.btn-outline-secondary {
-    color: #8bbabb;
+    
+    color: #fadf06;
+    /*color: #8bbabb;*/
     border-color: #8bbabb; }
     .btn.btn-outline-secondary:hover, .btn.btn-outline-secondary:focus {
       color: #fff;
       background: #8bbabb; }
   .btn.btn-tertiary {
     color: #fff;
-    background: #e2c275;
+    /*background: #e2c275;*/
     border-color: #e2c275; }
     .btn.btn-tertiary:hover, .btn.btn-tertiary:focus {
       border-color: #d9af4b !important;

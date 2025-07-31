@@ -57,65 +57,46 @@
     <div class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">
-                                            <i class="far fa-arrow-right-to-arc"></i><span>{{$currYear}} Awards</span>
+                                            <i class="far fa-arrow-right-to-arc"></i><span>Register</span>
                                         </div>
                                                                            </a>
                                     <div class="dropdown-cart-menu">
-                                        <div class="dropdown-cart-header">
+                                      <!--   <div class="dropdown-cart-header">
                                             <span>03 Items</span>
                                             <a href="#">View Cart</a>
-                                        </div>
+                                        </div> -->
                                         <ul class="dropdown-cart-list">
                                             <li>
                                                 <div class="dropdown-cart-item">
                                                     <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p47.png" alt="#"></a>
+                                                        <a href="#"><img src="../../img/kazimoto/p4.png" alt="#"></a>
                                                     </div>
                                                     <div class="cart-info">
-                                                        <h4><a href="#">Xamaha R15 Red</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$200.00</span></p>
+                                                     <a href="/contestant">Be a Contestant</a>
                                                     </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
+                                                                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="dropdown-cart-item">
                                                     <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p12.png" alt="#"></a>
+                                                       <a href="#"><img src="../../img/kazimoto/s2.png" alt="#"></a>
                                                     </div>
                                                     <div class="cart-info">
-                                                        <h4><a href="#">Apple Blue Watch</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$120.00</span></p>
+                                                     <a href="#">Be a Sponsor</a>
                                                     </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
+                                                                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="dropdown-cart-item">
                                                     <div class="cart-img">
-                                                        <a href="#"><img src="assets/img/product/p32.png" alt="#"></a>
+                                                         <a href="#"><img src="../../img/kazimoto/v1.png" alt="#"></a>
                                                     </div>
                                                     <div class="cart-info">
-                                                        <h4><a href="#">Orange Sweater</a></h4>
-                                                        <p class="cart-qty">1x - <span
-                                                                class="cart-amount">$330.00</span></p>
+                                                     <a href="#">Vote</a>
                                                     </div>
-                                                    <a href="#" class="cart-remove" title="Remove this item"><i
-                                                            class="far fa-times-circle"></i></a>
-                                                </div>
+                                                                                                 </div>
                                             </li>
                                         </ul>
-                                        <div class="dropdown-cart-bottom">
-                                            <div class="dropdown-cart-total">
-                                                <span>Total</span>
-                                                <span class="total-amount">$650.00</span>
-                                            </div>
-                                            <a href="#" class="theme-btn">Checkout</a>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -173,18 +154,19 @@
             <div class="classy-nav-container breakpoint-off">               
                 <nav class="classy-navbar justify-content-between" id="southNav">
   
-@isset($app_contacts)
+
+   <div class="dropdown-cart">
+
+    @isset($app_contacts)
    <a href="#"><img src="{{ URL::asset('/storage/logos/'.$app_contacts->logo) }}" alt="logo2" style="width:88px;"></a>
 @else
     <a href="#"><img src="" alt="logo2" style="width:88px;"></a>
 @endisset
 
 
-
-   <div class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">
-                                            <i class="far fa-arrow-right-to-arc"></i><span>{{$currYear}} Awards</span>
+                                            <button class="btn mb-2 mb-md-0 btn-outline-secondary">Menu <i class="fa-solid fa-angles-down"></i></button>
                                         </div>
                                                                            </a>
                                     <div class="dropdown-cart-menu">                                      
@@ -205,7 +187,7 @@
                                 </ul>
                             </li>
 
-                             <li><a href="#"><img src="assets/img/icon/music.svg" alt=""><span>Music & Audio</span></a></li>
+                             <li><a href="#"><img src="assets/img/icon/music.svg" alt=""><span>Sponsors</span></a></li>
                             <li>
                                 <a href="#">
                                     <img src="assets/img/icon/dress.svg" alt="">

@@ -44,7 +44,7 @@
  <div class="form-group row">
               <div class="col-md-12 col-sm-12">   
               <label>Sponsor name</label>
-               <input type="text" name="sponsor" id="sponsor" class="form-control" >
+               <input type="text" name="sponsor" id="sponsor" class="form-control" required>
           </div>
             </div>
 
@@ -53,7 +53,7 @@
  <div class="form-group row">
               <div class="col-md-6 col-sm-12">   
               <label>Mobile</label>
-               <input type="text" name="mobile" id="mobile" class="form-control" >
+               <input type="text" name="mobile" id="mobile" class="form-control" required>
           </div>
 
           <div class="col-md-6 col-sm-12">   
@@ -71,7 +71,7 @@
 
           <div class="col-md-6 col-sm-12">   
               <label>Contact person</label>
-               <input type="text" name="contact_person" id="contact_person" class="form-control" >
+               <input type="text" name="contact_person" id="contact_person" class="form-control" required>
           </div>
             </div>
 
@@ -117,7 +117,7 @@
 
                <div class="col-md-6 col-sm-12">   
               <label>Status</label>
-              <select class="form-control" name="status" id="status">
+              <select class="form-control" name="status" id="status" required>
                 <option></option>
                 <option>Active</option>
                 <option>Inactive</option>
@@ -126,7 +126,7 @@
             </div>
 
           <div class="d-flex justify-content-between mt-3">
-             <a href="/contacts" role="button" class="btn-previous">Cancel</a>
+             <a href="/sponsors" role="button" class="btn-previous">Cancel</a>
             <button type="submit" class="btn-gradient">Save</button>
           </div>
         </fieldset>

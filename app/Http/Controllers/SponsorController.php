@@ -7,6 +7,10 @@ use App\Models\contacts;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoresponsorRequest;
 use App\Http\Requests\UpdatesponsorRequest;
+use Illuminate\Support\Facades\Storage;
+use DB;
+
+
 
 class SponsorController extends Controller
 {
@@ -110,9 +114,11 @@ return redirect()->route('sponsors.index')->with('success','Tour Summary Cost cr
      * @param  \App\Models\sponsor  $sponsor
      * @return \Illuminate\Http\Response
      */
-    public function edit(sponsor $sponsor)
+   public function edit(Request $request,$id)
     {
-        //
+        $sponsor_first=sponsor::where('id',$id)
+         ->first();
+     return view('admin.sponsors.editsponsor',compact('sponsor_first'));
     }
 
     /**
@@ -122,9 +128,52 @@ return redirect()->route('sponsors.index')->with('success','Tour Summary Cost cr
      * @param  \App\Models\sponsor  $sponsor
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatesponsorRequest $request, sponsor $sponsor)
+         public function update(Request $request,$id)
     {
-        //
+
+      $visionUpdate = sponsor::where('id',$id)
+             ->update([           
+        'sponsor_name'=>request('sponsor'),
+        'mobile'=>request('mobile'),
+         'email'=>request('email'),
+        'pledge'=>request('pledge'),
+         'contact_person'=>request('contact_person'),
+
+        'address'=>request('address'),
+        'website'=>request('website'),
+        'status'=>request('status') 
+       ]);
+
+//Update photo if exists
+  if(request('logo_photo')){
+                $attach = request('logo_photo');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                      //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
+                    $path = $attached->storeAs('public/logos/', $imageToStore);
+                }
+
+   $slides = sponsor::where('id',$id)->first(); 
+  $contestant_fileupdate = sponsor::where('id',$id)
+             ->update([
+               'logo'=>$imageToStore
+
+        ]);
+
+//dd($slides->photo);
+        Storage::delete('/public/logos/'.$slides->logo);   
+            }
+   
+        return redirect('/sponsors');
     }
 
     /**
@@ -133,8 +182,18 @@ return redirect()->route('sponsors.index')->with('success','Tour Summary Cost cr
      * @param  \App\Models\sponsor  $sponsor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sponsor $sponsor)
+    public function destroy($id)
     {
-        //
+          $delete = sponsor::where('id',$id)->first();
+      //dd($delete);
+        if($delete->delete()){
+             DB::statement("delete from sponsors where id=$id");
+             Storage::delete('/public/logos/'.$delete->logo);
+            
+            return redirect()->route('sponsors.index')->with('info','The Sponsor deleted successfully');
+        }
+        else{
+            return redirect()->route('sponsors.index')->with('error','The Sponsor not exists');
+        }
     }
 }

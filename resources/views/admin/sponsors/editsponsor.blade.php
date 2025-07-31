@@ -36,20 +36,16 @@
 
 <div class="form-container">
     <div class="col-md-12">
-    <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('contacts.update',$contact_first->id) }}" enctype="multipart/form-data">
-        @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>Contact Editing Form</h3>
-        <fieldset class="active">
-    <input type="hidden" name="_method" value="PUT">
- <div class="form-group row">
-              <div class="col-md-6 col-sm-12">   
-              <label>Phone1</label>
-               <input type="text" name="phone1" id="phone1" class="form-control" value="{{$contact_first->phone1}}">
-          </div>
+      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('sponsors.update',$sponsor_first->id) }}" enctype="multipart/form-data">
 
-           <div class="col-md-6 col-sm-12">   
-              <label>Phone2</label>
-               <input type="text" name="phone2" id="phone2" class="form-control" value="{{$contact_first->phone2}}">
+        @csrf
+        <h3><i class="fa fa-calendar-check-o"></i>Sponsor Registration Form</h3>
+        <fieldset class="active">
+       <input type="hidden" name="_method" value="PUT">
+ <div class="form-group row">
+              <div class="col-md-12 col-sm-12">   
+              <label>Sponsor name</label>
+               <input type="text" name="sponsor" id="sponsor" class="form-control" value="{{$sponsor_first->sponsor_name}}" required>
           </div>
             </div>
 
@@ -57,23 +53,35 @@
 
  <div class="form-group row">
               <div class="col-md-6 col-sm-12">   
-              <label>Email1</label>
-               <input type="email" name="email1" id="email1" class="form-control" value="{{$contact_first->email1}}">
+              <label>Mobile</label>
+               <input type="text" name="mobile" id="mobile" class="form-control" value="{{$sponsor_first->mobile}}" required>
           </div>
 
           <div class="col-md-6 col-sm-12">   
-              <label>Email2</label>
-               <input type="email" name="email2" id="email2" class="form-control" value="{{$contact_first->email2}}">
+              <label>Email</label>
+               <input type="email" name="email" id="email" class="form-control" value="{{$sponsor_first->email}}">
           </div>
             </div>
 
 
+ <div class="form-group row">
+              <div class="col-md-6 col-sm-12">   
+              <label>Pledge</label>
+               <input type="number" name="pledge" id="pledge" class="form-control" value="{{$sponsor_first->pledge}}">
+          </div>
 
-          
+          <div class="col-md-6 col-sm-12">   
+              <label>Contact person</label>
+               <input type="text" name="contact_person" id="contact_person" class="form-control" value="{{$sponsor_first->contact_person}}" required>
+          </div>
+            </div>
+
+
+         
  <div class="form-group row">
       <div class="col-md-12 col-sm-12">
         <label>Address</label>
-            <textarea cols="30" rows="3" name="address" class="form-control" id="address" placeholder="address" maxlength="1200" value="{{$contact_first->address}}">{{$contact_first->address}}</textarea>
+            <textarea cols="30" rows="2" name="address" class="form-control" id="address" placeholder="address" maxlength="1200" required>{{$sponsor_first->address}}</textarea>
   </div>
   </div>
 
@@ -94,7 +102,7 @@
             <span class="img-div">
               <div class="text-center img-placeholder"  onClick="triggerClick()">
               </div>
-              <img src="{{ URL::asset('/storage/logos/'.$contact_first->logo) }}" onClick="triggerClick()" id="profileDisplay">
+              <img src="{{ URL::asset('/storage/logos/'.$sponsor_first->logo) }}" onClick="triggerClick()" id="profileDisplay">
             </span>
             </div>               
   </div>
@@ -103,10 +111,15 @@
 
 
  <div class="form-group row">
-                    <div class="col-md-6 col-sm-12">   
+              <div class="col-md-6 col-sm-12">   
+              <label>Website</label>
+               <input type="text" name="website" id="website" class="form-control" value="{{$sponsor_first->website}}">
+          </div>
+
+               <div class="col-md-6 col-sm-12">   
               <label>Status</label>
-              <select class="form-control" name="status" id="status">
-                 <option>{{$contact_first->status}}</option>
+              <select class="form-control" name="status" id="status" required>
+                <option>{{$sponsor_first->status}}</option>
                 <option></option>
                 <option>Active</option>
                 <option>Inactive</option>
@@ -115,7 +128,7 @@
             </div>
 
           <div class="d-flex justify-content-between mt-3">
-             <a href="/contacts" role="button" class="btn-previous">Cancel</a>
+             <a href="/sponsors" role="button" class="btn-previous">Cancel</a>
             <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>

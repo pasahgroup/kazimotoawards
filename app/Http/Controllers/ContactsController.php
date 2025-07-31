@@ -160,9 +160,6 @@ $contacts=contacts::get();
     }
 
 
-
-
-
     /**
      * Show the form for editing the specified resource.
      *
