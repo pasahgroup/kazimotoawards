@@ -133,7 +133,7 @@ Route::get('/register_slide', [SlidesController::class,'show'])->name('register_
 Route::get('/edit_slide', [SlidesController::class,'edit'])->name('edit_slide');
 
 Route::get('/getSlides/{id}', [SlidesController::class, 'getSlides']);
- Route::get('/slide-destroy/{x}', [SlidesController::class, 'destroy'])->name('destroy');
+ Route::get('/slide-destroy/{x}', [SlidesController::class, 'destroy'])->name('slide-destroy');
 
 
 Route::resource('/contestant',ContestantController::class);
@@ -144,15 +144,15 @@ Route::get('/get_contestant', [ContestantController::class,'contestant']);
 Route::get('/get_aboutusw', [WebsiteController::class,'aboutusw']);
 Route::resource('/aboutus',AboutusController::class);
  
-  Route::get('/aboutus-destroy/{x}', [AboutusController::class, 'destroy'])->name('destroy');
-  Route::get('/project-destroy/{x}', [ProjectController::class, 'destroy'])->name('destroy');
-  Route::get('/subproject-destroy/{x}', [SubprojectController::class, 'destroy'])->name('destroy');
+  Route::get('/aboutus-destroy/{x}', [AboutusController::class, 'destroy'])->name('aboutus-destroy');
+  Route::get('/project-destroy/{x}', [ProjectController::class, 'destroy'])->name('project-destroy');
+  Route::get('/subproject-destroy/{x}', [SubprojectController::class, 'destroy'])->name('subproject-destroy');
 
- Route::get('/activity-destroy/{x}', [ActivityController::class, 'destroy'])->name('destroy');
+ Route::get('/activity-destroy/{x}', [ActivityController::class, 'destroy'])->name('activity-destroy');
 
- Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('destroy');
- Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('destroy');
- Route::get('/award-destroy/{x}', [AwardController::class, 'destroy'])->name('destroy');
+ Route::get('/bank-destroy/{x}', [BankController::class, 'destroy'])->name('bank-destroy');
+ Route::get('/donor-destroy/{x}', [DonorController::class, 'destroy'])->name('donor-destroy');
+ Route::get('/award-destroy/{x}', [AwardController::class, 'destroy'])->name('award-estroy');
 
  Route::resource('/assign-activity',AssignactivityController::class);
  Route::get('/assignActivity', [AssignactivityController::class,'show'])->name('assignActivity');
@@ -212,7 +212,7 @@ Route::get('/stl', function () {
    dd('cache clear successfully');
 });
 
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('flush', [AuthController::class, 'flush'])->name('flush');
 
 //Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -286,7 +286,7 @@ Route::get('/editasset/{x}',[AssetController::class, 'editasset'])->name('editas
 
 Route::resource('/asset-update',updateAssetController::class);
 
- Route::get('/asset-destroy/{x}', [AssetController::class, 'destroy'])->name('destroy');
+ Route::get('/asset-destroy/{x}', [AssetController::class, 'destroy'])->name('asset-destroy');
   Route::get('/asset-edit/{x}', [AssetController::class, 'edit'])->name('asset-edit');
 
 // Route::get('/New-Agent-show/{x}', [AgentController::class, 'show'])->name('New-Agent-show');
@@ -468,7 +468,7 @@ Route::get('/sponsor-destroy/{x}', [SponsorController::class, 'destroy'])->name(
 //Program controller
 Route::get('/editProgram/{x}', [programController::class, 'editProgram'])->name('editProgram');
 Route::post('/updatef/{x}', [programController::class, 'updatef'])->name('updatef');
-Route::get('/destroyf/{x}', [programController::class, 'destroyf'])->name('destroyf');
+Route::get('/destroyf/{x}', [programController::class, 'destroyf'])->name('program-destroyf');
 //End Program controller
 
 //Titles controller
@@ -541,48 +541,48 @@ Route::POST('/percent-Update/{x}',[PeoplePercentController::class, 'percentUpdat
 
 Route::get('/add-percent',[PeoplePercentController::class, 'addPercent'])->name('add-percent');
 Route::get('/edit-percent/{x}',[PeoplePercentController::class, 'editPercent'])->name('edit-percent');
-Route::get('/destroy-percent/{x}',[PeoplePercentController::class, 'destroyf'])->name('destroyf');
+Route::get('/destroy-percent/{x}',[PeoplePercentController::class, 'destroyf'])->name('destroy-destroyf');
 //inclusive
 Route::resource('/inclusive',InclusiveController::class);
 Route::POST('/inclusiveUpdate/{x}',[InclusiveController::class, 'inclusiveUpdate'])->name('inclusiveUpdate');
 
 Route::get('/addInclusive',[InclusiveController::class, 'addinclusive'])->name('addinclusive');
 Route::get('/editInclusive/{x}',[InclusiveController::class, 'editInclusive'])->name('editInclusive');
-Route::get('/destroyInclusive/{x}',[InclusiveController::class, 'destroyf'])->name('destroyf');
+Route::get('/destroyInclusive/{x}',[InclusiveController::class, 'destroyf'])->name('inclusive-destroyf');
 
 
 
 Route::resource('/class',ClassgController::class);
 Route::get('/addclass',[ClassgController::class, 'addclass'])->name('addclass');
 Route::get('/editClass/{x}',[ClassgController::class, 'editClass'])->name('editClass');
-Route::get('/destroyClass/{x}',[ClassgController::class, 'destroy'])->name('destroy');
+Route::get('/destroyClass/{x}',[ClassgController::class, 'destroy'])->name('class-destroy');
 
 Route::resource('/session',SessionController::class);
 Route::get('/addsession',[SessionController::class, 'addsession'])->name('addsession');
 Route::get('/editSession/{x}',[SessionController::class, 'editSession'])->name('editSession');
-Route::get('/destroySession/{x}',[SessionController::class, 'destroy'])->name('destroy');
+Route::get('/destroySession/{x}',[SessionController::class, 'destroy'])->name('session-destroy');
 
 
 Route::resource('/employee',EmployeeController::class);
 Route::get('/addemployee',[EmployeeController::class, 'addemployee'])->name('addemployee');
 Route::get('/editemployee/{x}',[EmployeeController::class, 'editemployee'])->name('editemployee');
-Route::get('/destroyEmployee/{x}',[EmployeeController::class, 'destroy'])->name('destroy');
+Route::get('/destroyEmployee/{x}',[EmployeeController::class, 'destroy'])->name('employee-destroy');
 
 Route::resource('/supply',SupplyController::class);
 Route::get('/addSupply',[SupplyController::class, 'addSupply'])->name('addSupply');
 Route::get('/editsupply/{x}',[SupplyController::class, 'editsupply'])->name('editsupply');
-Route::get('/destroySupply/{x}',[SupplyController::class, 'destroy'])->name('destroy');
+Route::get('/destroySupply/{x}',[SupplyController::class, 'destroy'])->name('supply-destroy');
 
 
 Route::resource('/category',CategoryController::class);
 Route::get('/addcategory',[CategoryController::class, 'addCategory'])->name('addCategory');
 Route::get('/editCategory/{x}',[CategoryController::class, 'editCategory'])->name('editCategory');
-Route::get('/destroyCategory/{x}',[CategoryController::class, 'destroy'])->name('destroy');
+Route::get('/destroyCategory/{x}',[CategoryController::class, 'destroy'])->name('category-destroy');
 
 Route::resource('/subcategory',SubcategoryController::class);
 Route::get('/addSubcategory',[SubcategoryController::class, 'addSubcategory'])->name('addSubcategory');
 Route::get('/editSubcategory/{x}',[SubcategoryController::class, 'editSubcategory'])->name('editSubcategory');
-Route::get('/destroySubcategory/{x}',[SubcategoryController::class, 'destroy'])->name('destroy');
+Route::get('/destroySubcategory/{x}',[SubcategoryController::class, 'destroy'])->name('subcategory-destroy');
 
 Route::get('/getS/{p}', [SubcategoryController::class,'getS']);
 
@@ -591,26 +591,26 @@ Route::get('/getS/{p}', [SubcategoryController::class,'getS']);
 Route::resource('/condition',AssetconditionController::class);
 Route::get('/addCondition',[AssetconditionController::class, 'addCondition'])->name('addCondition');
 Route::get('/editCondition/{x}',[AssetconditionController::class, 'editCondition'])->name('editCondition');
-Route::get('/destroyCondition/{x}',[AssetconditionController::class, 'destroy'])->name('destroy');
+Route::get('/destroyCondition/{x}',[AssetconditionController::class, 'destroy'])->name('condition-destroy');
 
 
 
 Route::resource('/lodge',LodgeController::class);
 Route::get('/addlodge',[LodgeController::class, 'addlodge'])->name('addlodge');
 Route::get('/editLodge/{x}',[LodgeController::class, 'editLodge'])->name('editLodge');
-Route::get('/destroyLodge/{x}',[LodgeController::class, 'destroy'])->name('destroy');
+Route::get('/destroyLodge/{x}',[LodgeController::class, 'destroy'])->name('lodge-destroy');
 
 
 Route::resource('/relation',RelationController::class);
 Route::get('/addrelation',[RelationController::class, 'addrelation'])->name('addrelation');
 Route::get('/editRelation/{x}',[RelationController::class, 'editRelation'])->name('editRelation');
-Route::get('/destroyRelation/{x}',[RelationController::class, 'destroy'])->name('destroy');
+Route::get('/destroyRelation/{x}',[RelationController::class, 'destroy'])->name('relation-destroy');
 
 
 Route::resource('/designation',DesignationController::class);
 Route::get('/adddesignation',[DesignationController::class, 'adddesignation'])->name('adddesignation');
 Route::get('/editDesignation/{x}',[DesignationController::class, 'editDesignation'])->name('editDesignation');
-Route::get('/destroyDesignation/{x}',[DesignationController::class, 'destroy'])->name('destroy');
+Route::get('/destroyDesignation/{x}',[DesignationController::class, 'destroy'])->name('designation-destroy');
 
 // Home page route
 Route::resource('/page',homeController::class);
@@ -630,7 +630,7 @@ Route::post('pageWidgetList/{x}',[homeController::class, 'pageWidgetList'])->nam
 //Route::resource('/createPage',homeController::class);
 //Route::get('/section',[homeController::class, 'section'])->name('section');
 Route::get('section',[homeController::class, 'section'])->name('section');
-Route::get('section-number/{x}',[homeController::class, 'section'])->name('section');
+Route::get('section-number/{x}',[homeController::class, 'section'])->name('section-number');
 
 //Attractions
   Route::resource('/Attraction',AttractionController::class);
