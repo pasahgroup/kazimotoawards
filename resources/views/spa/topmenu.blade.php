@@ -71,9 +71,8 @@
                                                     <div class="cart-img">
                                                         <a href="#"><img src="../../img/kazimoto/p4.png" alt="#"></a>
                                                     </div>
-                                                    <div class="cart-info">
-                                                     <a href="/contestant">Be a Contestant</a>
-                                                    </div>
+                                                      <a href="/contestant">Be a Contestant</a>
+                                                   
                                                                                                  </div>
                                             </li>
                                             <li>
@@ -81,9 +80,7 @@
                                                     <div class="cart-img">
                                                        <a href="#"><img src="../../img/kazimoto/s2.png" alt="#"></a>
                                                     </div>
-                                                    <div class="cart-info">
-                                                     <a href="#">Be a Sponsor</a>
-                                                    </div>
+                                                     <a href="/register_sponsorw">Be a Sponsor</a>                                                   
                                                                                                  </div>
                                             </li>
                                             <li>
@@ -91,9 +88,8 @@
                                                     <div class="cart-img">
                                                          <a href="#"><img src="../../img/kazimoto/v1.png" alt="#"></a>
                                                     </div>
-                                                    <div class="cart-info">
-                                                     <a href="#">Vote</a>
-                                                    </div>
+                                                        <a href="#">Vote</a>
+                                                 
                                                                                                  </div>
                                             </li>
                                         </ul>
@@ -136,17 +132,19 @@
             <div class="container-fluid">
                 <div class="header-top-wrapper">
                     <div class="row">
-                      <span> <marquee>Tanzania Mapishi Yetu  Awards(TMYA)-{{$currYear}}</marquee></span>
+                      <span> <marquee>Tanzania Mapishi Yetu  Awards(TMYA)-{{$currYear}}       
+
+<a  href="/contestant" class="btn-secondary">Be a Contestant<i class="fa-solid fa-angles-down"></i></a>
+                        
+
+                        <a  href="/register_sponsorw" class="btn-info">Be a Sponsor<i class="fa-solid fa-angles-down"></i></a>
+                        <a  href="#" class="btn-outline-primary">Vote<i class="fa-solid fa-angles-down"></i></a>
+                      </marquee></span>
                    
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
 
 
         <!-- Main Header Area -->

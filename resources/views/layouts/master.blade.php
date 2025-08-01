@@ -146,10 +146,6 @@
 
 
 
-
-
-
-
        <!-- <script src="../assetf/js/jquery/jquery-2.2.4.min.js"></script> -->
 <!-- jQuery -->
 <script src="../../../../plugins/jquery/jquery.min.js"></script>

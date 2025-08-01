@@ -43,7 +43,59 @@ class SponsorController extends Controller
      * @param  \App\Http\Requests\StoresponsorRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function sponsorp(Request $request)
+    {
+        
+//dd(request('mobile'));
+
+
+  $sponsors = sponsor::UpdateOrCreate([
+        'sponsor_name'=>request('sponsor'),
+        'mobile'=>request('mobile'),
+         'email'=>request('email'),
+        'pledge'=>request('pledge'),
+         'contact_person'=>request('contact_person'),
+
+        'address'=>request('address'),
+        'website'=>request('website'),
+        'status'=>request('status')        
+        ]);
+
+
+//Update photo if exists
+  if(request('logo_photo')){
+                $attach = request('logo_photo');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                      //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $missionphoto);
+                    $path = $attached->storeAs('public/logos/', $imageToStore);
+                }
+
+  $contestant_fileupdate = sponsor::where('id',$sponsors->id)
+             ->update([
+               'logo'=>$imageToStore
+
+        ]);        
+    }
+
+return redirect()->route('register_sponsorw')->with('success','Tour Summary Cost created successful');
+
+    }
+
+
+
+
+
+public function store(Request $request)
     {
         
 //dd(request('mobile'));
@@ -91,6 +143,11 @@ return redirect()->route('sponsors.index')->with('success','Tour Summary Cost cr
 
     }
 
+
+
+
+
+
     /**
      * Display the specified resource.
      *
@@ -106,6 +163,12 @@ return redirect()->route('sponsors.index')->with('success','Tour Summary Cost cr
         return view('admin.sponsors.addsponsor',compact('sponsors'));
     }
 
+
+    public function sponsorw(Request $request)
+    {
+       $sponsors=sponsor::get();
+        return view('website.sponsorw.addsponsorw',compact('sponsors'));
+    }
 
 
     /**

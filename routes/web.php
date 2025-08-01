@@ -169,12 +169,12 @@ Route::resource('/item',ItemController::class);
 
 
 Route::resource('/addAsset', AssetCateController::class);
-Route::resource('/reassign-asset',ReassignController::class);
-Route::get('/indexf', [ReassignController::class, 'indexf'])->name('indexf');
+//Route::resource('/reassign-asset',ReassignController::class);
+//Route::get('/indexf', [ReassignController::class, 'indexf'])->name('indexf');
 
 
 Route::get('/getSubcategory/{id}', [AssetController::class, 'getSubcategory']);
-Route::get('/getAll/{id}', [ReassignController::class, 'getAll']);
+//Route::get('/getAll/{id}', [ReassignController::class, 'getAll']);
 
 Route::get('/getSubcategor/{id}', [AssetController::class, 'getSubcategor']);
 Route::get('/getD/{p}', [AssetController::class,'getD']);
@@ -457,8 +457,13 @@ Route::get('/contact-destroy/{x}', [ContactsController::class, 'destroy'])->name
 
 Route::resource('/sponsors',SponsorController::class);
 Route::get('/register_sponsor', [SponsorController::class,'show'])->name('register_sponsor');
-Route::get('/sponsor-destroy/{x}', [SponsorController::class, 'destroy'])->name('sponsor-destroy');
+Route::get('/register_sponsorw', [SponsorController::class,'sponsorw'])->name('register_sponsorw');
+Route::post('/register_sponsorp', [SponsorController::class,'sponsorp'])->name('register_sponsorp');
 
+
+Route::get('/sponsor-destroy/{x}', [SponsorController::class, 'destroy'])->name('sponsor-destroy');
+// Route::post('/posts', [SponsorController::class, 'store'])->name('posts');
+//Route::get('/register_contactd', [ContactsController::class,'show'])->name('register_contactd');
 
 
 
