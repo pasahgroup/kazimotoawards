@@ -1,5 +1,12 @@
 @extends('spa.mainlayout')
 @section('contents')
+
+<style>
+  .form-horizontal .control-label {
+  text-align: left !important;
+}  
+
+</style>
     <main class="main">
 <div class="hero-section3 hs3-2">
             <div class="container">
@@ -68,7 +75,6 @@
                <input type="email" name="email" id="email" class="form-control" >
           </div>
             </div>
-
 
  <div class="row">
               <div class="col-md-6 col-sm-12">   
