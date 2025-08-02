@@ -10,6 +10,7 @@ use App\Models\bank;
 use App\Models\slide;
 use App\Models\contact;
 use App\Models\award;
+use App\Models\sponsor;
 
 use App\Http\Requests\StorewebsiteRequest;
 use App\Http\Requests\UpdatewebsiteRequest;
@@ -33,9 +34,12 @@ class WebsiteController extends Controller
         ->get();
             $awards=award::where('status','Active')
         ->get();
-       // dd($slides);
 
-        return view('website.home.home',compact('donors','slides','awards'));
+          $sponsors=sponsor::where('status','Active')
+        ->get();
+       //dd($sponsors);
+
+        return view('website.home.home',compact('donors','slides','awards','sponsors'));
     }
 
     public function form()

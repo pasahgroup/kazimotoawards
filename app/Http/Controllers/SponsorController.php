@@ -23,7 +23,7 @@ class SponsorController extends Controller
     {
        $sponsors=sponsor::get();     
      $status=contacts::distinct()->get(['status']);
-     //dd('ddd');
+    // dd($sponsors);
      return view('admin.sponsors.sponsors',compact('sponsors','status'));
     }
 

@@ -1,6 +1,112 @@
 @extends('spa.mainlayout')
 @section('contents')
 
+<style>
+    
+.tech-slideshow {
+  height: 100px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border:1px solid black;
+}
+
+.mover-1 {
+  height: 150px;
+  width: 10000px;
+  
+  position: absolute;
+  overflow-x:hidden;
+  top: 0;
+  left: 0;
+
+  animation: moveSlideshow 40s linear infinite;
+}
+
+.mover-1 img {
+  display:inline-block;
+  vertical-align:middle;
+  width:100px;
+  margin:0;
+}
+
+@keyframes moveSlideshow {
+  100% { 
+    transform: translateX(-520px);  
+  }
+}
+</style>
+
+<style>
+    
+.marquee {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  /*border: 1px solid blue;*/
+}
+.marquee-content {
+  display: inline-block;
+  margin-top: 5px;
+  animation: marquee 30s linear infinite;
+}
+.item-collection-1 {
+  position: relative;
+  left: 0%;
+  animation: swap 30s linear infinite;
+}
+@keyframes swap {
+  0%, 50% {
+    left: 0%;
+  }
+  50.01%,
+  100% {
+    left: 100%;
+  }
+}
+.marquee-content:hover {
+  animation-play-state: paused
+}
+.item1 {
+  display: inline-block;
+  height: 70px;
+  width: 140px;
+  background:#;
+  vertical-align: top;
+  margin-left: 15px;
+}
+.item2 {
+  display: inline-block;
+  height: 70px;
+  width: 100px;
+  background:#;
+  vertical-align: top;
+  margin-left: 15px;
+  line-height: 14px;
+}
+/* Transition */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+</style>
+
+
+
+
+
+
+
+
      <main class="main">
         <!-- hero slider -->
         <div class="hero-section3 hs3-2">
@@ -52,84 +158,25 @@
                     </div>
                 </div>
                 <div class="category-slider owl-carousel owl-theme">
+                                      @foreach($sponsors as $sponsor)
+                 
                     <div class="category-item">
                         <a href="#">
+                                <marquee>
                             <div class="category-info">
                                 <div class="icon">
-                                    <img src="assets/img/category/gc1.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h4>Vegetables</h4>
-                                    <p>30 Items</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="#">
-                            <div class="category-info">
-                                <div class="icon">
-                                    <img src="assets/img/category/gc2.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h4>Milks & Creams</h4>
-                                    <p>30 Items</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="#">
-                            <div class="category-info">
-                                <div class="icon">
-                                    <img src="assets/img/category/gc3.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h4>Bakery</h4>
-                                    <p>30 Items</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="#">
-                            <div class="category-info">
-                                <div class="icon">
-                                    <img src="assets/img/category/gc4.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h4>Breakfast</h4>
-                                    <p>30 Items</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="#">
-                            <div class="category-info">
-                                <div class="icon">
-                                    <img src="assets/img/category/gc5.png" alt="">
-                                </div>
-                                <div class="content">
-                                    <h4>Fruits</h4>
-                                    <p>30 Items</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="category-item">
-                        <a href="#">
-                            <div class="category-info">
-                                <div class="icon">
-                                    <img src="assets/img/category/gc6.png" alt="">
+                                    <img src="{{ URL::asset('/storage/logos/'.$sponsor->logo) }}" alt="">
                                 </div>
                                 <div class="content">
                                     <h4>Meats</h4>
                                     <p>30 Items</p>
                                 </div>
                             </div>
+                                </marquee>
                         </a>
                     </div>
+            
+                    @endforeach
                     <div class="category-item">
                         <a href="#">
                             <div class="category-info">
@@ -715,6 +762,29 @@
         <!-- popular item end -->
 
 
+
+
+
+<div class="product-area pt-50">
+<div class="container">
+<div class="tech-slideshow">
+   
+  <div class="mover-1">
+    @foreach($sponsors as $sponsor)
+ 
+    <img src="{{URL::asset('/storage/logos/'.$sponsor->logo) }}" style="height:150px;">
+   
+    <img src="http://static.bragdeal.com/logo.png">
+    <img src="{{URL::asset('/storage/logos/'.$sponsor->logo) }}">
+   @endforeach
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
         <!-- product area -->
         <div class="product-area pt-50">
             <div class="container">
@@ -927,34 +997,61 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="site-heading-inline">
-                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Popular Brands</h2>
-                            <a href="#">All Brands <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Sponsors</h2>
+                                                    </div>
                     </div>
                 </div>
                 <div class="brand-slider owl-carousel owl-theme">
-                    <div class="brand-item">
-                        <img src="assets/img/brand/01.png" alt="">
+                   
+@foreach($sponsors as $sponsor)
+  <div class="category-item">
+                        
+                            <div class="category-info">
+                                <div class="item2">
+                                    <img src="{{URL::asset('/storage/logos/'.$sponsor->logo) }}" alt="">
+                                </div>                               
+                            </div>
+                        </br>
+                            <a href="#">
+                            <strong>{{$sponsor->sponsor_name}}</strong>
+                        </a>
                     </div>
-                    <div class="brand-item">
-                        <img src="assets/img/brand/02.png" alt="">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/img/brand/03.png" alt="">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/img/brand/04.png" alt="">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/img/brand/05.png" alt="">
-                    </div>
-                    <div class="brand-item">
-                        <img src="assets/img/brand/06.png" alt="">
-                    </div>
+@endforeach
+
                 </div>
             </div>
         </div>
         <!-- brand area end -->
+
+
+
+
+  <div class="brand-area pt-60">
+            <div class="container">
+<div class="marquee">
+<div class="marquee-content">
+@foreach($sponsors as $sponsor)
+ <!--    <span class="item-collection-1">
+        <span class="item1">
+            
+             <img src="{{URL::asset('/storage/logos/'.$sponsor->logo) }}" alt="">
+        </span>
+    </span> -->
+    <span class="item-collection-2">
+        <span class="item2">
+             <img src="{{URL::asset('/storage/logos/'.$sponsor->logo) }}" alt="">
+        </span>
+    </span>
+
+@endforeach
+</div>
+</div>
+</div>
+</div>
+
+
+
+
 
 
         <!-- blog area -->
@@ -1034,7 +1131,5 @@
         </div>
         <!-- blog area end -->
 
-</main>
-
- 
+</main> 
 @endsection
