@@ -315,7 +315,7 @@
                  <td>{{ $data->display?? "nill" }}</td>
                  <td>{{ $data->status }}</td>
                 <td>                
-                  <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
+                  <form method="GET" action="{{ route('slides.edit',$data->id) }}" class="d-inline">
                     @csrf
                     <input type="hidden" name="user_id" value="PUT">
                     <input type="hidden" name="asset_id" value="#">
@@ -330,7 +330,7 @@
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 
-                   <a href="/" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/bank-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
+                   <a href="/slide-destroy/{{$data->id}}" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/bank-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 

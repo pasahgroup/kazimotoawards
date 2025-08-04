@@ -69,47 +69,86 @@
 
 
 
-
-
-
      <main class="main">
         <!-- hero slider -->
-        <div class="hero-section3 hs3-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12 offset-xl-1">
-                        <div class="hero-slider owl-carousel owl-theme">
-                          
 
-                            @foreach($slides as $slide)
-                            <div class="hero-single">                               
-                                <div class="hero-single-bg" style="background-image: url({{ URL::asset('/storage/slides/'.$slide->photo) }})" style="width:300px;"></div>
-                                <div class="container">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-12 col-lg-7">
-                                            <div class="hero-content">                                               
-                                                <h5 class="hero-title" data-animation="fadeInRight" data-delay=".50s">                                                <span> {{$slide->photo_title}}</span> Shopping
-                                                </h5>
-                                                <p data-animation="fadeInLeft" data-delay=".75s">
-                                                    {{$slide->photo_description}}
-                                                </p>
-                                                <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
+        <!-- hero slider -->
+        <div class="hero-section2">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-lg-8">
+                        <div class="hero-slider-wrap">
+                            <div class="hero-slider owl-carousel owl-theme">
+                               
+
+
+                               @foreach($slides as $slide) 
+                                <div class="hero-single">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12 col-lg-7">
+                                                <div class="hero-content">
+                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">{{$slide->photo_title}}</h6>
+                                                 
+                                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                                         {{$slide->photo_description}}
+                                                    </p>
+                                                   
+                                                         <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
                                                     <a href="#" class="theme-btnx">Shop Now<i class="fas fa-arrow-right"></i></a>
                                                 </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-5">
+                                                <div class="hero-right">
+                                                    <div class="hero-img">
 
+  <img src="{{ URL::asset('/storage/slides/'.$slide->photo) }}" alt="" data-animation="fadeInRight"
+                                                            data-delay=".25s" style="height:300px;">
+
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>                       
+                                </div>
+                                 @endforeach
+
                             </div>
-                             @endforeach
-                        
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="small-banner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-12 px-lg-0">
+                                        <div class="banner-item">
+                                            <img src="assets/img/banner/mini-banner-1.jpg" alt="">
+                                            <div class="banner-content">
+                                                <p>Hot Collections</p>
+                                                <h3>Best Travel Sale <br> Collections</h3>
+                                                <a href="#">Discover Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-12 px-lg-0">
+                                        <div class="banner-item">
+                                            <img src="assets/img/banner/mini-banner-2.jpg" alt="">
+                                            <div class="banner-content">
+                                                <p>Apple Collections</p>
+                                                <h3>Apple Smart Watch <br> Collectons</h3>
+                                                <a href="#">Shop Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- hero slider end -->
+     
 
    
         <!-- popular item -->

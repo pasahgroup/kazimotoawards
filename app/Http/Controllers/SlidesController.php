@@ -85,6 +85,7 @@ public function slides()
             }
  
 
+
          $slides = Slide::UpdateOrCreate([
         'photo_title'=>request('photo_title'),
         'photo_description'=>request('photo_description'),      
@@ -93,11 +94,8 @@ public function slides()
             'display'=>request('display'),
         'status'=>request('status'), 
         ]);
-
-         //dd('Inserted correctly');
-
-         //return view('slides'); 
-       return redirect('/slides');  
+    
+       return redirect('/slides');
         }
 
     
@@ -108,14 +106,13 @@ public function slides()
 
  
 
-        public function show(project $project)
+        public function show(award $project)
     {
-         $awards['data'] = award::orderby("award_name","asc")
-              ->select('id','award_name')
+         $slide_awards= award::orderby("award_name","asc")
+             ->select('id','award_name')
               ->get();
-
- //dd($projects);
-        return view('admin.slides.addslide',compact('awards'));
+             //dd($awards);
+        return view('admin.slides.addslide',compact('slide_awards'));
     }
 
 
@@ -127,8 +124,6 @@ public function slides()
               ->where('project_id',$subprojectid)
               ->get();
 
-
- //dd( $empData['data']);
          return response()->json($empData);
 
     }
@@ -137,46 +132,37 @@ public function slides()
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Request $request)
+    public function edit(Request $request,$id)
     {
        // Fetch departments
-         $slides=slide::where('id',request('edit_slide'))
+         $slides=slide::where('id',$id)
          ->first();
 
-         $subprojects=subproject::where('project_id',$slides->project_id)->get();
-
-      $subproject_first=subproject::where('id',$slides->subproject_id)
+         $award_data=award::where('id',$slides->id)
          ->first();
 
-        $project_first=project::where('id',$slides->project_id)
-         ->first();
-
-       // dd($subprojects);
-
-         $projects['data'] = project::orderby("project_name","asc")
-              ->select('id','project_name')
+  $slide_awards= award::orderby("award_name","asc")
+             ->select('id','award_name')
               ->get();
 
 
-
-
-        return view('admin.slides.editslide',compact('projects','slides','project_first','subproject_first','subprojects'));
+      
+        return view('admin.slides.editslide',compact('slides','slide_awards','award_data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
       public function update(Request $request,$id)
-    {
-    $slides = slide::where('id',$id)->first();      
+    {  
+ $slides=slide::where('id',$id)
+         ->first();
       $visionUpdate = slide::where('id',$id)
-             ->where('status','Active')
              ->update([
-           
-         'photo_title'=>request('photo_title'),
+           'photo_title'=>request('photo_title'),
         'photo_description'=>request('photo_description'),      
-        'project_id'=>request('project_id'),
-        'subproject_id'=>request('subproject_id'),
+        'award_id'=>request('award_id'),
+           //'photo'=>$imageToStore,
             'display'=>request('display'),
         'status'=>request('status'),
         ]);
@@ -200,15 +186,13 @@ public function slides()
                 }
 
              $slideUpdate = slide::where('id',$id)
-             ->where('status','Active')
              ->update([
             'photo'=>$slidephoto
         ]);
-
-//dd($slides->photo);
-        Storage::delete('/public/slides/'.$slides->photo);   
+                  Storage::delete('/public/slides/'.$slides->photo);
             }
    
+       
         return redirect('/slides');
     }
 

@@ -134,15 +134,15 @@
 
 <div class="form-container">
     <div class="col-md-12">
-      <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.update',$slides->id) }}" enctype="multipart/form-data">
+        <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('slides.update',$slides->id) }}" enctype="multipart/form-data">
         @csrf
-        <h3><i class="fa fa-calendar-check-o"></i>SLIDE REGISTRATION FORM</h3>
+        <h3><i class="fa fa-calendar-check-o"></i>SLIDE EDITING FORM</h3>
 <input type="hidden" name="_method" value="PUT">
         <fieldset class="active">
             <div class="form-group row">        
            <div class="col-md-12 col-sm-12">
         <label>Photo title</label>
-        <input type="text" name="photo_title" id="photo_title" class="form-control" value="{{$slides->photo_title}}"  maxlength="150" required>
+        <input type="text" name="photo_title" id="photo_title" class="form-control" maxlength="150" value="{{$slides->photo_title}}" required>
          
   </div>
    </div>
@@ -163,7 +163,7 @@
             <span class="img-div">
               <div class="text-center img-placeholder"  onClick="triggerClick()">
               </div>
-                <img src="{{ URL::asset('/storage/slides/'.$slides->photo) }}" onClick="triggerClick()" id="profileDisplay">
+             <img src="{{ URL::asset('/storage/slides/'.$slides->photo) }}" onClick="triggerClick()" id="profileDisplay">
             </span>
             </div>               
   </div>
@@ -173,43 +173,30 @@
  <div class="form-group row">
       <div class="col-md-12 col-sm-12">
         <label>Sub project Description</label>
-            <textarea cols="30" rows="4" name="photo_description" class="form-control" id="photo_description" placeholder="photo description" maxlength="1200" required>{{$slides->photo_description}}</textarea>
+            <textarea cols="30" rows="4" name="photo_description" class="form-control" id="photo_description" maxlength="1200" required>{{$slides->photo_description}}</textarea>
   </div>
   </div>
+
 
  <div class="form-group row">                                          
               <div class="col-md-6 col-sm-6">   
-              <label>Project name</label>
-              <select class="form-control" name="project_id" id="project_id">
-                   <option selected value="{{$project_first->id?? 0}}">{{$project_first->project_name?? ""}}</option>
-               <option value="0"></option>
-  @foreach($projects['data'] as $project)
-                <option value="{{$project->id}}">{{$project->project_name}}</option>
+              <label>Award name</label>
+              <select class="form-control" name="award_id" id="award_id">
+                   <option value="{{$award_data->id}}" selected>{{$award_data->award_name}}</option>
+                <option></option>
+
+  @foreach($slide_awards as $award_data)
+                <option value="{{$award_data->id}}">{{$award_data->award_name}}</option>
             @endforeach    
               </select>
-          </div>
-                                                
-    
-              <div class="col-md-6 col-sm-6">   
-              <label>Sub project name</label>
-              <select id='subproject_id' name='subproject_id' class="form-control">
-                 <option  selected value="{{$subproject_first->id?? 0}}">{{$subproject_first->sub_project_name ?? ""}}</option>
-
-                 <option value="0"></option>
-        <option value='0'>-- Select subproject name --</option>
-        @foreach($subprojects as $subproject)
-         <option value="{{$subproject->id}}">{{$subproject->sub_project_name}}</option>
-        @endforeach
-    </select>
-          </div>
+          </div>                   
             </div>
 
-    <div class="form-group row">
+ <div class="form-group row">
               <div class="col-md-6 col-sm-12">   
               <label>Display</label>
               <select class="form-control" name="display" id="display">
-                 <option>{{$slides->display}}</option>
-
+                <option>{{$slides->display}}</option>
                 <option></option>
                 <option>Blog</option>
                   <option>Footer</option>
@@ -220,7 +207,7 @@
            <div class="col-md-6 col-sm-12">   
               <label>Status</label>
               <select class="form-control" name="status" id="status">
-                <option>{{$slides->status}}</option>
+                 <option>{{$slides->status}}</option>
                 <option></option>
                 <option>Active</option>
                 <option>Inactive</option>
@@ -229,7 +216,7 @@
             </div>
 <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/slides" role="button" class="btn-previous">Back</a>
+             <a href="/slides" role="button" class="btn-previous">Cancel</a>
             <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
@@ -250,7 +237,7 @@
 
              // Empty the dropdown
              $('#subproject_id').find('option').not(':first').remove();
-//alert(id);
+
              // AJAX request
              $.ajax({
                  url: 'getSlides/'+id,
@@ -263,7 +250,6 @@
                           len = response['data'].length;
                      }
 
-//alert(len);
                      if(len > 0){
                           // Read data and create <option >
                           for(var i=0; i<len; i++){
@@ -410,11 +396,13 @@
 
 
      $(document).ready(function(){
+
         // Department Change
         $('#sel_emp').change(function(){
 
              // Department id
              var id = $(this).val();
+
 
              // Empty the dropdown
              $('#sel_emp2').find('option').not(':first').remove();
@@ -430,6 +418,8 @@
                      if(response['data'] != null){
                           len = response['data'].length;
                      }
+
+
 
                      if(len > 0){
                           // Read data and create <option >

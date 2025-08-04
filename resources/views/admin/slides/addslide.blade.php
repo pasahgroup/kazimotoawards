@@ -176,13 +176,15 @@
   </div>
   </div>
 
+
  <div class="form-group row">                                          
               <div class="col-md-6 col-sm-6">   
               <label>Award name</label>
               <select class="form-control" name="award_id" id="award_id">
                 <option></option>
-  @foreach($awards['data'] as $award)
-                <option value="{{$award->id}}">{{$award->award_name}}</option>
+
+  @foreach($slide_awards as $award_data)
+                <option value="{{$award_data->id}}">{{$award_data->award_name}}</option>
             @endforeach    
               </select>
           </div>                   
