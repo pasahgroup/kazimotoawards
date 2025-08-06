@@ -133,23 +133,15 @@ $awards = implode(", ", $competes);
 $awards = implode(", ", $competes);
 $award_data = award::where('id',$id)->first();   
       
-dd(request('award_name'));
+//dd($awards);
 
   $donor_nameUpdate = award::where('id',$id)
              ->update([
-'award_name'=>request('award_name'),          
+'award_name'=>request('award_name'),
+   'prize'=>$awards,        
          'year'=>request('year'),    
        'status'=>request('status')
         ]);
-
-
- if(request('prize')){
-$donor_nameUpdate_data= award::where('id',$id)
-             ->update([
-'prize'=>$awards, 
-        ]); 
- }
-
 
 
   if(request('photo')){
