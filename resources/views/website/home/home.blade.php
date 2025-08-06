@@ -87,7 +87,7 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12 col-lg-7">
                                                 <div class="hero-content">
-                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">{{$slide->photo}}</h6>
+                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">{{$slide->photo_title}}</h6>
                                                     
                                                     <p data-animation="fadeInLeft" data-delay=".75s">
                                                         There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.
@@ -113,36 +113,7 @@
                                 </div>
  @endforeach
 
-                           
-     <div class="hero-single">
-                                    <div class="container">
-                                        <div class="row align-items-center">
-                                            <div class="col-md-12 col-lg-7">
-                                                <div class="hero-content">
-                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s"></h6>
-                                                    
-                                                    <p data-animation="fadeInLeft" data-delay=".75s">
-                                                        There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.
-                                                    </p>
-
-                                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
-                                                        <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 col-lg-5">
-                                                <div class="hero-right">
-                                                    <div class="hero-img">
-                                                    <img src="#" alt="" data-animation="fadeInRight"
-                                                     data-delay=".25s" style="height:300px;">
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+     
                             </div>
                         </div>
                     </div>
