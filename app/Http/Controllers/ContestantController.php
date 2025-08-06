@@ -64,9 +64,6 @@ class ContestantController extends Controller
     }
 
 
-
-
-
     /**
      * Store a newly created resource in storage.
      *
@@ -101,6 +98,15 @@ class ContestantController extends Controller
         ]);
 
 //dd($contestants->id);
+
+//Install Awards per contestant
+
+
+
+
+
+
+
 
 //File1
   if(request('file_one')){

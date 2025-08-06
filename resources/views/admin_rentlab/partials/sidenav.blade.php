@@ -37,7 +37,7 @@
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
                         <i class="las la-trophy"></i>
-                        <span class="menu-title">@lang('Awards') </span>
+                        <span class="menu-title">@lang('Contestants') </span>
                     </a>
                     <div class="sidebar-submenu # ">
                         <ul>

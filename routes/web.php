@@ -120,9 +120,11 @@ Route::resource('/contact',ContactController::class);
 Route::resource('/project',ProjectController::class);
 Route::resource('/subproject',SubprojectController::class);
 Route::resource('/activity',ActivityController::class);
-Route::resource('/awards',AwardController::class);
 
+
+Route::resource('/awards',AwardController::class);
 Route::get('/get_awardsw', [AwardController::class,'awardsw']);
+  Route::get('/awards-edit/{x}', [AwardController::class, 'edit'])->name('awards-edit');
 
 
 Route::resource('/slides',SlidesController::class);

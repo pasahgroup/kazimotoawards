@@ -1,103 +1,26 @@
 @extends('layouts.master')
 @section('contents')
 
-<style>
-  body {
-    font-family: "Calibri Light", Calibri, sans-serif;
-    background-color: #f8f9fa;
-  }
+    <script type="text/javascript">
+     var i = 1;
 
- .form-container {
-    max-width: 950px;
-    margin: 1rem auto;
-    background-color: #fff;
-    padding: 2rem 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+function addkid() {
+  if (i <= 4) {
+    i++;
+    var div = document.createElement('div');
+    div.innerHTML ="<label>Competitor "+i+' prize</label>:<input type="number" name="compete[]" id="compete[]">'
+      + ' <input type="button" id="add_kid()" onclick="addkid()" value="+" />'
+      + ' <input type="button" value="-" onclick="removekid(this)">';
+    document.getElementById('kids').appendChild(div);
   }
+}
 
-  h3 {
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: #4f46e5;
-    text-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
-  }
+function removekid(div) {
+  document.getElementById('kids').removeChild(div.parentNode);
+  i--;
+}
+</script>
 
-  label {
-    font-weight: 500;
-    color: #333;
-    font-size: 13px;
-  }
-
-  .form-control {
-    border: 1px solid #ced4da;
-    border-radius: 0.75rem;
-    /*font-size: 15px;
-    padding: 0.75rem;*/
-    font-family: "Calibri Light", Calibri, sans-serif;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .form-control:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
-  }
-
-  .form-group {
-    margin-bottom: 5px;
-  }
-
-  .btn-gradient {
-    background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
-    border: none;
-    padding: 0.1rem 1.2rem;
-    border-radius: 2rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
-    font-family: "Calibri Light", Calibri, sans-serif;
-    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  .btn-gradient:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.25);
-    background-color: #5b69ff;
-  }
-
-  .btn-previous {
-    background-color: #6c757d;
-    border: none;
-    padding: 0.4rem 1.5rem;
-    border-radius: 2rem;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-family: "Calibri Light", Calibri, sans-serif;
-  }
-
-  .btn-previous:hover {
-    background-color: #5a6268;
-  }
-
-  .input-error {
-    border-color: #dc3545 !important;
-    background-color: #fff4f4;
-  }
-
-  /* Hide all fieldsets except the first */
-  fieldset {
-    display: none;
-  }
-
-  fieldset.active {
-    display: block;
-  }
-</style>
 
 <div class="d-flex justify-content-center mt-2">
   <div style="width: 50%;">
@@ -134,55 +57,61 @@
 
 <div class="form-container">
     <div class="col-md-12">
-    <form method="POST" id="post_form" role="form" class="registration-form" action="{{ route('donor.update',$donors->id) }}" enctype="multipart/form-data">
-        @csrf
- <input type="hidden" name="_method" value="PUT">
 
-        <h3><i class="fa fa-calendar-check-o"></i>DONOR REGISTRATION FORM</h3>
+  <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('awards.update',$awards->id) }}" enctype="multipart/form-data">
+        @csrf
+        <h3><i class="fa fa-calendar-check-o"></i>AWARDS EDITING FORM</h3>
+<input type="hidden" name="_method" value="PUT">
+
+
         <fieldset class="active">
             <div class="form-group row">        
-           <div class="col-md-4 col-sm-6">
-        <label>Donor name</label>
+           <div class="col-md-12 col-sm-12">
+        <label>Award name</label>
+        <input type="text" name="award_name" value="{{$awards->award_name}}" id="award_name" class="form-control" maxlength="64" required>
 
-        <input type="text" name="donor_name" value="{{$donors->donor_name}}" id="donor_name" class="form-control" maxlength="64" required>
-
-  </div>
-   
-      <div class="col-md-2 col-sm-6">
-         <label>Contact number</label>
-         <input type="text" name="contact_number" value="{{$donors->contact_number}}" id="contact_number" class="form-control" maxlength="32" required>   
+  </div>   
   </div>
 
 
-      <div class="col-md-6 col-sm-12">
-         <label>Email</label>
-         <input type="email" name="email" value="{{$donors->email}}" id="email" class="form-control" maxlength="64" required>   
+  <div class="form-group row">             
+              <div class="col-md-6 col-sm-12">
+            <div id="kids">
+        <label>Competitor 1 prize:</label>
+                <input type="text" name="compete[]" id="compete[]" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" />
+                <input type="button" id="add_kid()" onclick="addkid()" value="+" />(limit 5)
+
+         
   </div>
+    </div>  
+
+
+  <div class="col-md-6 col-sm-6">
+        <label>Prizes</label>
+        <input type="text" name="prize" value="{{$awards->prize}}" id="prize" class="form-control" maxlength="64">
+
+  </div>  
   </div>
 
-  <div class="form-group row">
-      <div class="col-md-6 col-sm-12">
-         <label>Address</label>
-         <input type="text" name="address" value="{{$donors->address}}" id="address" class="form-control" maxlength="124" required>   
-  </div>
  
-  </div>
 
+  <div class="form-group row">   
 
-  <div class="form-group row">
-      <div class="col-md-6 col-sm-12">
-         <label>Country</label>
-         <input type="text" name="country" value="{{$donors->country}}" id="country" class="form-control" maxlength="40" required>   
-  </div>
- 
-      <div class="col-md-6 col-sm-12">
+   <div class="col-md-6 col-sm-12">
         <label>Status</label>
          <select class="form-control" aria-label="Default select example" name="status" id="status">
-          <option value="{{$donors->status}}">{{$donors->status}}</option>
+      <option value="Active" selected>{{$awards->status}}</option>    
   <option value="0"></option>
 <option value="Active">Active</option>
 <option value="Inactive">Inactive</option>
 </select>    
+  </div>
+
+      <div class="col-md-6 col-sm-12">
+        <label>Year</label>
+        <input type="number" class="form-control" name="year" value="{{ now()->year }}" min="2020">
+
+ 
   </div>
   </div>
 
@@ -191,7 +120,7 @@
                  <div class="col-lg-6 col-md-12 col-sm-12">
                                     <label for="password_confirmation" :value="('Image')" />
                                     <div class="form-group">
-                                    <input type="file" name="logo[]" onChange="displayImage(this)" id="logo" accept="image/*" class="" style="display:block;">
+                                    <input type="file" name="photo[]" onChange="displayImage(this)" id="photo" accept="image/*" class="" style="display:block;">
 
                                 </div>
                                 </div>
@@ -199,7 +128,7 @@
             <span class="img-div">
               <div class="text-center img-placeholder"  onClick="triggerClick()">
               </div>
-              <img src="{{ URL::asset('/storage/donor_photos/'.$donors->logo) }}" onClick="triggerClick()" id="profileDisplay">
+              <img src="{{ URL::asset('/storage/awards_photos/'.$awards->photo) }}" onClick="triggerClick()" id="profileDisplay">
             </span>
             </div>
            </div>
@@ -207,7 +136,7 @@
 
  <hr>
           <div class="d-flex justify-content-between mt-3">
-             <a href="/donor" role="button" class="btn-previous">Exit</a>
+             <a href="/awards" role="button" class="btn-previous">Exit</a>
             <button type="submit" class="btn-gradient">Update</button>
           </div>
         </fieldset>
@@ -216,7 +145,8 @@
   </div>
 
 
-    <script type='text/javascript'>
+
+      <script type='text/javascript'>
     $(document).ready(function(){
 
         // Department Change

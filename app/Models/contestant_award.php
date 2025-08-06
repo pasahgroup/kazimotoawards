@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class award extends Model
+class contestant_award extends Model
 {
     use HasFactory;
-     protected $fillable = [
-        'award_name',
-        'prize', 
-        'photo',
+      protected $fillable = [
+        'contestant_id',
+        'award_id',
         'year',
-         'status',
-        'user_id'
+         'status'
     ];
 }

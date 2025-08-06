@@ -295,7 +295,7 @@
               <tr>
                 <th>ID.</th>
                 <th>Award name</th>
-                <th>Price</th>
+                <th>Prize</th>
                <th>Photo</th>              
                 <th>Registra</th>
                    <th>Year</th>
@@ -304,18 +304,20 @@
               </tr>
             </thead>
             <tbody>
+
               @foreach ($awards as $data)
               <tr>
                 <td>{{ $data->id }}</td>
                 <td>{{ $data->award_name }}</td>
-                 <td>{{ $data->price }}</td> 
+                 <td>{{ $data->prize }}</td> 
                 
             <td><img src="{{ URL::asset('/storage/awards_photos/'.$data->photo) }}" alt="The Logo"></td>
                 <td>{{ $auth->name?? "nill" }}</td> 
                  <td>{{ $data->year?? "nill" }}</td>
                  <td>{{ $data->status }}</td>
-                <td>                
-                  <form method="GET" action="{{ route('awards.edit',$data->id) }}" class="d-inline">
+                <td>  
+                        
+                  <form method="GET" action="{{ route('awards-edit',$data->id) }}" class="d-inline">
                     @csrf
                     <input type="hidden" name="user_id" value="PUT">
                     <input type="hidden" name="asset_id" value="#">
@@ -325,8 +327,9 @@
                       <i class="fa fa-edit"></i> Edit
                     </button>
                   </form>
+                 
 
-                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/award-destroy/{{$data->id}}" data-message="Are you sure you want to delete this bank?">
+                  <a href="#" class="deletebtn btn-sm btn-danger btn-delete text-white" data-url="/award-destroy/{{$data->id}}" data-message="Are you sure you want to delete this Award?">
                     <i class="fa fa-trash"></i> Delete
                   </a> 
 

@@ -72,7 +72,177 @@
      <main class="main">
         <!-- hero slider -->
 
-        <!-- hero slider -->
+          <div class="hero-section2">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-lg-8">
+                        <div class="hero-slider-wrap">
+                            <div class="hero-slider owl-carousel owl-theme">
+                  
+{{$slides}}
+
+ @foreach($slides as $slide) 
+                                <div class="hero-single">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12 col-lg-7">
+                                                <div class="hero-content">
+                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                        For Your First <br><span>Goemart</span> Shopping
+                                                    </h1>
+                                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                                        There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.
+                                                    </p>
+                                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                        <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-5">
+                                                <div class="hero-right">
+                                                    <div class="hero-img">
+                                                        <img src="assets/img/slider/hero-1.png" alt="" data-animation="fadeInRight"
+                                                            data-delay=".25s">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+ @endforeach
+
+                                <div class="hero-single">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12 col-lg-7">
+                                                <div class="hero-content">
+                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                        For Your First <br><span>Goemart</span> Shopping
+                                                    </h1>
+                                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                                        There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.
+                                                    </p>
+                                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                        <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-5">
+                                                <div class="hero-right">
+                                                    <div class="hero-img">
+                                                        <img src="assets/img/slider/hero-2.png" alt="" data-animation="fadeInRight"
+                                                            data-delay=".25s">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hero-single">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12 col-lg-7">
+                                                <div class="hero-content">
+                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                        For Your First <br><span>Goemart</span> Shopping
+                                                    </h1>
+                                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                                        There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.
+                                                    </p>
+                                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                        <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-5">
+                                                <div class="hero-right">
+                                                    <div class="hero-img">
+                                                        <img src="assets/img/slider/hero-3.png" alt="" data-animation="fadeInRight"
+                                                            data-delay=".25s">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                <div class="hero-single">
+                                    <div class="container">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-12 col-lg-7">
+                                                <div class="hero-content">
+                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">Up To 50% Off</h6>
+                                                    <h1 class="hero-title" data-animation="fadeInRight" data-delay=".50s">
+                                                        For Your First <br><span>Goemart</span> Shopping
+                                                    </h1>
+                                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                                        There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.
+                                                    </p>
+                                                    <div class="hero-btn" data-animation="fadeInUp" data-delay="1s">
+                                                        <a href="#" class="theme-btn">Shop Now<i class="fas fa-arrow-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 col-lg-5">
+                                                <div class="hero-right">
+                                                    <div class="hero-img">
+                                                        <img src="assets/img/slider/hero-4.png" alt="" data-animation="fadeInRight"
+                                                            data-delay=".25s">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="small-banner">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-12 px-lg-0">
+                                        <div class="banner-item">
+                                            <img src="assets/img/banner/mini-banner-1.jpg" alt="">
+                                            <div class="banner-content">
+                                                <p>Hot Collections</p>
+                                                <h3>Best Travel Sale <br> Collections</h3>
+                                                <a href="#">Discover Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-12 px-lg-0">
+                                        <div class="banner-item">
+                                            <img src="assets/img/banner/mini-banner-2.jpg" alt="">
+                                            <div class="banner-content">
+                                                <p>Apple Collections</p>
+                                                <h3>Apple Smart Watch <br> Collectons</h3>
+                                                <a href="#">Shop Now</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
         <div class="hero-section2">
             <div class="container">
                 <div class="row g-3">
@@ -90,9 +260,21 @@
                                                 <div class="hero-content">
                                                     <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">{{$slide->photo_title}}</h6>
                                                  
-                                                    <p data-animation="fadeInLeft" data-delay=".75s">
+                                                    <p data-animation="fadeInLeft" data-delay=".75s" class="demo-1">
                                                          {{$slide->photo_description}}
                                                     </p>
+00000000000000
+
+
+
+<div class="tooltip">Hover over me
+  <span class="tooltiptext">Tooltip text</span>
+</div>
+
+
+
+
+
                                                    
                                                          <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
                                                     <a href="#" class="theme-btnx">Shop Now<i class="fas fa-arrow-right"></i></a>
@@ -113,6 +295,33 @@
                                     </div>
                                 </div>
                                  @endforeach
+
+
+<!-- 
+ <div class="text-center" style="background-color:#f2fde6;border-radius:100px">
+                                  <div class="text-center" style="font-size:18px;">
+                      <a class="Main-Text">
+                        <strong class="demo-3">
+                  ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+                    </strong>
+                  </a>
+                      <div class="Extra-Text">
+                            <a class="text-center" style="font-size:18px;"><strong>     kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</strong></a>
+                      </div>
+                      </div>
+                </div>
+ -->
+
+
+
+
+
+
+
+
+
+
+
 
                             </div>
                         </div>
@@ -150,6 +359,51 @@
         </div>
      
 
+
+  <!-- brand area -->
+
+       <!-- brand area -->
+    
+                
+                     
+
+
+
+           
+         
+        <!-- brand area end -->
+
+
+
+
+  <div class="brand-area pt-60">
+            <div class="container">
+                   <div class="site-heading-inline">
+                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Contestants</h2>
+                                                    </div>
+                  
+<div class="marquee">
+<div class="marquee-content">
+@foreach($contestant_datas as $contestant_data)
+    <span class="item-collection-2">
+        <span class="item2">
+             <img src="{{URL::asset('/storage/logos/'.$contestant_data->file1) }}" alt="">     
+
+        </span>
+        <strong>{{$contestant_data->full_name}}</strong>
+         <strong>{{$contestant_data->full_name}}</strong>
+           <strong>View More</strong>
+           <strong>Vote</strong>
+            </span>
+@endforeach
+</div>
+</div>
+</div>
+</div>
+
+
+
+
    
         <!-- popular item -->
         <div class="product-area pt-80">
@@ -157,7 +411,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="site-heading-inline item-tab">
-                            <h2 class="site-title">Popular Items</h2>
+                            <h2 class="site-title">Popular Items 2</h2>
                             <ul class="nav nav-pills" id="item-tab" role="tablist">
                                 <li class="nav-item" role="presentation">
                                   <button class="nav-link active" id="item-tab1" data-bs-toggle="pill" data-bs-target="#pill-item-tab1" type="button" role="tab" aria-controls="pill-item-tab1" aria-selected="true">Fruits</button>

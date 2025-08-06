@@ -23,7 +23,7 @@ class CreateSponsorsTable extends Migration
                     $table->string('website',32)->nullable();
                  $table->decimal('pledge',11,2)->default(0);
                   $table->string('address',250)->nullable();
-                $table->string('status')->unsigned();
+                $table->string('status')->nullable();
                 $table->timestamps();
         });
     }

@@ -39,7 +39,8 @@ class AwardController extends Controller
      */
     public function create()
     {
-        $awards=award::get();
+        $awards=award::where('status','Active')
+        ->get();
         return view('admin.awards.addaward',compact('awards'));
     }
 
@@ -49,7 +50,7 @@ class AwardController extends Controller
     public function store(Request $request)
     {
    //$rr=[];  
-$cars[0] = "Volvo";  
+//$cars[0] = "Volvo";  
 $competes=request('compete');
 $awards = implode(", ", $competes);
 //echo $cars_together;
@@ -79,10 +80,10 @@ $awards = implode(", ", $competes);
          }
       }
 
-        $donors = award::UpdateOrCreate([
+        $awards = award::UpdateOrCreate([
         'award_name'=>request('award_name'),
     ],[
-        'price'=>$awards,     
+        'prize'=>$awards,     
         'photo'=>$imageToStore,  
          'year'=>request('year'),    
        'status'=>request('status')
@@ -99,11 +100,9 @@ $awards = implode(", ", $competes);
 
  public function awardsw()
     {
-       $awards = award::get();
-       
+       $awards = award::get();       
        //dd($awards);
-       return view('website.awardsw.awardsw',compact('awards'));
-   
+       return view('website.awardsw.awardsw',compact('awards'));   
     }
 
 
@@ -121,8 +120,8 @@ $awards = implode(", ", $competes);
      */
     public function edit(Request $request,$id)
     {
-        $donors=donor::where('id',$id)->first();
-        return view('admin.awards.editaward',compact('donors'));
+        $awards=award::where('id',$id)->first();
+    return view('admin.awards.editaward',compact('awards'));
     }
 
     /**
@@ -130,20 +129,31 @@ $awards = implode(", ", $competes);
      */
     public function update(Request $request,$id)
     {
-$donors = donor::where('id',$id)->first();   
+        $competes=request('compete');
+$awards = implode(", ", $competes);
+$award_data = award::where('id',$id)->first();   
       
-  $donor_nameUpdate = donor::where('id',$id)
+dd(request('award_name'));
+
+  $donor_nameUpdate = award::where('id',$id)
              ->update([
-       'contact_number'=>request('contact_number'),
-        'email'=>request('email'),
-        'address'=>request('address'),
-        'country'=>request('country'),       
-        'status'=>request('status')
+'award_name'=>request('award_name'),          
+         'year'=>request('year'),    
+       'status'=>request('status')
         ]);
 
 
-  if(request('logo')){
-                $attach = request('logo');
+ if(request('prize')){
+$donor_nameUpdate_data= award::where('id',$id)
+             ->update([
+'prize'=>$awards, 
+        ]); 
+ }
+
+
+
+  if(request('photo')){
+                $attach = request('photo');
                 foreach($attach as $attached){
                      // Get filename with extension
                      $fileNameWithExt = $attached->getClientOriginalName();
@@ -155,17 +165,17 @@ $donors = donor::where('id',$id)->first();
                      $imageToStore = $filename.'_'.time().'.'.$extension;
                      //upload the image
                       //$path = $attached->storeAs('wawa/hh/jkl/donor_photos/', $imageToStore);
-                    $path = $attached->storeAs('public/donor_photos/', $imageToStore);
+                    $path = $attached->storeAs('public/awards_photos/', $imageToStore);
 
          }
-  $donorUpdate = donor::where('id',$id)
+  $awardUpdate = award::where('id',$id)
              ->update([
-            'logo'=>$imageToStore
+            'photo'=>$imageToStore
         ]);
-        Storage::delete('/public/donor_photos/'.$donors->logo);
+        Storage::delete('/public/awards_photos/'.$award_data->photo);
       }
 
-         return redirect('/donor');
+         return redirect('/awards');
     }
 
     /**

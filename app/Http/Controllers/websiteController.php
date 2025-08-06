@@ -11,6 +11,7 @@ use App\Models\slide;
 use App\Models\contact;
 use App\Models\award;
 use App\Models\sponsor;
+use App\Models\contestant;
 
 use App\Http\Requests\StorewebsiteRequest;
 use App\Http\Requests\UpdatewebsiteRequest;
@@ -37,9 +38,14 @@ class WebsiteController extends Controller
 
           $sponsors=sponsor::where('status','Active')
         ->get();
-       //dd($sponsors);
 
-        return view('website.home.home',compact('donors','slides','awards','sponsors'));
+         $contestant_datas=contestant::where('status','Active')
+        ->get();
+
+
+       //dd($contestant_datas);
+
+        return view('website.home.home',compact('donors','slides','awards','sponsors','contestant_datas'));
     }
 
     public function form()

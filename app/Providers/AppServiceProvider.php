@@ -70,19 +70,18 @@ $currYear = date('Y');
             //->select('properties.property_name')->first());
              //$view->with('qnsCount', collect($qnsCount));
 
-       $view->with('awards', award::where('year','2025')     
+       $view->with('awards_view_data', award::where('year',$view->currYear)     
         ->select('award_name')
             // ->where('manager_checklist','!=','Cleared')
             // ->where('property_id',$property_id)
             //  ->where('status','Active')
             // select('properties.property_name')
             ->get());
-            $view->with('awardsxxx', award::where('year','2025')
-              ->get());
-           View::share('currentYear', date('Y'));
-   //dd($view->awards); 
 
-           
+          //dd($view->awards_view_data);
+          //View::share('currentYear', date('Y'));
+          //dd($view->currYear);
+  
              $view->with('contact', PostBody::where('category','Contact')->first());
                $view->with('app_contacts', contacts::where('status',"Active")->first());
               // $view->with('students', student::where('category','Contact')->first());

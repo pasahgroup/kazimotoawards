@@ -19,8 +19,8 @@ class CreateAboutusesTable extends Migration
                $table->string('mission',2500)->nullable();
                  $table->string('mission_photo',64)->nullable();
                      $table->string('vision',2500)->nullable();
-                 $table->string('vision_photo',64)->unsigned();
-                $table->string('status')->unsigned();
+                 $table->string('vision_photo',64)->nullable();
+                $table->string('status')->nullable();
                 $table->timestamps();
         });
     }

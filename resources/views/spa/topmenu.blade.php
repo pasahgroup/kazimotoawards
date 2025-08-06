@@ -529,7 +529,7 @@
                                             <ul class="dropdown">
               
                                   <li><a href="/get_awardsw">Awards</a></li>
-                                      <li><a href="#">Contestants</a></li>
+                                      <li><a href="/contestant">Contestants</a></li>
            
 
   </ul>
@@ -543,10 +543,6 @@
                         
                                 <li>                                                                             
                      
-                          <a type="button" href="/contestant" class="btn mb-2 mb-md-0 btn-tertiary btn-block"> <div class="icon d-flex align-items-center justify-content-center">
-                                        <i class="ion-ios-paper-plane"></i>
-                                    </div>Contestant</a>
-
                                 </li>
 
 
