@@ -129,16 +129,12 @@ $awards = implode(", ", $competes);
      */
     public function update(Request $request,$id)
     {
-        $competes=request('compete');
-$awards = implode(", ", $competes);
-$award_data = award::where('id',$id)->first();   
       
-//dd($awards);
-
-  $donor_nameUpdate = award::where('id',$id)
+$award_data = award::where('id',$id)->first();
+$donor_nameUpdate = award::where('id',$id)
              ->update([
 'award_name'=>request('award_name'),
-   'prize'=>$awards,        
+   'prize'=>request('prize'),        
          'year'=>request('year'),    
        'status'=>request('status')
         ]);
