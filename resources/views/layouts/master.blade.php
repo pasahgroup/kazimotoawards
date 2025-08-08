@@ -43,11 +43,11 @@
     <link rel="stylesheet" href="{{asset('assets_rentlab/admin/css/app.css')}}">
   
 
- <link rel="stylesheet" href="../../css/custom2.css">
-
+  <link rel="stylesheet" href="../../css/custom2.css">
+  <link rel="stylesheet" href="../../css/tables.css">
   
 
-  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <script src="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></script>
 
 
