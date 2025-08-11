@@ -7,6 +7,7 @@ use App\Http\Requests\StorecontestantRequest;
 use App\Http\Requests\UpdatecontestantRequest;
 
 
+
 use App\Models\Agent;
 use App\Models\tailorMade;
 use App\Models\TourEquiryForm;
@@ -16,6 +17,8 @@ use App\Models\contacts;
 use App\Models\enquiry;
 use App\Models\lodge;
 use App\Models\student;
+use App\Models\contestant_award;
+use Illuminate\Validation\Validator;
 
 use App\Models\award;
 use App\Models\lodgetrainee;
@@ -73,12 +76,26 @@ class ContestantController extends Controller
     public function store(Request $request)
     {
 
-      
+      $curYear = date('Y');
      $start_date=request('birth_date');
      $birth_date=date('Y-m-d', strtotime($start_date));
 
+$validatedData = $request->validate([
+// $request->validate([
+    'full_name' => 'required|max:255',
+    'phone' => 'required',
+    'birth_date' => 'nullable|date',
+]);
 
-            $contestants = contestant::Create([
+$awards = request("awards");
+$awards=collect($awards);
+
+
+if($awards->count()<=3)
+{
+
+
+  $contestants = contestant::Create([
         'full_name'=>request('full_name'),
           'birth_date'=>$birth_date,
 
@@ -96,14 +113,6 @@ class ContestantController extends Controller
                
        'status'=>'Active',  
         ]);
-
-//dd($contestants->id);
-
-//Install Awards per contestant
-
-
-
-
 
 
 
@@ -133,7 +142,9 @@ class ContestantController extends Controller
 }
 
 
-//File1
+
+
+//File2
   if(request('file_two')){
             $attach = request('file_two');
             foreach($attach as $attached){
@@ -158,7 +169,8 @@ class ContestantController extends Controller
 }
 
 
-//File1
+
+//File3
   if(request('file_three')){
             $attach = request('file_three');
             foreach($attach as $attached){
@@ -183,7 +195,9 @@ class ContestantController extends Controller
 }
 
 
-//File1
+
+
+//File4
   if(request('file_four')){
             $attach = request('file_four');
             foreach($attach as $attached){
@@ -208,7 +222,7 @@ class ContestantController extends Controller
 }
 
 
-//File1
+//File5
   if(request('file_five')){
             $attach = request('file_five');
             foreach($attach as $attached){
@@ -234,8 +248,24 @@ class ContestantController extends Controller
 
 
 
+  foreach ($awards as $key => $id){ 
+ $contestant_awards = contestant_award::UpdateOrCreate([
+        'contestant_id'=>$contestants->id,
+       'award_id'=>$id,
+      ],
+      [       
+       'status'=>'Active',  
+        ]);
+  }
+}
+else{
+ //return redirect()->back()->with('error','The Selection must not exceed the  three(3) Awards');
+ //return redirect('/contestant')->with('error','The Selection must not exceed the  three(3) Awards');
+//dd('Data Exceed');
+  return redirect()->back()->with('error', 'Operation completed successfully!');
+}
 
-         return redirect('/contestant');
+       return redirect('/contestant');
     }
 
     /**

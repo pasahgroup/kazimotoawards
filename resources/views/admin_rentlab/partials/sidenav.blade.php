@@ -76,7 +76,7 @@
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
-                        <i class="menu-icon fa-solid fa-angles-down"></i>
+                        <i class="menu-icon  lab la-whmcs"></i>
                         <span class="menu-title">@lang('Settings') </span>
                     </a>
                     <div class="sidebar-submenu # ">

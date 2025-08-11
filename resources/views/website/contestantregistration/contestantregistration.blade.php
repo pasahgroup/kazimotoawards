@@ -199,7 +199,7 @@
 @foreach($awards as $award)
 
            <label for="facebook">{{$award->award_name}}
-          <input id="facebook" type="checkbox" class="zt-control"  name="hear[]" value="Facebook">
+          <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
         </label>
 @endforeach     
         </div>

@@ -226,7 +226,6 @@
 
 
 
-
    <!-- <script src="../../../assetstaxio/js/jquery-3.6.0.min.js"></script> -->
     <script src="../../../assetstaxio/js/modernizr.min.js"></script>
     <script src="../../../assetstaxio/js/bootstrap.bundle.min.js"></script>
