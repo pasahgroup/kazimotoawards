@@ -8,25 +8,38 @@
 .demo-1 {
 	overflow: hidden;
 	display: -webkit-box;
-	-webkit-line-clamp: 2;
-	-webkit-box-orient: vertical;
-}
-
-.demo-2 {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	max-width: 140px;
-}
-
-.demo-3 {
-	overflow: hidden;
-	display: -webkit-box;
 	-webkit-line-clamp: 1;
 	-webkit-box-orient: vertical;
 }
 
 
+.demo-2 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.demo-3 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+
+.demo-4 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+.demo-5 {
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 8;
+	-webkit-box-orient: vertical;
+}
 
 .tooltip {
   position: relative;
@@ -42,7 +55,7 @@
   text-align: center;
   border-radius: 0.25em;
   white-space: nowrap;
-  
+
   /* Position the tooltip */
   position: absolute;
   z-index: 1;
@@ -55,4 +68,18 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   transition-delay: 0.3s;
+}
+
+.Main-Text:hover + .Extra-Text {
+    display: block;
+}
+
+.Extra-Text {
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    width:100%;
+    border: 2px solid #000000;
+    padding: 10px;
+    font-size: 16px;
+    display: none;
 }

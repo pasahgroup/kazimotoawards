@@ -87,7 +87,17 @@
                                         <div class="row align-items-center">
                                             <div class="col-md-12 col-lg-7">
                                                 <div class="hero-content">
-                                                    <h6 class="hero-sub-title" data-animation="fadeInUp" data-delay=".25s">{{$slide->photo_title}}</h6>
+                                           
+                                                    <div class="text-center">
+                                  <div class="text-center">
+                      <a class="Main-Text">
+                       <strong class="hero-sub-title demo-1" data-animation="fadeInUp" data-delay=".25s">{{$slide->photo_title}}</strong>
+                  </a>
+                      <div class="Extra-Text">
+                            <a class="text-center" style="font-size:18px;"><strong>{{ $slide->photo_titlephoto_title }}</strong></a>
+                      </div>
+                      </div>
+                </div>
                                                     
                                                     <p data-animation="fadeInLeft" data-delay=".75s">
                                                         There are many variations of passages orem psum available but the majority have suffered alteration in some form by injected humour.

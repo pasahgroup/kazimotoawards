@@ -25,6 +25,16 @@
     <link rel="stylesheet" href="../../assets/css/nice-select.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
 
+  <!-- <link rel="stylesheet" href="../mold/assets/css/min/bootstrap.min.css" media="all">
+  <link rel="stylesheet" href="../mold/assets/css/jqueryui.css" media="all">
+  <link rel="stylesheet" href="../mold/vendor/animate-css/animate.css" media="all">
+  <link rel="stylesheet" href="../mold/assets/font/iconfont/iconstyle.css" media="all">
+  <link rel="stylesheet" href="../mold/assets/font/font-awesome/css/font-awesome.css" media="all">
+  <link rel="stylesheet" href="../mold/assets/css/main.css" media="all" id="maincss">
+  <link rel="stylesheet" href="../../css/style-shortline.css">
+ -->
+
+  <link href="../../assets/corporate/css/style.css" rel="stylesheet">
 
     <!-- Custom button -->
         <link rel="stylesheet" href="../../buttons/css/ionicons.min.css">
@@ -243,6 +253,26 @@
     <script src="../../../assetstaxio/js/jquery.nice-select.min.js"></script>
     <script src="../../../assetstaxio/js/wow.min.js"></script>
     <script src="../../../assetstaxio/js/main.js"></script> 
+
+
+  <script src="../mold/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="../mold/vendor/jqueryui/jquery-ui-1.10.3.custom.min.js"></script>
+  <script src="../mold/vendor/jquery.ui.touch-punch.min.js"></script>
+  <script src="../mold/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="../mold/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="../mold/vendor/owlcarousel/owl.carousel.min.js"></script>
+  <script src="../mold/vendor/retina.min.js"></script>
+  <script src="../mold/vendor/jquery.imageScroll.min.js"></script>
+  <script src="../mold/assets/js/min/responsivetable.min.js"></script>
+  <script src="../mold/assets/js/bootstrap-tabcollapse.js"></script>
+
+  <script src="../mold/assets/js/min/countnumbers.min.js"></script>
+  <script src="../mold/assets/js/main.js"></script>
+
+  <!-- Current Page JS -->
+  <script src="../mold/assets/js/min/home.min.js"></script>
+
 
 </body>
 </html>

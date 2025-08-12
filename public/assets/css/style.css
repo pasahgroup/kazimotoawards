@@ -2109,8 +2109,8 @@ label {
 }
 
 .hero-single {
-  padding-top: 90px;
-  padding-bottom: 124px;
+  padding-top: 10px;
+  padding-bottom: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2127,7 +2127,7 @@ label {
   letter-spacing: 4px;
   font-weight: 700;
   position: relative;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 
 .hero-single .hero-content .hero-title {
@@ -2213,7 +2213,7 @@ label {
 }
 
 .hero-section2 .hero-single{
-  padding: 30px 30px;
+  /*padding: 110px 30px;*/
 }
 
 .hero-section2 .small-banner .banner-item{
