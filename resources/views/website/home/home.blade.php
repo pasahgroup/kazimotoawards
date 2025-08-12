@@ -173,14 +173,28 @@
 @foreach($contestant_datas as $contestant_data)
     <span class="item-collection-2">
         <span class="item2">
-             <img src="{{URL::asset('/storage/logos/'.$contestant_data->file1) }}" alt="">     
+             <img src="{{URL::asset('/storage/photos/'.$contestant_data->file1) }}" alt=""> </br>
+    <strong>{{$contestant_data->birth_date}}</strong></br>
+         <strong>View More</strong></br>
+           <strong>Vote</strong></br>
 
         </span>
-        <strong>{{$contestant_data->full_name}}</strong>
-         <strong>{{$contestant_data->full_name}}</strong>
-           <strong>View More</strong>
-           <strong>Vote</strong>
-            </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @endforeach
 </div>
 </div>
