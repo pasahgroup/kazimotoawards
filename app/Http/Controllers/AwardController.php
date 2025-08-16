@@ -107,9 +107,6 @@ $awards = implode(", ", $competes);
 
 
 
-
-
-
     public function show(project $project)
     {
         //

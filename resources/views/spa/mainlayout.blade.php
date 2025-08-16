@@ -51,12 +51,12 @@
 
 <body class="home-5">
     <!-- preloader -->
-    <div class="preloader">
+ <!--    <div class="preloader">
         <div class="loader-ripple">
             <div></div>
             <div></div>
         </div>
-    </div>
+    </div> -->
      @include('spa.topmenu')
 <section style="padding-top:10%;"></section>
 
@@ -236,7 +236,7 @@
 
 
 
-   <!-- <script src="../../../assetstaxio/js/jquery-3.6.0.min.js"></script> -->
+
     <script src="../../../assetstaxio/js/modernizr.min.js"></script>
     <script src="../../../assetstaxio/js/bootstrap.bundle.min.js"></script>
     <script src="../../../assetstaxio/js/imagesloaded.pkgd.min.js"></script>
@@ -255,7 +255,7 @@
     <script src="../../../assetstaxio/js/main.js"></script> 
 
 
-  <script src="../mold/vendor/jquery/dist/jquery.min.js"></script>
+  <!-- <script src="../mold/vendor/jquery/dist/jquery.min.js"></script> -->
   <script src="../mold/vendor/jqueryui/jquery-ui-1.10.3.custom.min.js"></script>
   <script src="../mold/vendor/jquery.ui.touch-punch.min.js"></script>
   <script src="../mold/vendor/bootstrap/dist/js/bootstrap.min.js"></script>

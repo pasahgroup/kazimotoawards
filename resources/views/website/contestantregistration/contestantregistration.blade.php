@@ -229,33 +229,44 @@
                              </div>
 
 
-  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="form-group">
+        <label for="">Photo:</label>
+           <input type="file" class="form-control" name="photo[]" placeholder="photo" required> 
+        </div>
+        </div> 
+
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <div class="form-group">
         <label for="">File1:</label>
            <input type="file" class="form-control" name="file_one[]" placeholder="file1" required> 
         </div>
         </div> 
 
-
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <div class="form-group">
         <label for="">File2:</label>
            <input type="file" class="form-control" name="file_two[]" placeholder="file2"> 
         </div>
         </div> 
+    </div>
 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <div class="form-group">
         <label for="">File3:</label>
            <input type="file" class="form-control" name="file_three[]" placeholder="file3"> 
         </div>
         </div> 
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
     <div class="form-group">
         <label for="">File4:</label>
            <input type="file" class="form-control" name="file_four[]" placeholder="file4"> 
         </div>
         </div> 
+    </div>
+    
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="form-group">
         <label for="">File5:</label>
@@ -297,19 +308,12 @@
       </div>
    
 
-
-
-
-
-
                     </div>
                 </div>
             </div>
         </div>
 
 </main>
-
-
 
 
 

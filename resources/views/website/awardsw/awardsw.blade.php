@@ -139,6 +139,22 @@
             </marquee>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
              <!-- brand area -->
         <div class="brand-area pt-60">
             <div class="container">

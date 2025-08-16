@@ -21,6 +21,7 @@ class contestant extends Model
  'experience_two',
   'experience_three',
 
+'photo',
   'file1',
   'file2',
   'file3',

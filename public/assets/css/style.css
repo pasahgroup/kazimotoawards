@@ -2864,12 +2864,12 @@ label {
 }
 
 .category-info .icon img{
-  width: 45px;
-  filter: brightness(0) invert(1);
+  width: 80px;
+  /*filter: brightness(0) invert(1);*/
 }
 
 .category-info .content{
-  margin-top: 10px;
+  margin-top: 2px;
 }
 
 .category-info .content h4{
@@ -9103,7 +9103,7 @@ label {
 }
 
 .footer-top-link-info{
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 .footer-top-link-info a{
