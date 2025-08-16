@@ -459,7 +459,7 @@ label {
 }
 
 .pt-100 {
-  padding-top: 100px;
+  padding-top: 20px;
 }
 
 .pb-0 {
@@ -483,7 +483,7 @@ label {
 }
 
 .pb-50 {
-  padding-bottom: 50px;
+  padding-bottom: 20px;
 }
 
 .pb-60 {
@@ -503,7 +503,7 @@ label {
 }
 
 .pb-100 {
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 .mt-0 {
@@ -9128,7 +9128,7 @@ label {
 }
 
 .copyright-wrap{
-  padding: 28px 0;
+  /*padding: 28px 0;*/
   border-top: 1px solid var(--border-white-color);
 }
 

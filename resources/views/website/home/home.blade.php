@@ -20,7 +20,7 @@
 .slide-container{
   max-width: 1120px;
   width: 100%;
-  padding: 40px 0;
+  /*padding: 40px 0;*/
 }
 .slide-content{
   margin: 0 40px;
@@ -95,7 +95,7 @@
   border: none;
   font-size: 16px;
   color: #FFF;
-  padding: 8px 16px;
+  /*padding: 8px 16px;*/
   background-color: #4070F4;
   border-radius: 6px;
   margin: 14px;
@@ -479,13 +479,7 @@
             <div class="container">
                 <div class="row">            
         
-<h3>Contestants</h3>
-      <!--   <style>
-            .str3 { font-size:0 !important}
-            .str3-2 { background:none !important;}
-            .str3-2 span { border:1px solid #ccc; background:#f1f1f1; color:#999; margin:0 1px;width:220px; height:292px; display:inline-block; vertical-align:top;}
-        </style> -->
-
+<h3>Contestants_pop2d</h3>
       
         <div class="str3-2 str_wrap">
               @foreach($contestant_datas as $contestant_data) 
@@ -493,13 +487,11 @@
              <span class="category-item">
 
       <div class="slide-container swiper">
-            <div class="slide-content">
-                <div class="card-wrapper swiper-wrapperx">
+            <div class="slide-content_org">
+                <div class="card-wrapper swiper-wrapper">
   <div class="card swiper-slide">
                         <div class="image-content">
-                            <span class="overlay"></span>
-
-                            <div class="card-image">
+                                                   <div class="card-image">
                                     <img src="https://tinypic.host/images/2022/12/19/img_avatar.png" alt="" class="card-img">
                             </div>
                         </div>
@@ -507,9 +499,10 @@
                         <div class="card-content">
                             <h2 class="name">Mohamed Yousef
 </h2>
-                            <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
+                            <div class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</div>
 
                             <button class="button">View More</button>
+                             <button class="button">View More</button>s
                         </div>
                     </div>
                 </div>
@@ -720,7 +713,7 @@ Vote<i class="fas fa-arrow-right"></i>
              </div>
         </div>
         
-<h3>Contestants</h3>
+<h3>Contestants_pop</h3>
         <style>
             .str3 { font-size:0 !important}
             .str3-2 { background:none !important;}
@@ -729,8 +722,6 @@ Vote<i class="fas fa-arrow-right"></i>
 
       
         <div class="str3-2 str_wrap">
-
-
               @foreach($contestant_datas as $contestant_data)  
 
      <span style="background-image: url({{URL::asset('/storage/photos/'.$contestant_data->file1) }});">
@@ -1018,8 +1009,8 @@ Vote<i class="fas fa-arrow-right"></i>
                 <div class="row">
                     <div class="col-12">
                         <div class="site-heading-inline">
-                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Popular Brands</h2>
-                            <a href="#">All Brands <i class="fas fa-arrow-right"></i></a>
+                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Awards</h2>
+                            <a href="#">All Awards <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
