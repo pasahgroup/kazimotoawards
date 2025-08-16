@@ -116,6 +116,30 @@ if($awards->count()<=3)
 
 
 
+//photo
+  if(request('photo')){
+            $attach = request('photo');
+            foreach($attach as $attached){
+
+                 // Get filename with extension
+                 $fileNameWithExt = $attached->getClientOriginalName();
+                 // Just Filename
+                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                 // Get just Extension
+                 $extension = $attached->getClientOriginalExtension();
+                 //Filename to store
+                 $imageToStore = $filename.'_'.time().'.'.$extension;
+                 //upload the image
+                 $path = $attached->storeAs('public/photos/', $imageToStore);
+
+  $contestant_fileupdate = contestant::where('id',$contestants->id)
+             ->update([
+               'photo'=>$imageToStore
+        ]);
+       
+    }
+}
+
 
 //File1
   if(request('file_one')){
