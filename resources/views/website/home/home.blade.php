@@ -7,7 +7,11 @@
         <link rel="stylesheet" href="css/style.css">
                                         
  
-
+  <style>
+            .str3 { font-size:0 !important}
+            .str3-2 { background:none !important;}
+            .str3-2 span { border:1px solid #ccc;color:#999; margin:0 1px; display:inline-block; vertical-align:top;}
+        </style>
 
 <style>
 
@@ -632,147 +636,6 @@ Vote<i class="fas fa-arrow-right"></i>
             <div class="swiper-pagination"></div>
         </div>
         
-
-
-
-
-
-
-
-
-   <div class="hero-section2">
-            <div class="container">
-                <div class="row">    
-<h3>Contestants_pop</h3>
-        <style>
-            .str3 { font-size:0 !important}
-            .str3-2 { background:none !important;}
-            .str3-2 span { border:1px solid #ccc;color:#999; margin:0 1px; display:inline-block; vertical-align:top;}
-        </style>
-
-      
-        <div class="str3-2 str_wrap">
-              @foreach($contestant_datas as $contestant_data)  
-
-     <span style="background-image: url({{URL::asset('/storage/photos/'.$contestant_data->file1) }});">
-  <div class="row item-2">
-   <div class="product-item">
-                                    <div class="product-img">
-                                     
-                                        <div class="product-action-wrap">
-                                            <div class="product-action">
-                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="View Details"><i class="far fa-eye"></i></a>
-                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Wishlist"><i class="far fa-heart"></i></a>
-                                                <a href="#" data-bs-placement="right" data-tooltip="tooltip" title="Add To Compare"><i class="far fa-arrows-repeat"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-content">
-                                        <spanx class="product-title"><a href="#">Fresh Organic Product</a></spanx>
-                                      
-                                        <div class="product-bottom">
-                                            <div class="product-price">
-                                                <span>$100.00</span>
-                                                <span>$300.00</span>
-                                           
-                                            <button type="button" class="product-cart-btn">Vote</button>
-                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                     </span>
-
-
-
-
-
-
-
-
-             
-             <span class="category-item">
-                        <a href="#">
-                            <div class="category-info" style="background-image:url({{URL::asset('/storage/photos/'.$contestant_data->file1) }}); text-align:left;height:200px;width:100;">
-                                                             
-                            </div>
-                        </a>
-   <div>
-    <div>Name: {{$contestant_data->full_name}}</div>
-                                      <div>Awards: {{$contestant_data->full_name}}</div>
-                                       <!--  <div>
-                                           <button type="button" class="btn">Vote</button></div> -->
-                                              <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
-                                                    <!-- <a href="#" class="theme-btn">Vote<i class="fas fa-arrow-right"></i></a> -->
-                                                    <a href="#" class="theme-btn" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
-
-Vote<i class="fas fa-arrow-right"></i>
-</a>
-                                                </div>
-                                           </div>
-                 
-
-
-<div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-             <strong class="modal-title" id="loginModal">{{$contestant_data->full_name}}</strong>
-            <div class="modal-header">                    
-                                    <span aria-hidden="true">×2</span>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-   </span>
-  @endforeach
-        </div>  
-    
-    </div>
-</div>
-</div>
-
-
 
 
 
