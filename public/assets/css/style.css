@@ -705,6 +705,27 @@ label {
 8. Theme button
 ======================*/
 
+.theme-btn2 {
+  position: relative;
+  font-size: 16px;
+  background:#000;
+  color: var(--color-white);
+  padding: 10px 20px;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: capitalize;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  border: none;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  z-index: 1;
+}
+
+
 .theme-btn {
   position: relative;
   font-size: 16px;
@@ -9113,7 +9134,7 @@ label {
   color:yellow;
   padding: 3px 15px;
   margin: 10px 5px 0 0;
-  border-radius: 50px;
+  border-radius: 5px;
   font-size: 14px;
 }
 

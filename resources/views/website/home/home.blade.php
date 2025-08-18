@@ -50,7 +50,7 @@
   height: 100%;
   width: 100%;
   background-color: #4070F4;
-  border-radius: 25px 25px 0 25px;
+  border-radius: 2px 2px 0 25px;
 }
 .overlay::before,
 .overlay::after{
@@ -93,7 +93,7 @@
 }
 .button{
   border: none;
-  font-size: 16px;
+  /*font-size: 16px;*/
   color: #FFF;
   /*padding: 8px 16px;*/
   background-color: #4070F4;
@@ -309,6 +309,166 @@
 
 
 
+
+
+
+   <div class="hero-section2">
+            <div class="container">
+                <div class="row">            
+        
+<h3>Contestants</h3>
+      
+        <div class="str3-2 str_wrap">
+              @foreach($contestant_datas as $contestant_data) 
+         
+             <span class="category-item">
+
+      <div class="slide-container swiper">
+            <div class="slide-content_org">
+                <div class="card-wrapper swiper-wrapper">
+  <div class="card swiper-slide">
+
+
+ <div class="image-content">
+                            <span class="overlay"></span>
+
+                            <div class="card-image">
+                               <img src="{{URL::asset('/storage/photos/'.$contestant_data->photo) }}" alt="" class="card-img">
+                            </div>
+                        </div>
+
+
+                        <div class="card-content">
+                            <h2 class="name">{{$contestant_data->full_name}}
+</h2>
+                            <div class="description">Awards: {{$contestant_data->awa}}</div>
+
+
+
+
+
+<div class="row">
+    <div class="col-md-6">
+                       <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btn2" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
+
+View more<i class="fas fa-arrow-right"></i>
+</a>
+                                                </div>
+
+                            </div>
+ <div class="col-md-6">
+                                                
+                      
+ <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
+                                                    <a href="#" class="theme-btn" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
+
+Vote<i class="fas fa-arrow-right"></i>
+</a>
+                                                </div>
+
+
+                         </div>
+
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   <div>
+</div>
+                 
+
+
+<div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+             <strong class="modal-title" id="loginModal">{{$contestant_data->full_name}}</strong>
+            <div class="modal-header">                    
+                                    <span aria-hidden="true">×2</span>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+   </span>
+
+
+
+  @endforeach
+        </div>        
+
+</hr>
+        <h3>Vertical scroller</h3>
+        <div class="str4 str_wrap" style="height:200px;">
+            <p>
+            1 text content and text content and text content and text content and text content and text content and text content and text content and text content
+            </p>
+            <p>
+            2 text content and text content and text content and text content and text content and text content and text content and text content and text content
+            </p>
+            <p>
+            3 text content and text content and text content and text content and text content and text content and text content and text content and text content
+            </p>
+            <p>
+            4 text content and text content and text content and text content and text content and text content and text content and text content and text content
+            </p>
+        </div>
+    
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
         <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
@@ -326,7 +486,7 @@
 </h2>
                             <p class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
 
-                            <button class="button">View More</button>
+                            <button class="button">View More2</button>
                         </div>
                     </div>
                     <div class="card swiper-slide">
@@ -475,196 +635,6 @@
 
 
 
-   <div class="hero-section2">
-            <div class="container">
-                <div class="row">            
-        
-<h3>Contestants_pop2d</h3>
-      
-        <div class="str3-2 str_wrap">
-              @foreach($contestant_datas as $contestant_data) 
-         
-             <span class="category-item">
-
-      <div class="slide-container swiper">
-            <div class="slide-content_org">
-                <div class="card-wrapper swiper-wrapper">
-  <div class="card swiper-slide">
-                        <div class="image-content">
-                                                   <div class="card-image">
-                                    <img src="https://tinypic.host/images/2022/12/19/img_avatar.png" alt="" class="card-img">
-                            </div>
-                        </div>
-
-                        <div class="card-content">
-                            <h2 class="name">Mohamed Yousef
-</h2>
-                            <div class="description">The lorem text the section that contains header with having open functionality. Lorem dolor sit amet consectetur adipisicing elit.</div>
-
-                            <button class="button">View More</button>
-                             <button class="button">View More</button>s
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <a href="#">
-                            <div class="category-info" style="background-image:url({{URL::asset('/storage/photos/'.$contestant_data->file1) }}); text-align:left;height:200px;width:100;">
-                                                             
-                            </div>
-                        </a>
-   <div>
-    <div>Name: {{$contestant_data->full_name}}</div>
-                                      <div>Awards: {{$contestant_data->full_name}}</div>
-                                       <!--  <div>
-                                           <button type="button" class="btn">Vote</button></div> -->
-                                              <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
-                                                    <!-- <a href="#" class="theme-btn">Vote<i class="fas fa-arrow-right"></i></a> -->
-                                                    <a href="#" class="theme-btn" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
-
-Vote<i class="fas fa-arrow-right"></i>
-</a>
-                                                </div>
-                                           </div>
-                 
-
-
-<div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-             <strong class="modal-title" id="loginModal">{{$contestant_data->full_name}}</strong>
-            <div class="modal-header">                    
-                                    <span aria-hidden="true">×2</span>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-   </span>
-
-
-
-  @endforeach
-        </div>        
-
-
-        <h3>Vertical scroller</h3>
-        <div class="str4 str_wrap" style="height:200px;">
-            <p>
-            1 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            2 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            3 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            4 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-        </div>
-    
-    </div>
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="brand-area pt-60">
-            <div class="container">
-                   <div class="site-heading-inline">
-                            <h2 class="site-title"><img src="assets/img/icon/brand.svg" alt="">Contestants2</h2>
-                                                    </div>
-                  
-<div class="marqueex" style="overflow:hidden !important;">
-<div class="marquee-content" style="overflow:hidden !important;">
-@foreach($contestant_datas as $contestant_data)
-    <span class="item-collection-2">
-        <span class="item2">
-             <img src="{{URL::asset('/storage/photos/'.$contestant_data->file1) }}" alt=""> </br>
-    <strong>{{$contestant_data->birth_date}}</strong></br>
-         <strong>View More</strong></br>
-           <strong>Vote</strong></br>
-
-        </span>
-
-@endforeach
-</div>
-</div>
-</div>
-</div>
-
-
 
 
 
@@ -672,52 +642,12 @@ Vote<i class="fas fa-arrow-right"></i>
 
    <div class="hero-section2">
             <div class="container">
-                <div class="row">
-
-        <h3>Image scroller</h3>
-        <style>
-            .str3 .str_item {
-                font-size:0;
-                line-height:0
-            }
-            .str3 img { opacity:0.9}
-            .str3 img:hover { opacity:1}
-            .str3.str_wrap.str_active {
-                background:#fff;
-            }
-        </style>
-        <div class="str3 str_wrap">
-            <div>
-            <a href="#">
-                <div>
-                <img src="https://unsplash.it/150/150/?random">
-                trtrt vvvvvvvvvvv</br>
-                gfgfg</br>
-                </div>
-             </a>
-            <a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a><a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a><a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a><a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a><a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a><a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a><a href="#">
-                <img src="https://unsplash.it/150/150/?random">
-            </a>
-             </div>
-        </div>
-        
+                <div class="row">    
 <h3>Contestants_pop</h3>
         <style>
             .str3 { font-size:0 !important}
             .str3-2 { background:none !important;}
-            .str3-2 span { border:1px solid #ccc; background:#f1f1f1; color:#999; margin:0 1px;width:220px; height:292px; display:inline-block; vertical-align:top;}
+            .str3-2 span { border:1px solid #ccc;color:#999; margin:0 1px; display:inline-block; vertical-align:top;}
         </style>
 
       
@@ -836,24 +766,7 @@ Vote<i class="fas fa-arrow-right"></i>
 
    </span>
   @endforeach
-        </div>        
-
-
-        <h3>Vertical scroller</h3>
-        <div class="str4 str_wrap" style="height:200px;">
-            <p>
-            1 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            2 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            3 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            4 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-        </div>
+        </div>  
     
     </div>
 </div>
