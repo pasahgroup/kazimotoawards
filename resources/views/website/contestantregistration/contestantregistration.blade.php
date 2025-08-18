@@ -78,7 +78,7 @@
 
       <div class="col-lg-6 col-md-12 col-sm-12">
                                       <label>Phone number</label>
-                                        <input type="number" name="phone" /> 
+                                        <input type="text" name="phone" /> 
                                 </div>
   <div class="col-lg-6 col-md-12 col-sm-12">
                                       <label>Email</label>
