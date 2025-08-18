@@ -341,7 +341,7 @@
                         <div class="card-content">
                             <h2 class="name">{{$contestant_data->full_name}}
 </h2>
-                            <div class="description">Awards: {{$contestant_data->awa}}</div>
+                            <div class="description">Awards: {{$contestant_data->award_name}}</div>
 
 
 

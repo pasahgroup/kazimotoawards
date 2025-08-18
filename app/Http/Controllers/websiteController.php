@@ -12,6 +12,7 @@ use App\Models\contact;
 use App\Models\award;
 use App\Models\sponsor;
 use App\Models\contestant;
+use App\Models\contestant_award;
 
 use App\Http\Requests\StorewebsiteRequest;
 use App\Http\Requests\UpdatewebsiteRequest;
@@ -32,15 +33,29 @@ class WebsiteController extends Controller
         ->get();
 
           $slides=slide::where('status','Active')
+          ->get();
+
+            $awardscc=contestant_award::where('status','Active')
         ->get();
-            $awards=award::where('status','Active')
+
+         $awards=award::where('status','Active')
         ->get();
+
+
+
+        $contestant_datas = contestant_award::join('contestants','contestants.id','contestant_awards.contestant_id')
+             ->join('awards','awards.id','contestant_awards.award_id')
+             ->select('contestants.*','awards.award_name')
+             ->get();
+
+
+       // dd($awards);
 
           $sponsors=sponsor::where('status','Active')
         ->get();
 
-         $contestant_datas=contestant::where('status','Active')
-        ->get();
+        //  $contestant_datas=contestant::where('status','Active')
+        // ->get();
 
 
        //dd($contestant_datas);
