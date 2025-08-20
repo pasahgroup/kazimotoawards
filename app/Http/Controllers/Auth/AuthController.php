@@ -177,6 +177,10 @@ if($status==null)
                      $path = $attached->storeAs('public/user/', $imageToStore);
 
        
+
+dd('data');
+
+
           if(request('password') != request('confirm_password'))
           {
             return redirect()->back()->with('info','Password does not match');
