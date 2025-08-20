@@ -214,7 +214,7 @@ Route::get('/stl', function () {
    dd('cache clear successfully');
 });
 
-// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('flush', [AuthController::class, 'flush'])->name('flush');
 
 //Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -231,7 +231,7 @@ Route::get('/l', [commandController::class, 'index'])->name('c');
   Route::group(['middleware' => ['auth','Admin']], function() {
 // Route::group(["middleware" => "role:Admin,worker"], function() {
 
-        Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
+       Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
        Route::get('/new-user', [AuthController::class, 'registration'])->name('new-user');
     Route::get('/user-show/{x}', [AuthController::class, 'show'])->name('user-show');
     Route::post('/user-update/{x}', [AuthController::class, 'update'])->name('user-update');

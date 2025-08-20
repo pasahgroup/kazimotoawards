@@ -61,7 +61,7 @@
 <body>
 
       <!-- page-wrapper start -->
-    <div class="page-wrapper default-version" style="padding-top:8%;">
+    <div class="page-wrapper default-version" style="padding-top:2%;">
          @yield('contents')
     </div>
 

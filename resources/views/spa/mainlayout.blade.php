@@ -190,13 +190,6 @@
     </footer>
     <!-- footer area end -->
 
-
-
-    <!-- scroll-top -->
-    <a href="#" id="scroll-top"><i class="far fa-arrow-up-from-arc"></i></a>
-    <!-- scroll-top end -->
-
-
     <!-- js -->
    <!-- <script src="../../assets/js/jquery-3.7.1.min.js"></script> -->
     <script src="../../assets/js/modernizr.min.js"></script>

@@ -94,6 +94,8 @@
                                 </div>
                              </div>
 
+{{--
+
                 <div class="row">
                  <div class="col-lg-3 col-md-12 col-sm-12">
                                     <x-label for="password_confirmation" :value="__('Photo')" />
@@ -110,6 +112,8 @@
             </span>
             </div>
            </div>
+--}}
+
 
                           <div class="form-group row">
                               <div class="col-md-6 offset-md-4">

@@ -258,7 +258,6 @@
 <div class="content-wrapper" style="background: #f8fafc;">
   <section class="content">
     <div class="container-fluid">
-
       <!-- Header -->
       <div class="legend-header mb-4">
         <div>
@@ -276,7 +275,7 @@
       </div>
 
       <!-- Rectangular Dashboard Cards -->
-      <div class="row g-3 mb-2">
+      <disv class="row g-3 mb-2">
          <div class="col">
           <div class="card legend-card card-properties">
             <i class="bi bi-building card-icon"></i>
@@ -295,7 +294,7 @@
           <div class="card legend-card card-students">
             <i class="bi bi-people-fill card-icon"></i>
             <div class="card-content text-center">
-              <h5 class="card-title">Students</h5>
+              <h5 class="card-title">Students ff</h5>
               <div class="card-number">66</div>
               <div class="card-buttons justify-content-center">
                 <a href="/students" class="legend-btn" style="background-color: ;"><i class="bi bi-plus-circle"></i> Add</a>

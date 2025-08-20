@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="../../marquee/css/liMarquee.css">
           <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
-        <link rel="stylesheet" href="css/style.css">
-                                        
+        <link rel="stylesheet" href="../../css/style.css">
+            <link rel="stylesheet" href="../../css/login.css">                            
  
   <style>
             .str3 { font-size:0 !important}
@@ -316,11 +316,13 @@
 
 
 
+
+
    <div class="hero-section2">
             <div class="container">
                 <div class="row">            
         
-<h3>Contestants</h3>
+<h3>Contestants bnm</h3>
       
         <div class="str3-2 str_wrap">
               @foreach($contestant_datas as $contestant_data) 
@@ -382,24 +384,127 @@ Vote<i class="fas fa-arrow-right"></i>
         </div>
    <div>
 </div>
-                 
+    
 
 
+
+
+<div class="container mt-5 col-md-8">
 <div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-             <strong class="modal-title" id="loginModal">{{$contestant_data->full_name}}</strong>
-            <div class="modal-header">                    
-                                    <span aria-hidden="true">×2</span>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong class="modal-title" id="exampleModalLabel">Voting Form</strong>
+                       
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                      <strong class="modal-title" id="loginModal">Voting for:</strong> <i>{{$contestant_data->full_name}}</i></strong></br>
+                     <strong class="modal-title" id="loginModal">Award:</strong> <i>{{$contestant_data->award_name}}</i></strong></br>
+                     <label></label>
+                      <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
+
+  <div class="wrapper">
+    <div class="title"><span>Voting Form</span></div>
+    <form action="#">
+      <div class="row">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Email or Phone" required />
+      </div>
+      <div class="row">
+        <i class="fas fa-lock"></i>
+        <input type="password" placeholder="Password" required />
+      </div>
+  
+       <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                </div>
+
+        <div class="signup-link">Not a member? <a href="/login">Sign in</a></div>
+
+   <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>   
+    </form>
+  </div>
+
+          </form>
+                </div>                
             </div>
-            <div class="modal-body">
-                <form method="POST" action="{{ route('login') }}">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-5 col-md-8">
+<div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}g" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <strong class="modal-title" id="exampleModalLabel">Voting Form</strong>
+                       
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                      <strong class="modal-title" id="loginModal">Voting for:</strong> <i>{{$contestant_data->full_name}}</i></strong></br>
+                     <strong class="modal-title" id="loginModal">Award:</strong> <i>{{$contestant_data->award_name}}</i></strong></br>
+                     <label></label>
+                      <form method="POST" action="{{ route('login') }}">
                     @csrf
 
                     <div class="form-group row">
                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
-                        <div class="col-md-6">
+                        <div class="col-md-8">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                        <div class="col-md-8">
+                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+
+                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                        <div class="col-md-8">
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -410,32 +515,17 @@ Vote<i class="fas fa-arrow-right"></i>
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+               <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Vote</button>
+                </div>
 
-                        <div class="col-md-6">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-4">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
-                    </div>
                 </form>
+                </div>                
             </div>
         </div>
     </div>
 </div>
-
    </span>
 
 
@@ -637,10 +727,7 @@ Vote<i class="fas fa-arrow-right"></i>
         </div>
         
 
-
-
-
- <div class="category-area2 pt-80 pb-70">
+<div class="category-area2 pt-80 pb-70">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -1605,33 +1692,6 @@ Vote<i class="fas fa-arrow-right"></i>
 </div>
 </div>
 </div>
-
-
-
-<!-- Modal -->
-
-<div class="modal fade" id="exampleModalCenterx" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitlex" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
 </main> 
 
 

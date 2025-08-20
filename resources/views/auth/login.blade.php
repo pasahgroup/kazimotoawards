@@ -65,7 +65,7 @@
                 <br>
 <div class="mb-3">
                   <div class="form-check">
-                    <label class="form-check-label" for="remember">New User? <a href="">Sign Up</a> </label>
+                    <label class="form-check-label" for="remember">New User? <a href="/register">Sign Up</a> </label>
                   </div>
                 </div>
 
