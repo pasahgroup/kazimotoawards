@@ -186,7 +186,6 @@ if($status==null)
 //    return redirect()->back()->withSuccess('User! Registered successful');
 
 
-
      if(request('attachment')){
                 $attach = request('attachment');
                 foreach($attach as $attached){

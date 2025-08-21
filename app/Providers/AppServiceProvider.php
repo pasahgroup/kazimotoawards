@@ -58,7 +58,7 @@ $currYear = date('Y');
                $property_id=0;
              }
 
-            $view->with('user', Auth::user());
+            $view->with('auth_user', Auth::user());
             // $view->with('qnsCountx', User::join('properties','users.property_id','properties.id')
             // ->select('properties.property_name')->first());
 
@@ -80,7 +80,7 @@ $currYear = date('Y');
 
           //dd($view->awards_view_data);
           //View::share('currentYear', date('Y'));
-          //dd($view->currYear);
+          //dd($view->auth_user);
   
              $view->with('contact', PostBody::where('category','Contact')->first());
                $view->with('app_contacts', contacts::where('status',"Active")->first());

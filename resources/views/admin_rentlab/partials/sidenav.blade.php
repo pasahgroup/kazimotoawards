@@ -4,10 +4,10 @@
     <div class="sidebar__inner">
         <div class="sidebar__logo">
             <a href="#" class="sidebar__main-logo"><img
-                    src="#" alt="@lang('image')"></a>
+                    src="{{URL::asset('/storage/user/'.$auth_user->photo) }}" alt="@lang('image') {{$auth_user->id}}"></a>
             <a href="#" class="sidebar__logo-shape"><img
                     src="#" alt="@lang('image')"></a>
-            <button type="button" class="navbar__expand"></button>
+            <button type="button" class="navbar__expand">  <i class="menu-icon las la-angle-double-left"></i></button>
         </div>
 
 <div class="sidebar__menu-wrapper" id="sidebar__menuWrapper">
