@@ -1,4 +1,4 @@
-@extends('admins.layouts.Apps.app')
+  @extends('layouts.app')
 @section('contents')
  <link href="../../img_library/main.css" rel="stylesheet">
     <link href="../../img_library/mform.css" rel="stylesheet">

@@ -1,5 +1,5 @@
 
-  @extends('admins.layouts.Apps.app')
+  @extends('layouts.app')
   @section('contents')
   <style type="text/css">
     .red{

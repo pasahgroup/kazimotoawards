@@ -42,6 +42,15 @@ class AuthController extends Controller
     }  
 
 
+
+    public function store(Request $request)
+    {
+        dd('print');
+    }
+
+
+
+
       public function update(Request $request,$id)
     {
            if(request('attachment')){
@@ -95,7 +104,7 @@ class AuthController extends Controller
 
     public function registration()
     {
-        return view('auth.register');
+    return view('auth.register');
 
     }
 
@@ -159,8 +168,25 @@ if($status==null)
 
      */
 
-    public function postRegistration(Request $request)
+    public function store_org(Request $request)
     {
+
+
+// dd('printed');
+
+//    $user = User::UpdateOrCreate([
+//             'name' => $request->name,
+//             'email' => $request->email,
+//             'password' => Hash::make($request->password),
+//               'role' => $request->role,
+//                 'status' =>'1',
+//                   'photo' =>$imageToStore,
+//         ]);
+
+//    return redirect()->back()->withSuccess('User! Registered successful');
+
+
+
      if(request('attachment')){
                 $attach = request('attachment');
                 foreach($attach as $attached){
@@ -175,11 +201,6 @@ if($status==null)
                      $imageToStore = $filename.'_'.time().'.'.$extension;
                      //upload the image
                      $path = $attached->storeAs('public/user/', $imageToStore);
-
-       
-
-dd('data');
-
 
           if(request('password') != request('confirm_password'))
           {

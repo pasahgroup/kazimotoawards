@@ -65,7 +65,6 @@ class WebsiteController extends Controller
 
     public function form()
     {
-        //dd('fall');
         return view('form');
     }
 

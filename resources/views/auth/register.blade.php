@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('layouts.app')
 @section('contents')
  <link href="../../img_library/main.css" rel="stylesheet">
     <link href="../../img_library/mform.css" rel="stylesheet">
@@ -18,11 +18,17 @@
                               </div>
                           </div>
               <div class="card">
-                  <div class="card-header" style="background-color:seagreen;"><h3 class="text-center text-white">User Registration bnm</h3></div>
+                  <div class="card-header" style="background-color:seagreen;"><h3 class="text-center text-white">User registration</h3></div>
                   <div class="card-body">  
 
-                 <form  method="post"  action="{{ route('register.post') }}" enctype="multipart/form-data">
-                          @csrf
+             
+
+
+
+
+
+              <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('register.store') }}" enctype="multipart/form-data">
+        @csrf
                                                   
                          <div class="row">
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -94,7 +100,7 @@
                                 </div>
                              </div>
 
-{{--
+
 
                 <div class="row">
                  <div class="col-lg-3 col-md-12 col-sm-12">
@@ -112,7 +118,7 @@
             </span>
             </div>
            </div>
---}}
+
 
 
                           <div class="form-group row">

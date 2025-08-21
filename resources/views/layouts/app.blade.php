@@ -2,8 +2,10 @@
 @section('contents')
     <!-- page-wrapper start -->
     <div class="page-wrapper default-version">
+        @auth
         @include('admin_rentlab.partials.sidenav')
         @include('admin_rentlab.partials.topnav')
+        @endauth
 
         <div class="body-wrapper">
             <div class="bodywrapper__inner">

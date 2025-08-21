@@ -1,7 +1,9 @@
 <?php
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\RegisterController;
+
 use App\Http\Controllers\accommodationController;
-use App\Http\Controllers\RegisterController;
+// use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\destinationController;
 use App\Http\Controllers\itineraryController;
 use App\Http\Controllers\locationController;
@@ -113,8 +115,6 @@ Route::get('/get_slides', [SlidesController::class,'slides']);
 Route::get('/get_contact', [ContactController::class,'contact']);
 
 
-//Route::post('/donor', [DonorController::class,'store']);
-
 Route::resource('/donor',DonorController::class);
 Route::resource('/contact',ContactController::class);
 Route::resource('/project',ProjectController::class);
@@ -161,15 +161,8 @@ Route::resource('/aboutus',AboutusController::class);
  Route::get('/getAssignActivity/{id}', [AssignactivityController::class, 'getAssignActivity']);
 
 // End of Controllers
-
-
-
-
-
 // Route::resource('/addAsset', [AssetCateController::class]);
 Route::resource('/item',ItemController::class);
-
-
 Route::resource('/addAsset', AssetCateController::class);
 //Route::resource('/reassign-asset',ReassignController::class);
 //Route::get('/indexf', [ReassignController::class, 'indexf'])->name('indexf');
@@ -225,20 +218,27 @@ Auth::routes();
 //Route::middleware(['auth', 'Admin'])->group(function () {
 Route::group(['middleware' => ['auth','Account']], function() {
 Route::get('/l', [commandController::class, 'index'])->name('c');
-
 });
+
+ Route::resource('/register',RegisterController::class);
+
+
+ Route::post('/user-update/{x}', [AuthController::class, 'update'])->name('user-update');
 // Route::group(['middleware' => ['auth']], function() {
   Route::group(['middleware' => ['auth','Admin']], function() {
 // Route::group(["middleware" => "role:Admin,worker"], function() {
 
-     Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');
-       Route::get('/new-user', [AuthController::class, 'registration'])->name('new-user');
+       // Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');      
+      //Route::resource('/registerx', [AuthControllerx::class]);
+    //Route::resource('/registerx',AuthControllerx::class);
+
+    Route::get('/new-user', [AuthController::class, 'registration'])->name('new-user');
     Route::get('/user-show/{x}', [AuthController::class, 'show'])->name('user-show');
     Route::post('/user-update/{x}', [AuthController::class, 'update'])->name('user-update');
 
-      Route::get('/user-destroy/{x}', [AuthController::class, 'destroy'])->name('user-destroy');
+    Route::get('/user-destroy/{x}', [AuthController::class, 'destroy'])->name('user-destroy');
     Route::get('/user-list', [AuthController::class, 'userList'])->name('user-list');
-    // Route::get('/new-login', [RegisterController::class, 'login'])->name('new-login');
+    //Route::get('/new-login', [RegisterControllerx::class, 'login'])->name('new-login');
 
 
    Route::get('/Agent-Destroy/{x}', [AgentController::class, 'destroy'])->name('Agent-Destroy');
@@ -324,7 +324,7 @@ Route::get('/coa/', [PostBodyController::class, 'coa'])->name('coa');
 Route::get('/coa-About/', [PostBodyController::class, 'createAbout'])->name('coa-About');
 Route::get('/destroy-Aboutus/{x}', [PostBodyController::class, 'destroy'])->name('destroy-Aboutus');
 Route::get('/destroy-contact/{x}', [PostBodyController::class, 'destroyContact'])->name('contact-Aboutus');
-Route::resource('/PostCategory', PostController::class);
+// Route::resource('/PostCategory', PostController::class);
 
 //Welcome introduction
 // Route::get('/aboutus', [PostBodyController::class, 'aboutus'])->name('aboutus');
@@ -484,9 +484,9 @@ Route::get('/title-list', [TitleController::class, 'titles'])->name('titles');
 Route::get('/destroy-titles/{x}', [TitleController::class, 'destroy'])->name('destroy-titles');
 //End Titles controller
 
-Route::resource('/add-ons', AddonsController::class);
-Route::resource('/buy-addons', BuyaddonsController::class);
-Route::resource('/addons', addonshowController::class);
+// Route::resource('/add-ons', AddonsController::class);
+// Route::resource('/buy-addons', BuyaddonsController::class);
+// Route::resource('/addons', addonshowController::class);
 
 Route::resource('/Testimonies', TestimonyController::class);
 Route::get('/Testimony-Comment', [TestimonyController::class, 'clientComment'])->name('clientComment');
@@ -595,10 +595,10 @@ Route::get('/getS/{p}', [SubcategoryController::class,'getS']);
 
 //AssetconditionController
 
-Route::resource('/condition',AssetconditionController::class);
-Route::get('/addCondition',[AssetconditionController::class, 'addCondition'])->name('addCondition');
-Route::get('/editCondition/{x}',[AssetconditionController::class, 'editCondition'])->name('editCondition');
-Route::get('/destroyCondition/{x}',[AssetconditionController::class, 'destroy'])->name('condition-destroy');
+// Route::resource('/condition',AssetconditionController::class);
+// Route::get('/addCondition',[AssetconditionController::class, 'addCondition'])->name('addCondition');
+// Route::get('/editCondition/{x}',[AssetconditionController::class, 'editCondition'])->name('editCondition');
+// Route::get('/destroyCondition/{x}',[AssetconditionController::class, 'destroy'])->name('condition-destroy');
 
 
 
@@ -608,10 +608,10 @@ Route::get('/editLodge/{x}',[LodgeController::class, 'editLodge'])->name('editLo
 Route::get('/destroyLodge/{x}',[LodgeController::class, 'destroy'])->name('lodge-destroy');
 
 
-Route::resource('/relation',RelationController::class);
-Route::get('/addrelation',[RelationController::class, 'addrelation'])->name('addrelation');
-Route::get('/editRelation/{x}',[RelationController::class, 'editRelation'])->name('editRelation');
-Route::get('/destroyRelation/{x}',[RelationController::class, 'destroy'])->name('relation-destroy');
+// Route::resource('/relation',RelationController::class);
+// Route::get('/addrelation',[RelationController::class, 'addrelation'])->name('addrelation');
+// Route::get('/editRelation/{x}',[RelationController::class, 'editRelation'])->name('editRelation');
+// Route::get('/destroyRelation/{x}',[RelationController::class, 'destroy'])->name('relation-destroy');
 
 
 Route::resource('/designation',DesignationController::class);

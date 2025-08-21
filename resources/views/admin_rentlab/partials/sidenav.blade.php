@@ -32,11 +32,9 @@
                     </div>
                 </li>
 
-
-
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
-                        <i class="las la-trophy"></i>
+                        <i class="menu-icon las la-trophy"></i>
                         <span class="menu-title">@lang('Contestants') </span>
                     </a>
                     <div class="sidebar-submenu # ">
@@ -57,7 +55,7 @@
 
                 <li class="sidebar-menu-item sidebar-dropdown">
                     <a href="javascript:void(0)" class="#">
-                        <i class="las la-align-justify"></i>
+                        <i class="menu-icon las la-align-justify"></i>
                         <span class="menu-title">@lang('Slides') </span>
                     </a>
                     <div class="sidebar-submenu # ">
@@ -130,8 +128,27 @@
                           
                         </ul>
                     </div>
-                </li>               
+                </li>  
 
+      <li class="sidebar-menu-item sidebar-dropdown">
+                    <a href="javascript:void(0)" class="#">
+                        <i class="menu-icon  las la-users"></i>
+                        <span class="menu-title">@lang('Users') </span>
+                    </a>
+
+                    <div class="sidebar-submenu # ">
+                        <ul>
+
+                             <li class="sidebar-menu-item #">
+                                <a href="/user-list" class="nav-link">
+                                    <i class="menu-icon las la-dot-circle"></i>
+                                    <span class="menu-title">@lang('User list')</span>
+                                </a>
+                            </li>
+                                                 
+                        </ul>
+                    </div>
+                </li> 
                         </ul>
                     </div>             
         </div>
