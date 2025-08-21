@@ -24,9 +24,6 @@
              
 
 
-
-
-
               <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('register.store') }}" enctype="multipart/form-data">
         @csrf
                                                   
