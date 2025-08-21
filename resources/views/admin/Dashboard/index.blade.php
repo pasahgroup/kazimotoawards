@@ -9,7 +9,7 @@
 .legend-header {
   background: linear-gradient(90deg, #4f46e5 0%, #06b6d4 100%);
   color: #fff;
-  padding: 2rem 1rem;
+  padding: 1rem 0.5rem;
   border-radius: 1rem 1rem 0 0;
   margin-bottom: 2rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
