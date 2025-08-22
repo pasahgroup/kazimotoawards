@@ -34,7 +34,6 @@ class RegisterController extends Controller
    public function store(Request $request)
     {
 
-//dd('print1');
 
         $request->validate([
             'name' => 'required|string|max:255',
@@ -44,22 +43,73 @@ class RegisterController extends Controller
         ]);
 
 
-//dd('print2');
 
+//dd('print2');
         $user = User::UpdateOrCreate([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
               'role' => $request->role,
-                'status' =>'0',
+                'status' =>'1',
+        ]);
+  if(request('attachment')){
+                $attach = request('attachment');
+                foreach($attach as $attached){
+
+                     // Get filename with extension
+                     $fileNameWithExt = $attached->getClientOriginalName();
+                     // Just Filename
+                     $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                     // Get just Extension
+                     $extension = $attached->getClientOriginalExtension();
+                     //Filename to store
+                     $imageToStore = $filename.'_'.time().'.'.$extension;
+                     //upload the image
+                     $path = $attached->storeAs('public/user/', $imageToStore);
+
+         
+
+  $visionUpdate = aboutus::where('id',$id)
+             ->where('status','Active')
+             ->update([
+            'who_weare'=>request('who_weare'),
+            'mission'=>request('mission'),    
+        'vision'=>request('vision'),
+        'status'=>request('status')
         ]);
 
-        event(new Registered($user));
-        Auth::login($user);      
+
+       //    if(request('password') != request('confirm_password'))
+       //    {
+       //      return redirect()->back()->with('info','Password does not match');
+       //    }
+       //    else
+       //    {
+       //    $user = User::create([
+       //      'name' => $request->name,
+       //      'email' => $request->email,
+       //      'password' => Hash::make($request->password),
+       //        'role' => $request->role,
+       //          'status' =>'1',
+       //            'photo' =>$imageToStore,
+       //  ]);
+       // }
+
+       }
+      }
+
+
+
+
+     event(new Registered($user));
+        Auth::login($user);   
+
 
         // return redirect(RouteServiceProvider::HOME);
          return redirect()->back()->with('success','New user Registered successful');
     }
+
+
 
 
     public function register()
