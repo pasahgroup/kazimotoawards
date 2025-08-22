@@ -33,8 +33,6 @@ class RegisterController extends Controller
 
    public function store(Request $request)
     {
-
-
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -52,6 +50,7 @@ class RegisterController extends Controller
               'role' => $request->role,
                 'status' =>'1',
         ]);
+
   if(request('attachment')){
                 $attach = request('attachment');
                 foreach($attach as $attached){
@@ -68,14 +67,9 @@ class RegisterController extends Controller
                      $path = $attached->storeAs('public/user/', $imageToStore);
 
          
-
-  $visionUpdate = aboutus::where('id',$id)
-             ->where('status','Active')
+  $userUpdate = User::where('id',$user->id)
              ->update([
-            'who_weare'=>request('who_weare'),
-            'mission'=>request('mission'),    
-        'vision'=>request('vision'),
-        'status'=>request('status')
+            'photo'=>$imageToStore,
         ]);
 
 
@@ -128,8 +122,4 @@ class RegisterController extends Controller
     {
       return view('auth.login');
     }
-
-
-
-
 }

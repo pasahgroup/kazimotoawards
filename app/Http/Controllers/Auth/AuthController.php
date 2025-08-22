@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Session;
 use App\Models\User;
 use Hash;
@@ -69,7 +70,7 @@ class AuthController extends Controller
                      $path = $attached->storeAs('public/user/', $imageToStore);
 
        
-            $user = User::where('id',$id)
+            $userUpdate = User::where('id',$id)
                ->update([
            'name' => $request->name,
             'email' => $request->email,          
@@ -78,9 +79,14 @@ class AuthController extends Controller
                   'photo' =>$imageToStore,
 
               ]);
-
        
        }
+
+// dd('dddd');
+
+  $user = User::where('id',$id)->first();
+Storage::delete('/public/user/'.$user->photo);   
+
             return redirect('/user-list')->withSuccess('User! Updated successful');
       }
     else
@@ -125,7 +131,7 @@ class AuthController extends Controller
               'role' => '',
                'photo' => '',
 
-        ]);  
+        ]);
 
              $status=User::where('email',$request->email)
         ->first();
@@ -144,7 +150,6 @@ if($status==null)
          
         $user=User::where('email',$request->email)
         ->first();
-            //$role=$user->role;
               $role = Auth::User()->role;
              // dd('dd1x');
             return redirect()->route('dashboard.index',compact('role'))->withSuccess('You have Successfully loggedin');
@@ -302,6 +307,7 @@ if($status==null)
         Auth::logout();
       return redirect("login")->withInfo('Roles was not assigned to the route| The user has no preveledge to access this route');
          }
+
 
       public function destroy($id)
     {
