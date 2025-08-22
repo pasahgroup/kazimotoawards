@@ -33,6 +33,10 @@ class RegisterController extends Controller
 
    public function store(Request $request)
     {
+
+ $url = $request->path();
+ //dd($url);
+
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -77,10 +81,11 @@ class RegisterController extends Controller
 
 
 
- 
-       event(new Registered($user));
-        Auth::login($user);   
-
+//  if($url=="register")
+//  {
+//        event(new Registered($user));
+//         Auth::login($user);   
+// }
 
         // return redirect(RouteServiceProvider::HOME);
          return redirect()->back()->with('success','New user Registered successful');
