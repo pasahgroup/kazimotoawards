@@ -81,11 +81,11 @@ class RegisterController extends Controller
 
 
 
-//  if($url=="register")
-//  {
-//        event(new Registered($user));
-//         Auth::login($user);   
-// }
+ if($url=="register")
+ {
+       event(new Registered($user));
+        Auth::login($user);   
+}
 
         // return redirect(RouteServiceProvider::HOME);
          return redirect()->back()->with('success','New user Registered successful');
