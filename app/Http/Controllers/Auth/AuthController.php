@@ -54,6 +54,8 @@ class AuthController extends Controller
 
       public function update(Request $request,$id)
     {
+          $user = User::where('id',$id)->first();
+
            if(request('attachment')){
                 $attach = request('attachment');
                 foreach($attach as $attached){
@@ -78,14 +80,13 @@ class AuthController extends Controller
                 'status' =>$request->status,
                   'photo' =>$imageToStore,
 
-              ]);
-       
+              ]);       
        }
 
 // dd('dddd');
 
-  $user = User::where('id',$id)->first();
-Storage::delete('/public/user/'.$user->photo);   
+
+Storage::delete('/public/user/'.$user->photo); 
 
             return redirect('/user-list')->withSuccess('User! Updated successful');
       }
@@ -313,6 +314,8 @@ if($status==null)
     {
       $delete = User::where('id',$id)->first();
         if($delete->delete()){
+
+          Storage::delete('/public/user/'.$delete->photo); 
          return redirect()->back()->with('success','User'." ".$delete->name." removed successfully");
         }    
         else{

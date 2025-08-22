@@ -8,17 +8,12 @@
    
       <div class="row justify-content-center">
           <div class="col-md-8">
-   <div class="form-group row">
-
-                              <label for="email_address" class="col-md-4 col-form-label text-md-right"></label>
-
-                              <div class="col-md-4">
-                                  <img src="../../img/logo.png" style="height: 80px;width: 400;" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-
-                              </div>
-                          </div>
               <div class="card">
-                  <div class="card-header" style="background-color:seagreen;"><h3 class="text-center text-white">User registration</h3></div>
+                  <div class="card-header">
+              <img src="../../img/logo.png" alt="Logo" class="logo mx-auto d-block">
+             User registration
+            </div>
+
                   <div class="card-body">  
 
              
