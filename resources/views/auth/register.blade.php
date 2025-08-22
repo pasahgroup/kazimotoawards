@@ -137,14 +137,21 @@
   
                    <div class="row">
                  <div class="col-lg-6 col-md-12 col-sm-12">                                    
-                                   <a href="/user-list" role="button" class="btn btn-success">
-                                  Back
+                                   <a href="/">
+                                  Website
                               </a>
                                 </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
            <button type="submit" class="btn btn-primary float-right">
                                   Register
                               </button>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12">
+           <a href="/login" class="#">
+                                  Login
+                              </a>
 
             </div>
            </div>

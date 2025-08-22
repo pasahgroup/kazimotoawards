@@ -444,22 +444,6 @@ Vote<i class="fas fa-arrow-right"></i>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container mt-5 col-md-8">
 <div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}g" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog">
@@ -1693,7 +1677,6 @@ Vote<i class="fas fa-arrow-right"></i>
 </div>
 </div>
 </main> 
-
 
 
 

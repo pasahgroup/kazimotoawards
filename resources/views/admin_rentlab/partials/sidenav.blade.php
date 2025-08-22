@@ -1,10 +1,17 @@
+
+    @auth
 <div class="sidebar"
      data-background="#">
     <button class="res-sidebar-close-btn"><i class="las la-times"></i></button>
+
     <div class="sidebar__inner">
         <div class="sidebar__logo">
-            <a href="#" class="sidebar__main-logo"><img
-                    src="{{URL::asset('/storage/user/'.$auth_user->photo) }}" alt="@lang('image') {{$auth_user->id}}"></a>
+            <a href="#" class="sidebar__main-logo">
+               
+                <img src="{{URL::asset('/storage/user/'.$auth_user->photo)?? '' }}">
+            </br>
+                {{$auth_user->name}}
+                </a>
             <a href="#" class="sidebar__logo-shape"><img
                     src="#" alt="@lang('image')"></a>
             <button type="button" class="navbar__expand">  <i class="menu-icon las la-angle-double-left"></i></button>
@@ -153,3 +160,4 @@
                     </div>             
         </div>
     </div>
+   @endauth
