@@ -72,30 +72,13 @@ class RegisterController extends Controller
             'photo'=>$imageToStore,
         ]);
 
-
-       //    if(request('password') != request('confirm_password'))
-       //    {
-       //      return redirect()->back()->with('info','Password does not match');
-       //    }
-       //    else
-       //    {
-       //    $user = User::create([
-       //      'name' => $request->name,
-       //      'email' => $request->email,
-       //      'password' => Hash::make($request->password),
-       //        'role' => $request->role,
-       //          'status' =>'1',
-       //            'photo' =>$imageToStore,
-       //  ]);
-       // }
-
-       }
+        }
       }
 
 
 
-
-     event(new Registered($user));
+ 
+       event(new Registered($user));
         Auth::login($user);   
 
 

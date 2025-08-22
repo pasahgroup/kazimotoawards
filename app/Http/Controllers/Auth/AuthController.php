@@ -111,8 +111,7 @@ Storage::delete('/public/user/'.$user->photo);
 
     public function registration()
     {
-    return view('auth.register');
-
+       return view('auth.register');
     }
 
       
