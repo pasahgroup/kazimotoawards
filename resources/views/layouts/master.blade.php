@@ -88,14 +88,16 @@
 
 <body>
 
+
+
+
       <!-- page-wrapper start -->
     <div class="">
         @include('admin_rentlab.partials.sidenav')
         @include('admin_rentlab.partials.topnav')
-
-
                 @include('admin_rentlab.partials.breadcrumb')
-              
+          
+    
 @yield('contents')
     </div>
 

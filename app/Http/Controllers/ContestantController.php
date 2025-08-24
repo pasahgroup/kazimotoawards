@@ -19,6 +19,9 @@ use App\Models\lodge;
 use App\Models\student;
 use App\Models\contestant_award;
 use Illuminate\Validation\Validator;
+use App\Rules\FileTypeValidate;
+
+use App\Http\Helpers\helpers;
 
 use App\Models\award;
 use App\Models\lodgetrainee;
@@ -33,6 +36,113 @@ class ContestantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+
+function imagePath()
+{
+    $data['gateway'] = [
+        'path' => 'assets/images/gateway',
+        'size' => '800x800',
+    ];
+    $data['verify'] = [
+        'deposit'=>[
+            'path'=>'assets/images/verify/deposit'
+        ]
+    ];
+    $data['image'] = [
+        'default' => 'assets/images/default.png',
+    ];
+    $data['ticket'] = [
+        'path' => 'assets/support',
+    ];
+    $data['language'] = [
+        'path' => 'assets/images/lang',
+        'size' => '64x64'
+    ];
+    $data['logoIcon'] = [
+        'path' => 'assets/images/logoIcon',
+    ];
+    $data['favicon'] = [
+        'size' => '128x128',
+    ];
+    $data['extensions'] = [
+        'path' => 'assets/images/extensions',
+        'size' => '36x36',
+    ];
+    $data['seo'] = [
+        'path' => 'assets/images/seo',
+        'size' => '600x315'
+    ];
+    $data['profile'] = [
+        'user'=> [
+            'path'=>'assets/images/user/profile',
+            'size'=>'350x350'
+        ],
+        'admin'=> [
+            'path'=>'assets/admin/images/profile',
+            'size'=>'400x400'
+        ]
+    ];
+    $data['vehicles'] = [
+        'path' => 'assets/images/vehicles',
+        'size' => '770x480'
+    ];
+    return $data;
+}
+
+
+
+
+function uploadImage($file, $location, $size = null, $old = null, $thumb = null)
+{
+    $path =$this->makeDirectory($location);
+    if (!$path) throw new Exception('File could not been created.');
+
+    if ($old) {
+        removeFile($location . '/' . $old);
+        removeFile($location . '/thumb_' . $old);
+    }
+
+    $filename = uniqid() . time() . '.' . $file->getClientOriginalExtension();
+    $image = Image::make($file);
+    if ($size) {
+        $size = explode('x', strtolower($size));
+        $image->resize($size[0], $size[1]);
+    }
+    $image->save($location . '/' . $filename);
+
+    if ($thumb) {
+        $thumb = explode('x', $thumb);
+        Image::make($file)->resize($thumb[0], $thumb[1])->save($location . '/thumb_' . $filename);
+    }
+
+    return $filename;
+}
+
+function uploadFile($file, $location, $size = null, $old = null){
+    $path =$this->makeDirectory($location);
+    if (!$path) throw new Exception('File could not been created.');
+
+    if ($old) {
+        removeFile($location . '/' . $old);
+    }
+
+    $filename = uniqid() . time() . '.' . $file->getClientOriginalExtension();
+    $file->move($location,$filename);
+    return $filename;
+}
+
+
+function makeDirectory($path)
+{
+    if (file_exists($path)) return true;
+    return mkdir($path, 0755, true);
+}
+
+
+
     public function index()
     {
       $awards=award::where('status','Active')
@@ -75,6 +185,94 @@ class ContestantController extends Controller
      */
     public function store(Request $request)
     {
+
+//New installation
+
+
+  $request->validate([
+            'name' => 'required|string',
+            
+            // 'brand' => 'required|integer|gt:0',
+            // 'seater' => 'required|integer|gt:0',
+            // 'price' => 'required|numeric|gt:0',
+            // 'details' => 'required|string',
+            // 'model' => 'required|string',
+            // 'car_model_no' => 'required|integer',
+
+            // 'doors' => 'required|integer|gt:0',
+            // 'transmission' => 'required|string',
+            // 'fuel_type' => 'required|string',
+            //  'car_body_type' => 'required|string',
+            //  'tag' => 'required|string',
+            //  'color' => 'required|string',
+        
+
+            'images.*' => ['required', 'max:10000', new FileTypeValidate(['jpeg','jpg','png','gif'])],
+            // 'icon' => 'required|array',
+            // 'icon.*' => 'required|string',
+            // 'label' => 'required|array',
+            // 'label.*' => 'required|string',
+            // 'value' => 'required|array',
+            // 'value.*' => 'required|string',
+        ]);
+
+//dd($car_body_type);
+        $contestant_data = new contestant();
+        $contestant_data->full_name = $request->name;
+        // $vehicle->brand_id = $request->brand;
+        // $vehicle->seater_id = $request->seater;
+        // $vehicle->price = $request->price;
+        // $vehicle->details = $request->details;
+        // $vehicle->model = $request->model;
+        // $vehicle->car_model_no = $request->car_model_no;
+
+        // $vehicle->doors = $request->doors;
+        // $vehicle->transmission = $request->transmission;
+        // $vehicle->fuel_type = $request->fuel_type;
+        //  $vehicle->car_body_type_id = $request->car_body_type;
+        //   $vehicle->tag_id = $request->tag;
+        //    $vehicle->color_id = $request->color;
+        //     $vehicle->location_id = $request->location;
+
+
+        // foreach ($request->label as $key => $item) {
+        //     $specifications[$item] = [
+        //         $request->icon[$key],
+        //         $request->label[$key],
+        //         $request->value[$key]
+        //     ];
+        // }
+
+        // $vehicle->specifications = $specifications;
+
+
+// $data = $this->getSomeData();
+        // Upload image
+        foreach ($request->images as $image) {
+            $path = $this->imagePath()['vehicles']['path'];
+            $size = $this->imagePath()['vehicles']['size'];
+            $images[] =$this->uploadImage($image, $path, $size);
+        }
+        $contestant_data->images = $images;
+        $contestant_data->save();
+
+        $notify[] = ['success', 'Vehicle Added Successfully!'];
+        return back()->withNotify($notify);
+
+
+dd('print consent');
+//End of new installation
+
+
+
+
+
+
+
+
+
+
+
 
       $curYear = date('Y');
      $start_date=request('birth_date');

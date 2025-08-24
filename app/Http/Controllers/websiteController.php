@@ -27,8 +27,7 @@ class WebsiteController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        
+    {        
           $donors=donor::where('status','Active')
         ->get();
 
@@ -88,10 +87,23 @@ $yearExperience=($newDateTime)->year;
         //
     }
 
- // public function donor()
- //    {
- //        return view('public.donor_photos');
- //    }
+
+ public function votingDetails()
+    {
+       
+     return view('website.voting.voting_details');
+    }
+
+
+
+public function add()
+    {
+       
+     return view('website.voting.add');
+    }
+
+
+
 
 
 public function safari()

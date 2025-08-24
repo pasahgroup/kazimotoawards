@@ -40,10 +40,15 @@ class RegisterController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-          //  'password' => 'required|string|confirmed|min:8',
+            'password' => 'required|string|confirmed|min:8',
             'role' => 'required|string',            
         ]);
 
+
+ // if(request('password') != request('confirm_password'))
+ //          {
+ //            return redirect()->back()->with('info','Password does not match');
+ //          }
 
 
 //dd('print2');
@@ -54,6 +59,7 @@ class RegisterController extends Controller
               'role' => $request->role,
                 'status' =>'1',
         ]);
+
 
   if(request('attachment')){
                 $attach = request('attachment');

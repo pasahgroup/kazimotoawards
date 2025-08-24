@@ -29,6 +29,4 @@
 //  }
 
 echo "Your message send successfully!.";
-
-
 ?>

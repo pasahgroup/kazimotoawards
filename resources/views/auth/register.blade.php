@@ -17,6 +17,15 @@
                   <div class="card-body">  
 
              
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 
               <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('register.store') }}" enctype="multipart/form-data">

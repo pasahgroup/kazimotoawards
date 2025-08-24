@@ -348,6 +348,8 @@
                             <h2 class="name">{{$contestant_data->full_name}}
 </h2>
                             <div class="description">Awards: {{$contestant_data->award_name}}</div>
+                            <a href="/voting_details/3" class="theme-btn">gg</a>
+
 
 
 
@@ -367,10 +369,11 @@ View more<i class="fas fa-arrow-right"></i>
                                                 
                       
  <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="#" class="theme-btn" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
+                                                    <a href="/voting_details/3" class="theme-btn" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
 
 Vote<i class="fas fa-arrow-right"></i>
 </a>
+
                                                 </div>
 
 

@@ -105,11 +105,6 @@ $fullUrl=request('fullurl');
             return $this->sendLoginResponse($request);
         }
 
-//dd($fullUrl);
-
-        // If the login attempt was unsuccessful we will increment the number of attempts
-        // to login and redirect the user back to the login form. Of course, when this
-        // user surpasses their maximum number of attempts they will get locked out.
         $this->incrementLoginAttempts($request);
 
         return $this->sendFailedLoginResponse($request);
@@ -183,7 +178,6 @@ $fullUrl=request('fullurl');
             $userLogin->country =  $exist->country;
         }else{
             $info = json_decode(json_encode(getIpInfo()), true);
-  //dd('dd2');
             if($info["long"]!==null) {
             $userLogin->longitude =  @implode(",",$info["long"]);
              }

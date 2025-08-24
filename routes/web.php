@@ -142,7 +142,6 @@ Route::resource('/contestant',ContestantController::class);
 Route::get('/get_contestant', [ContestantController::class,'contestant']);
 
 
-
 Route::get('/get_aboutusw', [WebsiteController::class,'aboutusw']);
 Route::resource('/aboutus',AboutusController::class);
  
@@ -385,6 +384,10 @@ Route::get('/circuitTour/{x}', [websiteController::class, 'circuitTour'])->name(
 Route::get('/detail-page/{x}', [websiteController::class, 'detailPage'])->name('detail-page');
 
 Route::get('/detailp/{x}', [websiteController::class, 'detail'])->name('detail');
+
+//Voting details
+Route::get('/voting_details/{x}', [websiteController::class, 'votingDetails'])->name('voting_details');
+Route::get('/voting_add_details', [websiteController::class, 'add'])->name('voting_add_details');
 
 //Trained students
 Route::get('/trained/{x}', [websiteController::class, 'trained'])->name('trained');
