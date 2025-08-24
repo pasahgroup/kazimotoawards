@@ -28,6 +28,8 @@ use App\Models\lodgetrainee;
 
 use DB;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+// use Intervention\Image\Facades\Image;
 
 class ContestantController extends Controller
 {
