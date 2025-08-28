@@ -602,26 +602,32 @@
   </div>
 
 
-  <div class="row" style="padding-left:10px;padding-right:10px;">
-                                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <label for="">Experience 1:</label>
-                                    <div class="form-group">
-                                    <textarea name="experience_one"></textarea>
-                                    </div>
+
+<div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="nicEditor0">@lang('Details')</label>
+                                    <textarea rows="10" name="details" class="form-control nicEdit"
+                                              id="nicEditor0">{{ old('details') }}</textarea>
                                 </div>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="nicEditor0">@lang('Details')</label>
+                                    <textarea rows="10" cols="100" name="details" class="form-control nicEdit"
+                                              id="nicEditor0">{{ old('details') }}</textarea>
+                                </div>
+                            </div>
 
 
-
-    </div>
 
 
 
   <div class="row" style="padding-left:10px;padding-right:10px;">
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 2:</label>
-                                    <div class="form-group">
-                                      <textarea name="experience_two"></textarea>
-                                    </div>
+                                      <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"></textarea>
+                                    
                                 </div>
 
 
@@ -899,14 +905,7 @@ slider.oninput = function() {
 
 
 
-
-
-
-
-
-
-
-    <div class="row">
+<div class="row">
         <div class="col-lg-12">
             <div class="card">                            
 <form action="{{ route('contestant.store') }}" method="post" enctype="multipart/form-data">
@@ -957,7 +956,7 @@ slider.oninput = function() {
                                     </div>
                                 </div>
                             </div>
-
+{{--
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="nicEditor0">@lang('Details')</label>
@@ -965,7 +964,7 @@ slider.oninput = function() {
                                               id="nicEditor0">{{ old('details') }}</textarea>
                                 </div>
                             </div>
-
+--}}
                      
                             <div class="col-md-12">
                                 <div class="card border--dark mb-4">
