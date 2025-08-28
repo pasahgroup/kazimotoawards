@@ -13,15 +13,20 @@
     {{--
     <link rel="shortcut icon" type="image/png" href="{{getImage(imagePath()['logoIcon']['path'] .'/favicon.png')}}">
     --}}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"> -->
     <!-- bootstrap 4  -->
-    <link rel="stylesheet" href="{{ asset('assets/admin/css/vendor/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('assets/admin/css/vendor/bootstrap.min.css') }}"> -->
     <!-- bootstrap toggle css -->
-    <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/bootstrap-toggle.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('assets/admin/css/vendor/bootstrap-toggle.min.css')}}"> -->
     <!-- fontawesome 5  -->
-    <link rel="stylesheet" href="{{asset('assets/admin/css/all.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('assets/admin/css/all.min.css')}}"> -->
     <!-- line-awesome webfont -->
     <link rel="stylesheet" href="{{asset('assets/admin/css/line-awesome.min.css')}}">
+
+
+             <link href="../../css/style-shortline.css" rel="stylesheet">
+  <link href="../../css/mform.css" rel="stylesheet">
+     <script src="../js/jquery361.min.js"></script>
 
     @stack('style-lib')
 
@@ -62,7 +67,7 @@
 <!-- custom select box js -->
 <script src="{{asset('assets/admin/js/vendor/jquery.nice-select.min.js')}}"></script>
 
-@include('admin_rentlab.partials.notify')
+
 @include('admin_rentlab.partials.notify')
 @stack('script-lib')
 
@@ -92,7 +97,6 @@
 </script>
 
 @stack('script')
-
 
 </body>
 </html>

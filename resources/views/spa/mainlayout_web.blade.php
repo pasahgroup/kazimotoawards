@@ -60,6 +60,7 @@
      @include('spa.topmenu')
 <section style="padding-top:10%;"></section>
 
+ @include('layout.app_customer')
 @yield('contents')
 
 <section style="padding-top:10%;"></section>

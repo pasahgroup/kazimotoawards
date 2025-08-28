@@ -21,7 +21,8 @@ class contestant extends Model
  'experience_two',
   'experience_three',
 
-'photo',
+'images' => 'object',
+'photo' => 'object',
   'file1',
   'file2',
   'file3',

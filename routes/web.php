@@ -206,7 +206,7 @@ Route::get('/stl', function () {
    dd('cache clear successfully');
 });
 
- Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('flush', [AuthController::class, 'flush'])->name('flush');
 
 //Route::get('login', [AuthController::class, 'index'])->name('login');

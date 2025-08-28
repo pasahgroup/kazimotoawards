@@ -1645,7 +1645,7 @@ p {
 }
 
 p, li, a {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 
 .text--small {
@@ -6884,8 +6884,8 @@ a.icon-btn {
     flex-wrap: wrap;
 }
 .payment-method-item .payment-method-header .thumb .profilePicPreview {
-    width: 210px;
-    height: 210px;
+    width: 120px;
+    height: 120px;
     display: block;
     border: 3px solid #f1f1f1;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
@@ -6901,18 +6901,18 @@ a.icon-btn {
 }
 
 .payment-method-item .payment-method-header .thumb .avatar-edit label {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    /*border-radius: 50%;*/
     text-align: center;
-    line-height: 45px;
+    /*line-height: 45px;*/
     border: 2px solid #fff;
     font-size: 18px;
     cursor: pointer;
 }
 
 .payment-method-item .payment-method-header .thumb {
-    width: 220px;
+    /*width: 220px;*/
     position: relative;
     margin-bottom: 30px;
 }

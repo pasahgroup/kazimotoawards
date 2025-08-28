@@ -27,8 +27,12 @@ use App\Models\award;
 use App\Models\lodgetrainee;
 
 use DB;
+// use Image;
+//use Intervention\Image\Facades\Image;
+
 use Illuminate\Http\Request;
-use Intervention\Image\Facades\Image;
+//use Intervention\Image\Facades\Image;
+ use Intervention\Image\Facades\Image as Image;
 // use Intervention\Image\Facades\Image;
 
 class ContestantController extends Controller
@@ -38,8 +42,6 @@ class ContestantController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
-
 
 
 function imagePath()
@@ -113,6 +115,8 @@ function uploadImage($file, $location, $size = null, $old = null, $thumb = null)
         $size = explode('x', strtolower($size));
         $image->resize($size[0], $size[1]);
     }
+
+
     $image->save($location . '/' . $filename);
 
     if ($thumb) {
@@ -120,8 +124,10 @@ function uploadImage($file, $location, $size = null, $old = null, $thumb = null)
         Image::make($file)->resize($thumb[0], $thumb[1])->save($location . '/thumb_' . $filename);
     }
 
+//dd($location);
     return $filename;
 }
+
 
 function uploadFile($file, $location, $size = null, $old = null){
     $path =$this->makeDirectory($location);
@@ -247,6 +253,8 @@ function makeDirectory($path)
 
         // $vehicle->specifications = $specifications;
 
+//dd('print consent1');
+//const $images =[];
 
 // $data = $this->getSomeData();
         // Upload image
@@ -254,15 +262,33 @@ function makeDirectory($path)
             $path = $this->imagePath()['vehicles']['path'];
             $size = $this->imagePath()['vehicles']['size'];
             $images[] =$this->uploadImage($image, $path, $size);
-        }
-        $contestant_data->images = $images;
-        $contestant_data->save();
 
+   // $photoMeta = explode("_", $keyPhoto);
+
+          //dd($images);  
+        }
+
+ //dd($contestant_data->images);
+// $indexedArray = array("apple", "banana", "orange");
+$images = implode(",",$images);
+
+$images=("[".$images."]");
+
+ //const myArray = ["apple", "banana", "cherry"];
+  //  $myString = $images[].join(", ");
+
+  //dd($myString);
+
+        $contestant_data->images = $images;
+     //dd($contestant_data->images);
+
+        $contestant_data->save();
+//dd('print consent1xx');
         $notify[] = ['success', 'Vehicle Added Successfully!'];
         return back()->withNotify($notify);
 
 
-dd('print consent');
+dd('print consent2');
 //End of new installation
 
 
