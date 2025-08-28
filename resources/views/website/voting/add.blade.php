@@ -564,6 +564,9 @@
                     </div>
                     </div>
 
+                         <div class="input__container">
+                            <a class="nxt__btn" onclick="nextForm();"> Next</a>
+                        </div>
 
                     </fieldset>
                     <fieldset class="active__form" id="form2">
