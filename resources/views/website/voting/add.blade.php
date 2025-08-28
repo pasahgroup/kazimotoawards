@@ -452,7 +452,7 @@
                 <div class="left__container">
                     <div class="side__titles">
                         <div class="title__name">
-                            <label>Full name</label>
+                            <h3>Personal Details</h3>
                             <p>Enter & press next</p>
                         </div>
                         <div class="title__name">
@@ -488,23 +488,82 @@
                             <h4>Let's start with your name</h4>
                         </div>
                         
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
                         <div class="input__container">
-                            <label for="name">Enter your name</label>
+                            <label for="name">Full name</label>
                               <input type="text" name="full_name" required/> 
                         </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
                          <div class="input__container">
-                            <label for="name">Enter your name</label>
-                              <input type="text" name="full_name" required/> 
+                            <label for="name">Birth Date</label>
+                            <input type="date" name="birth_date" id="birth_date1" required/>
                         </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                            <label for="name">Phone number</label>
+                              <input type="text" name="phone" required/> 
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
                          <div class="input__container">
-                            <label for="name">Enter your name</label>
-                              <input type="text" name="full_name" required/> 
+                            <label for="name">Email</label>
+                            <input type="email" name="email" required/>
                         </div>
+                    </div>
+                    </div>
+
+
+
+                    <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                            <label for="name">Country</label>
+                               <select class="form-control" name="country">
+                                              <option value="0">--Select the Country--</option>
+                                            <option value="Tanzania">Tanzania</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
                          <div class="input__container">
-                            <label for="name">Enter your name</label>
-                              <input type="text" name="full_name" required/> 
-                            <a class="nxt__btn" onclick="nextForm();"> Next</a>
+                            <label for="name">District</label>
+                            <input type="text" name="district" required/>
                         </div>
+                    </div>
+                    </div>
+
+
+
+ <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                          <label for="">Education:</label>
+                                         <select class="search-fields form-control" name="education">
+                                              <option value="0">--Select the Education--</option>
+                                            <option value="PHD">PHD</option>
+                                             <option value="Master">Master</option>
+                                              <option value="Degree">Degree</option>
+                                               <option value="Diploma">Diploma</option>
+                                                <option value="Certificate">Certificate</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
+                         <div class="input__container">
+                            <label>Degree of</label>
+                                        <input type="text" name="education_of"/>
+                        </div>
+                    </div>
+                    </div>
+
 
                     </fieldset>
                     <fieldset class="active__form" id="form2">
