@@ -456,12 +456,12 @@
                             <p>Enter & press next</p>
                         </div>
                         <div class="title__name">
-                            <h3>Desctibes</h3>
+                            <h3>Experiences</h3>
                             <p>select & press next</p>
                         </div>
                         <div class="title__name">
                             <h3>Services</h3>
-                            <p>select & press next</p>
+                            <p>First expirience field is mandatory</p>
                         </div>
                         <div class="title__name">
                             <h3>Budget</h3>
@@ -484,6 +484,13 @@
                 </div>
                 <div class="right__container">
                     <fieldset id="form1">
+   <div class="form-card">
+                            <div class="">
+                                 <div class="col-12" style="background-color:#e9ece9">
+                                    <h4 class="fs-title">Personal Details:| Step 1 - 4</h4>
+                                </div>                                
+                            </div> 
+
                         <div class="sub__title__container ">
                             <h4>Let's start with your name</h4>
                         </div>
@@ -570,33 +577,88 @@
 
                     </fieldset>
                     <fieldset class="active__form" id="form2">
-                        <div class="sub__title__container">
-                            <p>Step 2/5</p>
-                            <h2>What best describes you ?</h2>
-                            <p>Please let us know what type of business best describes you as entreprenuer or businessman.</p>
-                        </div>
-                        
-                        <div class="input__container">
-                            <div class="selection newB">
-                                <div class="imoji">
-                                    <ion-icon name="happy"></ion-icon>
-                                    
+                      
+                        <div class="input__container">                            
+              <div class="form-card">
+                            <div class="">
+                                 <div class="col-12" style="background-color:#e9ece9">
+                                    <h4 class="fs-title">Experience Details:| Step 2 - 4</h4>
+                                </div>                                
+                            </div> 
+                           
+
+
+  <div class="row" style="padding-left:10px;padding-right:10px;">
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <label for="">Experience 1:</label>
+                                    <div class="form-group">
+                                    <textarea name="experience_one"></textarea>
+                                    </div>
                                 </div>
-                                <div class="descriptionTitle">
-                                    <h3>New Business</h3>
-                                    <p>Started trading in last 12 months</p>
+
+
+
+    </div>
+
+
+
+  <div class="row" style="padding-left:10px;padding-right:10px;">
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <label for="">Experience 2:</label>
+                                    <div class="form-group">
+                                      <textarea name="experience_two"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="selection exitB">
-                                <div class="imoji">
-                                    <ion-icon name="business"></ion-icon>
+
+
+
+    </div>
+
+
+
+    <div class="row" style="padding-left:10px;padding-right:10px;">
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <label for="">Experience 3:</label>
+                                    <div class="form-group">
+                                      <textarea name="experience_three"></textarea>
+                                    </div>
                                 </div>
-                                <div class="descriptionTitle">
-                                    <h3>Existing Business</h3>
-                                    <p>Have been operating beyond 12 months</p>
-                                </div>
-                            </div>
-                            
+
+
+
+    </div>
+
+
+ <div class="form-group">
+     <div class="col-md-12">
+       
+            <label for="">Apply for Awards,Maximum 3 selections:</label>
+       <div class="form-group">
+
+@foreach($awards as $award)
+
+           <label for="facebook">{{$award->award_name}}
+          <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
+        </label>
+@endforeach     
+        </div>
+        </div>
+  </div>
+
+                          
+
+                        </div> 
+
+
+
+
+
+
+
+
+
+
+
                             <div class="buttons">
                                 <a class="prev__btn" onclick="prevForm();" >Back</a>
                                 <a class="nxt__btn"  onclick="nextForm();" >Next</a>    

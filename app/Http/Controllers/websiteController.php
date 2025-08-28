@@ -26,7 +26,7 @@ class WebsiteController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index_org()
+    public function index()
     {        
           $donors=donor::where('status','Active')
         ->get();
@@ -63,7 +63,7 @@ class WebsiteController extends Controller
     }
 
 
-  public function index()
+  public function indexx()
     { 
          return view('website.home.multiform');
     }
@@ -106,11 +106,12 @@ $yearExperience=($newDateTime)->year;
 
 public function add()
     {       
-     return view('website.voting.add');
+         $awards=award::where('status','Active')
+      ->where('award_name','!=',"")
+      ->get();
+
+     return view('website.voting.add',compact('awards'));
     }
-
-
-
 
 
 public function safari()
