@@ -586,6 +586,20 @@
                                 </div>                                
                             </div> 
                            
+ <div class="form-group">
+     <div class="col-md-12">
+       
+            <label for="">Apply for Awards,Maximum 3 selections:</label>
+       <div class="form-group">
+@foreach($awards as $award)
+
+           <label for="facebook">{{$award->award_name}}
+          <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
+        </label>
+@endforeach     
+        </div>
+        </div>
+  </div>
 
 
   <div class="row" style="padding-left:10px;padding-right:10px;">
@@ -628,22 +642,6 @@
 
     </div>
 
-
- <div class="form-group">
-     <div class="col-md-12">
-       
-            <label for="">Apply for Awards,Maximum 3 selections:</label>
-       <div class="form-group">
-
-@foreach($awards as $award)
-
-           <label for="facebook">{{$award->award_name}}
-          <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
-        </label>
-@endforeach     
-        </div>
-        </div>
-  </div>
 
                           
 
