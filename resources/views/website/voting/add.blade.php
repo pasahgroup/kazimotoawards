@@ -446,7 +446,7 @@
 
 <div class="form__container">
             <div class="title__container">
-                <Strong>Example UI container</Strong>
+                <Strong>Contestant: Registration Form</Strong>
             </div>
             <div class="body__container">
                 <div class="left__container">
