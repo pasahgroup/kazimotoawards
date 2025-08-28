@@ -618,9 +618,14 @@
                                               id="nicEditor0">{{ old('details') }}</textarea>
                                 </div>
                             </div>
+  <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"></textarea>
 
-
-
+  <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                            <label for="name">Full name</label>
+                               <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"></textarea>
+                        </div>
+                    </div>
 
 
   <div class="row" style="padding-left:10px;padding-right:10px;">
