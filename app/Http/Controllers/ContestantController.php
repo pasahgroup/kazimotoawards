@@ -197,24 +197,11 @@ function makeDirectory($path)
 //dd('print consent2');
 
   $request->validate([
-            'full_name' => 'required|string',
-            
-            // 'brand' => 'required|integer|gt:0',
-            // 'seater' => 'required|integer|gt:0',
-            // 'price' => 'required|numeric|gt:0',
-            // 'details' => 'required|string',
-            // 'model' => 'required|string',
-            // 'car_model_no' => 'required|integer',
+            'full_name' => 'required|string',            
+             'phone' => 'required|string',
 
-            // 'doors' => 'required|integer|gt:0',
-            // 'transmission' => 'required|string',
-            // 'fuel_type' => 'required|string',
-            //  'car_body_type' => 'required|string',
-            //  'tag' => 'required|string',
-            //  'color' => 'required|string',
-        
-
-            'images.*' => ['required', 'max:10000', new FileTypeValidate(['jpeg','jpg','png','gif'])],
+            'experience_one' => 'required|string',
+           'images.*' => ['required', 'max:10000', new FileTypeValidate(['jpeg','jpg','png','gif'])],
             // 'icon' => 'required|array',
             // 'icon.*' => 'required|string',
             // 'label' => 'required|array',
