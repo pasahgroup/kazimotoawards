@@ -453,23 +453,19 @@
                     <div class="side__titles">
                         <div class="title__name">
                             <h3>Personal Details</h3>
-                            <p>Enter & press next</p>
+                            <p>Personal particulars</p>
                         </div>
                         <div class="title__name">
                             <h3>Experiences</h3>
-                            <p>select & press next</p>
+                            <p>Describe even one experience you've had</p>
                         </div>
                         <div class="title__name">
-                            <h3>Services</h3>
-                            <p>First expirience field is mandatory</p>
-                        </div>
-                        <div class="title__name">
-                            <h3>Budget</h3>
-                            <p>Select & press next</p>
+                            <h3>Evidence Photos</h3>
+                            <p>Upload some of your evidence photos</p>
                         </div>
                         <div class="title__name">
                             <h3>Complete</h3>
-                            <p>Finaly press submit</p>
+                            <p>Submit application</p>
                         </div>
                     </div>
                     <div class="progress__bar__container">
@@ -478,11 +474,18 @@
                             <li id="icon2"><ion-icon name="book-outline"></ion-icon></li>
                             <li id="icon3"><ion-icon name="layers-outline"></ion-icon></li>
                             <li id="icon4"><ion-icon name="pricetag-outline"></ion-icon></li>
-                            <li id="icon5"><ion-icon name="mail-outline"></ion-icon></li>
                         </ul>
                     </div>
                 </div>
+
+
+
+
+
                 <div class="right__container">
+
+                       <form method="post" action="{{ route('contestant.store') }}" enctype="multipart/form-data">
+                    @csrf
                     <fieldset id="form1">
    <div class="form-card">
                             <div class="">
@@ -571,15 +574,15 @@
                     </div>
                     </div>
 
-                         <div class="input__container">
-                            <a class="nxt__btn" onclick="nextForm();"> Next</a>
-                        </div>
+                        <div class="buttons">
+                                <a class="prev__btn" onclick="prevForm();" ></a>
+                                <a class="nxt__btn"  onclick="nextForm();" >Next</a>    
+                            </div>
 
                     </fieldset>
-                    <fieldset class="active__form" id="form2">
-                      
+                    <fieldset class="active__form" id="form2">                      
                         <div class="input__container">                            
-              <div class="form-card">
+                         <div class="form-card">
                             <div class="">
                                  <div class="col-12" style="background-color:#e9ece9">
                                     <h4 class="fs-title">Experience Details:| Step 2 - 4</h4>
@@ -603,35 +606,37 @@
 
 
 
-<div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="nicEditor0">@lang('Details')</label>
-                                    <textarea rows="10" name="details" class="form-control nicEdit"
-                                              id="nicEditor0">{{ old('details') }}</textarea>
+
+  <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <label for="">Experience 1:</label>
+                                      <textarea name="experience_one" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
+                                    
                                 </div>
-                            </div>
-
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="nicEditor0">@lang('Details')</label>
-                                    <textarea rows="10" cols="100" name="details" class="form-control nicEdit"
-                                              id="nicEditor0">{{ old('details') }}</textarea>
-                                </div>
-                            </div>
-  <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"></textarea>
-
-  <div class="col-md-6 col-lg-6 col-sm-6">
-                        <div class="input__container">
-                            <label for="name">Full name</label>
-                               <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"></textarea>
-                        </div>
-                    </div>
 
 
-  <div class="row" style="padding-left:10px;padding-right:10px;">
+
+    </div>
+
+
+
+ <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 2:</label>
-                                      <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"></textarea>
+                                      <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
+                                    
+                                </div>
+
+
+
+    </div>
+
+
+
+ <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <label for="">Experience 3:</label>
+                                      <textarea name="experience_three" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
                                     
                                 </div>
 
@@ -652,19 +657,7 @@
 
 
     </div>
-
-
-                          
-
-                        </div> 
-
-
-
-
-
-
-
-
+</div> 
 
 
 
@@ -675,60 +668,74 @@
                         </div>
                     </fieldset>
                     <fieldset class="active__form" id="form3">
-                        <div class="sub__title__container">
-                            <p>Step 3/5</p>
-                            <h2>What service are looking for ?</h2>
-                            <p>Please let us know what type of business best describes you as entreprenuer or businessman.</p>
-                        </div>
-                        
-                        <div class="input__container">
-                            <div class="selection newB">
-                                <div class="imoji">
-                                    <ion-icon name="desktop"></ion-icon>
-                                    
-                                </div>
-                                <div class="descriptionTitle">
-                                    <h3>Website Development</h3>
-                                    <p>Development of online websites</p>
+                         <div class="">
+                                 <div class="col-12" style="background-color:#e9ece9">
+                                    <h4 class="fs-title">Evidence Photos:| Step 3 - 4</h4>
+                                </div>                                
+                            </div>
+
+ <div class="input__container">
+   <div class="col-md-12">
+                                <div class="card border--dark mb-4">
+                                    <div class="card-header bg--dark d-flex justify-content-between">
+                                        <h5 class="text-white">@lang('Upload Different photos')</h5>
+                                        <button type="button" class="btn btn-sm btn-outline-light addBtn"><i
+                                                class="fa fa-fw fa-plus"></i>@lang('Add New')
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><small class="text-facebook">@lang('Images will be resize into')
+                                           
+                                           {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
+
+                                       </p>
+                                        <div class="row element">
+
+                                            <div class="col-md-2 imageItem">
+                                                <div class="payment-method-item">
+                                                    <div class="payment-method-header d-flex flex-wrap">
+                                                        <div class="thumb" style="position: relative;">
+                                                            <div class="avatar-preview">
+                                                                <div class="profilePicPreview"
+                                                                     style="background-image: url('{{asset('assets/images/default.png')}}')">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="avatar-edit">
+                                                                <input type="file" name="images[]"
+                                                                       class="profilePicUpload" id="0"
+                                                                       accept=".png, .jpg, .jpeg" required>
+                                                                <label for="0" class="bg-primary">
+                                                                    <i class="la la-pencil"></i>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="selection exitB">
-                                <div class="imoji">
-                                    <ion-icon name="phone-portrait"></ion-icon>
-                                </div>
-                                <div class="descriptionTitle">
-                                    <h3>Development of Mobile App</h3>
-                                    <p>Development of android and IOS mobile app</p>
-                                </div>
-                            </div>
+
+
+                    
+                       
+                          
                             <div class="buttons">
                                 <a class="prev__btn" onclick="prevForm();" >Back</a>
-                                <a class="nxt__btn"  onclick="nextForm();" >Next</a>    
+                                 <button type="submit" class="nxt__btn">Submit</button> 
+ 
                             </div>
+
                         </div>
                     </fieldset>
-                    <fieldset class="active__form" id="form4">
-                        <div class="sub__title__container">
-                            <p>Step 4/5</p>
-                            <h2>Please select your budget</h2>
-                            <p>Please let us know budget for your project so yes are great that we can give the right quote thanks</p>
-                        </div>
-                        
-                        <div class="input__container">
-                            
-                            
-                            <input type="range" min="10000" max="500000" value="250000" class="slider">
-                            <div class="output__value">
-                                
-                            </div>
-                            
-                            <div class="buttons">
-                                <a class="prev__btn" onclick="prevForm();" >Back</a>
-                                <a class="nxt__btn"  onclick="nextForm();" >Next</a>     
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="active__form" id="form5">
+               
+
+
+                <!--     <fieldset class="active__form" id="form4">
                         <div class="sub__title__container">
                             <p>Step 5/5</p>
                             <h2>Complete Submission</h2>
@@ -744,7 +751,8 @@
                             </div>
                             
                         </div>
-                    </fieldset>
+                    </fieldset> -->
+                </form>
                 </div>
             </div>
         </div>
@@ -756,14 +764,12 @@ const form1 = document.querySelector('#form1');
 const form2 = document.querySelector('#form2');
 const form3 = document.querySelector('#form3');
 const form4 = document.querySelector('#form4');
-const form5 = document.querySelector('#form5');
 
 
 const icon1 = document.querySelector('#icon1');
 const icon2 = document.querySelector('#icon2');
 const icon3 = document.querySelector('#icon3');
 const icon4 = document.querySelector('#icon4');
-const icon5 = document.querySelector('#icon5');
 
 
 var viewId = 1;
@@ -790,32 +796,24 @@ function progressBar1(){
         icon2.classList.remove('active');
         icon3.classList.remove('active');
         icon4.classList.remove('active');
-        icon5.classList.remove('active');
     }
     if(viewId===2){
         icon2.classList.add('active');
         icon3.classList.remove('active');
         icon4.classList.remove('active');
-        icon5.classList.remove('active');
     }
     if(viewId===3){
         icon3.classList.add('active');
         icon4.classList.remove('active');
-        icon5.classList.remove('active');
     }
     if(viewId===4){
         icon4.classList.add('active');
-        icon5.classList.remove('active');
-    }
-    if(viewId===5){
-        icon5.classList.add('active');
         nxtBtn.innerHTML = "Submit"
     }
-    if(viewId>5){
+    if(viewId>4){
         icon2.classList.remove('active');
         icon3.classList.remove('active');
         icon4.classList.remove('active');
-        icon5.classList.remove('active');
         
     }
 }
@@ -829,23 +827,19 @@ function progressBar(){
     }
     if(viewId===4){
         icon4.classList.add('active');
-    }
-    if(viewId===5){
-        icon5.classList.add('active');
         nxtBtn.innerHTML = "Submit"
     }
-    if(viewId>5){
+    if(viewId>4){
         icon2.classList.remove('active');
         icon3.classList.remove('active');
-        icon4.classList.remove('active');
-        icon5.classList.remove('active');
+        // icon4.classList.remove('active');
         
     }
 }
 
 function displayForms(){
     
-    if(viewId>5){
+    if(viewId>4){
         viewId=1;
     }
 
@@ -854,35 +848,24 @@ function displayForms(){
         form2.style.display = 'none';
         form3.style.display = 'none';
         form4.style.display = 'none';
-        form5.style.display = 'none';
-
-
+     
     }else if(viewId === 2){
         form1.style.display = 'none';
         form2.style.display = 'block';
         form3.style.display = 'none';
         form4.style.display = 'none';
-        form5.style.display = 'none';
 
     }else if(viewId === 3){
         form1.style.display = 'none';
         form2.style.display = 'none';
         form3.style.display = 'block';
         form4.style.display = 'none';
-        form5.style.display = 'none';
+
     }else if(viewId === 4){
         form1.style.display = 'none';
         form2.style.display = 'none';
         form3.style.display = 'none';
-        form4.style.display = 'block';
-        form5.style.display = 'none';
-
-    }else if(viewId === 5){
-        form1.style.display = 'none';
-        form2.style.display = 'none';
-        form3.style.display = 'none';
         form4.style.display = 'none';
-        form5.style.display = 'block';
 
     }
 }

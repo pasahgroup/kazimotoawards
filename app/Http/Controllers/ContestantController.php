@@ -193,12 +193,11 @@ function makeDirectory($path)
      */
     public function store(Request $request)
     {
-
 //New installation
-
+//dd('print consent2');
 
   $request->validate([
-            'name' => 'required|string',
+            'full_name' => 'required|string',
             
             // 'brand' => 'required|integer|gt:0',
             // 'seater' => 'required|integer|gt:0',
@@ -226,8 +225,23 @@ function makeDirectory($path)
 
 //dd($car_body_type);
         $contestant_data = new contestant();
-        $contestant_data->full_name = $request->name;
-        // $vehicle->brand_id = $request->brand;
+        $contestant_data->full_name = $request->full_name;
+           $contestant_data->birth_date = $request->birth_date;
+        
+         $contestant_data->phone = $request->phone;
+           $contestant_data->email = $request->email;
+
+ $contestant_data->country = $request->country;
+           $contestant_data->district = $request->district;
+
+$contestant_data->education = $request->education;
+           $contestant_data->education_of = $request->education_of;
+
+       $contestant_data->experience_one = $request->experience_one;
+           $contestant_data->experience_two = $request->experience_two;
+$contestant_data->experience_three = $request->experience_three;
+       
+
         // $vehicle->seater_id = $request->seater;
         // $vehicle->price = $request->price;
         // $vehicle->details = $request->details;
@@ -284,7 +298,7 @@ $images=("[".$images."]");
 
         $contestant_data->save();
 //dd('print consent1xx');
-        $notify[] = ['success', 'Vehicle Added Successfully!'];
+        $notify[] = ['success', 'You have successfully registered!'];
         return back()->withNotify($notify);
 
 

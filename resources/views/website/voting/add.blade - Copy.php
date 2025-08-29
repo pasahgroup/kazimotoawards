@@ -4,118 +4,551 @@
 
 @extends('spa.mainlayout_web')
 @section('panel')
-<!--   <script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/jquery311.min.js"></script>
-<script type="text/javascript" src="../js/jquery321.min.js"></script>
- -->
+
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
     
+}
+
+:root{
+    --primary-color:#02044A;
+    --secondery-color:#25CC88;
+    --shadow-color:#9d9fb3; 
+}
 
 
 
+.form__container{
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    padding: 1rem;
+}
 
-<div class="hero-section3 hs3-2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12" style="align-self:center;">                    
-                      
-         <div class="modal-content" style="background-color:#e6e4e4;">     
-          <div class="preview-wrap">
-           
-            <div class="form-wrap">
-                <strong id="heading">Contestant:<span style="color:green"> Registration Form</span></strong>
-          <div>
-            @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-          </div>
+.title__container{
+    width: 100%;
+    /*height: 4.5rem;*/
+    /*padding: 0.6rem 1.5rem;*/
+    /*padding-bottom: 2rem;*/
+    border-bottom: 1px solid #42434e;
+}
+
+.title__container h1{
+    letter-spacing: 2px;
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+}
+
+.title__container p{
+    color: var(--shadow-color);
+    font-size: 0.75rem;
+}
+.body__container{
+    display: flex;
+
+}
+
+.left__container{
+    /*width: 35%;*/
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    border-right: 1px solid #42434e;
+    padding: 1.25rem 0 ;
+    margin-right: 2rem;
+    padding-right: 1.8rem;
+}
+
+.side__titles{
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-right: 0.6rem; */
+}
+
+.title__name{
+    padding: 0.6rem 0.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.title__name h3{
+    margin-bottom: 0.20rem;
+    text-align: right;
+    color: #ffffff;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.title__name p{
+    text-align: right;
+    color: var(--shadow-color);
+    font-size: 0.75rem;
+}
+
+.progress__bar__container{
+    padding-top:0.6rem ;
+    /* height: 100%; */
+}
+.progress__bar__container ul .active{
+    background-color: var(--secondery-color);
+
+}
+
+.progress__bar__container ul li{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    list-style: none;
+    background: var(--shadow-color);
+    padding: 0.5rem 0.6rem;
+    margin-bottom: 1.2rem;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-left:2rem ;
+}
+
+.progress__bar__container ul li::before{
+    content: '';
+    width: 1px;
+    height: 11vh;
+    position: absolute;
+    background-color: var(--shadow-color);
+
+}
+
+.progress__bar__container ul .active::before{
+    content: '';
+    width: 1px;
+    height: 11vh;
+    position: absolute;
+    background-color: var(--secondery-color);
+    /* z-index: -1; */
+}
+
+.right__container{
+    width: 65%;
+    /*display: flex;*/
+    /*padding: 1.5rem 1.5rem;*/
+}
+.right__container fieldset{
+    border: none;
+}
+/*.sub__title__container{
+    padding: 1rem 0 1.2rem 0;
+    border-bottom: 1px solid #42434e;
+}*/
+
+.sub__title__container h2{
+    letter-spacing: 2px;
+
+    color: #ffffff;
+    margin: 0.4rem 0;
+}
+
+.sub__title__container p{
+    font-size: 0.75rem;
+    color: var(--shadow-color);
+}
+
+.active__form{
+    display: none;
+}
+
+.input__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /*margin-top: 1.25rem;*/
+}
+
+.input__container label{
+    color: #ffffff;
+    font-size: 0.75rem;
+    /*margin-bottom: 0.4rem;*/
+}
+.input__container input{
+    
+    /*padding: 0.5rem;*/
+    font-size: 1.4rem;
+    /*border-radius: 0.75rem;*/
+    background: none;
+    border: 1px solid var(--secondery-color);    
+    margin-bottom: 1.2rem;
+    outline: none;
+    color: #ffffff;
+}
+
+.nxt__btn{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* float: right; */
+    /* width: 30%; */
+    padding: 0.1rem 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 2rem;
+    background: var(--secondery-color);
+    color: #ffffff;
+    /* border: none; */
+    /* outline: none; */
+    /* margin-left: 20em; */
+    /* margin-top: 0.55em;     */
+}
+
+.nxt__btn:hover{
+    transform: scale(1.03);
+    background:#1cd68c ;
+    cursor: pointer;
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* float: right; */
+    margin:0;
+    padding: 0;
+    /* justify-content:space-evenly; */
+}
+
+.prev__btn{
+    margin: 0;
+    /* padding: 0.5rem 1.5rem 0.7rem 1.5rem  ; */
+    /* background-color: #857373; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    /* margin-right: 20px; */
+    /* margin-left: 15rem; */
+    cursor: pointer;
+}
+
+/*------------------------------- form-2 design --------------------*/
+
+.selection{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--shadow-color);
+    padding: 0.5rem 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.selection:hover{
+    border: 1px solid var(--secondery-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.imoji{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.4rem;
+    margin:0  0.2rem ;
+    margin-right: 0.4rem;
+    font-size: 2rem;
+    font-weight: 900;
+    color: yellow;
+    border-radius: 50%;
+    background: var(--shadow-color);
+}
 
 
-                <form id="msform" method="post" action="{{ route('contestant.store') }}" class="registration-form"  enctype="multipart/form-data">
-                    @csrf
-                    <!-- progressbar -->
-                    <ul id="progressbar">
-                        <li class="active" id="account"><strong>1: Personal details</strong></li>
-                        <li id="personal"><strong>2: Experience</strong></li>
-                          <li id="personal"><strong>3: Photos</strong></li>
-                        <li id="confirm"><strong>Finish</strong></li>
-                    </ul>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div> <br> <!-- fieldsets -->
-                   
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                <div class="col-12" style="background-color:">
-                                    <h4 class="fs-title">Personal Details:| Step 1 - 4</h4>
+.descriptionTitle h3{
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+.descriptionTitle p{
+    font-size: 0.75rem;
+    color: var(--shadow-color);
+}
+
+
+/*-------------------------------------- form-4 design----------------------------------------- */
+.slider{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    -webkit-appearance: none;
+  appearance: none;
+  width: 100%; 
+  height: 0.75rem;
+  background: #d3d3d3; 
+  outline: none; 
+  opacity: 0.7; 
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  position: relative;
+  margin-top: 3rem;
+  /* margin-right:5rem ; */
+}
+
+
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px; 
+    height: 25px; 
+    border-radius: 50%;
+    background: var(--secondery-color);
+    cursor: pointer; 
+    position: relative;
+}
+
+.slider::-webkit-range-thumb {
+    width: 50px; 
+    height: 50px;
+    background: var(--secondery-color);
+    cursor: pointer;
+    position: relative;
+}
+
+.output__value{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:#ffffff;
+    border-radius: 2em;
+    padding: 0.8rem 0.8rem;
+    position: absolute;
+    background-color:var(--secondery-color);    
+}
+
+.output__value::after{
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: black;
+    transform: rotate(45deg);
+    position: absolute;
+    margin-top:40px;
+    background-color: var(--secondery-color);
+}
+ 
+
+@media only screen and (max-width: 600px) {
+    body{
+        background-color: var(--primary-color);
+    }
+    .form__container{
+        margin: 0;
+        padding: 0;
+    }
+
+    .body__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .right__container{
+        width: 90%;
+        margin: 0;
+    }
+    .title__container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+       
+    }
+
+    .left__container{
+        /*display: flex;*/
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    .buttons{
+        justify-content: space-between;
+    }
+    
+    .descriptionTitle h3{
+        font-size: 1rem;
+    }
+    .descriptionTitle p{
+        font-size: 0.6rem;
+
+    }
+    
+    
+    .side__titles{
+        display: none;
+        flex-direction: row;
+        /* align-items: center;  */
+        justify-content: space-evenly;
+    }
+    .title__name h3{
+        font-size: 0.75rem;
+
+    }
+    .title__name p{
+        font-size: 0.5rem;
+
+    }
+
+    .progress__bar__container{
+        margin-bottom: 0;
+
+    }
+    .progress__bar__container ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+        /* width: 50%; */
+        padding: 0 2rem;
+        
+    }
+
+    .progress__bar__container ul::before{
+        height: 5vh;
+    }
+    .progress__bar__container ul li{
+        margin: 10px;
+        padding: 10px ;
+        /* transform: rotate(90deg); */
+    }
+    .progress__bar__container ul .active::before{
+        transform: rotate(90deg);
+    }
+    
+}
+</style>
+
+
+
+<div class="form__container">
+            <div class="title__container">
+                <Strong>Contestant: Registration Form</Strong>
+            </div>
+            <div class="body__container">
+                <div class="left__container">
+                    <div class="side__titles">
+                        <div class="title__name">
+                            <h3>Personal Details</h3>
+                            <p>Enter & press next</p>
+                        </div>
+                        <div class="title__name">
+                            <h3>Experiences</h3>
+                            <p>select & press next</p>
+                        </div>
+                        <div class="title__name">
+                            <h3>Evidence Photos</h3>
+                            <p>Upload some of your evidence photos</p>
+                        </div>
+                        <div class="title__name">
+                            <h3>Complete</h3>
+                            <p>Submit your Informations</p>
+                        </div>
+                    </div>
+                    <div class="progress__bar__container">
+                        <ul>
+                            <li class="active" id="icon1"><ion-icon name="person-outline"></ion-icon></li>
+                            <li id="icon2"><ion-icon name="book-outline"></ion-icon></li>
+                            <li id="icon3"><ion-icon name="layers-outline"></ion-icon></li>
+                            <li id="icon5"><ion-icon name="mail-outline"></ion-icon></li>
+                        </ul>
+                    </div>
+                </div>
+
+                
+                <div class="right__container">
+                    <fieldset id="form1">
+   <div class="form-card">
+                            <div class="">
+                                 <div class="col-12" style="background-color:#e9ece9">
+                                    <h4 class="fs-title">Personal Details:| Step 1 - 3</h4>
                                 </div>                                
                             </div> 
-                           
 
- <div class="form-group">
-    <input type="hidden" class="form-control" name="company_name" value="#">
-          {{--   @if($discounts !=null)
-           <input type="hidden" class="form-control" name="unit_price" value="{{$discounts->new_price}}">
-             @else
-              <input type="hidden" class="form-control" name="unit_price" value="{{$programs->price}}">
-             @endif       
-               --}}
+                        <div class="sub__title__container ">
+                            <h4>Let's start with your name</h4>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                            <label for="name">Full name</label>
+                              <input type="text" name="full_name" required/> 
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
+                         <div class="input__container">
+                            <label for="name">Birth Date</label>
+                            <input type="date" name="birth_date" id="birth_date1" required/>
+                        </div>
+                    </div>
+                    </div>
 
-             <input type="hidden" class="form-control" name="tour_name" value="666">
-            <input type="hidden" class="form-control" name="currency" value="555">
-        </div>
-
-
-                    
-      <div class="row" style="padding:2px;">
-      <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Full name</label>
-                                         <input type="text" name="full_name" required/> 
-                                </div>
-  <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Birth Date</label>
-                                        <input type="date" name="birth_date" id="birth_date1" required/>
-                                </div>
-
-
-
-
-      <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Phone number</label>
-                                        <input type="text" name="phone" /> 
-                                </div>
-  <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Email</label>
-                                        <input type="email" name="email" /> 
-                                </div>
+                    <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                            <label for="name">Phone number</label>
+                              <input type="text" name="phone" required/> 
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
+                         <div class="input__container">
+                            <label for="name">Email</label>
+                            <input type="email" name="email" required/>
+                        </div>
+                    </div>
+                    </div>
 
 
 
-
-                                      <div class="col-lg-6 col-md-6 col-sm-6">
-                                   <label for="">Country:</label>
-                                        <select class="form-control" name="country">
+                    <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                            <label for="name">Country</label>
+                               <select class="form-control" name="country">
                                               <option value="0">--Select the Country--</option>
                                             <option value="Tanzania">Tanzania</option>
                                             <option value="Other">Other</option>
                                         </select>
-                                  
-                                </div>
-                                 <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>District</label>
-                                        <input type="text" name="district"/> 
-                                </div>
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
+                         <div class="input__container">
+                            <label for="name">District</label>
+                            <input type="text" name="district" required/>
+                        </div>
+                    </div>
+                    </div>
 
 
 
-                                      <div class="col-lg-6 col-md-6 col-sm-6">
-                                   <label for="">Education:</label>
+ <div class="row">
+                            <div class="col-md-6 col-lg-6 col-sm-6">
+                        <div class="input__container">
+                          <label for="">Education:</label>
                                          <select class="search-fields form-control" name="education">
                                               <option value="0">--Select the Education--</option>
                                             <option value="PHD">PHD</option>
@@ -125,46 +558,54 @@
                                                 <option value="Certificate">Certificate</option>
                                             <option value="Other">Other</option>
                                         </select>
-                                  
-                                </div>
-                                 <div class="col-lg-6 col-md-12 col-sm-12">
-                                      <label>Degree of</label>
-                                        <input type="text" name="education_of"/> 
-                                </div>
+                        </div>
+                    </div>
+ <div class="col-md-6 col-lg-6 col-sm-6">
+                         <div class="input__container">
+                            <label>Degree of</label>
+                                        <input type="text" name="education_of"/>
+                        </div>
+                    </div>
+                    </div>
 
+                         <div class="input__container">
+                            <a class="nxt__btn" onclick="nextForm();"> Next</a>
+                        </div>
 
-
-
-
-</div>
-                          
-
-                        </div> 
-                             <a href="/contestant" class="previous action-button-previous float-left" style="background-color:#d0794e">Close</a>
-                              <!-- <a href="/home" role="button" class="btn btn-primary">Close</a> -->
-                        <input type="button" name="next" class="next action-button" value="Next" />
-                    
                     </fieldset>
-
-
-
-
-     <fieldset>
-                        <div class="form-card">
-                            <div class="row">
+                    <fieldset class="active__form" id="form2">
+                      
+                        <div class="input__container">                            
+              <div class="form-card">
+                            <div class="">
                                  <div class="col-12" style="background-color:#e9ece9">
-                                    <h4 class="fs-title">Personal Details:| Step 2 - 4</h4>
+                                    <h4 class="fs-title">Experience Details:| Step 2 - 3</h4>
                                 </div>                                
                             </div> 
                            
+ <div class="form-group">
+     <div class="col-md-12">
+       
+            <label for="">Apply for Awards,Maximum 3 selections:</label>
+       <div class="form-group">
+@foreach($awards as $award)
+
+           <label for="facebook">{{$award->award_name}}
+          <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
+        </label>
+@endforeach     
+        </div>
+        </div>
+  </div>
 
 
-  <div class="row" style="padding-left:10px;padding-right:10px;">
+
+
+  <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 1:</label>
-                                    <div class="form-group">
-                                    <textarea name="experience_one"></textarea>
-                                    </div>
+                                      <textarea name="experience_one" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
+                                    
                                 </div>
 
 
@@ -173,12 +614,24 @@
 
 
 
-  <div class="row" style="padding-left:10px;padding-right:10px;">
+ <div class="row">
                                       <div class="col-lg-12 col-md-12 col-sm-12">
                                    <label for="">Experience 2:</label>
-                                    <div class="form-group">
-                                      <textarea name="experience_two"></textarea>
-                                    </div>
+                                      <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
+                                    
+                                </div>
+
+
+
+    </div>
+
+
+
+ <div class="row">
+                                      <div class="col-lg-12 col-md-12 col-sm-12">
+                                   <label for="">Experience 3:</label>
+                                      <textarea name="experience_three" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
+                                    
                                 </div>
 
 
@@ -197,151 +650,270 @@
 
 
 
-    </div>
+    </div>                          
+
+                        </div> 
 
 
- <div class="form-group">
-     <div class="col-md-12">
-       
-            <label for="">Apply for Awards,Maximum 3 selections:</label>
-       <div class="form-group">
-{{--
-@foreach($awards as $award)
+                        <div class="buttons">
+                                <a class="prev__btn" onclick="prevForm();" >Back</a>
+                                <a class="nxt__btn"  onclick="nextForm();" >Next</a>    
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="active__form" id="form3">
+                        <div class="">
+                                 <div class="col-12" style="background-color:#e9ece9">
+                                    <h4 class="fs-title">Evidence Photos:| Step 3 - 3</h4>
+                                </div>                                
+                            </div>
 
-           <label for="facebook">{{$award->award_name}}
-          <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
-        </label>
-@endforeach  
---}}   
-        </div>
-        </div>
-  </div>
 
+
+
+ <div class="input__container">
+   <div class="col-md-12">
+                                <div class="card border--dark mb-4">
+                                    <div class="card-header bg--dark d-flex justify-content-between">
+                                        <h5 class="text-white">@lang('Upload Different photos')</h5>
+                                        <button type="button" class="btn btn-sm btn-outline-light addBtn"><i
+                                                class="fa fa-fw fa-plus"></i>@lang('Add New')
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><small class="text-facebook">@lang('Images will be resize into')
+                                           
+                                           {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
+
+                                       </p>
+                                        <div class="row element">
+
+                                            <div class="col-md-2 imageItem">
+                                                <div class="payment-method-item">
+                                                    <div class="payment-method-header d-flex flex-wrap">
+                                                        <div class="thumb" style="position: relative;">
+                                                            <div class="avatar-preview">
+                                                                <div class="profilePicPreview"
+                                                                     style="background-image: url('{{asset('assets/images/default.png')}}')">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="avatar-edit">
+                                                                <input type="file" name="images[]"
+                                                                       class="profilePicUpload" id="0"
+                                                                       accept=".png, .jpg, .jpeg" required>
+                                                                <label for="0" class="bg-primary">
+                                                                    <i class="la la-pencil"></i>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+            
+                       
                           
+                            <div class="buttons">
+                                <a class="prev__btn" onclick="prevForm();" >Back</a>
+                              <a class="nxt__btn" type="submit" id="submitBtn">Submit</a>    
 
-                        </div> 
-                             <a href="/contestant" class="previous action-button-previous float-left" style="background-color:#d0794e">Close</a>
-                              <!-- <a href="/home" role="button" class="btn btn-primary">Close</a> -->
-
-                         <input type="button" name="previous" class="previous action-button-previous float-left" value="Previous" />
-                        <input type="button" name="next" class="next action-button" value="Next" />
-                    </fieldset>
-
-
-
-
-                    <fieldset>
-
-                            <div class="form-card">
-                            <div class="row">
-                                 <div class="col-12" style="background-color:#e9ece9">
-                                    <h4 class="fs-title">Photos:|Step 3 - 4</h4>
-                                </div>
-                             </div>
-
-
- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="form-group">
-        <label for="">Photo:</label>
-           <input type="file" class="form-control" name="photo[]" placeholder="photo" required> 
-        </div>
-        </div> 
-
-<div class="row">
-  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <div class="form-group">
-        <label for="">File1:</label>
-           <input type="file" class="form-control" name="file_one[]" placeholder="file1" required> 
-        </div>
-        </div> 
-
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <div class="form-group">
-        <label for="">File2:</label>
-           <input type="file" class="form-control" name="file_two[]" placeholder="file2"> 
-        </div>
-        </div> 
-    </div>
-
-<div class="row">
-          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <div class="form-group">
-        <label for="">File3:</label>
-           <input type="file" class="form-control" name="file_three[]" placeholder="file3"> 
-        </div>
-        </div> 
-         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-    <div class="form-group">
-        <label for="">File4:</label>
-           <input type="file" class="form-control" name="file_four[]" placeholder="file4"> 
-        </div>
-        </div> 
-    </div>
-    
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="form-group">
-        <label for="">File5:</label>
-           <input type="file" class="form-control" name="file_five[]" placeholder="file5"> 
-        </div>
-        </div> 
-              
-                        </div> 
-
-                      
-                     
-                        <button type="button" class="previous action-button-previous float-left" data-dismiss="modal" style="background-color:#d0794e">Close</button>
-                         <input type="button" name="previous" class="previous action-button-previous float-left" value="Previous" />
-                           <button type="submit" class="btn action-button float-right" onClick="return empty()">Submit</button>
-                    </fieldset>
-                    <fieldset>
-                        <div class="form-card">
-                            <div class="row">
-                                 <div class="col-12" style="background-color:#e9ece9">
-                                    <h4 class="fs-title">Finish:| Step 4 - 4</h4>
-                                </div>
-                            </div> <br>
-                            <h2 class="purple-text text-center"><strong>Success!</strong></h2> <br>
-                            <div class="row justify-content-center">
-                                <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
-                            </div> <br><br>
-                            <div class="row justify-content-center">
-                                <div class="col-7 text-center">
-                                    <h5 class="purple-text text-center">You Have Successfully submitted</h5>
-                                </div>
                             </div>
                         </div>
 
-                    </fieldset>
-                        
-                </form>
-            </div>
-        </div>   
-      </div>
-   
 
-                    </div>
+                    </fieldset>
+                    <fieldset class="active__form" id="form5">
+                        <div class="sub__title__container">
+                            <p>Step 5/5</p>
+                            <h2>Complete Submission</h2>
+                            <p>Thanks for completing the form and for your time.Plss enter your email below and submit the form</p>
+                        </div>
+                        
+                        <div class="input__container">
+                            <label for="Email">Enter your email</label>
+                            <input type="text">
+                            <div class="buttons">
+                                <a class="prev__btn"  onclick="prevForm();" >Back</a>
+                                <!-- <a class="nxt__btn" id="submitBtn" onclick="nextForm();" >Next</a>     -->
+
+                                <a class="nxt__btn" type="submit" id="submitBtn" >Submit</a>
+                            </div>
+                            
+                        </div>
+                    </fieldset>
                 </div>
             </div>
         </div>
+   
+<script>
+   
+   const nxtBtn = document.querySelector('#submitBtn');
+const form1 = document.querySelector('#form1');
+const form2 = document.querySelector('#form2');
+const form3 = document.querySelector('#form3');
+const form4 = document.querySelector('#form4');
+const form5 = document.querySelector('#form5');
+
+
+const icon1 = document.querySelector('#icon1');
+const icon2 = document.querySelector('#icon2');
+const icon3 = document.querySelector('#icon3');
+const icon4 = document.querySelector('#icon4');
+const icon5 = document.querySelector('#icon5');
+
+
+var viewId = 1;
+function nextForm(){
+    console.log("hellonext");
+    viewId=viewId+1;
+    progressBar();
+    displayForms();
+    
+    console.log(viewId);
+
+}
+
+function prevForm(){
+    console.log("helloprev");
+    viewId=viewId-1;
+    console.log(viewId);
+    progressBar1();
+    displayForms();
+}
+function progressBar1(){
+    if(viewId===1){
+        icon2.classList.add('active');
+        icon2.classList.remove('active');
+        icon3.classList.remove('active');
+        icon4.classList.remove('active');
+        icon5.classList.remove('active');
+    }
+    if(viewId===2){
+        icon2.classList.add('active');
+        icon3.classList.remove('active');
+        icon4.classList.remove('active');
+        icon5.classList.remove('active');
+    }
+    if(viewId===3){
+        icon3.classList.add('active');
+        icon4.classList.remove('active');
+        icon5.classList.remove('active');
+    }
+    if(viewId===4){
+        icon4.classList.add('active');
+        icon5.classList.remove('active');
+    }
+    if(viewId===5){
+        icon5.classList.add('active');
+        nxtBtn.innerHTML = "Submit"
+    }
+    if(viewId>5){
+        icon2.classList.remove('active');
+        icon3.classList.remove('active');
+        icon4.classList.remove('active');
+        icon5.classList.remove('active');
+        
+    }
+}
+
+function progressBar(){
+    if(viewId===2){
+        icon2.classList.add('active');
+    }
+    if(viewId===3){
+        icon3.classList.add('active');
+    }
+    if(viewId===4){
+        icon4.classList.add('active');
+    }
+    if(viewId===5){
+        icon5.classList.add('active');
+        nxtBtn.innerHTML = "Submit"
+    }
+    if(viewId>5){
+        icon2.classList.remove('active');
+        icon3.classList.remove('active');
+        icon4.classList.remove('active');
+        icon5.classList.remove('active');
+        
+    }
+}
+
+function displayForms(){
+    
+    if(viewId>5){
+        viewId=1;
+    }
+
+    if(viewId ===1){
+        form1.style.display = 'block';
+        form2.style.display = 'none';
+        form3.style.display = 'none';
+        form4.style.display = 'none';
+        form5.style.display = 'none';
+
+
+    }else if(viewId === 2){
+        form1.style.display = 'none';
+        form2.style.display = 'block';
+        form3.style.display = 'none';
+        form4.style.display = 'none';
+        form5.style.display = 'none';
+
+    }else if(viewId === 3){
+        form1.style.display = 'none';
+        form2.style.display = 'none';
+        form3.style.display = 'block';
+        form4.style.display = 'none';
+        form5.style.display = 'none';
+    }else if(viewId === 4){
+        form1.style.display = 'none';
+        form2.style.display = 'none';
+        form3.style.display = 'none';
+        form4.style.display = 'block';
+        form5.style.display = 'none';
+
+    }else if(viewId === 5){
+        form1.style.display = 'none';
+        form2.style.display = 'none';
+        form3.style.display = 'none';
+        form4.style.display = 'none';
+        form5.style.display = 'block';
+
+    }
+}
+
+// for slider
+
+var slider = document.querySelector(".slider");
+var output = document.querySelector(".output__value");
+output.innerHTML = slider.value ;
+
+slider.oninput = function() {
+    output.innerHTML = this.value ;
+    
+    
+} 
+</script>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="row">
+<div class="row">
         <div class="col-lg-12">
             <div class="card">                            
 <form action="{{ route('contestant.store') }}" method="post" enctype="multipart/form-data">
@@ -392,7 +964,7 @@
                                     </div>
                                 </div>
                             </div>
-
+{{--
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label for="nicEditor0">@lang('Details')</label>
@@ -400,7 +972,7 @@
                                               id="nicEditor0">{{ old('details') }}</textarea>
                                 </div>
                             </div>
-
+--}}
                      
                             <div class="col-md-12">
                                 <div class="card border--dark mb-4">
