@@ -674,6 +674,60 @@
                                 </div>                                
                             </div>
 
+
+
+ <div class="input__container">
+   <div class="col-md-12">
+                                <div class="card border--dark mb-4">
+                                    <div class="card-header bg--dark d-flex justify-content-between">
+                                        <h5 class="text-white">@lang('Upload your Photo')</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p><small class="text-facebook">@lang('Images will be resize into')
+                                           
+                                           {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
+
+                                       </p>
+                                        <div class="row element">
+                                            <div class="col-md-2 imageItem">
+                                                <div class="payment-method-item">
+                                                    <div class="payment-method-header d-flex flex-wrap">
+                                                        <div class="thumb" style="position: relative;">
+                                                            <div class="avatar-preview">
+                                                                <div class="profilePicPreview"
+                                                                     style="background-image: url('{{asset('assets/images/default.png')}}')">
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="avatar-edit">
+                                                                <input type="file" name="images[]"
+                                                                       class="profilePicUpload" id="0"
+                                                                       accept=".png, .jpg, .jpeg" required>
+                                                                <label for="0" class="bg-primary">
+                                                                    <i class="la la-pencil"></i>
+                                                                </label>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
  <div class="input__container">
    <div class="col-md-12">
                                 <div class="card border--dark mb-4">
