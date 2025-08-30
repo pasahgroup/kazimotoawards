@@ -206,9 +206,14 @@ function makeDirectory($path)
 //New installation
 //dd('print consent2');
 
+   $curYear = date('Y');
+     $start_date=request('birth_date');
+     $birth_date=date('Y-m-d', strtotime($start_date));
+
   $request->validate([
             'full_name' => 'required|string',            
              'phone' => 'required|string',
+             'birth_date' => 'nullable|date',
 
             'experience_one' => 'required|string',
            'images.*' => ['required', 'max:10000', new FileTypeValidate(['jpeg','jpg','png','gif'])],
@@ -303,34 +308,13 @@ $images=("[".$images."]");
 
         $contestant_data->save();
 //dd('print consent1xx');
-        $notify[] = ['success', 'You have successfully registered!'];
-        return back()->withNotify($notify);
+      
 
 
-dd('print consent2');
+//dd('print consent2');
 //End of new installation
 
 
-
-
-
-
-
-
-
-
-
-
-      $curYear = date('Y');
-     $start_date=request('birth_date');
-     $birth_date=date('Y-m-d', strtotime($start_date));
-
-$validatedData = $request->validate([
-// $request->validate([
-    'full_name' => 'required|max:255',
-    'phone' => 'required',
-    'birth_date' => 'nullable|date',
-]);
 
 $awards = request("awards");
 $awards=collect($awards);
@@ -386,138 +370,8 @@ if($awards->count()<=3)
 }
 
 
-//File1
-  if(request('file_one')){
-            $attach = request('file_one');
-            foreach($attach as $attached){
 
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/photos/', $imageToStore);
-
-  $contestant_fileupdate = contestant::where('id',$contestants->id)
-             ->update([
-               'file1'=>$imageToStore
-        ]);
-       
-    }
-}
-
-
-
-
-//File2
-  if(request('file_two')){
-            $attach = request('file_two');
-            foreach($attach as $attached){
-
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/photos/', $imageToStore);
-
-  $contestant_fileupdate = contestant::where('id',$contestants->id)
-             ->update([
-               'file2'=>$imageToStore
-        ]);
-       
-    }
-}
-
-
-
-//File3
-  if(request('file_three')){
-            $attach = request('file_three');
-            foreach($attach as $attached){
-
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/photos/', $imageToStore);
-
-  $contestant_fileupdate = contestant::where('id',$contestants->id)
-             ->update([
-               'file3'=>$imageToStore
-        ]);
-       
-    }
-}
-
-
-
-
-//File4
-  if(request('file_four')){
-            $attach = request('file_four');
-            foreach($attach as $attached){
-
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/photos/', $imageToStore);
-
-  $contestant_fileupdate = contestant::where('id',$contestants->id)
-             ->update([
-               'file4'=>$imageToStore
-        ]);
-       
-    }
-}
-
-
-//File5
-  if(request('file_five')){
-            $attach = request('file_five');
-            foreach($attach as $attached){
-
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/photos/', $imageToStore);
-
-  $contestant_fileupdate = contestant::where('id',$contestants->id)
-             ->update([
-               'file5'=>$imageToStore
-        ]);
-       
-    }
-}
-
-
-
-  foreach ($awards as $key => $id){ 
+foreach ($awards as $key => $id){ 
  $contestant_awards = contestant_award::UpdateOrCreate([
         'contestant_id'=>$contestants->id,
        'award_id'=>$id,
@@ -534,7 +388,13 @@ else{
   return redirect()->back()->with('error', 'Operation completed successfully!');
 }
 
-       return redirect('/contestant');
+
+
+
+  $notify[] = ['success', 'You have successfully registered!'];
+        return back()->withNotify($notify);
+
+      // return redirect('/contestant');
     }
 
     /**

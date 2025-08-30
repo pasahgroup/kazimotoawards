@@ -322,7 +322,7 @@
             <div class="container">
                 <div class="row">            
         
-<h3>Contestants bnm</h3>
+<h3>Contestants</h3>
       
         <div class="str3-2 str_wrap">
               @foreach($contestant_datas as $contestant_data) 
