@@ -48,7 +48,7 @@ class WebsiteController extends Controller
              ->get();
 
 
-        dd($contestant_datas);
+        //dd($contestant_datas);
 
           $sponsors=sponsor::where('status','Active')
         ->get();
