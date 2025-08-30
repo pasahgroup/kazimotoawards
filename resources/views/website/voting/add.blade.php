@@ -662,7 +662,7 @@
 
 
                             <div class="buttons">
-                                <a class="prev__btn" onclick="prevForm();" >Back</a>
+                                <a class="prev__btn btn btn--primary" onclick="prevForm();" >Back</a>
                                 <a class="nxt__btn"  onclick="nextForm();" >Next</a>    
                             </div>
                         </div>
@@ -675,7 +675,6 @@
                             </div>
 
 
-
  <div class="input__container">
    <div class="col-md-12">
                                 <div class="card border--dark mb-4">
@@ -683,49 +682,38 @@
                                         <h5 class="text-white">@lang('Upload your Photo')</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p><small class="text-facebook">@lang('Images will be resize into')
+                                        <p><small class="text-facebook">@lang('Upload your Photo')
                                            
                                            {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
 
                                        </p>
-                                        <div class="row element">
                                             <div class="col-md-2 imageItem">
                                                 <div class="payment-method-item">
                                                     <div class="payment-method-header d-flex flex-wrap">
-                                                        <div class="thumb" style="position: relative;">
-                                                            <div class="avatar-preview">
-                                                                <div class="profilePicPreview"
-                                                                     style="background-image: url('{{asset('assets/images/default.png')}}')">
+                                                        <div class="thumbx" style="position: relative;">
+                                                         
+                                                                      <div class="text-center">
+                    <img id="image-preview" 
+                         src="{{asset('assets/images/default.png')}}"
+                         style="width:140px"
+                         class="rounded rounded-circle" alt="placeholder">
+                </div>
 
-                                                                </div>
-                                                            </div>
-                                                            <div class="avatar-edit">
-                                                                <input type="file" name="images[]"
-                                                                       class="profilePicUpload" id="0"
-                                                                       accept=".png, .jpg, .jpeg" required>
-                                                                <label for="0" class="bg-primary">
-                                                                    <i class="la la-pencil"></i>
-                                                                </label>
-                                                            </div>
 
-                                                        </div>
+               <form>
+                    <input type="file" name="photos[]" class="form-control" accept="image/*"
+                           onchange="updatePreview(this, 'image-preview')" required>                   
+                </form>
+
+                                                           
+                                                           </div>
                                                     </div>
                                                 </div>
-                                            </div>
-
-                                        </div>
+                                            </div>                                     
                                     </div>
                                 </div>
                             </div>
-                                    </div>
-
-
-
-
-
-
-
-
+                     </div>
 
 
  <div class="input__container">
@@ -738,7 +726,7 @@
                                         </button>
                                     </div>
                                     <div class="card-body">
-                                        <p><small class="text-facebook">@lang('Images will be resize into')
+                                        <p><small class="text-facebook">@lang('Upload Different photos')
                                            
                                            {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
 
@@ -774,8 +762,7 @@
                                 </div>
                             </div>
 
-
-                    
+        
                        
                           
                             <div class="buttons">
@@ -811,8 +798,23 @@
             </div>
         </div>
    
-<script>
-   
+
+<script type="text/javascript">
+    function updatePreview(input, target) {
+        let file = input.files[0];
+        let reader = new FileReader();
+        
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+            let img = document.getElementById(target);
+            // can also use "this.result"
+            img.src = reader.result;
+        }
+    }
+</script>
+
+
+<script>   
    const nxtBtn = document.querySelector('#submitBtn');
 const form1 = document.querySelector('#form1');
 const form2 = document.querySelector('#form2');
@@ -945,179 +947,6 @@ slider.oninput = function() {
 
 
 
-
-
-<div class="row">
-        <div class="col-lg-12">
-            <div class="card">                            
-<form action="{{ route('contestant.store') }}" method="post" enctype="multipart/form-data">
-             @csrf
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">@lang('Name')</label>
-                                    <input type="text" id="name" name="name" class="form-control"
-                                           value="{{ old('name') }}">
-                                </div>
-                            </div>
-                              {{--                        
-                               <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="category">@lang('Model')</label>
-                                    <select class="form-control" id="model" name="model" required="">
-                                      <option value="">-- @lang('Select car model') --</option>
-                                       {{--
-                                        @forelse($modelbs as $modelb)
-                                            <option value="{{ $modelb->car_model }}">{{ __(@$modelb->car_model) }}</option>
-                                        @empty
-                                        @endforelse
-                                        --}}
-                                    </select>
-                                </div>
-                            </div>
-
-  <div class="col-md-2">
-                                <div class="form-group">
-                                    <label for="category">@lang('Available cars')</label>
-                                    <input type="number" name="car_model_no" id="car_model_no" class="form-control">                                    
-                                </div>
-                            </div>
-
-                              
-                            
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label for="price">@lang('Price Per Day')</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="price" name="price"
-                                               value="{{ old('price') }}" required>
-                                        <div class="input-group-append">
-                                            <div class="input-group-text">#</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-{{--
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label for="nicEditor0">@lang('Details')</label>
-                                    <textarea rows="10" name="details" class="form-control nicEdit"
-                                              id="nicEditor0">{{ old('details') }}</textarea>
-                                </div>
-                            </div>
---}}
-                     
-                            <div class="col-md-12">
-                                <div class="card border--dark mb-4">
-                                    <div class="card-header bg--dark d-flex justify-content-between">
-                                        <h5 class="text-white">@lang('Images')</h5>
-                                        <button type="button" class="btn btn-sm btn-outline-light addBtn"><i
-                                                class="fa fa-fw fa-plus"></i>@lang('Add New')
-                                        </button>
-                                    </div>
-                                    <div class="card-body">
-                                        <p><small class="text-facebook">@lang('Images will be resize into')
-                                           
-                                           {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
-
-                                       </p>
-                                        <div class="row element">
-
-                                            <div class="col-md-2 imageItem">
-                                                <div class="payment-method-item">
-                                                    <div class="payment-method-header d-flex flex-wrap">
-                                                        <div class="thumb" style="position: relative;">
-                                                            <div class="avatar-preview">
-                                                                <div class="profilePicPreview"
-                                                                     style="background-image: url('{{asset('assets/images/default.png')}}')">
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="avatar-edit">
-                                                                <input type="file" name="images[]"
-                                                                       class="profilePicUpload" id="0"
-                                                                       accept=".png, .jpg, .jpeg" required>
-                                                                <label for="0" class="bg-primary">
-                                                                    <i class="la la-pencil"></i>
-                                                                </label>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                           
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="doors">@lang('No of Doors')</label>
-                                    <input type="text" id="doors" class="form-control" value="{{ old('doors') }}"
-                                           autocomplete="off" name="doors" required>
-                                </div>
-                            </div>
-                           
-                           <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="category">@lang('Transmission')</label>
-                                    <select class="form-control" id="transmission" name="transmission" required="">
-                                        <option value="">-- @lang('Select Transmission') --</option>
-                              
-                                            <option value="AT">@lang('AT')</option>
-                                            <option value="SAT">@lang('SAT')</option>
-                                             <option value="Manual">@lang('Manual')</option>
-                                                                        </select>
-                                </div>
-                            </div>
-
-                            
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="category">@lang('Fuel Type')</label>
-                                    <select class="form-control" id="fuel" name="fuel_type" required="">
-                                        <option value="">-- @lang('Select Fuel Type') --</option>
-                              
-                                              <option value="Electric">@lang('Electric')</option>
-                                            <option value="Diesel">@lang('Diesel')</option>
-                                             <option value="Petrol">@lang('Petrol')</option>
-                                                                        </select>
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-12">
-                                <div class="card border--dark">
-                                    <h5 class="card-header bg--dark">@lang('More Specifications')
-                                        <button type="button"
-                                                class="btn btn-sm btn-outline-light float-right" data-toggle="modal" data-target="#exampleModal">
-                                            <i class="la la-fw la-plus"></i>@lang('Add New')
-                                        </button>
-                                    </h5>
-
-                                    <div class="card-body">
-                                        <div class="row addedField">
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <button class="btn btn--primary w-100">@lang('Create')</button>
-                    </div>
-                </form>
-            </div><!-- card end -->
-        </div>
-    </div>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -1190,7 +1019,7 @@ slider.oninput = function() {
 @endpush
 
 @push('script')
-    <script>
+  <script>
         (function ($) {
             "use strict";
 

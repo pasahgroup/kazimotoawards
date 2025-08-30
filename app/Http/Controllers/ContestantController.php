@@ -89,10 +89,21 @@ function imagePath()
             'size'=>'400x400'
         ]
     ];
-    $data['vehicles'] = [
-        'path' => 'assets/images/vehicles',
+    // $data['vehicles'] = [
+    //     'path' => 'assets/images/vehicles',
+    //     'size' => '770x480'
+    // ];
+
+      $data['photos'] = [
+        'path' => 'photos',
         'size' => '770x480'
     ];
+
+      $data['cv_photos'] = [
+        'path' => 'cv_photos',
+        'size' => '770x480'
+    ];
+
     return $data;
 }
 
@@ -124,7 +135,6 @@ function uploadImage($file, $location, $size = null, $old = null, $thumb = null)
         Image::make($file)->resize($thumb[0], $thumb[1])->save($location . '/thumb_' . $filename);
     }
 
-//dd($location);
     return $filename;
 }
 
@@ -202,6 +212,7 @@ function makeDirectory($path)
 
             'experience_one' => 'required|string',
            'images.*' => ['required', 'max:10000', new FileTypeValidate(['jpeg','jpg','png','gif'])],
+            'photo.*' => ['required', 'max:10000', new FileTypeValidate(['jpeg','jpg','png','gif'])],
             // 'icon' => 'required|array',
             // 'icon.*' => 'required|string',
             // 'label' => 'required|array',
@@ -260,14 +271,21 @@ $contestant_data->experience_three = $request->experience_three;
 // $data = $this->getSomeData();
         // Upload image
         foreach ($request->images as $image) {
-            $path = $this->imagePath()['vehicles']['path'];
-            $size = $this->imagePath()['vehicles']['size'];
+            $path = $this->imagePath()['photos']['path'];
+            $size = $this->imagePath()['photos']['size'];
             $images[] =$this->uploadImage($image, $path, $size);
 
    // $photoMeta = explode("_", $keyPhoto);
-
-          //dd($images);  
         }
+
+
+          foreach ($request->photos as $photo) {
+            $path = $this->imagePath()['cv_photos']['path'];
+            $size = $this->imagePath()['cv_photos']['size'];
+            $images[] =$this->uploadImage($photo, $path, $size);
+        }
+ // dd('dddd2');
+
 
  //dd($contestant_data->images);
 // $indexedArray = array("apple", "banana", "orange");
