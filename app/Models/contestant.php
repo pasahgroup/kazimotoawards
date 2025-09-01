@@ -30,4 +30,11 @@ class contestant extends Model
   'file5',
         'status'
     ];
+
+
+public function scopeActive($query)
+    {
+        return $query->where('status',"Active");
+    }
+
 }

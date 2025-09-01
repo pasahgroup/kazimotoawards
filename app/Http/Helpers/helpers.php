@@ -705,8 +705,9 @@ function imagePath()
             'size'=>'400x400'
         ]
     ];
-    $data['vehicles'] = [
-        'path' => 'assets/images/vehicles',
+    $data['photos'] = [
+        'path' => 'photos',
+        //  'path' => 'assets/images/vehicles',
         'size' => '770x480'
     ];
     return $data;

@@ -10,7 +10,7 @@
   <style>
             .str3 { font-size:0 !important}
             .str3-2 { background:none !important;}
-            .str3-2 span { border:1px solid #ccc;color:#999; margin:0 1px; display:inline-block; vertical-align:top;}
+            .str3-2 span {color:#999; margin:0 1px; display:inline-block; vertical-align:top;}
         </style>
 
 <style>
@@ -53,7 +53,7 @@
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #4070F4;
+  background-color: #A6AAA1;
   border-radius: 2px 2px 0 25px;
 }
 .overlay::before,
@@ -76,12 +76,12 @@
   width: 150px;
   border-radius: 50%;
   background: #FFF;
-  padding: 3px;
+  padding: 1px;
 }
 .card-image .card-img{
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  /*object-fit: cover;*/
   border-radius: 50%;
   border: 4px solid #4070F4;
 }
@@ -145,14 +145,6 @@
 }
 
 </style>
-
-
-
-
-
-
-
-
 
 <style>    
 .marquee {
@@ -314,16 +306,10 @@
 
 
 
-
-
-
-
-   <div class="hero-section2">
-            <div class="container">
-                <div class="row">            
+            <div class="container">            
         
-<h3>Contestants</h3>
-      
+<h3>Contestants</h3>     
+
         <div class="str3-2 str_wrap">
               @foreach($contestant_datas as $contestant_data) 
          
@@ -339,7 +325,11 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                               <img src="{{URL::asset('/storage/photos/'.$contestant_data->photo) }}" alt="" class="card-img">
+                               <img src="../../cv_photos/{{$contestant_data->photo}}" alt="" class="card-img">
+                            {{--
+                            <img src="{{URL::asset('/storage/photos/'.$contestant_data->photo) }}" alt="" class="card-img">
+                            --}}
+
                             </div>
                         </div>
 
@@ -347,18 +337,12 @@
                         <div class="card-content">
                             <h2 class="name">{{$contestant_data->full_name}}
 </h2>
-                            <div class="description">Awards: {{$contestant_data->award_name}}</div>
-                            <a href="/voting_details/3" class="theme-btn">gg</a>
-
-
-
-
-
-
+                            <div class="description">Award: {{$contestant_data->award_name}}</div>
+                        
 <div class="row">
     <div class="col-md-6">
-                       <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="#" class="theme-btn2" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
+                       <div class="footer-top-link-info">
+                                                    <a href="/voting_details/{{$contestant_data->id}}">
 
 View more<i class="fas fa-arrow-right"></i>
 </a>
@@ -386,7 +370,10 @@ Vote<i class="fas fa-arrow-right"></i>
             </div>
         </div>
    <div>
-</div>
+   </div>
+
+
+
     
 
 
@@ -521,7 +508,7 @@ Vote<i class="fas fa-arrow-right"></i>
         </div>        
 
 </hr>
-        <h3>Vertical scroller</h3>
+  <!--       <h3>Vertical scroller</h3>
         <div class="str4 str_wrap" style="height:200px;">
             <p>
             1 text content and text content and text content and text content and text content and text content and text content and text content and text content
@@ -535,20 +522,14 @@ Vote<i class="fas fa-arrow-right"></i>
             <p>
             4 text content and text content and text content and text content and text content and text content and text content and text content and text content
             </p>
-        </div>
+        </div> -->
     
     </div>
 </div>
 </div>
 
 
-
-
-
-
-
-
-
+{{--
 
         <div class="slide-container swiper">
             <div class="slide-content">
@@ -712,7 +693,9 @@ Vote<i class="fas fa-arrow-right"></i>
             <div class="swiper-button-prev swiper-navBtn"></div>
             <div class="swiper-pagination"></div>
         </div>
-        
+      --}}  
+
+
 
 <div class="category-area2 pt-80 pb-70">
             <div class="container">

@@ -96,11 +96,77 @@ $yearExperience=($newDateTime)->year;
     }
 
 
- public function votingDetails()
-    {
-       
-     return view('website.voting.voting_details');
+ public function votingDetails_org()
+    {       
+         $contestant_datas = contestant_award::join('contestants','contestants.id','contestant_awards.contestant_id')
+             ->join('awards','awards.id','contestant_awards.award_id')
+             ->select('contestants.*','awards.award_name')
+             ->get();
+            
+            // dd($contestant_datas);
+     return view('website.voting.voting_details',compact('contestant_datas'));
     }
+
+
+ public function votingDetails(){
+        //dd('print');
+        $vehicle = contestant::active()->where('id',1)->firstOrFail();
+            $contestant_datas = contestant_award::join('contestants','contestants.id','contestant_awards.contestant_id')
+             ->join('awards','awards.id','contestant_awards.award_id')
+             ->select('contestants.*','awards.award_name')
+             ->get();
+
+//dd($vehicle->images);
+$fullUrl = url()->full();     
+
+       // $rental_terms = getContent('rental_terms.content', true);
+        $pageTitle = 'Vehicle Details';
+
+          
+
+// $string = "apple,banana,orange";
+ $array = explode(',', $vehicle->images);
+
+//         $indexedArray = ['apple', 'banana', 'cherry'];
+// $stringFromIndexed = implode(', ', $indexedArray); 
+
+//dd($array);
+        $u=$array;
+
+// dd($u);
+          return view('website.voting.voting_details',compact('vehicle','pageTitle','fullUrl','u','contestant_datas'));
+        //return view($this->activeTemplate.'vehicles.details',compact('vehicle','pageTitle','fullUrl'));
+    }
+
+
+
+
+
+
+// function getImage($image,$size = null)
+// {
+//     $clean = '';
+//     if (file_exists($image) && is_file($image)) {
+//         return asset($image) . $clean;
+//     }
+//     if ($size) {
+//         return route('placeholder.image',$size);
+//     }
+//     return asset('assets/images/default.png');
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

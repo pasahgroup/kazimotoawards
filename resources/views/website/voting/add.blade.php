@@ -681,7 +681,6 @@
                                     <div class="card-header bg--dark d-flex justify-content-between">
                                         <h5 class="text-white">@lang('Upload your Photo')</h5>
                                     </div>
-                                    <div class="card-body">
                                         <p><small class="text-facebook">@lang('Upload your Photo')
                                            
                                            {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
@@ -710,8 +709,7 @@
                                                     </div>
                                                 </div>
                                             </div>                                     
-                                    </div>
-                                </div>
+                                                               </div>
                             </div>
                      </div>
 
@@ -725,7 +723,6 @@
                                                 class="fa fa-fw fa-plus"></i>@lang('Add New')
                                         </button>
                                     </div>
-                                    <div class="card-body">
                                         <p><small class="text-facebook">@lang('Upload Different photos')
                                            
                                            {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
@@ -757,7 +754,6 @@
                                                 </div>
                                             </div>
 
-                                        </div>
                                     </div>
                                 </div>
                             </div>

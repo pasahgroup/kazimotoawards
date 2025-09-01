@@ -226,6 +226,12 @@ function makeDirectory($path)
             // 'value.*' => 'required|string',
         ]);
 
+
+$awards = request("awards");
+$awards=collect($awards);
+
+if($awards->count()<=3)
+{
 //dd($car_body_type);
         $contestant_data = new contestant();
         $contestant_data->full_name = $request->full_name;
@@ -287,9 +293,13 @@ $contestant_data->experience_three = $request->experience_three;
           foreach ($request->photos as $photo) {
             $path = $this->imagePath()['cv_photos']['path'];
             $size = $this->imagePath()['cv_photos']['size'];
-            $images[] =$this->uploadImage($photo, $path, $size);
+            $photos[] =$this->uploadImage($photo, $path, $size);
         }
  // dd('dddd2');
+
+$photos = implode(",",$photos);
+
+//$photos=("[".$photos."]");
 
 
  //dd($contestant_data->images);
@@ -301,9 +311,11 @@ $images=("[".$images."]");
  //const myArray = ["apple", "banana", "cherry"];
   //  $myString = $images[].join(", ");
 
-  //dd($myString);
+  //dd($photos);
 
-        $contestant_data->images = $images;
+        $contestant_data->photo = $photos;
+         $contestant_data->images = $images;
+
      //dd($contestant_data->images);
 
         $contestant_data->save();
@@ -316,64 +328,40 @@ $images=("[".$images."]");
 
 
 
-$awards = request("awards");
-$awards=collect($awards);
 
 
-if($awards->count()<=3)
-{
-
-
-  $contestants = contestant::Create([
-        'full_name'=>request('full_name'),
-          'birth_date'=>$birth_date,
-
-         'phone'=>request('phone'),
-        'email'=>request('email'),   
-         'country'=>request('country'),
-         'district'=>request('district'),
-
-        'education'=>request('education'),
-        'education_of'=>request('education_of'), 
-
-         'experience_one'=>request('experience_one'),
-        'experience_two'=>request('experience_two'), 
-         'experience_three'=>request('experience_three'),
-               
-       'status'=>'Active',  
-        ]);
 
 
 
 //photo
-  if(request('photo')){
-            $attach = request('photo');
-            foreach($attach as $attached){
+//   if(request('photo')){
+//             $attach = request('photo');
+//             foreach($attach as $attached){
 
-                 // Get filename with extension
-                 $fileNameWithExt = $attached->getClientOriginalName();
-                 // Just Filename
-                 $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-                 // Get just Extension
-                 $extension = $attached->getClientOriginalExtension();
-                 //Filename to store
-                 $imageToStore = $filename.'_'.time().'.'.$extension;
-                 //upload the image
-                 $path = $attached->storeAs('public/photos/', $imageToStore);
+//                  // Get filename with extension
+//                  $fileNameWithExt = $attached->getClientOriginalName();
+//                  // Just Filename
+//                  $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+//                  // Get just Extension
+//                  $extension = $attached->getClientOriginalExtension();
+//                  //Filename to store
+//                  $imageToStore = $filename.'_'.time().'.'.$extension;
+//                  //upload the image
+//                  $path = $attached->storeAs('public/photos/', $imageToStore);
 
-  $contestant_fileupdate = contestant::where('id',$contestants->id)
-             ->update([
-               'photo'=>$imageToStore
-        ]);
+//   $contestant_fileupdate = contestant::where('id',$contestants->id)
+//              ->update([
+//                'photo'=>$imageToStore
+//         ]);
        
-    }
-}
+//     }
+// }
 
 
 
 foreach ($awards as $key => $id){ 
  $contestant_awards = contestant_award::UpdateOrCreate([
-        'contestant_id'=>$contestants->id,
+        'contestant_id'=>$contestant_data->id,
        'award_id'=>$id,
       ],
       [       

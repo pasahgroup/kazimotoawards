@@ -1,13 +1,13 @@
 @extends('spa.mainlayout_web')
-@section('contents')
+@section('content')
 
-    <link rel="stylesheet" href="../../marquee/css/liMarquee.css">
+ <link rel="stylesheet" href="../../marquee/css/liMarquee.css">
           <!-- Swiper CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css">
         <link rel="stylesheet" href="../../css/style.css">
-            <link rel="stylesheet" href="../../css/login.css">                            
- 
-  <style>
+            <link rel="stylesheet" href="../../css/login.css"> 
+            
+<style>
             .str3 { font-size:0 !important}
             .str3-2 { background:none !important;}
             .str3-2 span {color:#999; margin:0 1px; display:inline-block; vertical-align:top;}
@@ -207,20 +207,7 @@
 
 </style>
 
-
-
-
-
-
-     <main class="main">
-        <!-- hero slider -->
-
-   
-          
-
-
-
-  <div class="single-section pt-120x pb-120 bg--section position-relative overflow-hidden">
+    <div class="single-section pt-120x pb-120 bg--section position-relative overflow-hidden">
         <div class="shape">@lang('Book Now')</div>
         <div class="container">
              <div class="widget border--dashed" style="background-color:#fff">
@@ -472,25 +459,20 @@
     </div>
 
 
-
-
-
-
-
-
-
-
+   <main class="main">
 
             <div class="container">            
         
 <h3>Contestants</h3>     
 
         <div class="str3-2 str_wrap">
-              @foreach($contestant_datas as $contestant_data) 
-         
-             <span class="category-item">
+              @foreach($contestant_datas as $contestant_data)
 
-      <div class="slide-container swiper">
+
+
+<span class="category-item">
+
+               <div class="slide-container swiper">
             <div class="slide-content_org">
                 <div class="card-wrapper swiper-wrapper">
   <div class="card swiper-slide">
@@ -544,307 +526,10 @@ Vote<i class="fas fa-arrow-right"></i>
                 </div>
             </div>
         </div>
-   <div>
-   </div>
-
-
-
-    
-
-
-
-
-<div class="container mt-5 col-md-8">
-<div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <strong class="modal-title" id="exampleModalLabel">Voting Form</strong>
-                       
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                      <strong class="modal-title" id="loginModal">Voting for:</strong> <i>{{$contestant_data->full_name}}</i></strong></br>
-                     <strong class="modal-title" id="loginModal">Award:</strong> <i>{{$contestant_data->award_name}}</i></strong></br>
-                     <label></label>
-                      <form method="POST" action="{{ route('login') }}">
-                    @csrf
-
-
-  <div class="wrapper">
-    <div class="title"><span>Voting Form</span></div>
-    <form action="#">
-      <div class="row">
-        <i class="fas fa-user"></i>
-        <input type="text" placeholder="Email or Phone" required />
+    </span>
+              @endforeach
+          </div>
       </div>
-      <div class="row">
-        <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Password" required />
-      </div>
-  
-       <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Vote</button>
-                </div>
-
-        <div class="signup-link">Not a member? <a href="/login">Sign in</a></div>
-
-   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>   
-    </form>
-  </div>
-
-          </form>
-                </div>                
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-<div class="container mt-5 col-md-8">
-<div class="modal fade" id="exampleModalCenter_{{$contestant_data->id}}g" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <strong class="modal-title" id="exampleModalLabel">Voting Form</strong>
-                       
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                      <strong class="modal-title" id="loginModal">Voting for:</strong> <i>{{$contestant_data->full_name}}</i></strong></br>
-                     <strong class="modal-title" id="loginModal">Award:</strong> <i>{{$contestant_data->award_name}}</i></strong></br>
-                     <label></label>
-                      <form method="POST" action="{{ route('login') }}">
-                    @csrf
-
-                    <div class="form-group row">
-                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                        <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                        <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                              <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                        <div class="col-md-8">
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-               <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Vote</button>
-                </div>
-
-                </form>
-                </div>                
-            </div>
-        </div>
-    </div>
-</div>
-   </span>
-
-
-
-  @endforeach
-        </div>        
-
-</hr>
-  <!--       <h3>Vertical scroller</h3>
-        <div class="str4 str_wrap" style="height:200px;">
-            <p>
-            1 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            2 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            3 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-            <p>
-            4 text content and text content and text content and text content and text content and text content and text content and text content and text content
-            </p>
-        </div> -->
-    
-    </div>
-</div>
-</div>
-</main> 
-
-
-
-
-
-    <!-- Swiper JS -->
-   <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.js"></script>
-
-    <!-- JavaScript -->
-      <!--Uncomment this line-->
-    <script src="//cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/script.js"></script>
-            
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-<!-- <script src="js/jquery.liMarquee.js"></script> -->
-
- <script src="../../marquee/js/jquery.liMarquee.js"></script>
-<script>
-$(window).load(function() { 
-        
-    /* basic - default settings */
-        $('.str1').liMarquee();
-        
-        /* some custom settings */
-        $('.str2').liMarquee({
-            direction: 'left',  
-            loop:-1,            
-            scrolldelay: 500,   
-            scrollamount:90,    
-            circular: false,
-            hoverstop:false,    
-            drag: false         
-        });
-        
-        $('.str3').liMarquee({
-            direction: 'left',  
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:100,   
-            circular: true,     
-            drag: true          
-        });
-        
-        $('.str3-2').liMarquee({
-            direction: 'left',  
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:120,   
-            circular: true,     
-            drag: true          
-        });
-        
-        $('.str4').liMarquee({
-            direction: 'up',    
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:30,    
-            circular: true,     
-            drag: true          
-        });
-        
-        $('.str5').liMarquee({
-            direction: 'down',  
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:30,    
-            circular: true  ,   
-            drag: false         
-        });
-        
-        $('.str6').liMarquee({
-            direction: 'up',    
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:30,    
-            circular: false ,   
-            drag: true,         
-            runshort:false      
-        });
-        
-        
-        $('.str8').liMarquee({
-            direction: 'down',  
-            loop:-1,            
-            scrolldelay: 0,     
-            scrollamount:30,    
-            circular: false ,   
-            drag: true          
-        });
-        
-        $('.str9').liMarquee({
-            direction: 'right'  
-        });
-        
-    })
-</script>
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<script>
-     
-var swiper = new Swiper(".slide-content", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    loop: true,
-    centerSlide: 'true',
-    fade: 'true',
-    grabCursor: 'true',
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    breakpoints:{
-        0: {
-            slidesPerView: 1,
-        },
-        520: {
-            slidesPerView: 2,
-        },
-        950: {
-            slidesPerView: 3,
-        },
-    },
-  });
-
-</script>
+</main>
 
 @endsection

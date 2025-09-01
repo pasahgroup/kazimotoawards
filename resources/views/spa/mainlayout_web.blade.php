@@ -25,14 +25,18 @@
     <link rel="stylesheet" href="../../assets/css/nice-select.min.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
 
-  <!-- <link rel="stylesheet" href="../mold/assets/css/min/bootstrap.min.css" media="all">
+
+    <link rel="stylesheet" href="../../assets/templates/basic/css/owl.min.css">
+<link rel="stylesheet" href="../../assets/templates/basic/css/main.css">
+
+ <link rel="stylesheet" href="../mold/assets/css/min/bootstrap.min.css" media="all">
   <link rel="stylesheet" href="../mold/assets/css/jqueryui.css" media="all">
   <link rel="stylesheet" href="../mold/vendor/animate-css/animate.css" media="all">
   <link rel="stylesheet" href="../mold/assets/font/iconfont/iconstyle.css" media="all">
   <link rel="stylesheet" href="../mold/assets/font/font-awesome/css/font-awesome.css" media="all">
   <link rel="stylesheet" href="../mold/assets/css/main.css" media="all" id="maincss">
   <link rel="stylesheet" href="../../css/style-shortline.css">
- -->
+
 
   <link href="../../assets/corporate/css/style.css" rel="stylesheet">
 
@@ -42,6 +46,9 @@
 
         <link rel="stylesheet" href="../../styleMain.css">
         <link rel="stylesheet" href="../../../../sonamaster/style.css">
+
+ <link rel="stylesheet" href="../../../../sonamaster/css/owl.carousel.css">
+
            <!-- <link rel="stylesheet" href="../../forms/css/style.css"> -->
 
              <link href="../../css/style-shortline.css" rel="stylesheet">
@@ -58,12 +65,12 @@
         </div>
     </div> -->
      @include('spa.topmenu')
-<section style="padding-top:10%;"></section>
+<section style="padding-top:2px;"></section>
 
  @include('layout.app_customer')
 @yield('contents')
 
-<section style="padding-top:10%;"></section>
+<section style="padding-top:2px;"></section>
     <!-- footer area -->
     <footer class="footer-area">
         <div class="footer-widget">
@@ -211,6 +218,10 @@
     <script src="../../assets/js/wow.min.js"></script>
     <script src="../../assets/js/main.js"></script>
      <script src="../../forms/js/main.js"></script> 
+
+     <!-- <script src="'js/owl.min.js')}}"></script> -->
+
+       <script src="../../assets/templates/basic/js/owl.min.js"></script> 
 
 
   <!-- <script src="../../sonamaster/js/jquery/jquery-2.2.4.min.js"></script>  -->

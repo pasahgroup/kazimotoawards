@@ -19,6 +19,8 @@ use App\Http\Controllers\SocialmediaController;
 use App\Http\Controllers\DeparturesController;
 use App\Http\Controllers\GrouptourController;
 
+use App\Http\Controllers\SiteController;
+
 use App\Http\Controllers\SubprojectController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ActivityController;
@@ -125,6 +127,14 @@ Route::resource('/activity',ActivityController::class);
 Route::resource('/awards',AwardController::class);
 Route::get('/get_awardsw', [AwardController::class,'awardsw']);
   Route::get('/awards-edit/{x}', [AwardController::class, 'edit'])->name('awards-edit');
+
+
+
+//Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholder.image');
+
+  Route::get('/placeholder-image/{size}', [SiteController::class, 'placeholderImage'])->name('placeholder.image');
+
+
 
 
 Route::resource('/slides',SlidesController::class);

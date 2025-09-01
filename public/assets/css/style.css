@@ -2843,7 +2843,7 @@ label {
 }
 
 .category-item a{
-  width: 100%;
+  /*width: 100%;*/
   vertical-align: middle;
 }
 
@@ -9134,7 +9134,7 @@ label {
   color:yellow;
   padding: 3px 15px;
   margin: 10px 5px 0 0;
-  border-radius: 5px;
+  border-radius: 1px;
   font-size: 14px;
 }
 
