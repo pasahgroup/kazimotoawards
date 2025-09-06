@@ -34,8 +34,8 @@ class WebsiteController extends Controller
           $slides=slide::where('status','Active')
           ->get();
 
-            $awardscc=contestant_award::where('status','Active')
-        ->get();
+        //     $awardscc=contestant_award::where('status','Active')
+        // ->get();
 
          $awards=award::where('status','Active')
         ->get();
@@ -107,11 +107,13 @@ $yearExperience=($newDateTime)->year;
     }
 
 
- public function votingDetails(){
-        //dd('print');
-        $vehicle = contestant::active()->where('id',1)->firstOrFail();
+ public function votingDetails($id){
+        //dd($id);
+        $vehicle = contestant::active()->where('id',$id)->firstOrFail();
+           
             $contestant_datas = contestant_award::join('contestants','contestants.id','contestant_awards.contestant_id')
              ->join('awards','awards.id','contestant_awards.award_id')
+             //->where('contestant_id',$id)
              ->select('contestants.*','awards.award_name')
              ->get();
 

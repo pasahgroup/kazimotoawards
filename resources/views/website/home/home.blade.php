@@ -337,7 +337,7 @@
                         <div class="card-content">
                             <h2 class="name">{{$contestant_data->full_name}}
 </h2>
-                            <div class="description">Award: {{$contestant_data->award_name}}</div>
+                            <div class="description">Award:{{$contestant_data->id}}: {{$contestant_data->award_name}}</div>
                         
 <div class="row">
     <div class="col-md-6">

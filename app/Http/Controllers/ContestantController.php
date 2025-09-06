@@ -249,7 +249,8 @@ $contestant_data->education = $request->education;
        $contestant_data->experience_one = $request->experience_one;
            $contestant_data->experience_two = $request->experience_two;
 $contestant_data->experience_three = $request->experience_three;
-       
+
+       $contestant_data->status ="Active";
 
         // $vehicle->seater_id = $request->seater;
         // $vehicle->price = $request->price;
@@ -305,7 +306,6 @@ $photos = implode(",",$photos);
  //dd($contestant_data->images);
 // $indexedArray = array("apple", "banana", "orange");
 $images = implode(",",$images);
-
 $images=("[".$images."]");
 
  //const myArray = ["apple", "banana", "cherry"];
@@ -320,15 +320,8 @@ $images=("[".$images."]");
 
         $contestant_data->save();
 //dd('print consent1xx');
-      
-
-
 //dd('print consent2');
 //End of new installation
-
-
-
-
 
 
 

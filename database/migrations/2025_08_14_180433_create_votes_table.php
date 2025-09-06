@@ -14,8 +14,17 @@ class CreateVotesTable extends Migration
     public function up()
     {
         Schema::create('votes', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+           $table->bigIncrements('id');  
+            $table->integer('user_id')->nullable();                   
+             $table->integer('contestant_id')->nullable();
+              $table->string('mobile')->nullable();
+              $table->string('email',64)->nullable();
+              $table->string('award_id')->nullable();
+
+                        $table->string('mac')->nullable();
+                        $table->string('year')->nullable();
+                $table->string('status')->nullable();
+                $table->timestamps();
         });
     }
 

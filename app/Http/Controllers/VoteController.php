@@ -26,6 +26,7 @@ class VoteController extends Controller
 
     public function vote(Request $request,$id)
     {
+       
        $awards=contestant_award::join('awards','awards.id','contestant_awards.award_id')
        ->where('awards.status','Active')
       ->where('awards.award_name','!=',"")
@@ -35,7 +36,8 @@ class VoteController extends Controller
 
 $contestant_first=contestant::where('id',$id)->first();
 
-      //dd($awards);
+     // dd($awards);
+
       return view('website.voting.vote',compact('awards','contestant_first'));
 
     }
