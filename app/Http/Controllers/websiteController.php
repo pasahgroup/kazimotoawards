@@ -41,7 +41,6 @@ class WebsiteController extends Controller
         ->get();
 
 
-
         $contestant_datas = contestant_award::join('contestants','contestants.id','contestant_awards.contestant_id')
              ->join('awards','awards.id','contestant_awards.award_id')
              ->select('contestants.*','awards.award_name')
@@ -103,7 +102,7 @@ $yearExperience=($newDateTime)->year;
              ->select('contestants.*','awards.award_name')
              ->get();
             
-            // dd($contestant_datas);
+            //dd($contestant_datas);
      return view('website.voting.voting_details',compact('contestant_datas'));
     }
 
@@ -116,7 +115,8 @@ $yearExperience=($newDateTime)->year;
              ->select('contestants.*','awards.award_name')
              ->get();
 
-//dd($vehicle->images);
+//dd($contestant_datas);
+
 $fullUrl = url()->full();     
 
        // $rental_terms = getContent('rental_terms.content', true);

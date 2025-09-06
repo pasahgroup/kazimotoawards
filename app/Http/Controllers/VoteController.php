@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\vote;
+use App\Models\award;
+use App\Models\contestant_award;
+use App\Models\contestant;
+
 use App\Http\Requests\StorevoteRequest;
 use App\Http\Requests\UpdatevoteRequest;
+use Illuminate\Http\Request;
 
 class VoteController extends Controller
 {
@@ -17,6 +22,24 @@ class VoteController extends Controller
     {
         //
     }
+
+
+    public function vote(Request $request,$id)
+    {
+       $awards=contestant_award::join('awards','awards.id','contestant_awards.award_id')
+       ->where('awards.status','Active')
+      ->where('awards.award_name','!=',"")
+        ->where('contestant_awards.contestant_id',"$id")
+      ->get();
+
+
+$contestant_first=contestant::where('id',$id)->first();
+
+      //dd($awards);
+      return view('website.voting.vote',compact('awards','contestant_first'));
+
+    }
+
 
     /**
      * Show the form for creating a new resource.

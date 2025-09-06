@@ -306,7 +306,7 @@
 
 
 
-            <div class="container">            
+            <div class="container">          
         
 <h3>Contestants</h3>     
 
@@ -353,7 +353,7 @@ View more<i class="fas fa-arrow-right"></i>
                                                 
                       
  <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="/voting_details/3" class="theme-btn" data-toggle="modal" data-target="#exampleModalCenter_{{$contestant_data->id}}">
+                                                    <a href="/vote/{{$contestant_data->id}}" class="theme-btn" data-toggle="modalx">
 
 Vote<i class="fas fa-arrow-right"></i>
 </a>
@@ -384,7 +384,7 @@ Vote<i class="fas fa-arrow-right"></i>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <strong class="modal-title" id="exampleModalLabel">Voting Form</strong>
+                    <strong class="modal-title" id="exampleModalLabel">Voting Form 5678</strong>
                        
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -398,7 +398,7 @@ Vote<i class="fas fa-arrow-right"></i>
 
 
   <div class="wrapper">
-    <div class="title"><span>Voting Form</span></div>
+    <div class="title"><span>Voting Form 5678n</span></div>
     <form action="#">
       <div class="row">
         <i class="fas fa-user"></i>

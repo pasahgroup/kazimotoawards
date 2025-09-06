@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../../assets/templates/basic/css/owl.min.css">
 <link rel="stylesheet" href="../../assets/templates/basic/css/main.css">
 
- <link rel="stylesheet" href="../mold/assets/css/min/bootstrap.min.css" media="all">
+ <!-- <link rel="stylesheet" href="../mold/assets/css/min/bootstrap.min.css" media="all"> -->
   <link rel="stylesheet" href="../mold/assets/css/jqueryui.css" media="all">
   <link rel="stylesheet" href="../mold/vendor/animate-css/animate.css" media="all">
   <link rel="stylesheet" href="../mold/assets/font/iconfont/iconstyle.css" media="all">

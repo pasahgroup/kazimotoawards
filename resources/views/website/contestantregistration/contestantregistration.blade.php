@@ -1,7 +1,3 @@
-{{--
-@extends('layout.app_customer')
---}}
-
 @extends('spa.mainlayout_web')
 @section('panel')
 

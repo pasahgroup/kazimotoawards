@@ -58,6 +58,8 @@ use App\Http\Controllers\SlidesController;
 use App\Http\Controllers\LodgeController;
 use App\Http\Controllers\LodgetraineeController;
 
+use App\Http\Controllers\VoteController;
+
 
 use App\Http\Controllers\AssetController;
 use App\Http\Controllers\updateAssetController;
@@ -396,6 +398,8 @@ Route::get('/detail-page/{x}', [websiteController::class, 'detailPage'])->name('
 Route::get('/detailp/{x}', [websiteController::class, 'detail'])->name('detail');
 
 //Voting details
+Route::get('/vote/{x}', [VoteController::class, 'vote'])->name('vote');
+
 Route::get('/voting_details/{x}', [websiteController::class, 'votingDetails'])->name('voting_details');
 Route::get('/voting_add_details', [websiteController::class, 'add'])->name('voting_add_details');
 

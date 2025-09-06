@@ -1,7 +1,3 @@
-{{--
-@extends('layout.app_customer')
---}}
-
 @extends('spa.mainlayout_web')
 @section('panel')
 
@@ -449,150 +445,52 @@
                 <Strong>Contestant: Registration Form</Strong>
             </div>
             <div class="body__container">
+           
                 <div class="left__container">
-                    <div class="side__titles">
-                        <div class="title__name">
-                            <h3>Personal Details</h3>
-                            <p>Personal particulars</p>
-                        </div>
-                        <div class="title__name">
-                            <h3>Experiences</h3>
-                            <p>Describe even one experience you've had</p>
-                        </div>
-                        <div class="title__name">
-                            <h3>Evidence Photos</h3>
-                            <p>Upload some of your evidence photos</p>
-                        </div>
-                        <div class="title__name">
-                            <h3>Complete</h3>
-                            <p>Submit application</p>
-                        </div>
-                    </div>
-                    <div class="progress__bar__container">
-                        <ul>
-                            <li class="active" id="icon1"><ion-icon name="person-outline"></ion-icon></li>
-                            <li id="icon2"><ion-icon name="book-outline"></ion-icon></li>
-                            <li id="icon3"><ion-icon name="layers-outline"></ion-icon></li>
-                            <li id="icon4"><ion-icon name="pricetag-outline"></ion-icon></li>
-                        </ul>
-                    </div>
-                </div>
-
-
-
-
-
-                <div class="right__container">
-
                        <form method="post" action="{{ route('contestant.store') }}" enctype="multipart/form-data">
                     @csrf
                     <fieldset id="form1">
    <div class="form-card">
                             <div class="">
                                  <div class="col-12" style="background-color:#e9ece9">
-                                    <h4 class="fs-title">Personal Details:| Step 1 - 4</h4>
+                                    <h4 class="fs-title">Vote for: {{$contestant_first->full_name}}</h4>
                                 </div>                                
                             </div> 
 
-                        <div class="sub__title__container ">
-                            <h4>Let's start with your name</h4>
-                        </div>
-                        
-                        <div class="row">
+
+                                <div class="row">
                             <div class="col-md-6 col-lg-6 col-sm-6">
                         <div class="input__container">
-                            <label for="name">Full name</label>
-                              <input type="text" name="full_name" required/> 
+                            <label for="name">Name:</label>
+                             <label for="name">{{$contestant_first->full_name}}</label>
                         </div>
                     </div>
  <div class="col-md-6 col-lg-6 col-sm-6">
                          <div class="input__container">
-                            <label for="name">Birth Date</label>
-                            <input type="date" name="birth_date" id="birth_date1" required/>
+                           <div class="image-content">
+                            <span class="overlay"></span>
+                            <div class="card-image">
+                               <img src="../../cv_photos/{{$contestant_first->photo}}" alt="" class="card-img"  style="width:200px">
+                        {{--
+                            <img src="{{URL::asset('/storage/cv_photos/'.$contestant_first->photo) }}" alt="" class="card-img">
+                     --}}
+
+                            </div>
+                        </div>
                         </div>
                     </div>
                     </div>
 
-                    <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-6">
-                        <div class="input__container">
-                            <label for="name">Phone number</label>
-                              <input type="text" name="phone" required/> 
-                        </div>
-                    </div>
- <div class="col-md-6 col-lg-6 col-sm-6">
-                         <div class="input__container">
-                            <label for="name">Email</label>
-                            <input type="email" name="email" required/>
-                        </div>
-                    </div>
-                    </div>
-
-
-
-                    <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-6">
-                        <div class="input__container">
-                            <label for="name">Country</label>
-                               <select class="form-control" name="country">
-                                              <option value="0">--Select the Country--</option>
-                                            <option value="Tanzania">Tanzania</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                        </div>
-                    </div>
- <div class="col-md-6 col-lg-6 col-sm-6">
-                         <div class="input__container">
-                            <label for="name">District</label>
-                            <input type="text" name="district" required/>
-                        </div>
-                    </div>
-                    </div>
+                      
 
 
 
  <div class="row">
-                            <div class="col-md-6 col-lg-6 col-sm-6">
-                        <div class="input__container">
-                          <label for="">Education:</label>
-                                         <select class="search-fields form-control" name="education">
-                                              <option value="0">--Select the Education--</option>
-                                            <option value="PHD">PHD</option>
-                                             <option value="Master">Master</option>
-                                              <option value="Degree">Degree</option>
-                                               <option value="Diploma">Diploma</option>
-                                                <option value="Certificate">Certificate</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                        </div>
-                    </div>
- <div class="col-md-6 col-lg-6 col-sm-6">
-                         <div class="input__container">
-                            <label>Degree of</label>
-                                        <input type="text" name="education_of"/>
-                        </div>
-                    </div>
-                    </div>
-
-                        <div class="buttons">
-                                <a class="prev__btn" onclick="prevForm();" ></a>
-                                <a class="nxt__btn"  onclick="nextForm();" >Next</a>    
-                            </div>
-
-                    </fieldset>
-                    <fieldset class="active__form" id="form2">                      
-                        <div class="input__container">                            
-                         <div class="form-card">
-                            <div class="">
-                                 <div class="col-12" style="background-color:#e9ece9">
-                                    <h4 class="fs-title">Experience Details:| Step 2 - 4</h4>
-                                </div>                                
-                            </div> 
-                           
- <div class="form-group">
-     <div class="col-md-12">
+      
+                       <div class="col-md-12">
        
-            <label for="">Apply for Awards,Maximum 3 selections:</label>
+            <label for="">{{$contestant_first->full_name}}: contestants applied awards:</label>
+            <p> Once you vote for a specific awards won't allowed to vote for the same awards again to a different contestant.</p>
        <div class="form-group">
 @foreach($awards as $award)
 
@@ -602,193 +500,18 @@
 @endforeach     
         </div>
         </div>
-  </div>
-
-
-
-
-  <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <label for="">Experience 1:</label>
-                                      <textarea name="experience_one" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
-                                    
-                                </div>
-
-
-
-    </div>
-
-
-
- <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <label for="">Experience 2:</label>
-                                      <textarea name="experience_two" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
-                                    
-                                </div>
-
-
-
-    </div>
-
-
-
- <div class="row">
-                                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <label for="">Experience 3:</label>
-                                      <textarea name="experience_three" class="form-control nicEdit" id="nicEditor0"  style="width: 930px; border-width: 0px 1px 1px; border-style: none solid solid; border-color: currentcolor rgb(204, 204, 204) rgb(204, 204, 204); border-image: none; overflow: hidden auto;"></textarea>
-                                    
-                                </div>
-
-
-
-    </div>
-
-
-
-    <div class="row" style="padding-left:10px;padding-right:10px;">
-                                      <div class="col-lg-12 col-md-12 col-sm-12">
-                                   <label for="">Experience 3:</label>
-                                    <div class="form-group">
-                                      <textarea name="experience_three"></textarea>
-                                    </div>
-                                </div>
-
-
-
-    </div>
-</div> 
-
-
-
-                            <div class="buttons">
-                                <a class="prev__btn btn btn--primary" onclick="prevForm();" >Back</a>
-                                <a class="nxt__btn"  onclick="nextForm();" >Next</a>    
-                            </div>
-                        </div>
-                    </fieldset>
-                    <fieldset class="active__form" id="form3">
-                         <div class="">
-                                 <div class="col-12" style="background-color:#e9ece9">
-                                    <h4 class="fs-title">Evidence Photos:| Step 3 - 4</h4>
-                                </div>                                
-                            </div>
-
-
- <div class="input__container">
-   <div class="col-md-12">
-                                <div class="card border--dark mb-4">
-                                    <div class="card-header bg--dark d-flex justify-content-between">
-                                        <h5 class="text-white">@lang('Upload your Photo')</h5>
-                                    </div>
-                                        <p><small class="text-facebook">@lang('Upload your Photo')
-                                           
-                                           {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
-
-                                       </p>
-                                            <div class="col-md-2 imageItem">
-                                                <div class="payment-method-item">
-                                                    <div class="payment-method-header d-flex flex-wrap">
-                                                        <div class="thumbx" style="position: relative;">
-                                                         
-                                                                      <div class="text-center">
-                    <img id="image-preview" 
-                         src="{{asset('assets/images/default.png')}}"
-                         style="width:140px"
-                         class="rounded rounded-circle" alt="placeholder">
                 </div>
 
 
-               <form>
-                    <input type="file" name="photos[]" class="form-control" accept="image/*"
-                           onchange="updatePreview(this, 'image-preview')" required>                   
-                </form>
+                      
 
-                                                           
-                                                           </div>
-                                                    </div>
-                                                </div>
-                                            </div>                                     
-                                                               </div>
-                            </div>
-                     </div>
-
-
- <div class="input__container">
-   <div class="col-md-12">
-                                <div class="card border--dark mb-4">
-                                    <div class="card-header bg--dark d-flex justify-content-between">
-                                        <h5 class="text-white">@lang('Upload Different photos')</h5>
-                                        <button type="button" class="btn btn-sm btn-outline-light addBtn"><i
-                                                class="fa fa-fw fa-plus"></i>@lang('Add New')
-                                        </button>
-                                    </div>
-                                        <p><small class="text-facebook">@lang('Upload Different photos')
-                                           
-                                           {{--     {{ imagePath()['vehicles']['size'] }}px</small> --}}
-
-                                       </p>
-                                        <div class="row element">
-
-                                            <div class="col-md-2 imageItem">
-                                                <div class="payment-method-item">
-                                                    <div class="payment-method-header d-flex flex-wrap">
-                                                        <div class="thumb" style="position: relative;">
-                                                            <div class="avatar-preview">
-                                                                <div class="profilePicPreview"
-                                                                     style="background-image: url('{{asset('assets/images/default.png')}}')">
-
-                                                                </div>
-                                                            </div>
-                                                            <div class="avatar-edit">
-                                                                <input type="file" name="images[]"
-                                                                       class="profilePicUpload" id="0"
-                                                                       accept=".png, .jpg, .jpeg" required>
-                                                                <label for="0" class="bg-primary">
-                                                                    <i class="la la-pencil"></i>
-                                                                </label>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                    </div>
-                                </div>
+                               <div class="buttons">
+                                <button class="prev__btn"></button>
+                                <button class="nxt__btn" type="submit">Vote</button>    
                             </div>
 
-        
-                       
-                          
-                            <div class="buttons">
-                                <a class="prev__btn" onclick="prevForm();" >Back</a>
-                                 <button type="submit" class="nxt__btn">Submit</button> 
- 
-                            </div>
+                    </fieldset>                   
 
-                        </div>
-                    </fieldset>
-               
-
-
-                <!--     <fieldset class="active__form" id="form4">
-                        <div class="sub__title__container">
-                            <p>Step 5/5</p>
-                            <h2>Complete Submission</h2>
-                            <p>Thanks for completing the form and for your time.Plss enter your email below and submit the form</p>
-                        </div>
-                        
-                        <div class="input__container">
-                            <label for="Email">Enter your email</label>
-                            <input type="text">
-                            <div class="buttons">
-                                <a class="prev__btn"  onclick="prevForm();" >Back</a>
-                                <a class="nxt__btn" id="submitBtn" onclick="nextForm();" >Next</a>    
-                            </div>
-                            
-                        </div>
-                    </fieldset> -->
                 </form>
                 </div>
             </div>
@@ -938,6 +661,7 @@ slider.oninput = function() {
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
@@ -1200,5 +924,4 @@ slider.oninput = function() {
       });
     });
      </script>
-
 @endpush
