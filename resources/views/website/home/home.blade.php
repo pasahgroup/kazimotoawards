@@ -353,7 +353,7 @@ View more<i class="fas fa-arrow-right"></i>
                                                 
                       
  <div class="footer-top-link-info" data-animation="fadeInUp" data-delay="1s">
-                                                    <a href="/vote/{{$contestant_data->id}}" class="theme-btn" data-toggle="modalx">
+                                                    <a href="/votes/{{$contestant_data->id}}" class="theme-btn" data-toggle="modalx">
 
 Vote<i class="fas fa-arrow-right"></i>
 </a>

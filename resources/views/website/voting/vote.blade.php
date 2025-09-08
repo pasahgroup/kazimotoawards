@@ -447,7 +447,7 @@
             <div class="body__container">
            
                 <div class="left__container">
-                       <form method="post" action="{{ route('contestant.store') }}" enctype="multipart/form-data">
+                       <form method="post" action="{{ route('vote.store') }}" enctype="multipart/form-data">
                     @csrf
                     <fieldset id="form1">
    <div class="form-card">
@@ -463,6 +463,7 @@
                         <div class="input__container">
                             <label for="name">Name:</label>
                              <label for="name">{{$contestant_first->full_name}}</label>
+                             <input type="hidden" name="award_id" value="{{$contestant_first->id}}">
                         </div>
                     </div>
  <div class="col-md-6 col-lg-6 col-sm-6">
@@ -517,6 +518,8 @@
             </div>
         </div>
    
+
+
 
 <script type="text/javascript">
     function updatePreview(input, target) {

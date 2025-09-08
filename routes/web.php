@@ -218,7 +218,7 @@ Route::get('/stl', function () {
    dd('cache clear successfully');
 });
 
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('flush', [AuthController::class, 'flush'])->name('flush');
 
 //Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -398,7 +398,8 @@ Route::get('/detail-page/{x}', [websiteController::class, 'detailPage'])->name('
 Route::get('/detailp/{x}', [websiteController::class, 'detail'])->name('detail');
 
 //Voting details
-Route::get('/vote/{x}', [VoteController::class, 'vote'])->name('vote');
+ Route::resource('/vote', VoteController::class);
+Route::get('/votes/{x}', [VoteController::class, 'vote'])->name('vote');
 
 Route::get('/voting_details/{x}', [websiteController::class, 'votingDetails'])->name('voting_details');
 Route::get('/voting_add_details', [websiteController::class, 'add'])->name('voting_add_details');
