@@ -37,13 +37,24 @@ class RegisterController extends Controller
  $url = $request->path();
  //dd($url);
 
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|confirmed|min:8',
-            'role' => 'required|string',            
-        ]);
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'email' => 'required|string|email|max:255|unique:users',
+        //     'password' => 'required|string|confirmed|min:8',
+        //     'role' => 'required|string',            
+        // ]);
 
+
+$this->validate($request, [
+
+       'name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|confirmed|min:8',
+        'password_confirmation' => 'required'
+
+    ]);
+
+ //dd($url);
 
  // if(request('password') != request('confirm_password'))
  //          {

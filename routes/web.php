@@ -133,8 +133,7 @@ Route::get('/get_awardsw', [AwardController::class,'awardsw']);
 
 
 //Route::get('placeholder-image/{size}', 'SiteController@placeholderImage')->name('placeholder.image');
-
-  Route::get('/placeholder-image/{size}', [SiteController::class, 'placeholderImage'])->name('placeholder.image');
+Route::get('/placeholder-image/{size}', [SiteController::class, 'placeholderImage'])->name('placeholder.image');
 
 
 
@@ -218,7 +217,7 @@ Route::get('/stl', function () {
    dd('cache clear successfully');
 });
 
-// Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('flush', [AuthController::class, 'flush'])->name('flush');
 
 //Route::get('login', [AuthController::class, 'index'])->name('login');
@@ -232,7 +231,6 @@ Route::get('/l', [commandController::class, 'index'])->name('c');
 });
 
  Route::resource('/register',RegisterController::class);
-
 
  Route::post('/user-update/{x}', [AuthController::class, 'update'])->name('user-update');
 // Route::group(['middleware' => ['auth']], function() {

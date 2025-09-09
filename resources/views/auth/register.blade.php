@@ -33,7 +33,7 @@
                                                   
                          <div class="row">
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   <x-label for="password_confirmation" :value="__('Full Name')" />
+                                   <x-label for="password_confirmation" :value="__('Full name')" />
                                      <div class="form-group icon_down">
                                  <input type="text" id="name" class="form-control" name="name" required autofocus>
                                   @if ($errors->has('name'))
@@ -43,8 +43,40 @@
                                 </div>
                           </div>
 
+
                           
                          <div class="row">
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                   <x-label for="password_confirmation" :value="__('Password')" />
+                                     <div class="form-group icon_down">
+                                     <input type="password" class="form-control" name="password">
+        @if ($errors->has('password'))
+            <span class="help-block text-danger">
+                <strong>{{ $errors->first('password') }}</strong>
+            </span>
+        @endif
+                                    </div>
+                                </div>
+                           
+
+     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                   <x-label for="password_confirmation" :value="__('Confirm password')" />
+                                     <div class="form-group icon_down">
+          <input type="password" class="form-control" name="password_confirmation">
+        @if ($errors->has('password_confirmation'))
+            <span class="help-block">
+                <strong>{{ $errors->first('password_confirmation') }}</strong>
+            </span>
+        @endif
+                                    </div>
+                                </div>
+
+
+                           </div>
+
+
+
+  <div class="row">
                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                    <x-label for="password_confirmation" :value="__('Email')" />
                                      <div class="form-group icon_down">
@@ -55,10 +87,17 @@
                                   @endif
                                     </div>
                                 </div>
+                         
+
                            </div>
+
+
+
+
+                           {{--
                          
                         <div class="row">
-                           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                                    <x-label for="password_confirmation" :value="__('Password')" />
                                      <div class="form-group icon_down">
                                       <input type="password" id="password" class="form-control" name="password" required>
@@ -74,12 +113,15 @@
                                      <div class="form-group icon_down">
                                       <input type="password" id="confirm_password" class="form-control" name="confirm_password" required>
 
-                                  @if ($errors->has('password'))
-                                      <span class="text-danger">{{ $errors->first('password') }}</span>
+                                  @if ($errors->has('confirm_password'))
+                                      <span class="text-danger">{{ $errors->first('confirm_password') }}</span>
                                   @endif
                                     </div>
                                 </div>
                          </div>
+                         --}}
+
+
 
                         <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -129,7 +171,7 @@
 
                                       <label>
 
-                                          <input type="checkbox" name="remember"> Remember Me
+                                          <input type="checkbox" name="remember"> Remember me
 
                                       </label>
 
