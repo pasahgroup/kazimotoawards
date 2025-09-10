@@ -32,15 +32,39 @@
                                 <ul class="header-top-list">
                                     <li>
     <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown"
-                                                aria-expanded="false">
-                                                <i class="far fa-arrow-right-to-arc"></i> Login
-                                            </a>
 
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="/login">Login system</a>
-                                                 <a class="dropdown-item" href="https://tmya.net:2096" target="_blank">Login email</a>
-                                            </div>
+
+
+    <div class="dropdown-cart">
+                                    <a href="#" class="shop-cart list-item">
+                                        <div class="list-item-icon">
+                                            <i class="fas fa-sign-out-alt"></i><span>Login</span>
+                                        </div>
+                                                                           </a>
+                                    <div class="dropdown-cart-menu">
+                                        <ul class="dropdown-cart-list">
+                                            <li>
+                                                <div class="dropdown-cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="../../img/kazimoto/lock.png" alt="#"></a>
+                                                    </div>
+                                                      <a href="/login">Login system</a>
+                                                   
+                                                                                                 </div>
+                                            </li>
+
+                                            <li>
+                                                <div class="dropdown-cart-item">
+                                                    <div class="cart-img">
+                                                       <a href="#"><img src="../../img/kazimoto/email.png" alt="#"></a>
+                                                    </div>
+                                                     <a href="https://tmya.net:2096" target="_blank">Login email</a>                                                   
+                                                                                                 </div>
+                                            </li>
+                                          
+                                        </ul>
+                                    </div>
+                                </div>
                                         </div>
 
                                     </li>
@@ -48,12 +72,7 @@
 
                                 <li>
                                         <div class="dropdown">
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="#">Login</a>
-                                                <a class="dropdown-item" href="#">Contestant</a>
-                                                <a class="dropdown-item" href="#">Panel</a>
-                                            </div>
-
+                                          
     <div class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">

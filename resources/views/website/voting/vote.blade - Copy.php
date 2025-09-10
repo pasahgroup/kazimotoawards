@@ -471,7 +471,10 @@
                             <span class="overlay"></span>
                             <div class="card-image">
                                <img src="../../cv_photos/{{$contestant_first->photo}}" alt="" class="card-img"  style="width:200px">
-                     
+                        {{--
+                            <img src="{{URL::asset('/storage/cv_photos/'.$contestant_first->photo) }}" alt="" class="card-img">
+                     --}}
+
                             </div>
                         </div>
                         </div>
@@ -484,7 +487,8 @@
 
  <div class="row">
       
-                       <div class="col-md-12">       
+                       <div class="col-md-12">
+       
             <label for="">{{$contestant_first->full_name}}: contestants applied awards:</label>
             <p> Once you vote for a specific awards won't allowed to vote for the same awards again to a different contestant.</p>
        <div class="form-group">
@@ -499,11 +503,11 @@
                 </div>                      
 
                                <div class="buttons">
+                                <button class="prev__btn"></button>
                                  @auth                            
-                                  <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Vote</button>  
+                                  <a  href="{{ route('login') }}" class="">Vote</a> 
                                  @else
-                                 <a href="/login" class="btn mb-2 mb-md-0 btn-outline-primary">Login</a> 
-                                        <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Vote2</button> 
+                                        <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Login</button> 
                                    @endauth
                             </div>             
 
@@ -513,6 +517,18 @@
             </div>
         </div>
    
+
+ <form method="post" action="{{ route('login') }}" enctype="multipart/form-data">
+                    @csrf
+    @auth                            
+                             <button class="btn mb-2 mb-md-0 btn-outline-secondary" type="submit">Vote</button> 
+                                 @else
+                                 <button class="" type="submit">Vote22</button> 
+                                        <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Login2</button> 
+                                   @endauth
+                               </form>
+
+
 <script type="text/javascript">
     function updatePreview(input, target) {
         let file = input.files[0];
