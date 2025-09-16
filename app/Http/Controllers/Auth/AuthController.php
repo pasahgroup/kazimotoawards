@@ -135,7 +135,9 @@ Storage::delete('/public/user/'.$user->photo);
 
              $status=User::where('email',$request->email)
         ->first();
-    // dd($status);
+     //dd($status);
+
+
 
 if($status==null)
 {
@@ -151,8 +153,22 @@ if($status==null)
         $user=User::where('email',$request->email)
         ->first();
               $role = Auth::User()->role;
-             // dd('dd1x');
-            return redirect()->route('dashboard.index',compact('role'))->withSuccess('You have Successfully loggedin');
+              //dd($role);
+              $id=2;
+
+              if($role=="Admin")
+              {
+                  return redirect()->route('dashboard.index',compact('role'))->withSuccess('You have Successfully loggedin');
+              }
+              else
+              {
+                 dd(request('award_id'));
+//return redirect()->route('vote',compact('id'))->withSuccess('You have Successfully loggedin');
+
+  return redirect()->route('vote',$id)->with('success','Tour Summary Cost created successful');
+              }
+           
+
         }
 
         return redirect("logout")->withInfo('You have entered Invalid Credentials');

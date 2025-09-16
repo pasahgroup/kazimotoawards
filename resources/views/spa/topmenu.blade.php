@@ -38,27 +38,40 @@
     <div class="dropdown-cart">
                                     <a href="#" class="shop-cart list-item">
                                         <div class="list-item-icon">
-                                            <i class="fas fa-sign-out-alt"></i><span>Login</span>
+
+                                            <i class="far fa-user"></i><span>Account</span>
                                         </div>
                                                                            </a>
                                     <div class="dropdown-cart-menu">
                                         <ul class="dropdown-cart-list">
                                             <li>
-                                                <div class="dropdown-cart-item">
-                                                    <div class="cart-img">
-                                                        <a href="#"><img src="../../img/kazimoto/lock.png" alt="#"></a>
-                                                    </div>
-                                                      <a href="/login">Login system</a>
-                                                   
-                                                                                                 </div>
-                                            </li>
 
-                                            <li>
-                                                <div class="dropdown-cart-item">
+
+
+                                                                                                  <div class="dropdown-cart-item">
                                                     <div class="cart-img">
                                                        <a href="#"><img src="../../img/kazimoto/email.png" alt="#"></a>
                                                     </div>
                                                      <a href="https://tmya.net:2096" target="_blank">Login email</a>                                                   
+                                                                                                 </div>
+                                            </li>
+
+                                            <li>
+                                               
+                                                <div class="dropdown-cart-item">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="../../img/kazimoto/lock.png" alt="#"></a>
+                                                    </div>
+
+                                                          @auth                            
+                               
+                                    <a href="/logout">Logout</a>
+                                 @else
+                                <a href="/login">Login system</a>
+                                   @endauth
+
+
+                                                   
                                                                                                  </div>
                                             </li>
                                           

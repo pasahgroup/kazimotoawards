@@ -462,7 +462,7 @@
                         <div class="input__container">
                             <label for="name">Name:</label>
                              <label for="name">{{$contestant_first->full_name}}</label>
-                             <input type="hidden" name="award_id" value="{{$contestant_first->id}}">
+                             <input type="text" name="award_id" value="{{$contestant_first->id}}">
                         </div>
                     </div>
  <div class="col-md-6 col-lg-6 col-sm-6">
@@ -503,7 +503,6 @@
                                   <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Vote</button>  
                                  @else
                                  <a href="/login" class="btn mb-2 mb-md-0 btn-outline-primary">Login</a> 
-                                        <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Vote2</button> 
                                    @endauth
                             </div>             
 

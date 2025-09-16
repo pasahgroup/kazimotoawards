@@ -71,27 +71,37 @@
                                     </div>
                                 </div>
 
-
                            </div>
 
 
 
-  <div class="row">
-                           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   <x-label for="password_confirmation" :value="__('Email')" />
+
+
+          <div class="row">
+                          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                   <x-label for="password_confirmation" :value="__('Phone')" />                                   
                                      <div class="form-group icon_down">
-                                     <input type="text" id="email_address" class="form-control" name="email" required autofocus>
+                                     <input type="text" id="phone" class="form-control" name="phone" required autofocus>
+
+                                  @if ($errors->has('email'))
+                                      <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                  @endif
+                                    </div>
+                                </div>
+                           
+
+     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                   <x-label for="password_confirmation" :value="__('Email')" />                                   
+                                       <div class="form-group icon_down">
+                                     <input type="text" id="email" class="form-control" name="email" required autofocus>
 
                                   @if ($errors->has('email'))
                                       <span class="text-danger">{{ $errors->first('email') }}</span>
                                   @endif
                                     </div>
                                 </div>
-                         
 
                            </div>
-
-
 
 
                            {{--

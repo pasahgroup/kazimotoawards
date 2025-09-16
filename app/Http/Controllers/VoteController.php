@@ -10,6 +10,7 @@ use App\Models\contestant;
 use App\Http\Requests\StorevoteRequest;
 use App\Http\Requests\UpdatevoteRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Rules\FileTypeValidate;
 
@@ -35,14 +36,13 @@ class VoteController extends Controller
         ->where('contestant_awards.contestant_id',"$id")
       ->get();
 
+//dd($awards);
 
 $contestant_first=contestant::where('id',$id)->first();
-
-     // dd($awards);
+//dd($contestant_first);
 
       return view('website.voting.vote',compact('awards','contestant_first'));
-
-    }
+          }
 
 
     /**
@@ -71,11 +71,10 @@ $contestant_first=contestant::where('id',$id)->first();
      $start_date=request('birth_date');
      $birth_date=date('Y-m-d', strtotime($start_date));
  $checkedAwards = $request->input('awards');
-
-//dd(count($checkedAwards));
+$users=Auth::user();
+//dd($users);
 
   $request->validate([
-
              'awards' => ['required', 'max:10000'],
            //  'full_name' => 'required|string',            
            //   'phone' => 'required|string',
@@ -115,8 +114,6 @@ $macaddress=substr($mycomsys,($pmac+36),17);
 
 
 
-
-
 $awards = request("awards");
 $awardsCount=collect($awards);
 
@@ -153,8 +150,10 @@ if($awardsCount->count()<=3)
 //dd('print kaka');
 
         $vote_data = new vote();
-        $vote_data->mac = $macaddress;
-        $vote_data->year = $curYear;
+           $vote_data->user_id = $users->id;
+             $vote_data->contestant_id=request('award_id');
+        $vote_data->mobile = $users->phone;
+        $vote_data->email = $users->email;
 //            $contestant_data->birth_date = $request->birth_date;
         
 //          $contestant_data->phone = $request->phone;
@@ -170,7 +169,9 @@ if($awardsCount->count()<=3)
 //            $contestant_data->experience_two = $request->experience_two;
 // $contestant_data->experience_three = $request->experience_three;
 
-      $vote_data->contestant_id=request('award_id');
+    
+        $vote_data->mac = $macaddress;
+        $vote_data->year = $curYear;
 $vote_data->award_id=$awards;
 
        $vote_data->status ="Active";
