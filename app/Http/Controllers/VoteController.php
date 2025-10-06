@@ -165,8 +165,21 @@ $awards = implode(",",$awards);
 if($awardsCount->count()<=3)
 {
 
+$users=Auth::user();
+
+//dd($users);
+
+$contestant_first=vote::where('user_id',$users->id)
+->where('year',$curYear)
+->where('email',$users->email)
+->where('id',$id)->first();
+
+dd($contestant_first);
+
+
+
         $vote_data = new vote();
-           $vote_data->user_id = $users->id;
+        $vote_data->user_id = $users->id;
              $vote_data->contestant_id=request('contestant_id');
         $vote_data->mobile = $users->phone;
         $vote_data->email = $users->email;
