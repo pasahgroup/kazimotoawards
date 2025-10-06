@@ -179,46 +179,20 @@ if($awardsCount->count()<=3)
    
 
 foreach ($awardss as $key => $item) {
-          $voteaward_data = vote_award::Create([       
-         'contestant_id'=>request('contestant_id'),
+    $voteaward_data = vote_award::UpdateOrCreate([
+                  'contestant_id'=>request('contestant_id'),
         'award_id'=>$item,
         'year'=>$curYear,
-
-    ],[
-        'vote_id'=>"5",
-        'status'=>"Active",
-         ]);
+            ],[
+               'vote_id'=>$vote_data->id,
+        'status'=>"Active"
+            ]);
         }
 
        // dd($vote_data);
 
 
 //dd($vote_data);
-
-
-//photo
-//   if(request('photo')){
-//             $attach = request('photo');
-//             foreach($attach as $attached){
-
-//                  // Get filename with extension
-//                  $fileNameWithExt = $attached->getClientOriginalName();
-//                  // Just Filename
-//                  $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
-//                  // Get just Extension
-//                  $extension = $attached->getClientOriginalExtension();
-//                  //Filename to store
-//                  $imageToStore = $filename.'_'.time().'.'.$extension;
-//                  //upload the image
-//                  $path = $attached->storeAs('public/photos/', $imageToStore);
-
-//   $contestant_fileupdate = contestant::where('id',$contestants->id)
-//              ->update([
-//                'photo'=>$imageToStore
-//         ]);
-       
-//     }
-// }
 
 
 
