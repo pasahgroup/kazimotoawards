@@ -165,8 +165,6 @@ $awards = implode(",",$awards);
 if($awardsCount->count()<=3)
 {
 
-
-
         $vote_data = new vote();
            $vote_data->user_id = $users->id;
              $vote_data->contestant_id=request('contestant_id');
@@ -187,7 +185,7 @@ foreach ($awardss as $key => $item) {
         'year'=>$curYear,
 
     ],[
-        'vote_id'=>4,
+        'vote_id'=>"5",
         'status'=>"Active",
          ]);
         }
