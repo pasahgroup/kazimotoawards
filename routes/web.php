@@ -231,6 +231,8 @@ Route::get('/l', [commandController::class, 'index'])->name('c');
 });
 
  Route::resource('/register',RegisterController::class);
+  // Route::resource('/voter_register',RegisterController::class);
+  Route::get('/voter_register', [RegisterController::class, 'voterregister'])->name('voter_register');
 
  Route::post('/user-update/{x}', [AuthController::class, 'update'])->name('user-update');
 // Route::group(['middleware' => ['auth']], function() {

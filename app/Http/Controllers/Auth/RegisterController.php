@@ -111,6 +111,20 @@ $this->validate($request, [
 
 
 
+ public function voterregister()
+    {
+      //dd('Voter register');
+      return view('auth.voter_register');
+    }
+
+
+
+
+
+
+
+
+
     public function register()
     {
       return view('auth.register');

@@ -72,10 +72,6 @@ class AboutusController extends Controller
                 }
             }
 
-//dd('Reached here');
-
-
-
 
         $aboutus = aboutus::UpdateOrCreate([
       'status'=>'Active', 

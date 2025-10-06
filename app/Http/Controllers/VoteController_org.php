@@ -7,8 +7,6 @@ use App\Models\award;
 use App\Models\contestant_award;
 use App\Models\contestant_update;
 use App\Models\contestant;
-use App\Models\vote_award;
-
 
 use App\Http\Requests\StorevoteRequest;
 use App\Http\Requests\UpdatevoteRequest;
@@ -140,8 +138,6 @@ $macaddress=substr($mycomsys,($pmac+36),17);
 
 
 $awards = request("awards");
-$awardss = request("awards");
-
 $awardsCount=collect($awards);
 
 $macAddr = exec('getmac');
@@ -154,48 +150,113 @@ $macAddress = strtok($macAddr, $delimiter); // Hello
 $after = strtok($delimiter); // World
 //dd($macAddress);
 
-$localIP = getHostByName(getHostName());
+$localIP = getHostByName(getHostName()); 
+
+
 $awards = implode(",",$awards);
 
 //$photos=("[".$photos."]");
+
+
+ //dd($contestant_data->images);
+// $indexedArray = array("apple", "banana", "orange");
+//$images = implode(",",$images);
+//$images=("[".$images."]");
+//$mac = system('arp -an');
+//dd($awards);
 
 
 
 
 if($awardsCount->count()<=3)
 {
-
-
+//dd('print kaka');
 
         $vote_data = new vote();
            $vote_data->user_id = $users->id;
              $vote_data->contestant_id=request('contestant_id');
         $vote_data->mobile = $users->phone;
         $vote_data->email = $users->email;
+//            $contestant_data->birth_date = $request->birth_date;
+        
+//          $contestant_data->phone = $request->phone;
+//            $contestant_data->email = $request->email;
+
+//  $contestant_data->country = $request->country;
+//            $contestant_data->district = $request->district;
+
+// $contestant_data->education = $request->education;
+//            $contestant_data->education_of = $request->education_of;
+
+//        $contestant_data->experience_one = $request->experience_one;
+//            $contestant_data->experience_two = $request->experience_two;
+// $contestant_data->experience_three = $request->experience_three;
+
     
-    $vote_data->mac = $macaddress;
-    $vote_data->year = $curYear;
+        $vote_data->mac = $macaddress;
+        $vote_data->year = $curYear;
     $vote_data->award_id=$awards;
     $vote_data->status ="Active";
-   $vote_data->save();
-   
 
-foreach ($awardss as $key => $item) {
-          $voteaward_data = vote_award::Create([       
-         'contestant_id'=>request('contestant_id'),
-        'award_id'=>$item,
-        'year'=>$curYear,
+      
+        // $vehicle->seater_id = $request->seater;
+        // $vehicle->price = $request->price;
+        // $vehicle->details = $request->details;
+        // $vehicle->model = $request->model;
+        // $vehicle->car_model_no = $request->car_model_no;
 
-    ],[
-        'vote_id'=>4,
-        'status'=>"Active",
-         ]);
-        }
+        // $vehicle->doors = $request->doors;
+        // $vehicle->transmission = $request->transmission;
+        // $vehicle->fuel_type = $request->fuel_type;
+        //  $vehicle->car_body_type_id = $request->car_body_type;
+        //   $vehicle->tag_id = $request->tag;
+        //    $vehicle->color_id = $request->color;
+        //     $vehicle->location_id = $request->location;
 
-       // dd($vote_data);
+
+        // foreach ($request->label as $key => $item) {
+        //     $specifications[$item] = [
+        //         $request->icon[$key],
+        //         $request->label[$key],
+        //         $request->value[$key]
+        //     ];
+        // }
+
+        // $vehicle->specifications = $specifications;
+
+//dd('print consent1');
+//const $images =[];
+
+// $data = $this->getSomeData();
+        // Upload image
+   //      foreach ($request->images as $image) {
+   //          $path = $this->imagePath()['photos']['path'];
+   //          $size = $this->imagePath()['photos']['size'];
+   //          $images[] =$this->uploadImage($image, $path, $size);
+
+   // // $photoMeta = explode("_", $keyPhoto);
+   //      }
+
+//dd('End');
 
 
-//dd($vote_data);
+ //const myArray = ["apple", "banana", "cherry"];
+  //  $myString = $images[].join(", ");
+
+  //dd($photos);
+
+        //$contestant_data->photo = $photos;
+        // $contestant_data->images = $images;
+
+     //dd($contestant_data->images);
+
+$vote_data->save();
+
+//dd('print consent1xx');
+//dd('print consent2');
+//End of new installation
+
+
 
 
 //photo

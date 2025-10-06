@@ -48,6 +48,7 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
+
      $hear_from = request('hear');   
       $pin=rand(11111111, 99999999);
    

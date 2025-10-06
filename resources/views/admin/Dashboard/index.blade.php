@@ -85,7 +85,7 @@
   border-radius: 2rem;
   font-weight: 600;
   font-size: 0.9rem;
-  padding: 0.38rem 1.1rem;
+  padding: 0.2rem 1.1rem;
   box-shadow: 0 3px 8px rgba(255,255,255,0.25);
   border: 1.5px solid rgba(255,255,255,0.6);
   background: transparent;
@@ -280,10 +280,9 @@
           <div class="card legend-card card-properties">
             <i class="bi bi-building card-icon"></i>
             <div class="card-content text-center">
-              <h5 class="card-title">Properties</h5>
-              <div class="card-number">{{ $lodges }}</div>
+              <h5 class="card-title">Voters:{{$curYear}}</h5>
+              <div class="card-number">{{ $votes }}</div>
               <div class="card-buttons justify-content-center">
-                <a href="/properties" class="legend-btn"><i class="bi bi-plus-circle"></i> Add</a>
                 <a href="/properties/list" class="legend-btn" style="border-color:#fff; color:#fff;">View</a>
               </div>
             </div>

@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('spa.mainlayout_web')
 @section('contents')
 
   <main class="login-form">
@@ -8,7 +8,7 @@
         <div class="col-md-8">
           <div class="card">
             <div class="card-header">
-              <img src="../../img/logo.png" alt="Logo" class="logo mx-auto d-block">
+              <img src="../../img/logo.png" alt="Logo" class="logo mx-auto d-block" style="height:60px;">
               Login to your existing account
             </div>
 

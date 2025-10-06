@@ -11,6 +11,7 @@ use App\Models\enquiry;
 use App\Models\lodge;
 use App\Models\student;
 use App\Models\lodgetrainee;
+use App\Models\vote;
 
 use DB;
 use Illuminate\Http\Request;
@@ -24,13 +25,14 @@ class dashboardController extends Controller
      */
     public function index()
     {
+           $curYear = date('Y');
         $customers=TourEquiryForm::where('status','Active')->count();
         $agents=Agent::where('status','Active')->count();
          $partiners=partner::where('status','Active')->count();
          $tailorMades=tailorMade::where('status','Active')->count();
         $tourGuides=tourGuide::where('status','Active')->count();
 
-   $contacts=contacts::where('status','Active')->count();
+$contacts=contacts::where('status','Active')->count();
 $enquiries=enquiry::where('status','Active')->count();
 
 
@@ -40,14 +42,21 @@ $enquiries=enquiry::where('status','Active')->count();
         ->count();
 
         
-    $trainees=lodgetrainee::count();
-        
+    $trainees=lodgetrainee::count();        
         $students=student::count();
             $lodges=lodge::count();
 
-//dd($lodges);
+             $votes=vote::where('year',$curYear)
+             ->where('contestant_id',"!=","")
+             ->count();
 
-        return view('admin.Dashboard.index',compact('agents','lodges','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
+                    $datas=vote::
+                    select('votes.award_id')
+                    ->get();
+                    $datas=collect($datas);
+
+//dd($datas);
+        return view('admin.Dashboard.index',compact('agents','votes','curYear','lodges','students','trainees','tailorMades','customers','partiners','tourGuides','contacts','enquiries','activeGroupTrip'));
     }
 
     /**

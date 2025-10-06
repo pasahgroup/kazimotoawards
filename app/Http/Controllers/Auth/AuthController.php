@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Session;
 use App\Models\User;
+use App\Models\contestant_update;
 use Hash;
 
 class AuthController extends Controller
@@ -153,8 +154,10 @@ if($status==null)
         $user=User::where('email',$request->email)
         ->first();
               $role = Auth::User()->role;
-              //dd($role);
-              $id=2;
+              //dd($user);
+
+
+             // $id=2;
 
               if($role=="Admin")
               {
@@ -162,12 +165,15 @@ if($status==null)
               }
               else
               {
-                 dd(request('award_id'));
+                // dd('wawa');
 //return redirect()->route('vote',compact('id'))->withSuccess('You have Successfully loggedin');
 
-  return redirect()->route('vote',$id)->with('success','Tour Summary Cost created successful');
-              }
-           
+//return redirect('/votes/',2)->with('status', 'Profile updated!');
+//return redirect()->route('vote', [$user]);
+
+  $contestant_second=contestant_update::where('id',1)->first();  //dd($contestant_second->contestant_id);
+  return redirect()->route('vote',$contestant_second->contestant_id)->with('success','You have Successfully loggedin');
+              }        
 
         }
 

@@ -1,5 +1,15 @@
 
-  @extends('spa.mainlayout_web')
+    @auth                            
+                                 @extends('spa.mainlayout_web')
+                                 @else
+
+                                                   @endauth
+
+
+
+
+
+
 @section('contents')
  <link href="../../img_library/main.css" rel="stylesheet">
     <link href="../../img_library/mform.css" rel="stylesheet">
@@ -136,29 +146,15 @@
 
                      
 
+   <div class="row">
 
-
-
-                          
-                              <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                   <x-label for="password_confirmation" :value="__('Role')" />
-                                     <div class="form-group icon_down">
-                                        <select class="form-control" name="role">
-                                              <option value="0">--Select User Role--</option>
-                                            <option value="Admin">Admin</option>\
-                                             <option value="Account">Account</option>
-                                            <option value="Agents">Agent</option>
-                                             <option value="Cultural">Cultural</option>
-                                             <option value="Employee">Employee</option>
-                                            <option value="Marketing Officer">Marketing Officer</option>                                             
-                                            <option value="Tour Guide">Tour Guide</option>
-                                            <option value="Partiner">Partiner</option>
-                                              <option value="Normal">Normal</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                      <input type="hidden" name="role" value="Normal"> 
+                                   
                              </div>
+
+
+
+
 
                 <div class="row">
                  <div class="col-lg-3 col-md-12 col-sm-12">
@@ -230,3 +226,4 @@
 </main>
 <script src="../../img_library/scripts.js" type="text/javascript"></script>
 @endsection
+

@@ -462,7 +462,7 @@
                         <div class="input__container">
                             <label for="name">Name:</label>
                              <label for="name">{{$contestant_first->full_name}}</label>
-                             <input type="text" name="award_id" value="{{$contestant_first->id}}">
+                             <input type="hidden" name="contestant_id" value="{{$contestant_first->id}}">
                         </div>
                     </div>
  <div class="col-md-6 col-lg-6 col-sm-6">
@@ -487,26 +487,52 @@
                        <div class="col-md-12">       
             <label for="">{{$contestant_first->full_name}}: contestants applied awards:</label>
             <p> Once you vote for a specific awards won't allowed to vote for the same awards again to a different contestant.</p>
+             
        <div class="form-group">
+         @auth 
 @foreach($awards as $award)
 
            <label for="facebook">{{$award->award_name}}
           <input id="facebook" type="checkbox" class="zt-control"  name="awards[]" value="{{$award->id}}">
         </label>
-@endforeach     
-        </div>
+@endforeach  
+ @endauth 
+
+        </div>             
         </div>
                 </div>                      
 
-                               <div class="buttons">
+                            <div class="buttons">
                                  @auth                            
                                   <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Vote</button>  
                                  @else
-                                 <a href="/login" class="btn mb-2 mb-md-0 btn-outline-primary">Login</a> 
-                                   @endauth
+        
+
+                 <label class="form-check-label" for="remember">No account: <a href="/voter_register">Sign Up</a> </label>
+                                    <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit" value="login" name="login">Login</button> 
+                                                   @endauth
                             </div>             
 
                 </form>   
+
+
+<!-- 
+
+     <form method="post" id="post_form" role="form" class="registration-form" action="{{ route('Agents.store') }}" enctype="multipart/form-data">
+        @csrf
+                          
+
+
+
+  <div class="buttons">
+                                 @auth                            
+                                  <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Vote2</button>  
+                                 @else
+                                   <button class="btn mb-2 mb-md-0 btn-outline-primary" type="submit">Login2</button> 
+                                   @endauth
+                            </div> 
+  </form>
+ -->
 
                 </div>
             </div>

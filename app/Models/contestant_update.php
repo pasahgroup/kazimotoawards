@@ -5,17 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class vote extends Model
+class contestant_update extends Model
 {
     use HasFactory;
-        protected $fillable = [
-        'user_id',
+    protected $fillable = [
         'contestant_id',
-        'mobile',
-        'email',
-        'award_id',
-        'mac',
-        'year',
-        'status'
     ];
 }
